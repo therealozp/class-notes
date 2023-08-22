@@ -1,5 +1,8 @@
 {
   "accentColor": "",
   "cssTheme": "Catppuccin",
-  "textFontFamily": "Inter"
+  "textFontFamily": "Satoshi",
+  "enabledCssSnippets": [
+    "obsidian"
+  ]
 }
