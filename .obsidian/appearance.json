@@ -4,5 +4,6 @@
   "textFontFamily": "Satoshi",
   "enabledCssSnippets": [
     "obsidian"
-  ]
+  ],
+  "baseFontSize": 17
 }

@@ -4,5 +4,7 @@
   "obsidian-git",
   "obsidian-style-settings",
   "obsidian-tasks-plugin",
-  "templater-obsidian"
+  "templater-obsidian",
+  "obsidian-excalidraw-plugin",
+  "table-editor-obsidian"
 ]
