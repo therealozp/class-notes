@@ -45,7 +45,7 @@ $$ \lnot p \land \lnot q \equiv \lnot(p \lor q)$$
 ### The statement form
 The statement (or propositional) form is an expression made up of statement variables and logical connectives that becomes a statement when **actual statements** are substituted for components. 
 
-	The truth table is basically what is drawn in [[#Compound statements]], where there are $2^n$ rows with n being the number of variables.
+The truth table is basically what is drawn in [[#Compound statements]], where there are $2^n$ rows with n being the number of variables.
 
 The disjunction $p \lor q$ is the *inclusive or*. *Exclusive or* only returns true when **either p or q** is true, **but not both.** This can also be represented as $(p \lor q) \land  \lnot(p \land q)$. 
 
@@ -56,6 +56,26 @@ The disjunction $p \lor q$ is the *inclusive or*. *Exclusive or* only returns tr
 | F   | T   |     T      |      F      |         T          |                  T                   |
 | F   | F   |     F      |      F      |         T          |                  F                   |
 
-hello i am gud student
-nom nom nom
-discrete math who
+### Logical equivalency
+If two statements give the same truth value no matter what the statements are changed to, we say that they have logical equivalency. For example, **double negatives** ($\lnot (\lnot p))$ and are exactly the same as **normal** statements, which means they have *logical equivalency*.
+
+> It will rain today or it will rain tomorrow = It will rain tomorrow or it will rain today, 
+
+### De Morgan's law of logic: 
+1. The negation of conjunctions is the disjunction of negations, i.e. 
+$$\lnot (p \land q) \equiv \lnot p \lor \lnot q$$
+2. The negation of disjunctions is the conjunction of negations, i.e. 
+$$\lnot (p \lor q) \equiv \lnot p \land \lnot q$$
+### Tautologies and Contradiction
+1. A tautology is a statement that takes a tautological form, which returns **True** regardless of the truth values of its components. 
+2. A contradiction is a statement that is contradictory, which returns False regardless of the truth values of its components.
+
+For example, $p \lor \lnot p$ is a tautology, while $p \land \lnot p$ is a contradiction. 
+
+| $p$ | $\lnot p$ | $p \lor \lnot p$ | $p \land \lnot p$ |
+| --- | --------- | ---------------- | ----------------- |
+| T   | F         | T                | F                 |
+| F   | T         | T                | F                 |
+
+### Summary of logical equivalencies
+![[Pasted image 20230828164949.png]]

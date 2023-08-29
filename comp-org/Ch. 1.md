@@ -68,3 +68,7 @@ There are 2 kinds of RAM: *SRAM* (for cache memory, holds **static** data as lon
 - Single or Multiple cores/chips, and multiple PUs
 - Independent L1 and L2 cache
 - Runs through the system bus to memory
+
+## 5. Caller, Assembler, Linker, Loader
+
+![[C.A.L.L. 2023-08-28 12.37.06.excalidraw|1024|center]]
