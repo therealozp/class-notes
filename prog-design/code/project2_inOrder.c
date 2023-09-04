@@ -1,14 +1,19 @@
+// Name: Phu Anh Khang Le
+// Description: This program gets input with getchar() and checks if the input is in alphabetical order
+
 #include <stdio.h>
 #include <ctype.h>
 
 int main() {
+    // declare current character and previous character
     char curr, prev;    
+
+    // initializes boolean variables
     int inOrder = 1;
     int valid = 1;
     printf("Enter input: ");
     do {
         curr = getchar();
-        // printf("%c", curr);
         
         // only keeps checking if string is valid
         if (valid) {
@@ -45,6 +50,5 @@ int main() {
             printf("not in order");
         }
     }
-    // printf(lesser ? "true" : "false");
     return 0;
 }

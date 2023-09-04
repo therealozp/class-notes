@@ -3,9 +3,18 @@
 // and will calculate the total charges.
 
 #include <stdio.h>
-#include <math.h>
 // macro defintion: 7 days in a week
 #define WEEK_DAYS 7
+
+// math.h is not available in gcc v 4.0.7 so im implementing my own ceil function
+int ceiling(double x) {
+    // this converts it to an integer form first
+    int x_int = x;
+    if (x > x_int) {
+        return x_int + 1;
+    }
+    return x;
+}
 
 int main(void) {
     int equipment; 
@@ -65,6 +74,8 @@ int main(void) {
 
     // round up the ratios, because integer division automatically floors the answers
     week_day_ratio = weekly_cap / daily_cap;
+    week_day_ratio = ceiling(week_day_ratio);
+     
 
     // since 8-hour sessions for all products exceed the daily cap, we just need to check if the number of sessions exceed 4
     // if yes, increment days by 1
