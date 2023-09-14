@@ -6,7 +6,7 @@
 int main() {
     // first initializes remainder
     int number, remainder;
-    printf("Enter input: ");
+    printf("Enter input:");
     scanf("%d", &number);
 
     // checks if number is divisible by 3, else it is not a magic number
