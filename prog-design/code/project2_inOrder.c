@@ -11,7 +11,7 @@ int main() {
     // initializes boolean variables
     int inOrder = 1;
     int valid = 1;
-    printf("Enter input: ");
+    printf("Enter input:");
     do {
         curr = getchar();
         
@@ -42,12 +42,12 @@ int main() {
     } while (curr != '\n');
 
     if (!valid) {
-        printf("invalid input");
+        printf("invalid input\n");
     } else {
         if (inOrder) {
-            printf("in order");
+            printf("in order\n");
         } else {
-            printf("not in order");
+            printf("not in order\n");
         }
     }
     return 0;
