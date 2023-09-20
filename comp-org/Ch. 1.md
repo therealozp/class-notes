@@ -48,7 +48,7 @@ Today's stored-program machine architecture: [[#a. Components]]
 - Has capacity for sequential instruction processing
 - A single data path between CPU and main memory, called the **von Neumann bottleneck**
 
-![[vonneumann.excalidraw]]
+![[vonneumann.excalidraw|600]]
 
 
 Employs a **fetch-decode-execute cycle** to run programs.

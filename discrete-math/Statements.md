@@ -4,7 +4,7 @@
 A sentence that is either true or false, **but not both** (or neither). There is only one well-defined truth value, which **can be unknown**. Truth values can be: 
 - evident from the sentence itself (e.g. 2 + 2 = 5 is False)
 - evident from the sentence that is has one. "There are an odd number of stars in the universe." 
-- assigned for the sake of argument or analysis. 
+- assigned for the sake of argument or analysis
 
 Some sentences should not be considered statements, either because: 
 - it is a question (and assigning it a truth value does not make sense)

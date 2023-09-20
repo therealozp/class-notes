@@ -1,23 +1,25 @@
 #include <stdio.h>
-#define weekly 7
-#define biweekly weekly+weekly
 
-int ceiling(double x) {
-    // this converts it to an integer form first
-    int x_int = x;
-    if (x > x_int) {
-        return x_int + 1;
-    }
-    return x;
+void reverse(int a[], int n) {
+    int tmp;
+    for (int i = 0; i < n / 2; i++) {
+        tmp = a[i];
+        a[i] = a[n - i - 1];
+        a[n - i - 1] = tmp;
+    } 
+    return;
 }
 
 int main() {
-    int b;
-    float a, c;
-    scanf("%f%d%f", &a, &b, &c);
-    printf("%f\n", a);
-    printf("%d\n", b);
-    printf("%f\n", c);
-    // printf("%d", days);
+    int n = 6; 
+    int a[] = {5, 5, 4, 23, 2, 17};
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+    reverse(a, n);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
     return 0;
 }
