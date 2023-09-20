@@ -49,7 +49,7 @@ When determining the validity of the argument, always look at the critical rows 
 ## Modus Tollens
 The form provided is called **modus tollens** or **denying the consequent**: 
 
-If p then q       If Zeus is human, then he is mortal.
+$p \rightarrow q$              If Zeus is human, then he is mortal.
 $\lnot q$                   Zeus is not mortal.
 $\therefore \lnot p$               Zeus is not human.
 
@@ -111,6 +111,27 @@ Since this is a valid argument form, $r$ can be shown if we:
 - Use either the fact that *n is even* ($q$) or ($\lor$) *n is odd* ($p$)
 - Show that n being odd implies n(n+1) is even ($p \rightarrow r$) 
 - Show that n being even implies n(n+1) is even ($q \rightarrow r$)
-## Fallacy
-A fallacy is an error in reasoning that results in a faulty argument. They could be used in argument form directly, using **ambiguous premises**, or **assuming the conclusion.**
 
+## Fallacy
+A fallacy is an error in reasoning that results in a faulty argument. They could be used in argument form directly, using **ambiguous premises**, or **assuming the consequent.**
+
+We also have the inverse fallacy, or **denying the antecedent.** It has he invalid form: 
+$p \rightarrow q$
+$\lnot p$
+$\therefore \lnot q$
+
+If $p$ is false, the premises becomes true, but the conclusion cannot be deduced either way.
+
+### Circular reasoning
+$p \rightarrow q$
+$q \rightarrow r$
+$r \rightarrow p$
+$\therefore p \land q \land r$
+
+This can also work when all premises are vacuously true (aka when they are all false). To fill this void, another premises is needed: $p \lor q \lor r$
+
+## The contradiction rule
+$\lnot p \rightarrow c$, where c is a contradiction
+$\therefore p$
+
+This is especially powerful when a direct proof is not available, and a false reality such as this is needed to conclude the truth of $p$,
