@@ -42,7 +42,9 @@ Constructing a truth table for $p \lor \lnot q \rightarrow \lnot p$
 - Find the rows where the antecedent is True and the consequent is False, and put F's for every single one. Then, the rest is true.
 - Alternatively, find all the rows where the antecedent is False, and mark T's. Then, copy the values of the consequent to the truth table.
 
-## Equivalent Or and Contrapositive forms and Negation
+## Equivalent Or, Contrapositive forms, and Negation
+
+### Negation
 Consider $p \rightarrow q$ and $\lnot p \lor q$. **These are logically equivalent.**
 The disjunction $\lor$ is only false when $p$ is true, and $q$ is false. Which means that negating $p \rightarrow q$ will mean: 
 $$
