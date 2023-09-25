@@ -22,6 +22,15 @@ Price cut by half (???) each year
 - **Processor Speeds**: KHz, MHz, GHz
 - **Time & Space**: $\mu$s, ns, ms.
 
+The chart for MB versus MiB is as follows: 
+
+| Symbol | Number of Bytes               | Symbol | Number of Bytes |
+| ------ | ----------------------------- | ------ | --------------- |
+| KB     | 1000 ($10^3$)                 | KiB    | 1024 ($2^{10}$) |
+| MB     | 1,000,000 ($10^6$)            | MiB    | $2^{20}$        |
+| GB     | 1,000,000,000 ($10^9$)        | GiB    | $2^{30}$        |
+| TB     | 1,000,000,000,000 ($10^{12}$) | TiB    | $2^{40}$        |
+
 Hertz = **clock cycles/s** (frequency). For example, a bus operating at 133MHz has a cycle time of 7.52ns, as $133 \cdot 10^6 cycles/s = \frac{1}{133 \cdot 10^6} = 7.52 ns/cycle$
 
 **The writing operation** (e.g. adding 2 32-bit numbers a and b):

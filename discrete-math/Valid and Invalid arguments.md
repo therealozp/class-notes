@@ -135,3 +135,26 @@ $\lnot p \rightarrow c$, where c is a contradiction
 $\therefore p$
 
 This is especially powerful when a direct proof is not available, and a false reality such as this is needed to conclude the truth of $p$,
+
+
+**Step 1**
+$q \rightarrow r$    by premise (b)
+$\lnot r$         by premise (d)
+$\therefore \lnot q$      by modus tollens
+
+**Step 2**
+$p \lor q$       by premise (a)
+$\lnot q$          by Step 1
+$\therefore p$         by elimination
+
+**Step 3**
+$\lnot q \rightarrow u \land s$  by premise (e)
+$\lnot q$               by Step 1
+$\therefore u \land s$        by modus ponens
+$\therefore s$              by specialization
+
+**Step 4**
+$p$                   by Step 2
+$s$                   by Step 3
+$p \land s \rightarrow t$      by premise (c)
+$\therefore t$                by modus ponens
