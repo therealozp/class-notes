@@ -64,7 +64,7 @@ The truth table demonstrates its validity, but if we replace the conditional wit
 
 An argument form consisting of two premises, a *major and minor premise*, is called a **syllogism.**
 
-## Rule of inference
+## Rules of inference
 An argument form, like modus ponens/tollens, that is valid. Although any valid argument form is a rule of inference, they are normal used to make **deductions** of a **sequence of arguments.**
 
 For example, given that the premises $p \rightarrow q$, $q \rightarrow r$, $r \rightarrow s$, $s \rightarrow t$, and $p$ is true, can we deduce the truth of $t$? (yes)
