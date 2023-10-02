@@ -79,3 +79,7 @@ For example, $p \lor \lnot p$ is a tautology, while $p \land \lnot p$ is a contr
 
 ### Summary of logical equivalencies
 ![[Pasted image 20230828164949.png]]
+
+
+[[Conditional]]
+[[Inequalities]]

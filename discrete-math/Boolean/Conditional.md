@@ -62,11 +62,11 @@ The contrapositive of "If $p$ then $q$" is *If not $q$, then not $p$*. Symbolica
 
 By equivalence, these three statements necessarily agree in truth: 
 - If you are in this class, then you are a USF student.
-- You're not in this class, or you are a USF student. ()
+- You're not in this class, or you are a USF student. (equivalent disjunction)
 - If you are not a USF student, then you're not in this class. 
 
 This statement necessarily disagrees in truth: 
-- You are in this class, but you are not a USF student.
+- You are in this class, but you are not a USF student. (negation)
 
 ### Necessity and Sufficiency
 Here are some equivalent ways to state a conditional $p \rightarrow q$ when using the terms *necessary* and *sufficient.*
@@ -94,3 +94,5 @@ The biconditional statement is defined as $p \leftrightarrow q$, or $(p \rightar
 1. Evaluate negations $\lnot$ first. 
 2. Evaluate $\lor$ and $\land$ second, using parentheses if both are present.
 3. Evaluate $\rightarrow$ and $\leftrightarrow$ last, using parentheses if both are present.
+
+[[Valid and Invalid arguments]]

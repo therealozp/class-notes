@@ -6,6 +6,38 @@ $$A\cup B = \set{x: x\in A \space \lor x\in B}$$
 $$A\cap B = \set{x: x\in A \space \land x\in B}$$
 - Difference (Relative Complement)
 $$A- B = \set{x: x\in A \space \land x\not\in B}$$
+## The universal set
+The universal set, or universe, basically contain the context of the sets where they are both placed in. This is useful when we are taking the complement of the lone set, such as $A^\complement$, 
+
+## Interval notation
+Let $\mathbb{R}$ be the universal set. Then, **intervals** are subsets of $\mathbb{R}$ where for a < b, we have: 
+$$
+\begin{split}
+& (a, b) = \set{x \in \mathbb{R} : a < x < b} \\
+& [a, b] = \set{x \in \mathbb{R} : a \leq x \leq b}
+\end{split}
+$$
+## Subsets: Proof and Disproof
+If $A$ is a subset of $B$ ($A \subseteq B$), then: 
+$$\forall x, x \in A \implies x\in B$$
+Example: $A \subseteq B$ where: 
+$$\begin{split}
+& A = \set{m \in \mathbb{Z} : m = 6r + 12 , r \in Z} \\
+& B = \set{n \in \mathbb{Z} : n = 3s, s \in Z}
+\end{split}$$
+[[Set Intro#Subsets and Equality]]
+
+## Basic Set Facts
+Let $U$ be a universal set containing sets A, B, and C. Then: 
+1. $A\cup B = B \cup A$ and $A\cap B = B \cap A$
+2. $(A\cup B) \cup C = A \cup (B \cup C)$ (also for intersection)
+3. $A\cup (B \cap C) = (A \cup B) \cap (A\cup C)$
+4. $A \cup U = U$
+5. $A \cup \varnothing = A$, while $A \cap \varnothing = \varnothing$
+6. $A \cup A^\complement = U$, while $A \cap A^\complement = \varnothing$
+7. $A\cup (A \cap B) = A$ and $A\cap (A \cup B) = A$ **(Absorption)**
+8. 
+
 ## Procedural Versions
 We have the following subset relations: 
 1. Inclusion of intersection: $A \cap B \subseteq A$ and $A \cap B \subseteq B$
@@ -33,7 +65,6 @@ $\Longleftrightarrow (x \in A \land y \in B) \lor (x \in C \land y \in D)$
 $\Longleftrightarrow [(x \in A \land y \in B) \lor x \in C] \land [(x \in A \land y \in B) \lor y \in D]$
 $\Longleftrightarrow [(x \in A) \lor x \in C] \land [(y \in B) \lor y \in D]$
 $\Longleftrightarrow (x \in A \cup C) \land (y \in B \cup D)$
-
 ## Empty sets
 **Fact**: The empty set is a subset of every set.
 By definition, if $A \subseteq B \Longleftrightarrow \forall x$ if $x \in A$ then $x\in B$, and if $A = \varnothing$, then the universal conditional above is vacuously true since the empty set has no elements. 
@@ -47,4 +78,3 @@ To prove a set empty, we assume it contains element, and derive a contradiction.
 ![[Pasted image 20231002162911.png]]
 
 Alternatively, we also have $\cup^n_{i = 1}A_i$ is the same as $A_1 \cup A_2 \cup ...\cup A_n$, and $\cap^n_{i = 1}A_i$ is the same as $A_1 \cap A_2 \cap ...\cap A_n$
- 

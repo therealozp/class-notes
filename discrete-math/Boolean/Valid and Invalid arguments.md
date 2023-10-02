@@ -165,3 +165,6 @@ $p$                   by Step 2
 $s$                   by Step 3
 $p \land s \rightarrow t$      by premise (c)
 $\therefore t$                by modus ponens
+
+[[Quantified Statements]]
+[[Multiple Quantifiers]]

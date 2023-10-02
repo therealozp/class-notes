@@ -106,4 +106,4 @@ If $D$ is an empty set, then:
 - The existential statement $\exists x \in D, A(x)$ is **false by default** for any predicate A, because nothing exists to prove it.
 - On the contrary, the **universal** statement $\forall x\in D, B(x)$ is **true by default** for any predicate B, because *technically* it is all true for every element in the set (which is empty).
 
-## [[Multiple Quantifiers]]
+[[Multiple Quantifiers]]
