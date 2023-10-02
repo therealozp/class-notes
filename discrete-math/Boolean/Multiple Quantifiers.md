@@ -1,4 +1,3 @@
-
 Consider the example: 
 - There exists $(x, y) \in \mathbb{R}^2$ such that $x^2+y^2 = 1$. 
 - There exists $x$ such that there exists $y$ such that $x^2+y^2 = 1$
