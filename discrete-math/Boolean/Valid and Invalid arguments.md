@@ -11,7 +11,7 @@ We are considering the **premises** ($p \rightarrow q$, $p$) and the conclusion 
 - Argument form is considered valid if **true premises always result in a true conclusion**
 - Any argument made with a valid form is considered **valid**, even if the substitution made results in some false premise(s). 
 - To be a **sound** argument, the argument must both be **valid** and have **all true premises.**
-- Invalid arguments, made with an invalid form, are **never considered sound**, even if all the premises are true
+- Invalid arguments, made with an invalid form, are **never considered sound**, even if all the premises are true.
 - For any valid argument, the conclusion **follows** from the premises. 
 
 When we are talking about *validity*, we are talking about its form; when we are talking about *soundness*, we are talking about it's applications. 
@@ -32,7 +32,7 @@ $\therefore q$          You are a USF student.
 - Case 2: If non-USF students could take this class, this argument would be **unsound.** 
 So, a valid argument but with a **false premise** makes the argument **unsound.**
 
-### Invalid argument
+### Converse Error (affirming the consequent)
 Let's make an invalid argument with a small change in form: 
 $p \rightarrow q$      If  you are in this class, then you are a USF student.
 $q$             You are a USF student
@@ -64,6 +64,13 @@ The truth table demonstrates its validity, but if we replace the conditional wit
 
 An argument form consisting of two premises, a *major and minor premise*, is called a **syllogism.**
 
+### Inverse Error (denying the antecedent)
+Another invalid argument form, taken under something like: 
+$p \rightarrow q$      If  you are in this class, then you are a USF student.
+$\lnot p$           You are not in this class
+$\therefore \lnot q$        You are not a USF student.
+
+Note that the **inverse** of $p \rightarrow q$ is $\lnot p \rightarrow \lnot q$, hence the name of the argument.
 ## Rules of inference
 An argument form, like modus ponens/tollens, that is valid. Although any valid argument form is a rule of inference, they are normal used to make **deductions** of a **sequence of arguments.**
 
@@ -109,8 +116,8 @@ E.g. outline a proof that the product of two consecutive integers is always even
 
 Since this is a valid argument form, $r$ can be shown if we: 
 - Use either the fact that *n is even* ($q$) or ($\lor$) *n is odd* ($p$)
-- Show that n being odd implies n(n+1) is even ($p \rightarrow r$) 
-- Show that n being even implies n(n+1) is even ($q \rightarrow r$)
+- Show that n being odd implies (n+1) is even ($p \rightarrow r$) 
+- Show that n being even implies (n+1) is **still** even ($q \rightarrow r$)
 
 ## Fallacy
 A fallacy is an error in reasoning that results in a faulty argument. They could be used in argument form directly, using **ambiguous premises**, or **assuming the consequent.**

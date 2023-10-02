@@ -68,7 +68,7 @@ $$\lnot (p \land q) \equiv \lnot p \lor \lnot q$$
 $$\lnot (p \lor q) \equiv \lnot p \land \lnot q$$
 ### Tautologies and Contradiction
 1. A tautology is a statement that takes a tautological form, which returns **True** regardless of the truth values of its components. 
-2. A contradiction is a statement that is contradictory, which returns False regardless of the truth values of its components.
+2. A contradiction is a statement that is contradictory, which returns **False** regardless of the truth values of its components.
 
 For example, $p \lor \lnot p$ is a tautology, while $p \land \lnot p$ is a contradiction. 
 
