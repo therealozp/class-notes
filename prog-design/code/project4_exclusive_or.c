@@ -1,7 +1,11 @@
+// Name: Phu Anh Khang Le
+/* Description: this program takes in 2 arrays and by using pointer arithmetic, it will filter out
+the elements existing in this array but not in the other. */
+
 #include <stdio.h>
 
 void exclusive_or(int *a, int n1, int *b, int n2, int *c, int *size) {
-    // intialize pointers for array a, b, and c
+    // intialize pointers for array a, b, and c respectively
     int *p, *q, *r;
     int *curr = c; // initialize a pointer pointing to the first element of output
     for (p = a; p < (a + n1); p++) {
@@ -31,13 +35,15 @@ void exclusive_or(int *a, int n1, int *b, int n2, int *c, int *size) {
             }
         }
         if (!found) {
-            // do the same, but just point it to q (the bigger element) instead
+            // do the same, but just point it to q (elements in the outermost loop) instead
            *curr = *q;
             curr++;
             *size += 1;
         }
     }
     printf("Output: ");
+    // iterate through the c array, where size is the global variable defined in the main function
+    // note that r is still initialized to be at the start of array c, so it will not follow curr
     for (r = c; r < (c + *size); r++) {
         printf("%d ", *r);
     }

@@ -1,6 +1,6 @@
 // Name: Phu Anh Khang Le
 // Description: This program accepts an array of arrival timestamps of people into an escalator
-// and calculate the total time it will operate
+// and calculate the total time it will operate, using pointer arithmetic
 
 #include <stdio.h>
 
@@ -24,6 +24,7 @@ int active_seconds(int *arrival, int n) {
             } else {
                 // if it is NOT greater, then the total seconds operate are the difference between two timestamps
                 // but the end should still be 10s more than the arrival of the current person
+                // here, curr_ptr - 1 is will represent the previous element
                 secs += (*curr_ptr - *(curr_ptr - 1));
             }
         }        
@@ -46,6 +47,6 @@ int main() {
     }
     
     result = active_seconds(arrival, people);
-    printf("Active seconds: %d", result);
+    printf("Active seconds: %d\n", result);
     return 0;
 }
