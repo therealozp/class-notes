@@ -88,7 +88,7 @@ If we have a conditional statement $p \rightarrow q$ then:
 So, the **converse** is the **contrapositive** of the **inverse.**
 
 ## The Biconditional
-The biconditional statement is defined as $p \leftrightarrow q$, or $(p \rightarrow q) \land (q \rightarrow p)$, and the negation of the biconditional is the exclusive or.
+The biconditional statement is defined as $p \leftrightarrow q$, or $(p \rightarrow q) \land (q \rightarrow p)$, and the **negation of the biconditional is the exclusive or**.
 
 ### Order of Operations
 1. Evaluate negations $\lnot$ first. 
