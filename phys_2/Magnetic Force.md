@@ -49,3 +49,47 @@ where $\mu_0 = 4\pi \times 10^{-7} \ T\cdot \frac{m}{A}$. Consider the example:
 So, let $d$ be the separation between the two wires. We could get the equation: 
 $$F_{1, 2} = I_2L_2B_1 = I_2L_2B\frac{\mu_0I_1}{2\pi d}$$
 The force is **attractive** when these two currents are going in the **same direction**. Flip one around, and they become **repulsive.**
+
+## Torque on a current loop
+Consider a square loop of wire with a current $I$ in a magnetic field coming out of the page. 
+
+![[Pasted image 20231003163812.png]]
+
+There is only a force on the wires on the top and bottom. The sides are parallel to the field. Now, rotate the loop so that the top segment aims out of the page: 
+
+![[Pasted image 20231003163928.png]]
+
+Right-hand-rule dictates that tilting the loop also means the magnetic force on the top wire points up, which creates a torque. We have: 
+$$
+\begin{split}
+\tau & = rF_\perp \\
+F_\perp &=ILB \\
+r &=\frac{L}{2}
+\end{split}
+$$
+Since there are 2 wire segments, we add up the segments in the field that have a force on it. Thus: 
+$$
+\tau = \frac{L}{2}ILB + \frac{L}{2}ILB = IL^2B = \mu \cdot B
+$$
+Here, $\mu = IA$ (the dipole moment).
+
+## Magnetic domains
+Within a magnetic material, there are magnetic domains. Originally, they are randomly oriented, but an magnetic force can be applied to align the domains. 
+
+![[Pasted image 20231003165006.png]]
+
+## Mass spectrometry
+Consider a charge $q$ movign through a velocity $\vec v$ in a m-field $\vec B$. [[#On moving charges]]
+
+![[Pasted image 20231003165138.png]]
+
+The ion is accelerated by a potential difference, then enters a chamber and deflected by the constant magnetic field. Like this, the mass of the ion can be determined.
+
+Recall: 
+$$\Delta KE = -\Delta PE = q_0\Delta V$$
+And the mass function: 
+$$qvb = \frac{mv^2}{r}\rightarrow m = \frac{rqB}{v}$$
+From this, we can solve for the mass of the ion and anything in between.
+
+## Blood-flow meter 
+Pretty unimportant stuff here.
