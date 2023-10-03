@@ -19,4 +19,3 @@ Inserting an object with a *ferro* core into it, we get an **electromagnet.** Th
 $$B \propto I$$
 For a solenoid, it will also be directly proportional to $n$, the number of coils: 
 $$B\propto n$$
-## Magnetic forces on moving charges
