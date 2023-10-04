@@ -14,3 +14,5 @@ For example, consider the following truth table:
 All logic design can be summed up with logic gates, namely **AND, OR, NOT.** Among these, there are the **NAND** and **NOR** gates, which produce complementary output to AND and OR respectively. 
 
 Note that these two **NAND** and **NOR** gates are called *universal gates*, because a combination of these two can produce any combination of gates available. 
+
+![[Pasted image 20231004105701.png]]
