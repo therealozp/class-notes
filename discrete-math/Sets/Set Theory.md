@@ -26,7 +26,6 @@ $$\begin{split}
 & B = \set{n \in \mathbb{Z} : n = 3s, s \in Z}
 \end{split}$$
 [[Set Intro#Subsets and Equality]]
-
 ## Basic Set Facts
 Let $U$ be a universal set containing sets A, B, and C. Then: 
 1. $A\cup B = B \cup A$ and $A\cap B = B \cap A$
