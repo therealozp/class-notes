@@ -10,6 +10,7 @@ The direction of the field due to the current element is indeed determined by th
 Only the horizontal components $dB_x$ remain: 
 $$d\vec B_x = \frac{\mu_0}{4\pi}(\frac{NI\cos \theta ds}{(R^2 + x^2)})$$
 Integrating the entire loop over $ds$ gives: 
+$$\vec B(P) = \frac{\mu_0}{4\pi}\int\frac{\vec I \times \hat r}{r^2}dl$$
 $$B_x = \frac{\mu_0}{2}\frac{NIR^2}{(R^2+x^2)^{3/2}}$$
 As $x \rightarrow 0$: 
 $$B_x = \frac{\mu_0}{2}\frac{NI}{R}$$
