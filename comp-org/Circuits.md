@@ -79,3 +79,8 @@ After completing the truth table (as an exercise for the reader) we get:
 ![[Pasted image 20231002133613.png|500]]
 ![[Pasted image 20231002133632.png|200]]
 
+## Sequential Circuits Analysis
+1. Mark all feedback signals
+2. Perform combinational circuits with external input and feedback signals to obtain the input Boolean functions for flip flops and external outputs
+3. Apply the characteristic table of flip flops to obtain next states.
+
