@@ -77,3 +77,45 @@ To prove a set empty, we assume it contains element, and derive a contradiction.
 ![[Pasted image 20231002162911.png]]
 
 Alternatively, we also have $\cup^n_{i = 1}A_i$ is the same as $A_1 \cup A_2 \cup ...\cup A_n$, and $\cap^n_{i = 1}A_i$ is the same as $A_1 \cap A_2 \cap ...\cap A_n$
+
+## Partitions
+### Disjoint sets
+Sets $A_1, A_2, A_3,...$ are called **mutually disjoint** (or **pairwise disjoint** or **nonoverlapping**) if no two sets $A_i$ and $A_j$ with distinct subscripts have any elements in common. 
+
+A finite or infinite collection of nonempty sets $\set{A_1, A_2, A_3,...}$ is called a *partition* of set $A$ when: 
+- $A$ is the union of all $A_i$
+- All the sets in the collection have to be **mutually disjoint.**
+
+## Power sets
+Let A be a set. The *power set* of A, denoted by $P(A)$, is the set containing **all subsets** of A. 
+
+| Set $A$       | $A$ | Power set                   | P(A) |
+| ------------- | --- | --------------------------- | ---- | 
+| $\varnothing$ | 0   | $\set{\varnothing}$         |  1     |   
+| $\set{a}$     | 1   | $\set{\varnothing, \set{a}}$ | 2    |    
+
+Then, the cardinality of the power set $|P(A)|$ will be $2^{|A|}$ 
+
+## Disproofs and Algebraic Proof
+
+## Boolean Algebra
+The set of statement forms, together with operations $\lor, \land, \lnot$ form and Boolean algebra. Similarly, power set of an $n$ element set, together with operations $\cap, \cup, \complement$ from another Boolean algebra.
+
+![[Pasted image 20231004162611.png]]
+
+So, in general, a Boolean algebra is defined as a set $\beta$ with operations $+, \cdot$ such that (at this point, this is literally just the Boolean identities in Comp Org): 
+1. Commutativity: $\forall a, b \in \beta : a+b = b+a$ and $a\cdot b = b \cdot a$
+2. Associativity: $\forall a, b, c \in \beta : (a+b)+c = a +(b+c)$ and $(a\cdot b) \cdot c = a\cdot (b \cdot c)$
+3. Distributivity
+4. Identity
+5. Complements (Negation, Inverse)
+
+**Theorem**: A Boolean algebra $\beta$ with operations $+$ and $\cdot$ satisfy: 
+1. Unique complements
+2. Unique identities
+3. Double complement
+4. Idempotent
+5. Universal bound (Dominance)
+6. De Morgan's laws
+7. Absorption laws
+8. Complements of 0 and 1
