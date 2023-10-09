@@ -79,6 +79,8 @@ To prove a set empty, we assume it contains element, and derive a contradiction.
 Alternatively, we also have $\cup^n_{i = 1}A_i$ is the same as $A_1 \cup A_2 \cup ...\cup A_n$, and $\cap^n_{i = 1}A_i$ is the same as $A_1 \cap A_2 \cap ...\cap A_n$
 
 ## Partitions
+A partition of $A$ is a grouping of elements in set $A$, such that each element is included in exactly **one** subset.
+
 ### Disjoint sets
 Sets $A_1, A_2, A_3,...$ are called **mutually disjoint** (or **pairwise disjoint** or **nonoverlapping**) if no two sets $A_i$ and $A_j$ with distinct subscripts have any elements in common. 
 
