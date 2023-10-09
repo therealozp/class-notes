@@ -22,7 +22,7 @@ In the conduction model, we take the direction of the electric field as the dire
 $$v_d = \frac{I}{nqA}$$
 And the number of electrons can be calculated with: 
 $$n = \frac{N_q}{volume}=\frac{N_q}{Av_ddt}$$
-### Current density
+### Current densityz
 Current per unit area.
 ![[Pasted image 20231002181555.png]]
 $$I = \int\int\vec J \cdot d \vec A$$
