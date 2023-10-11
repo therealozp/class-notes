@@ -140,6 +140,13 @@ int find_difference(int a[], int n1, int b[], int n2, int c[]) {
     return c_index;
 }
 
+void typecasting() {
+    int count = 4; 
+    
+    char ch = '0' + count; 
+    printf("%c", ch);
+}
+
 int main() {
     // int n = 6; 
 
@@ -192,6 +199,6 @@ int main() {
     // }
 
     // printf("%d", log_base_2(8));
-
+    typecasting();
     return 0;
 }
