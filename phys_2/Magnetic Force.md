@@ -9,7 +9,7 @@ Since the force depends on these quantities and is always perpendicular to the o
 $$\vec F_m = q\vec v \times \vec B$$
 The cross product yields a vector that is perpendicular to the other two. The magnitude of the cross product can be written as: 
 $$|F_m| = qvB\sin{\theta}$$
-Note that when $\theta$ is 0 or 180, the magnitude is zero. For the case when $\theta = 90\degree$, $F_m$ is at a **maximum**. 
+Note that when $\theta$ is 0 or 180, the magnitude is zero. For the case when $\theta = 90\degree$, $F_m$ is at a **maximum**.
 
 To determine the direction of *deflection*, we use the right hand rule: 
 
