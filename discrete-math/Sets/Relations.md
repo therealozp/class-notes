@@ -62,3 +62,43 @@ $$ R^{-1} = \set{(y, x) \in B \times A: (x, y) \in R}$$
 As such, $x\ R\ y \Longleftrightarrow y\ R^{-1}\ x$. 
 
 Note: $y \geq x$ is **NOT** an inverse relation to $x > y$, but $y > x$ is.  
+
+Let F be a function from A to B. As a relation, $F$ has an inverse relation $F^{-1}$. However, do note that the inverse relation does NOT have an inverse relation. (e.g. $F(x) = x^2$, where the "inverse" $F^{-1}(x) = \sqrt{x}$ does not hold)
+
+## n-ary relations
+Relations discussed above are mostly **binary**, meaning that they are only subsets of the Cartesian product of two sets. For sets $A_1, A_2, A_3,... A_n$, then an **n-ary** relation is a subset of $A_1 \times A_2 \times A_3 \times ... \times A_n$, consisting of ordered n-tuples. 
+
+Consider the following simplified version of a database, a quarternary relation $R$ of $A_1, A_2, A_3, A_4$ where: 
+- $A_1$ is a set of positive integers, patient IDs `patient_id`
+- $A_2$ is a set of names `string name`
+- $A_3$ is a set of dates `date admmission`
+- $A_4$ is a set of diagnoses `[diseases]`
+
+## Equivalence relations and partitions
+By definition, a partition of set S is a collection of subsets that: 
+- every member of S belongs to some other set in the partition, or the union of all subsets yields S itself.
+- all the sets are mutually disjoint.
+
+An **equivalence relation** is a special type of relation in which all related pairs are grouped into the same partition called an **equivalence class.** Therefore, equivalence relations will form partitions - and conversely, any partition can also be used to form an equivalence by relating pairs whenever belong to the same set.
+
+Consider the set of $\mathbb{Z}$ and the relation R, where $m \ R \ n$ occurs whenever m - n % 2 = 0.
+- Then, the relation R consists of all ordered pairs where they have the same parity (both even and both odd)
+- If $m$ and $n$ are related, then either **both** belong to $\mathbb{Z}_{even}$ or $\mathbb{Z}_{odd}$. Conversely, if they are part of the same partition, then they are related.
+- If one of them belongs to another one, then they are not related. The converse is also true. 
+
+> The equivalence relation is **reflexive, symmetric, and transitive.**
+### Reflexive, symmetric, and transitive relations
+A relation R on a set $S$ is called **reflexive** if for every $x \in S$, we have that $x\ R\ x$, or *every element is related to itself.* For example, $\leq$ is a reflexive relation on $\mathbb{R}$, while $<$ is not.
+
+A relation R on a set $S$ is called **symmetric** where for every $x, y \in S$, if $x\ R\ y$ then $y\ R\ x$. 
+
+A relation R on a set $S$ is called **transitive** if for every $x, y, z \in S$, if both $x\ R\ y$ and $y \ R\ z$ hold, then $x \ R \ z$. For example, both $\leq$ and $<$ are transitive. 
+
+For any $x \in S$, the **equivalence class** of x, denoted $[x]$ or $[x]_R$. is the set of all $y \in S$ that are related to x: 
+$$[x] = \set{y \in S : y\ R \ s}$$
+Example: Let $S = \set{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}$ and the relation R on S where elements of S are related if they begin with the same letter. 
+- Equivalence classes: $\set{\set{1}, \set{2, 3, 10}, \set{4, 5}, \set{6, 7}, \set{8}, \set{9}}$
+- **Reflexivity**: all numbers have the same first letter as itself
+- **Symmetric**: if $x \in S$ has the same letter as $y \in S$, then it has the same letter.
+- **Transitivity**: pretty self explanatory.
+Here, $[2], [3]$, and $[10]$ all refer to the same equivalence class. 
