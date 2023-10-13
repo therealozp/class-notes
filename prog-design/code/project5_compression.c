@@ -1,3 +1,7 @@
+// Name: Phu Anh Khang Le 
+/* Description: This program takes in a string of length < 1000, and compresses it according to the 
+number of characters of the string*/
+
 #include <stdio.h>
 #define MAXLEN 1000
 

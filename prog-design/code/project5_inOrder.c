@@ -20,7 +20,7 @@ int inOrder(char *input) {
 }
 
 int main(int argc, char* argv[]) {
-    // if there is more than 2 arguments
+    // if there is more or less than 2 arguments
     if (argc != 2) {
         printf("invalid input\n");
     } else {
