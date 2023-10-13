@@ -11,6 +11,8 @@ The cross product yields a vector that is perpendicular to the other two. The ma
 $$|F_m| = qvB\sin{\theta}$$
 Note that when $\theta$ is 0 or 180, the magnitude is zero. For the case when $\theta = 90\degree$, $F_m$ is at a **maximum**.
 
+When calculating the effect of **two charges** on each other, we evaluate it normally, first by computing $\vec B$ then substituting it into the equation above. Remember to take into consideration the directions. The formula for calculating the **magnitude** $B$-force of a charge without being provided $\vec B$: 
+$$F=\frac{\mu_0}{4\pi}\frac{q^2v^2}{r^2}$$
 To determine the direction of *deflection*, we use the right hand rule: 
 
 >Place your **fingers** in the direction of the **field**, **thumb** in the direction of the **velocity**, and your **palm normal** is the direction of the **force**.

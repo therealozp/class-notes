@@ -29,6 +29,5 @@ The direction will generally follow the right hand rule, and negative charges wi
 > Point the thumb in the direction of $\vec v$ with your right hand, and the direction of curl is the direction of the magnetic field.
 
 The constant $\mu_0$ is called the magnetic constant, and is roughly equal to $4\pi \times 10^{-7}$. 
-
 ## Of a current element 
 See [[Biot-Savart & Ampere's Law]]
