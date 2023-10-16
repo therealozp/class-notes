@@ -23,5 +23,6 @@ The equation for $x=0$ gives us the maximum field of the coil for a given curren
 
 ## Ampere's Law
 Unlike Gauss' law, this one is not defined by magnetic flux, but rather by a line integral over the entire length $l$ of the wire: 
-$$\int \vec B\cdot d\vec l = \mu_0 \cdot I_{encl}$$
-where $I_{encl}$ is the net current enclosed by the path in question.
+$$\oint \vec B\cdot d\vec l =  \oint\vec B \cdot \vec r d\theta =\mu_0 \cdot I_{encl}$$
+where $I_{encl}$ is the net current enclosed by the path in question. For closed circle loops, it usually looks something like: 
+$$Br\int d\theta = Br\cdot2\pi = \mu_0 \cdot I_{encl}$$
