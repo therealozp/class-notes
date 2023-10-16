@@ -1,5 +1,5 @@
 // Name: Phu Anh Khang Le
-// Description: This program gets input with getchar() and checks if the input is in alphabetical order
+// Description: This program takes input from the CLI, and checks whether the input is in order.
 
 #include <stdio.h>
 
