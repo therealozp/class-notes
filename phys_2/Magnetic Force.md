@@ -22,8 +22,8 @@ At every instant, the magnetic force is deflecting the particle, and if it is co
 ![[Pasted image 20231003131825.png]]
 
 The velocity is always tangent to the circular path, and the magnetic force is always a **center-seeking force**.
-$$qvb = \frac{mv^2}{r}\rightarrow qB = \frac{mv}{r}$$
-Since $v = \frac{2\pi r}{t} = \omega r$, we have: 
+$$qvB = \frac{mv^2}{r}\rightarrow qB = \frac{mv}{r}$$
+Since $$v = \frac{2\pi r}{t} = \omega r$$we have: 
 $$\omega = \frac{qB}{m}$$
 This is called the **cyclotron frequency.**
 
@@ -79,6 +79,10 @@ $$
 $$
 Here, $\mu = IA$ (the dipole moment).
 
+## Potential Energy
+With some magic through connecting the effects of the electric field, we can deduce the value of the potential energy for a **magnetic dipole** in the **magnetic field** is: 
+$$U = -\vec \mu \cdot \vec B = -\mu B \cos\phi$$
+where $\phi$ is the angle between $\vec \mu$ and $\vec B$.
 ## Magnetic domains
 Within a magnetic material, there are magnetic domains. Originally, they are randomly oriented, but an magnetic force can be applied to align the domains. 
 
