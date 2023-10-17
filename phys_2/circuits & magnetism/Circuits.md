@@ -27,6 +27,8 @@ Current per unit area.
 ![[Pasted image 20231002181555.png]]
 $$I = \int\int\vec J \cdot d \vec A$$
 $$|{J}| = \frac{I}{A} = n|q|v_d$$
+Where $n$ is the **concentration of moving charges**, $q$ is the charge per particle, and $v_d$ is the drift speed. 
+
 ![[Pasted image 20231002181832.png|500]]
 $$\vec J = \sigma \vec E$$
 where $\sigma$ is the inverse of $\rho$, and the electric field can be defined as: 
@@ -62,5 +64,13 @@ $$P = \frac{\Delta E}{\Delta t}=\frac{\Delta q \epsilon}{\Delta t} = I \epsilon$
 So, by applying Ohm's law:
 $$P = I^2 R$$
 *The rate of energy transfer in the circuit is equal to the rate of dissipation in the resistor.*
+
+When asked about: 
+- Rate of energy conversion from **chemical to electrical** in the battery: $P_{chemical}$ is the **total** $P$ power output. 
+- Rate of energy dissipation **in the battery**, means the power dissipated by the *internal resistance* of the battery, usually $P_{batt} = I^2r$. 
+- The **net output** of the battery: means the useful energy being dissipated at the target resistor(s). Usually $P_{out} = I^2R$. 
+
+For questions concerning the "potential difference across the terminals of the battery", this usually means: 
+$$V_{term}=\frac{\epsilon}{r+R}\cdot R $$
 
 [[Advanced Circuits]]
