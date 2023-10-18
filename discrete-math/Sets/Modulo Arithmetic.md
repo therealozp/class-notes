@@ -30,3 +30,16 @@ Then:
 3. $ab \equiv cd (\mod n)$
 4. $a^m \equiv c^m (\mod n)$
 
+## Modular Exponentiation and Repeated Squaring
+Suppose that we would like to computer $10^{100} \mod 13$. Plugging this into any computer, we will get an overflow error, but we will have 2 methods to solve this: 
+### Repeated squaring
+The *general* method. We compute the square of 10 mod 13, and then keep doing that, and so on. So, we will eventually get: 
+
+![[Pasted image 20231018155749.png]]
+
+Now, we break down the exponent as powers of two: 100 = 64 + 32 + 4. And using the principle of exponents, we can get: $10^{100}=10^{64}\cdot 10^{32}\cdot10^4$. From this, we apply the same rule and multiply the mod: 3 * 9 * 3 = 81 (mod 13) = 3
+
+### Modular exponentiation
+We can also consider the fact that $10^3 \equiv -1 (\mod 13)$. From this, we can get: 
+$$10^{100} = (10^{99})(10) = (10^3)^{33}(10) = (-1)^{33}\cdot 10 = -10 \equiv 3 \mod 13$$
+So, the final value of $10^{100}\mod 13$ is 3. 
