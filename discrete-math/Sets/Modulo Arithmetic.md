@@ -12,7 +12,7 @@ Given $a, b, n$ be any integers where $n > 1$. All the following are equivalent:
 1. $n \mid (a - b)$
 2. $a \equiv b (\mod n)$
 3. $a = b + kn$ for any integer k
-4. $a$ and $b$ have the same remainder when divided by $n$
+4. $a$ [[Modulo Arithmetic]]and $b$ have the same remainder when divided by $n$
 5. $a \mod n = b \mod n$
 ## Residues
 Given integers $a$ and $n$ where $n>1$, the **residue** of $a \mod n$ is the remainder of said operation. 
