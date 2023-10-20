@@ -147,6 +147,7 @@ void typecasting() {
     printf("%c", ch);
 }
 
+
 int main() {
     // int n = 6; 
 
@@ -180,7 +181,7 @@ int main() {
 
     // pointers();
     // ptr_arr(a, n);
-    printf("%d", recur(2, 3));
+    // printf("%d", recur(2, 3));
     // single_ptr();
     // switches(3); 
     // test_ifs();
@@ -201,4 +202,8 @@ int main() {
     // printf("%d", log_base_2(8));
     typecasting();
     return 0;
+}
+void typecasting() {
+    // return 12;
+    printf("12");
 }
