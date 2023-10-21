@@ -147,6 +147,13 @@ void typecasting() {
     printf("%c", ch);
 }
 
+void iterate_wo_extra(char s[]) {
+    for (; *s != '\0'; s++) {
+        if (*s == 'y') {
+            *s = 'd';
+        }
+    }
+}
 
 int main() {
     // int n = 6; 
@@ -200,10 +207,11 @@ int main() {
     // }
 
     // printf("%d", log_base_2(8));
-    typecasting();
+    // typecasting();
+    // int arr[] = {1, 2, 3, 4};
+    char s[] = "your mom gay";
+    // mod(arr); 
+    iterate_wo_extra(s);
+    printf("%s", s);
     return 0;
-}
-void typecasting() {
-    // return 12;
-    printf("12");
 }
