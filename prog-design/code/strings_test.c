@@ -35,7 +35,7 @@ void shift(char *message, int shift) {
 void get_extension (char *filename, char *extension) {
     char *p, *q; 
     q = extension; 
-    for (p = filename; *p != '.'; p++) ;
+    for (p = filename; *p != '.' && *p != '\0'; p++) ;
     p++; 
     if (*p == '\0') {
         *q = '\0';
@@ -173,7 +173,7 @@ int main(int argc, char* argv[]) {
     // pre_star(s1, s2);
     // printf("%s\n", s2);
 
-    general_case();
+    // general_case();
 
     return 0;
 }
