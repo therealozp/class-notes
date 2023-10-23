@@ -58,14 +58,14 @@ Adjustments to GDP:
 The expenditure approach can be calculated using the formula: 
 $$Y = C + I + G + (X - M)$$
 where: 
-- $C$ is personal consumption expenditures. They include purchases of durable goods (phones, clothes, furniture) and non-durable goods (food) and services.
-- $I$ is the gross private domestic investment. it is highly volatile and causes swings in the business cycle.
+- $C$ is **personal consumption** expenditures. They include purchases of durable goods (phones, clothes, furniture) and non-durable goods (food) and services.
+- $I$ is the **gross private domestic investment**. it is highly volatile and causes swings in the business cycle.
 	- investment in structures (residential and businesses)
 	- equipment and software purchases
 	- changes in business inventory
 *Note*: products which are not sold in the produced year will count as that year's GDP, through **business inventory.** For example, shoes produced in 2013 but sold in 2014 will count for 2013 GDP.
 
-- $G$ is govt. spending, which includes wages, purchases of goods and services from private businesses, and purchases of new structures and equipment. 
+- $G$ is **govt. spending,** which includes wages, purchases of goods and services from private businesses, and purchases of new structures and equipment. 
 	- does **not** include transfer payments from the government (soc. security benefits, medicare, etc.)
 - $X$ is the value in exports
 - $M$ is the value of imports
