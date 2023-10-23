@@ -135,3 +135,5 @@ $\rightarrow$ ongoing inflation and growth in output.
 
 ## Goodies
 All else equal, rising income in **other countries** will **increase** US AD, but a rising value of the dollar will **decrease** AD.
+
+For AS: steeper = more flexible prices, flatter = more rigid
