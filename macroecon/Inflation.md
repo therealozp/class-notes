@@ -68,3 +68,14 @@ Extremely high rate of inflation (at least 100% per year). Makes prices hard to 
 - Caused by excessive govt. spending over tax revenues and the printing of money to finance deficits
 - Workers are paid frequently, and purchases are paid immediately
 - The monetary system breaks down and a barter system comes into use
+
+## Unemployment
+Two types of surveys: 
+- Establishment surveys (payroll) interviews **companies and establishments** for the headcount
+- Household surveys interviews **household members** for job status. Normally less accurate.
+
+- **Frictional unemployment**: temporarily leaves to look for newer jobs, or for newly graduated students
+- **Structural unemployment**: caused by a change in roles
+- **Cyclical unemploymen**t: resulting from business **cycles** (hence the name)
+
+Natural unemployment rate: where inflation rate is same as expectations (no pressure on wages). Calculated with **frictional + structural**
