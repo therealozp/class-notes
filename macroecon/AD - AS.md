@@ -132,3 +132,6 @@ Over the long run:
 $\rightarrow$ ongoing inflation and growth in output. 
 
 ![[Pasted image 20231020124734.png]]
+
+## Goodies
+All else equal, rising income in **other countries** will **increase** US AD, but a rising value of the dollar will **decrease** AD.
