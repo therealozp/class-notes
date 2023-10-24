@@ -1,0 +1,8 @@
+addi t0, t0, 1
+addi t1, t1, 128
+addi x1, x1, 0
+while: beq t0, t1, endwhile
+slli t0, t0, 1
+addi x1, x1, 1
+j while
+endwhile:

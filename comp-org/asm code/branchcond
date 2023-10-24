@@ -1,0 +1,10 @@
+addi t0, t0, 255
+andi t1, t0, 1
+# t2 by default is 0
+If: bne t1, t2, Else
+srai t0, t0, 1
+j Endif
+Else: slli t1, t0, 2
+sub t0, t1, t0
+addi t0, t0, 1
+Endif: 
