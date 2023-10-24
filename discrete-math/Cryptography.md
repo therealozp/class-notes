@@ -27,3 +27,13 @@ From this, we get the theorem:
 
 Let $p$ and $q$ be distinct primes and let $n = pq$ be a modulus. If $e$ is relatively prime to $\phi(n)$, and $d$ is the inverse of $e$ modulo $\phi(n)$, i.e. $ed \equiv 1(\mod \phi(n))$. Then, we have: 
 $$x^{ed} = x \mod n$$
+## Extended Euclidean Algorithm
+The RSA alg relies on being able to find integers $e$ and $d$ that are inverse modulo $\phi(n)$ where $n = pq$ for distinct primes $p$ and $q$.
+
+**Theorem (Bezout's identity)**: Let $a$ and $b$ be integers. Then, there exists integers $x$ and $y$ such that $gcd(a, b) = ax + by$.
+
+In the special case that $a = \phi(n), \ b = e, \ y = d$ and $gcd(a, b) = 1$: 
+$$gcd(a, b) = ax + by \rightarrow 1 = \phi(n)\cdot x+ed$$
+or, in other words, $ed \equiv 1(\mod \phi(n))$.
+
+In general, the EEA will allow us to, for any integers $a$ and $b$, compute the respective $x$ and $y$.
