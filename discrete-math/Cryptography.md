@@ -8,6 +8,8 @@ For an integer $n > 1$, let $\phi(n)$ count the **number of positive integers sm
 We will have the following results from number theory that will be useful: 
 - If $p$ and $q$ are 2 **distinct primes**, $\phi(p) = p-1$,  $\phi(q) = q-1$,  and $\phi(pq) = (p-1)(q -1)$.
 
+We can generalize this as, for $p$ and $q$ being two distinct primes:
+$$\phi(pq) = (p-1)(q-1)$$
 The proof is simple, but yields a very strong formula: 
 
 ![[Pasted image 20231018163205.png]]
@@ -36,4 +38,28 @@ In the special case that $a = \phi(n), \ b = e, \ y = d$ and $gcd(a, b) = 1$:
 $$gcd(a, b) = ax + by \rightarrow 1 = \phi(n)\cdot x+ed$$
 or, in other words, $ed \equiv 1(\mod \phi(n))$.
 
-In general, the EEA will allow us to, for any integers $a$ and $b$, compute the respective $x$ and $y$.
+In general, the EEA will allow us to, for any integers $a$ and $b$, compute the respective $x$ and $y$. 
+How to: construct the EEA table. Work by filling in the columns with the quotient, remainder, $x$, and $y$.
+The formula for getting $x_i = x_{i-2} - q \times x_{i - 1}$, and the similar goes for $y$.
+
+## Injective vs Surjective functions
+Let $f: X \rightarrow Y$ be a function with domain X and co-domain Y. For $x \in X$, the value $f(x)$ might be called: 
+- f of x
+- the value of $f$ at $x$
+- the output of $f$ for the input $x$
+- the image of $x$ under $f$
+
+For a subset $A \subseteq X$, the image of $A$ under $f$ are the set of all $y$ values that are the image of some $x \in A$, i.e.
+$$f(A) = \set{f(x) : x\in A}$$
+The image f(X) of the whole domain is called the *range* of $f$. 
+### Injective
+So, let $f$. We call $f$ a **one-to-one** or **injective** if, for every $x_1, x_2$, we have: 
+$$\begin{split}
+ f(x_1) = f(x_2) &\rightarrow x_1 = x_2 \\
+ x_1\not=x_2& \rightarrow f(x_1) \not=f(x_2)
+\end{split}$$
+### Surjective
+We call $f$ **onto** or **surjective** if for every $y \in Y$ there is some $x\in X$ such that $y =f(x)$, or equivalently, the range and co-domain are equal. 
+
+So, if a function satisfies both these requirements, then $f$ is a **one-to-one correspondence** function, or it is a **bijection.**
+
