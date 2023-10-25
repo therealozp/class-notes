@@ -35,10 +35,46 @@ void ceasar() {
     }
 }
 
+char getcharfromindex(int shift) {
+    return char(int('A') + shift - 1);
+}
+
 int main() {
-    vector<int> mods = mrs(55, 307, 721);
-    for (int i: mods) {
-        cout << i << endl;
-    } 
+    string input;
+    cout << "What would you like to do? ";
+    cin >> input;
+
+    while (input != "q") {
+        if (input == "1") {
+            int base, power, modulus;
+            cout << "Enter base: ";
+            cin >> base; 
+            cout << "Enter power: ";
+            cin >> power;
+            cout << "Enter modulus: ";
+            cin >> modulus;
+            vector<int> mods = mrs(base, power, modulus);
+            int pwr = 1;
+
+
+            for (int i = 0; i < mods.size(); i++, pwr*=2) {
+                cout << base << '^' << pwr << " % " << modulus << " is " << mods[i] << endl;
+            } 
+        } else {
+            int index; 
+            char ch;
+            // cout << "Enter character: "; 
+            // cin >> ch;
+            cout << "Enter shift : ";
+            cin >> index;
+            ch = getcharfromindex(index);
+            cout << ch << endl;
+        }
+        cout << "What else would you like to do? ";
+        cin >> input;
+    }
+    
+    cout << "goodbye! " << endl;
+
     return 0;
 }
