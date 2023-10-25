@@ -21,6 +21,8 @@ The proof is simple, but yields a very strong formula:
 ## Modular Inverses
 For a modulus $n$, we say that $a$ and $b$ are (multiplicative) **inverses** modulo $n$ if $ab \equiv 1 (\mod n)$. Compare this to multiplicative inverses (reciprocals) of real numbers. 
 
+**!! IMPORTANT !!** to find the modular inverse, the numbers **have to be coprime.**
+
 Let $e$ and $d$ be integers such that $ed \equiv 1 (\mod \phi(n))$. Then, $ed  - 1 \equiv k\cdot \phi(n)$. By Euler's theorem, if $x$ and $n$ are relatively prime, then: 
 $$x^{ed - 1} = x^{k\cdot\phi(n)} = 1^k (\mod n)$$
 Multiply both sides by $x$, we get: 
@@ -29,8 +31,19 @@ From this, we get the theorem:
 
 Let $p$ and $q$ be distinct primes and let $n = pq$ be a modulus. If $e$ is relatively prime to $\phi(n)$, and $d$ is the inverse of $e$ modulo $\phi(n)$, i.e. $ed \equiv 1(\mod \phi(n))$. Then, we have: 
 $$x^{ed} = x \mod n$$
+
+I legit do not understand why it's phrased so complicated. Basically, to calculate the modular inverse of a number $a \mod n$, we do the following steps: 
+
+Do the [[#Extended Euclidean Algorithm]], and get the form $ax + by = gcd(a, b)$, where $a, b$ are numbers such as 73 and 660. 
+
+Now, for example, if you are asked to find the **modular inverse** of $73 \mod 660$, we can begin evaluating the steps for the EEA, which yields $x$ and $y$ as $217$ and $-24$. The $x$ and $y$ we yield, respectively, **are** the modular inverses.
+
+However, consider a more complicated case, where we are expected to find the least modular inverse: 
+$$73u=130\mod 660$$
+
+
 ## Extended Euclidean Algorithm
-The RSA alg relies on being able to find integers $e$ and $d$ that are inverse modulo $\phi(n)$ where $n = pq$ for distinct primes $p$ and $q$.
+The RSA algorithm relies on being able to find integers $e$ and $d$ that are inverse modulo $\phi(n)$ where $n = pq$ for distinct primes $p$ and $q$.
 
 **Theorem (Bezout's identity)**: Let $a$ and $b$ be integers. Then, there exists integers $x$ and $y$ such that $gcd(a, b) = ax + by$.
 
