@@ -10,6 +10,6 @@ Distinguishing between the two:
 
 ![[Pasted image 20231025103301.png]]
 
-Note that the DFF will change state immediately when the input changes (as in, until the next clock cycle). By definition, the Mealy machine will depend directly on the inputs (e.g. it is passed through one DFF), while the Moore machine applies an extra delay with another set of DFFs. 
+Note that in the Mealy machine, there is a branch of A that is broken off and integrated directly into the output. So that's Mealy. 
 
 So, in the Moore machine, it is **completely dependent** on states of DFFs, while for Mealy, it is still dependent on the input. 
