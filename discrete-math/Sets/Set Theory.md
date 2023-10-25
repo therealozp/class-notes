@@ -89,14 +89,14 @@ A finite or infinite collection of nonempty sets $\set{A_1, A_2, A_3,...}$ is ca
 - All the sets in the collection have to be **mutually disjoint.**
 
 ## Power sets
-Let A be a set. The *power set* of A, denoted by $P(A)$, is the set containing **all subsets** of A. 
+Let A be a set. The *power set* of A, denoted by $\mathcal{P}(A)$, is the set containing **all subsets** of A. 
 
 | Set $A$       | $A$ | Power set                   | P(A) |
 | ------------- | --- | --------------------------- | ---- | 
 | $\varnothing$ | 0   | $\set{\varnothing}$         |  1     |   
 | $\set{a}$     | 1   | $\set{\varnothing, \set{a}}$ | 2    |    
 
-Then, the cardinality of the power set $|P(A)|$ will be $2^{|A|}$ 
+Then, the cardinality of the power set $|\mathcal{P}(A)|$ will be $2^{|A|}$ 
 
 ## Disproofs and Algebraic Proof
 
