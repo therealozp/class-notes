@@ -25,7 +25,7 @@ bubblesort:
 		sub t4, s4, s0 # initialize second loop limit n - 1 - i 
 		
 		for2: bge s1, t4, exit2
-			# address j in t1
+			# address j in t5
 			slli t5, s1, 2
 			# a0 is already added to s3
 			add t5, s3, t5

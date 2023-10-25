@@ -36,7 +36,7 @@ void ceasar() {
 }
 
 int main() {
-    vector<int> mods = mrs(17, 115, 23);
+    vector<int> mods = mrs(55, 307, 721);
     for (int i: mods) {
         cout << i << endl;
     } 
