@@ -35,7 +35,7 @@ Let $U$ be a universal set containing sets A, B, and C. Then:
 5. $A \cup \varnothing = A$, while $A \cap \varnothing = \varnothing$
 6. $A \cup A^\complement = U$, while $A \cap A^\complement = \varnothing$
 7. $A\cup (A \cap B) = A$ and $A\cap (A \cup B) = A$ **(Absorption)**
-8. 
+8.  $A - B = A \cap B^\complement$ **set difference law**
 
 ## Procedural Versions
 We have the following subset relations: 
