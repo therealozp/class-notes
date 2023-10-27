@@ -25,6 +25,7 @@ For a modulus $n$, we say that $a$ and $b$ are (multiplicative) **inverses** mod
 
 Let $e$ and $d$ be integers such that $ed \equiv 1 (\mod \phi(n))$. Then, $ed  - 1 \equiv k\cdot \phi(n)$. By Euler's theorem, if $x$ and $n$ are relatively prime, then: 
 $$x^{ed - 1} = x^{k\cdot\phi(n)} = 1^k (\mod n)$$
+If it is not relatively prime, then, by using the Extended Euclidean Algorithm, and yield $ax + by = gcd(a, b)$
 Multiply both sides by $x$, we get: 
 $$x^{ed} = x \mod n$$
 From this, we get the theorem: 
