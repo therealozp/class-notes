@@ -1,4 +1,4 @@
-## Operations
+h## Operations
 Let A and B be sets.
 - Union: 
 $$A\cup B = \set{x: x\in A \space \lor x\in B}$$
@@ -31,7 +31,7 @@ Let $U$ be a universal set containing sets A, B, and C. Then:
 1. $A\cup B = B \cup A$ and $A\cap B = B \cap A$
 2. $(A\cup B) \cup C = A \cup (B \cup C)$ (also for intersection)
 3. $A\cup (B \cap C) = (A \cup B) \cap (A\cup C)$
-4. $A \cup U = U$
+4. $A \cup U = U$, while $A \cup U = A$. 
 5. $A \cup \varnothing = A$, while $A \cap \varnothing = \varnothing$
 6. $A \cup A^\complement = U$, while $A \cap A^\complement = \varnothing$
 7. $A\cup (A \cap B) = A$ and $A\cap (A \cup B) = A$ **(Absorption)**
