@@ -76,6 +76,7 @@ After completing the truth table (as an exercise for the reader) we get:
 - D(ata) flip flop is a true representation of physical computer memory. This sequential circuit stores **one bit of information.**
 - The output of the flip flop remains the same during subsequent clock pulses. 
 - Output only changes only when the value of D changes.
+
 ![[Pasted image 20231002133613.png|500]]
 ![[Pasted image 20231002133632.png|200]]
 
