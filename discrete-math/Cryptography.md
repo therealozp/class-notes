@@ -1,7 +1,7 @@
 ## GCD, Relative Primality, and Euler's Totient
 To produce invertible functions $E$ and $D$ on set $Z_n$ of integers mod some $n$, we need to  find $e$ and $d$ such that $x^{ed} = x$ for all x. 
 
-The GCD is the largest integer $d$ that divides both $a$ and $b$. In case $gcd(a, b) = 1$, then the two numbers are **relatively prime.** An integer is prime if $gcd(a, p) = 1 \forall x < p$.  
+The GCD is the largest integer $d$ that divides both $a$ and $b$. In case $gcd(a, b) = 1$, then the two numbers are **relatively prime.** An integer is prime if $gcd(a, p) = 1 \ \forall x < p$.  
 
 For an integer $n > 1$, let $\phi(n)$ count the **number of positive integers smaller** than $n$ that are relatively prime to $n$. This is the Euler's Totient function.
 
@@ -41,8 +41,7 @@ Now, for example, if you are asked to find the **modular inverse** of $73 \mod 6
 
 However, consider a more complicated case, where we are expected to find the least modular inverse: 
 $$73u=130\mod 660$$
-
-
+We understand that the modular inverse for $73 \mod 660$ is $217$, meaning that $73\times217 \equiv 1 \mod 660$. Then, we can go ahead by multiplying both sides by $130$, and taking the mod of the resulting product 
 ## Extended Euclidean Algorithm
 The RSA algorithm relies on being able to find integers $e$ and $d$ that are inverse modulo $\phi(n)$ where $n = pq$ for distinct primes $p$ and $q$.
 

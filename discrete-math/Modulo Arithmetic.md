@@ -12,13 +12,13 @@ Given $a, b, n$ be any integers where $n > 1$. All the following are equivalent:
 1. $n \mid (a - b)$
 2. $a \equiv b (\mod n)$
 3. $a = b + kn$ for any integer k
-4. $a$ [[Modulo Arithmetic]]and $b$ have the same remainder when divided by $n$
+4. $a$ [[Modulo Arithmetic]] and $b$ have the same remainder when divided by $n$
 5. $a \mod n = b \mod n$
 ## Residues
 Given integers $a$ and $n$ where $n>1$, the **residue** of $a \mod n$ is the remainder of said operation. 
 The numbers 0, 1, 2, ... n - 1 are called a **complete set of residues** and are the least nonnegative set of complete residues. 
 In clock arithmetic, we use 1, 2, 3,..., 12 as a complete set of residues modulo 12.
-To *reduce a number **mod** n* is to set it qual to is residue mod n. 
+To *reduce a number **mod** n* is to set it equal to is residue mod n. 
 
 > The equivalence classes of congruence modulo n are completely represented by the **residues mod n**. i.e. $[0], [1], [2], ...,[n-1]$ account for all equivalent classes.
 
