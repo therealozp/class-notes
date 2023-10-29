@@ -47,7 +47,7 @@ $D$ is transitive, meaning $x\ D\ y$ and $y\ D\ z$ implies $x\ D\ z$ should allo
 ## Relation on Sets
 If $A$ is a set, we call a relation from A to itself is a relation on A. For example: 
 - < is relation of $\mathbb{R}$ where, 1 < 2, $e < \pi$, etc. but $2 \not < 1$, etc. it consists of all points strictly above the line y = x. In set builder: 
-$$'<' = {(x, y) \in R\times R : x < y}$$
+$$'<' = \set{(x, y) \in R\times R : x < y}$$
 - = is a relation on any A, where x = y when they are the same. This is also the identity relation.
 $$'=' = \set{(x, x): x \in \mathbb{R}}$$
 Recall that the power set $\mathcal{P}(x)$ is the set of all subsets of X. Let $X = \set{a, b, c}$ and the relation S to be $A\ S\ B$ when $|A| \geq |B|$ meaning A has at least as many elements as B. then: 
