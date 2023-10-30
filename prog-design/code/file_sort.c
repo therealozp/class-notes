@@ -44,7 +44,6 @@ int sort_file (char* inputname, char* outputname) {
 
     for (int *p = a; p < a + i; p++) {
         // also fprintf(file_ptr, format, variables
-        )
         fprintf(output, "%d\n", *p);
     }
 
