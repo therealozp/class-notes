@@ -12,3 +12,19 @@ Allows you to get the **probability of sequential events** by multiplying the in
 3. and so on
 
 Then, the entire operation can be performed $n_1 \cdot n_2 \cdot n_3 \cdot ... \cdot n_k$ ways.
+
+## Permutations
+Suppose we have an $n$ element set and we would like to arrange $r \leq n$ of these. Then, we have the **$r$-permutation of an $n$-element set** as follows:
+
+The number of r-permutations of an $n$ element list is denoted $P(n,r)$. We can find it using the multiplication rule: 
+1. Place one of $n$ elements first
+2. Place one of the remaining $n-1$ elements second
+3. Place one of the remaining $n-2$ elements third
+4. ...
+5. Place one of the remaining $n-r + 1$ elements at the $r - 1^{th}$ position. 
+$$
+\begin{split}
+P(n, r) &= n\cdot (n-1)\cdot(n-2)\cdot...\cdot(n-r+1) \\
+&= \frac{n!}{(n-r)!}
+\end{split}
+$$
