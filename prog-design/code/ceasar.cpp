@@ -4,15 +4,15 @@
 
 using namespace std;
 
-vector<int> mrs(int base, int exp, int divisor) {
-    int n = 1;
-    vector<int> mods;
+vector<long long> mrs(int base, int exp, int divisor) {
+    long long n = 1;
+    vector<long long> mods;
     while (n < exp) {
-        int mod;
+        long long mod;
         if (mods.size() == 0 || n == 1) {
             mod = base % divisor;
         } else {
-            int powered = pow(mods[mods.size() - 1], 2);
+            long long powered = pow(mods[mods.size() - 1], 2);
             mod = powered % divisor;
         }
         mods.push_back(mod);
@@ -53,7 +53,7 @@ int main() {
             cin >> power;
             cout << "Enter modulus: ";
             cin >> modulus;
-            vector<int> mods = mrs(base, power, modulus);
+            vector<long long> mods = mrs(base, power, modulus);
             int pwr = 1;
 
 
