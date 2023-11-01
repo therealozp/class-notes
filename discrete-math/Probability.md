@@ -28,3 +28,16 @@ P(n, r) &= n\cdot (n-1)\cdot(n-2)\cdot...\cdot(n-r+1) \\
 &= \frac{n!}{(n-r)!}
 \end{split}
 $$
+For example, consider a round table with 6 diplomats ($A-F$), considering that rotating the table does not constitute a different position, how many ways can it be organized? 
+
+> So, we understand, to organize 6 diplomats in 6 seats, there will be $6!$ 
+
+## Addition rule: counting disjoint sets
+For all disjoint sets $A$ and $B$, $|A \cup B| = |A| + |B|$. 
+
+## The difference rule
+If $B\subseteq A$ are sets, then $|A-B| = |A| - |B|$. Proof: if B is a subset of A, then $B$ and $A-B$ are disjoint sets whose union is A. And then you can apply the addition rule.
+
+This can be used to make a subtraction-ish calculation, where you calculate all situations where a restriction is allowed, and subtract it by when the restriction MUST be applied.
+
+## Inclusion - Exclusion
