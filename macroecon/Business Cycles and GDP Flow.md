@@ -1,3 +1,4 @@
+#econ 
 ## Business Cycles
 They are the alternating **increases and decreases** in economic activity. They can: 
 - vary in intensity and duration
