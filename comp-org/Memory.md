@@ -73,4 +73,4 @@ $\Rightarrow$ *Cache memory can bridge this gap.*
 	- Traversing array element by element
 
 ## The Miss Penalty
-On average, when a **cache miss** occurs, memory from RAM will be accessed and copy into cache. So, in this case, the **miss penalty** will be that reading time + cache accessing time. So about 50ns + 2s. 
+On average, when a **cache miss** occurs, memory from RAM will be accessed and copy into cache. So, in this case, the **miss penalty** will be that reading time + cache accessing time. So about 50ns + 2s.
