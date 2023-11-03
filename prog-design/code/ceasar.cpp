@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -20,6 +21,45 @@ vector<long long> mrs(int base, int exp, int divisor) {
     }
     return mods;
 }
+
+string getBinaryVal(long number) {
+    if (number == 0) {
+        return "0";
+    } else if (number == 1) {
+        return "1";
+    }
+    int mod = number % 2;
+    string mod_str = to_string(mod);
+    return mod_str + getBinaryVal(number/2);
+}
+
+void getMods(int base, int exp, int divisor) {
+    vector <long long>mods = mrs(base, exp, divisor);
+    vector <long long>rems; 
+    int n = 1; 
+    string binary_string = getBinaryVal(exp);
+    vector <long long> base2; 
+    for (int i = 0; i < binary_string.length(); i ++) {
+        if (binary_string[i] == '1') {
+            base2.push_back(i);
+        }
+    }
+    
+    for (int i = 1; i < base2.size(); i++) {
+        if (rems.size() == 0) {
+            long long res = (mods[base2[i]] * mods[base2[i - 1]]) % divisor;
+            cout << mods[base2[i]] << "*" << mods[base2[i - 1]] << " % " << divisor << " is " << res << endl;
+            rems.push_back(res);
+        } else {
+            long long res = (mods[base2[i]] * rems[rems.size() - 1]) % divisor;
+            cout << mods[base2[i]] << "*" << rems[rems.size() - 1] << " % " << divisor << " is " << res << endl;
+            rems.push_back(res);
+            // rems.push_back((mods[base2[i]] * rems[rems.size() - 1]) % divisor);
+        }
+    }
+
+    return; 
+}; 
 
 void ceasar() { 
     string s = "NHHSV WKH GRFWRU DZDB";
@@ -60,6 +100,15 @@ int main() {
             for (int i = 0; i < mods.size(); i++, pwr*=2) {
                 cout << base << '^' << pwr << " % " << modulus << " is " << mods[i] << endl;
             } 
+        } else if (input == "2") {
+            int base, power, modulus;
+            cout << "Enter base: ";
+            cin >> base; 
+            cout << "Enter power: ";
+            cin >> power;
+            cout << "Enter modulus: ";
+            cin >> modulus;
+            getMods(base, power, modulus);
         } else {
             int index; 
             char ch;
