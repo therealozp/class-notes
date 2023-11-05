@@ -1,4 +1,3 @@
-
 # some test data to verify that the program actually runs
 .data
 	arr: .word 89, 1, 34, 5, 2, 7, 6, 3
@@ -29,7 +28,7 @@ findMinimum:
 	sw s3, 0(sp)
 	sw s4, 4(sp)
 	sw ra, 8(sp)
-	# assuming that, by convention, array, length is passed in using a3, a4
+	# in the selection_sort function, array and N is passed in using a5 and a6. so we are just using the same thing here
 	add s3, x0, a5
 	add s4, x0, a6
 	# decalare min_index variable in t5 and loop index in t4
@@ -112,4 +111,4 @@ selection_sort:
 		addi sp, sp, 20
 		jr ra
 	
-termine: 	
+termine:
