@@ -1,3 +1,4 @@
+# some test data
 .data 
 	arr: .word 2, 3, -3, -5, 12, 3, -6, 13
 	size: .word 8
@@ -17,11 +18,13 @@ search:
 	sw s3, 0(sp)
 	sw s4, 4(sp)
 	# store array address
+	# this is a trick the professor used (not sure why)
 	add s3, x0, a3
 	add s4, x0, a4
 	# initialize loop variable
 	add t0, x0, x0
-	# index found ? 
+	# index found ? set the default index to -1
+	# so if it isn't found, return -1 by default
 	addi t2, x0, -1
 	loop1: 
 		bge t0, s4, exit1

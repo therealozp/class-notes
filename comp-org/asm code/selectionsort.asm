@@ -1,16 +1,20 @@
+# some test data to verify that the program actually runs
 .data
 	arr: .word 89, 1, 34, 5, 2, 7, 6, 3
 	size: .word 8
 .text
 main: 
+	# load address of arr into a3
 	la a3, arr
 	lw a4, size
 	jal ra, selection_sort
+	# jump to end so that it won't run a second time
 	j termine
 
 swap:
 	# uses t0, t1
 	# assuming that it is using a0, a1 as the two arguments
+	# stores and saves without using temp because registers don't need them
 	lw t0, 0(a0)
 	lw t1, 0(a1)
 	sw t1, 0(a0)
@@ -24,7 +28,7 @@ findMinimum:
 	sw s3, 0(sp)
 	sw s4, 4(sp)
 	sw ra, 8(sp)
-	# assuming that, by convention, array, length is passed in using a3, a4
+	# in the selection_sort function, array and N is passed in using a5 and a6. so we are just using the same thing here
 	add s3, x0, a5
 	add s4, x0, a6
 	# decalare min_index variable in t5 and loop index in t4
@@ -50,7 +54,7 @@ findMinimum:
 			addi t4, t4, 1
 			j loop
 	endloop:
-		# deallocate all memory 
+		# deallocate all used memory 
 		lw s3, 0(sp)
 		lw s4, 4(sp)
 		lw ra, 8(sp)
@@ -97,12 +101,14 @@ selection_sort:
 			addi s0, s0, 1
 			j loop2
 	endloop2: 
+		# re-load all variables, including ra, and return
 		lw s3, 0(sp)
 		lw s4, 4(sp)
 		lw s0, 8(sp)
 		lw s1, 12(sp)
 		lw ra, 16(sp)
+		# deallocate the sp
 		addi sp, sp, 20
 		jr ra
 	
-termine: 	
+termine:
