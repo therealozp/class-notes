@@ -1,4 +1,4 @@
-James Maxwell postulated that, if an electric field can be induced using magnetic fields, then the opposite should also be possible. 
+	James Maxwell postulated that, if an electric field can be induced using magnetic fields, then the opposite should also be possible. 
 - A change in either field generated the existence of the other, and the co-existed **perpendicular** to each other,
 - These fields oscillate harmoniously and self-sustainingly together as an **electromagnetic wave.**
 - Light is an EM wave whose speed is simply $3.0 \times 10^8 \frac{m}{s}$.
