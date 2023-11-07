@@ -12,26 +12,6 @@ Allows you to get the **probability of sequential events** by multiplying the in
 3. and so on
 
 Then, the entire operation can be performed $n_1 \cdot n_2 \cdot n_3 \cdot ... \cdot n_k$ ways.
-
-## Permutations
-Suppose we have an $n$ element set and we would like to arrange $r \leq n$ of these. Then, we have the **$r$-permutation of an $n$-element set** as follows:
-
-The number of r-permutations of an $n$ element list is denoted $P(n,r)$. We can find it using the multiplication rule: 
-1. Place one of $n$ elements first
-2. Place one of the remaining $n-1$ elements second
-3. Place one of the remaining $n-2$ elements third
-4. ...
-5. Place one of the remaining $n-r + 1$ elements at the $r - 1^{th}$ position. 
-$$
-\begin{split}
-P(n, r) &= n\cdot (n-1)\cdot(n-2)\cdot...\cdot(n-r+1) \\
-&= \frac{n!}{(n-r)!}
-\end{split}
-$$
-For example, consider a round table with 6 diplomats ($A-F$), considering that rotating the table does not constitute a different position, how many ways can it be organized? 
-
-> So, we understand, to organize 6 diplomats in 6 seats, there will be $6!$ 
-
 ## Addition rule: counting disjoint sets
 For all disjoint sets $A$ and $B$, $|A \cup B| = |A| + |B|$. 
 
@@ -41,3 +21,5 @@ If $B\subseteq A$ are sets, then $|A-B| = |A| - |B|$. Proof: if B is a subset of
 This can be used to make a subtraction-ish calculation, where you calculate all situations where a restriction is allowed, and subtract it by when the restriction MUST be applied.
 
 ## Inclusion - Exclusion
+For an inclusion-exclusion of three sets, the cardinality of the **union** is the **sum of all 1-set intersections**, minus the **sum of all 2-set ints.**, plus **all 3-set intersections**.
+$$|A \cup B \cup C| = |A| +|B|+|C| - |A\cap B| - |A\cap C| - |B\cap C| +|A\cap B \cap C|$$
