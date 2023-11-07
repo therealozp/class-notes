@@ -28,7 +28,7 @@ In different environments, we can calculate the wavelength of light using the fo
 $$\lambda_n = \frac{\lambda_0}{n}$$
 Where $\lambda_0$ is the wavelength of light in the vacuum, and $\lambda_n$ is the wavelength of light in the medium. Note that, however, that the **frequency does not change**: $f_n = f_0$. 
 
-$n$ is the index of refraction of the medium and is given by:
+$n$ is the **index of refraction** of the medium, is always $\geq 1$ and is given by:
 $$n = \frac{c}{v_n}$$
 For light incident perpendicularly at the material, we can get: 
 ![[Pasted image 20231106235129.png]]
