@@ -28,3 +28,58 @@ $$\begin{split}
 C(n, r) = \frac{n!}{(n-r)!\times r!}
 \end{split}$$
 We also have the notation $\binom{n}{r}$ to represent the combinations. 
+
+## Permutations with Sets of Indistinguishable Objects
+Example: How many ways to arrange the letters of the word **MISSISSIPPI?** Note: There are 11 slots.
+
+$\rightarrow$ Although this sounds like a permutation problem, we see that there are a bunch of non-distinct objects, and as such is should be solved as a multiplication rule.
+
+ \__ __ __ __ __ __ __ __ __ __  
+
+We will have: 
+- $\binom{11}{1}$ ways to choose where to place the M
+- $\binom{10}{4}$ ways from the remaining 10 slots to place the I's
+- $\binom{6}{4}$ ways to place the S's
+- and $\binom{2}{2}$ remaining ways to place the P's
+
+By the multiplication rule, there are 34650 such arrangements.
+
+Alternatively, we can do it by using permutations and analyzing. Suppose that they are distinct, but then we will have to label them. So, we have $11!$ organizations, and: 
+- 1 way to label the M
+- $2! = 2$  ways to label the P
+- $4! = 24$ ways to label the S
+- $4! = 24$ ways to label the I
+
+So, due to the equivalence classes, we have to take the division:
+$$\frac{11!}{1!\times2!\times4! ^2} = 34650$$
+
+We can derive the general formula for this, assuming: 
+- $n_1$ being the number of elements of type 1
+- $n_2$ being the number of elements of type 2
+. . .
+- $n_k$ being the number the elements of type k
+$$P_u = \frac{n!}{n_1!n_2!...n_k!}$$
+## Selection with Repetition
+Consider selecting $n$ identical balls into $k$ distinguishable urns. How many ways can this be accomplished? 
+
+![[Pasted image 20231108155812.png]]
+
+Observe that we're only choosing from the $n + k - 1 = 9$ positions for the $n = 7$ positions of the balls. So, we can derive another formula for this:  
+$$S_r =\binom{n+k-1}{n}$$
+Variant: 
+How many **positive** solutions to 
+$$u + v + w + x + y + z = 35$$
+One approach is to substitute $u = u' + 1$, etc. so that we can get: 
+$$u' + v' + w' + x' + y' + z' + 6 = 35$$
+After switching sides, we can solve it normally by using the formula above.
+
+## Pascal's formula
+Recall Pascal's Triangle, which gives the $r^{th}$ coefficient in the expansion of $(x + y)^n$: 
+
+![[Pasted image 20231108163256.png|center]]
+
+If the first row is the $0^{th}$ row whose first entry is the zeroth, then the $r^{th}$ entry in the $(n + 1)^{th}$ row for $0 \leq r \leq n$ is defined recursively as: 
+$$\binom{n + 1}{r}=\binom{n}{r-1}+\binom{n}{r}$$
+where otherwise $\binom{n+1}{n} = 1$. This is called **Pascal's identity.**
+
+**Proof:** A bijective or combinatorial proof demonstrates a combinatorial identity by counting the same thing in two different ways, as we will do here. 
