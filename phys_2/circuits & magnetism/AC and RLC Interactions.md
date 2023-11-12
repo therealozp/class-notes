@@ -10,3 +10,8 @@ Drawing the phasor diagram for these circuits, we can divide them into two cases
 
 ![[Pasted image 20231112130524.png]]
 ![[Pasted image 20231112131102.png]]
+
+Then, we can get the angle of the final $V$ with respect to $I$ by taking the tangents: 
+$$\tan{\phi}=\frac{\omega L - 1/\omega C}{R}$$
+In terms of the root-mean-square (rms) values, we can relate voltage to impedance: 
+$$V_{rms} = I_{rms} Z$$
