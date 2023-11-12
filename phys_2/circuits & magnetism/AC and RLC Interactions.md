@@ -12,6 +12,12 @@ Drawing the phasor diagram for these circuits, we can divide them into two cases
 ![[Pasted image 20231112131102.png]]
 
 Then, we can get the angle of the final $V$ with respect to $I$ by taking the tangents: 
-$$\tan{\phi}=\frac{\omega L - 1/\omega C}{R}$$
+$$\tan{\phi}=\frac{\omega L - 1/\omega C}{R}=\frac{Z_L-Z_C}{R}$$
+or relating them directly to the impedance: 
+$$\cos{\phi}=\frac{R}{Z}$$
 In terms of the root-mean-square (rms) values, we can relate voltage to impedance: 
 $$V_{rms} = I_{rms} Z$$
+## Average power
+The average power of an RLC circuit can be calculated by: 
+$$P_{av}=V_{rms}\cdot I_{rms}\cdot \cos{\phi}$$
+where $\phi$ is the value calculated above.
