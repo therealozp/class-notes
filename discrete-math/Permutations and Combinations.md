@@ -83,3 +83,11 @@ $$\binom{n + 1}{r}=\binom{n}{r-1}+\binom{n}{r}$$
 where otherwise $\binom{n+1}{n} = 1$. This is called **Pascal's identity.**
 
 **Proof:** A bijective or combinatorial proof demonstrates a combinatorial identity by counting the same thing in two different ways, as we will do here. 
+
+## The Binomial Theorem (Newton's Binomial)
+For every integer $n \geq 0$ and real numbers $x, y$: 
+$$(x+y)^n = \binom{n}{r}\sum^n_{r=0}x^ry^{n-r}$$
+ Corollaries: 
+ $$(x+y)^n = \binom{n}{r} = 2^n$$
+ $$(x+y)^n = (-1)^r \binom{n}{r} = 0$$
+  
