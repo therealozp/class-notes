@@ -32,3 +32,17 @@ Three main schemes of placement and identification:
 ### [[Fully Associative]]
 
 ### [[Set Associative]]
+
+## Memory Write
+### Write through
+- Updates cache AND lower-level memory
+- Cache-control bit: only 1 valid bit needed. 
+- Memory always have **latest-data**.
+- Can always discard cached data when cache is replaced
+- Can be improved with a buffer
+### Write-back
+- Write updates **into cache only**
+- Cache control: **valid** bit and **modified** bit
+- **Modified** cache will be rewritten to memory when replaced
+- **Multiple writes** to the **same** cache block will only need to be written **once** to memory
+- Uses less memory bandwidth $\rightarrow$ less power
