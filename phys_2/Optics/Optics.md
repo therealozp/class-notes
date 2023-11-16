@@ -81,8 +81,8 @@ TODO
 
 ## Fiber Optic cable's incident angle
 We have the $d$ which stands for the width of the cable. So, the strategy would be to find the **critical angle** and re-calculate the incident angle $\theta_1$. In summary:
-	 
-![[Optics 2023-11-16 10.43.11.excalidraw]]
+
+![[Optics 2023-11-16 10.43.11.excalidraw|1000]]
 $$n_1\sin{\theta_1} = n_2\sin{\theta_2}$$
 $$\sin{\theta_{crit}} = \frac{n_{core}}{n_{cladding}}$$
 $$\theta_2 = 90\degree - \theta_{crit}$$
