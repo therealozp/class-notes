@@ -21,16 +21,17 @@ because E and B are perpendicular to each other. Here, $E$ and $B$ are the magni
 
 In these equations, $B_0$ is the **maximum magnetic field**, and $E_0$ is the maximum **electric** field.
 $k = \frac{2\pi}{\lambda}$ is the wave number, and $\omega$ is the angular frequency. The maximum field is related by: 
-$$B_0= cE_0$$
+$$B_0 = \frac{E_0}{c}$$
 where $c= \lambda f$. 
 
 The Poynting vector has units of $\frac{W}{m^2}$, which are the same units as intensity. To get the average intensity, we time-average the Poynting vector: 
 $$\overline{I} = \frac{1}{2\mu_0}E_0B_0$$
 Applying the above equations, we get the equation: 
-$$\overline I = \frac{E_0^2}{2c\mu_0}=c\epsilon_0E_{rms}^2$$
-
-The energy density in the delivered by the wave is therefore: 
-$$\overline u = \frac{E_0^2\epsilon_0}{2}=\epsilon_0E_{rms}^2$$
+$$\overline I = \frac{E_0^2}{2c\mu_0}=c\epsilon_0E_{rms}^2 = \frac{P}{A}$$
+The energy density (in Pascals) in the delivered by the wave is therefore: 
+$$\overline u = \frac{1}{2}E^2\epsilon_0 + \frac{1}{2\mu_0}B^2=\epsilon_0E^2$$
+We can derive the equality of the statement by understand that: 
+$$B = \frac{E}{c} = \sqrt{\epsilon_0\mu_0}E$$
 So, the **average power delivered to the area element** is: 
 $$\overline P = \overline IA = \epsilon_0E_{rms}^2A$$
 
