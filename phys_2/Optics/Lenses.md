@@ -23,7 +23,18 @@ For each object distance $p$, if:
 To get the magnification $M$:
 $$M = \frac{h'}{h}$$
 The thin lens equation that relates $p, q$ and $f$: 
-$$\frac{1}{p} + \frac{1}{q} = \frac{1}{f}$$
+$$\frac{1}{d_0} + \frac{1}{d_i} = \frac{1}{f}$$
 This equation can be established by doing a series of tangents on equivalent angles and relating them together, taking the sign convention as negative pointing down.
 
-1. Diverging
+## Sign convention
+The sign conventions for the given quantities in the lens equation and magnification equations are as follows:
+
+- $f$ is **+** if the lens is a double convex lens (**converging** lens)
+- $f$ is **-** if the lens is a double concave lens (**diverging** lens)
+
+- $d_i$ is **+** if the image is a **real image** and located on the **opposite side of the lens**.
+- $d_i$ is **-** if the image is a **virtual** image and located on the **object's side** of the lens.
+
+- $h_i$ is **+** if the image is an **upright** image (and therefore, also **virtual**)
+- $h_i$ is **-** if the image an **inverted** image (and therefore, also **real**) 
+
