@@ -9,7 +9,6 @@ A **set** is a group of blocks that can be indexed. For a number of $2^n$ sets, 
 2. After a set is chosen, implements fully associative mapping to pick **any** block in the set to put in.
 	- each block will have a **tag** and a **valid bit**, used to identify the **block**, and *NOT the set.*
 	- within each set, the lookup scheme is completely fully associative.
-
 ### Comparator
 Since the set index is **extracted directly from the main memory address**, we do not need to compare this with the set index again. Therefore, the number of comparisons we have to make is $n$, for **every block in the set** (aka the fully associative scheme)
 
