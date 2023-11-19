@@ -4,7 +4,7 @@ A **set** is a group of blocks that can be indexed. For a number of $2^n$ sets, 
 
 1. Implements direct mapping scheme to map a **block** of memory, and chooses a set to go in.
 	- get the **number of sets in cache** = number of blocks in the cache % $n$ (the number of blocks per set)
-	- get the **set index** = no. of address bits % no. of sets in cache
+	- get the **set index** = block address % no. of sets in cache
 	- for a set index of $2^n$, $n$ bits will be used for the set index. 
 2. After a set is chosen, implements fully associative mapping to pick **any** block in the set to put in.
 	- each block will have a **tag** and a **valid bit**, used to identify the **block**, and *NOT the set.*
