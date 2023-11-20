@@ -12,7 +12,7 @@ $$\Phi = BA$$
 - There is no current when the magnet remains static.
 
 Due to the change in flux through a loop, an emf is induced such that the loop now has a current through it.
-$$\epsilon=\frac{\Delta\Phi}{\Delta t}$$
+$$\epsilon=-\frac{\Delta\Phi}{\Delta t}$$
 According to the first point in the summary, the "induced" emf is not merely due to a change in flux, but due to a **rate of change** in flux. For a system of $N$ windings, the emf is as follows; 
 $$\epsilon=N\frac{\Delta\Phi}{\Delta t}$$
 ## Lenz's Law
