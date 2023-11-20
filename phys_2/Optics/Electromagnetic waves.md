@@ -30,7 +30,7 @@ Applying the above equations, we get the equation:
 $$\overline I = \frac{E_0^2}{2c\mu_0}=c\epsilon_0E_{rms}^2 = \frac{P}{A}$$
 The energy density (in Pascals) in the delivered by the wave is therefore: 
 $$\overline u = \frac{1}{2}E^2\epsilon_0 + \frac{1}{2\mu_0}B^2=\epsilon_0E^2$$
-We can derive the equality of the statement by understand that: 
+We can derive the equality of the statement by understanding that: 
 $$B = \frac{E}{c} = \sqrt{\epsilon_0\mu_0}E$$
 So, the **average power delivered to the area element** is: 
 $$\overline P = \overline IA = \epsilon_0E_{rms}^2A$$
