@@ -1,3 +1,15 @@
+## Inductance
+The self-inductance of a solenoid is calculated by the formula: 
+$$L = \frac{N\phi_B}{i} = \frac{NBA}{i}$$
+where $\phi_B$ is the magnetic flux caused by the current in each turn of the coil. In a solenoid, the magnetic field is calculated using the formula in [[Magnetic Field# In a solenoid]].
+
+By process of derivation, we can also get the self-induced emf in the solenoid: 
+$$\epsilon=-L\frac{di}{dt}$$
+
+### Energy stored in inductor
+The energy stored in the inductor $U$ can be obtained using: 
+$$U=L\int^I_0idi=\frac{1}{2}LI^2$$
+
 For a circuit with a current $i = I\cos{\omega t}$, each different R, L, C element will lead to a different circuit quantity: 
 
 ![[Pasted image 20231112125728.png]]
