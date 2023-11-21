@@ -38,3 +38,11 @@ $$\overline P = \overline IA = \epsilon_0E_{rms}^2A$$
 
 ## Polarization and Malus' Law
 ![[Pasted image 20231106214145.png]]
+
+## Radiation Pressure
+The average force per unit area, or **pressure** $p_{rad}$, caused by radiation can be calculated using two different formulae for two different cases: 
+1. If the wave is totally absorbed: 
+$$p_{rad}=\frac{S_{av}}{c}=\frac{I}{c}$$
+2. If the wave is totally reflected: 
+$$p_{rad}=\frac{2S_{av}}{c}=\frac{2I}{c}$$
+**Note** that the $I$ here is the **intensity**, *not the current.*
