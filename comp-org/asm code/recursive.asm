@@ -6,8 +6,8 @@ main:
 
 multiply: 
 	addi sp, sp, -8
-	sw ra, sp(0)
-	sw t0, sp(4)
+	sw ra, 0(sp)
+	sw t0, 4(sp)
 	addi t0, a0, 0
 	addi t1, a1, 0
 	if: bge x0, t1, else
@@ -20,8 +20,8 @@ multiply:
 	else: 
 		add a0, x0, x0
 	endif: 
-		lw ra, sp(0)
-		lw t0, sp(4)
+		lw ra, 0(sp)
+		lw t0, 4(sp)
 		addi sp, sp, 8
 		jr ra
 
