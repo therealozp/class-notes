@@ -155,6 +155,12 @@ void iterate_wo_extra(char s[]) {
     }
 }
 
+void printfile() {
+    int i, j; 
+    scanf("%d%d", &i, &j);
+    printf("%d %d", i, j);
+}
+
 int main() {
     // int n = 6; 
 
@@ -209,9 +215,10 @@ int main() {
     // printf("%d", log_base_2(8));
     // typecasting();
     // int arr[] = {1, 2, 3, 4};
-    char s[] = "your mom gay";
-    // mod(arr); 
-    iterate_wo_extra(s);
-    printf("%s", s);
+    // char s[] = "your mom gay";
+    // // mod(arr); 
+    // iterate_wo_extra(s);
+    // printf("%s", s);
+    printfile();
     return 0;
 }

@@ -1,6 +1,6 @@
 // Name: Phu Anh Khang Le
 // Description: Program takes in a file (database) of animals
-// and outputs the queried animals onto another output file
+// and outputs the sorted list into a file.
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -15,12 +15,15 @@ struct animal {
     int age; 
     double weight;
 };
-
+// compare functions should take in the generic pointer
 int species_comp(const void *p, const void *q) {
+    // can return the result from strcmp directly, through typecasting the pointer
+    // and accessing the species property
     return strcmp(((struct animal *)p)->species, ((struct animal *)q)->species);
 }
 
 int age_comp(const void *p, const void *q) {
+    // do the same thing for this compare function, but instead can use the subtract operator
     return ((struct animal *)p)->age - ((struct animal *)q)->age;
 }
 
@@ -44,10 +47,13 @@ int main() {
         animals[num_animals].gender,
         &animals[num_animals].age,
         &animals[num_animals].weight);
+        // since it will still scan the last item, make sure to exclude it 
+        // not incrementing the numanimals will exclude the last element of the struct array
         if (readitems == 5)
             num_animals++;
     }
 
+    // use quicksort
     qsort(animals, num_animals, sizeof(struct animal), age_comp);
     qsort(animals, num_animals, sizeof(struct animal), species_comp);
 
