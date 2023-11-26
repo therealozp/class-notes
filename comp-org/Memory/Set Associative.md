@@ -1,4 +1,4 @@
-> Aims to combine direct mapping and fully associative cache schemes.
+w> Aims to combine direct mapping and fully associative cache schemes.
 
 A **set** is a group of blocks that can be indexed. For a number of $2^n$ sets, we will need $n$ bits for **set indexing**. In an *$n$-way set associative* scheme, there will be $n$ **blocks per set**
 
@@ -11,4 +11,3 @@ A **set** is a group of blocks that can be indexed. For a number of $2^n$ sets, 
 	- within each set, the lookup scheme is completely fully associative.
 ### Comparator
 Since the set index is **extracted directly from the main memory address**, we do not need to compare this with the set index again. Therefore, the number of comparisons we have to make is $n$, for **every block in the set** (aka the fully associative scheme)
-
