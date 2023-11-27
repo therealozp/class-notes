@@ -16,7 +16,7 @@ int main()
 	//display the sum of factorials, the sum of squares, 
 	//and the sum of cubes from start to end
     int totalfact = sum(fact, start, end);
-    int totalsquare = sum(square start, end);
+    int totalsquare = sum(square, start, end);
     int totalcube = sum(cube, start, end);
 
     printf("Total of factorials: %d\n", totalfact);

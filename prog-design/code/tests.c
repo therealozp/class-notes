@@ -158,7 +158,7 @@ void iterate_wo_extra(char s[]) {
 void printfile() {
     FILE *pfile = fopen("test.txt", "r");
     char buffer[6];
-    fscanf(pfile, "%s", buffer);
+    fgets(buffer, 6, pfile);
     printf("%s", buffer);
 }
 
