@@ -156,9 +156,10 @@ void iterate_wo_extra(char s[]) {
 }
 
 void printfile() {
-    int i, j; 
-    scanf("%d%d", &i, &j);
-    printf("%d %d", i, j);
+    FILE *pfile = fopen("test.txt", "r");
+    char buffer[6];
+    fscanf(pfile, "%s", buffer);
+    printf("%s", buffer);
 }
 
 int main() {
