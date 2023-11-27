@@ -16,4 +16,5 @@ To do this, we assume the normal probability techniques, and yield the conclusio
 
 Now, for events A and B, **dependent** or **independent:**
 $$P(B\cap A) = P(A)\cdot P(B\mid A)$$
-Note: **mutually exclusive** means that the two events cannot occur at the same time. **Independent** means that the happening of one does not impact the occurrence of the other.
+Note: **mutually exclusive** means that the two events cannot occur at the same time. **Independent** means that the happening of one does not impact the occurrence of the other. Then, two events are called independent when: 
+$$P(B\cap A) = P(A) \cdot P(B)$$
