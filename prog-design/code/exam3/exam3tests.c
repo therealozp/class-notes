@@ -114,7 +114,7 @@ void fileanalysis(const char* filename) {
     }
     rewind(pfile);
     while (!ferror(pfile) && !feof(pfile)) {
-        if (fscanf(pfile, "%c", &ch) == 1 && ch == '\n') {
+        if (fscanf(pfile, "%c", &ch) == 1 && (ch == '\n')) {
             lcount++;
         } 
     }
