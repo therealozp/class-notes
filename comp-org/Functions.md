@@ -40,7 +40,7 @@ void bubblesort(int *a, int n) {
 }
 ```
 
-Note that the arguments `*a` and `n` are stored in `a0` and `a1` respectively. However, whenwe call the `swap(&a[j], &a[j + 1])` function, we will **still need** to use those two registers, because it is the **base address** and the **comparer** respectively. So, we will store this in `s3` and `s4`.
+Note that the arguments `*a` and `n` are stored in `a0` and `a1` respectively. However, when we call the `swap(&a[j], &a[j + 1])` function, we will **still need** to use those two registers, because it is the **base address** and the **comparer** respectively. So, we will store this in `s3` and `s4`.
 
 ```
 jal ra, func # store returning address PC + 4 to register RA	
