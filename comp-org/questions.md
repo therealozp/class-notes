@@ -12,5 +12,5 @@
 - multiple functions? storing $s$ registers? which functions to care about?
 
 - write back / write through policy?
-- quick way to determine boolean function?
-- and/nand/or/nor gate?
+- quick way to determine boolean function? **checked**
+- and/nand/or/nor gate? **no**
