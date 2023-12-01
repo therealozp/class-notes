@@ -126,13 +126,47 @@ void fileanalysis(const char* filename) {
     return;
 }
 
+int mod() {
+    int *pmax, *pnext; 
+    int numbers[] = {1, 5, 2, 6, 2, 8, 0}; 
+    pmax = numbers; 
+    pnext = numbers; 
+    while (pnext <= &numbers[6]) {
+        if (*pnext > *pmax) {
+
+        }
+    }
+}
+
+int count_chars(const char *filename) {
+    char str[1001]; 
+    int count = 0; 
+    FILE *pfile = fopen(filename, "r"); 
+    if (pfile == NULL) {
+        return 0;
+    }
+    while (!feof(pfile) && !ferror(pfile)) {
+        if (fgets(str, 1000, pfile))count+=strlen(str); 
+    }
+    return count;
+}
+
+void append_sentence(const char * filename) {
+    FILE *fp; 
+    fp = fopen(filename, "a"); 
+    fprintf(fp, "That's all, folks!\n");
+    fclose(fp); 
+}
+
 int main(int argc, char * argv[]) {
+    append_sentence(argv[1]);
     // rewindtest();
     // printf("%d", line_length_with_fscanf("test2.txt", 1));
     // upperify(argv[1]);
     // for (int i = 1; i < argc; i++) {
     //     fcat(argv[i]);
     // }
-    fileanalysis(argv[1]);
+    // fileanalysis(argv[1]);
+    // printf("%d\n", count_chars("test.txt"));
     return 0;
 }
