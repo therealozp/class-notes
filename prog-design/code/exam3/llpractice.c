@@ -53,13 +53,13 @@ struct node {
 };
 
 void cfree(struct node *list) { 
-    struct node * p = list; 
+    struct node * p; 
     while (list) {
+        p = list; 
         list = list->next; 
         if (p != NULL) {
             free(p); 
         }
-        p = list; 
     }
 }
 
@@ -93,34 +93,23 @@ void printll(struct node *list) {
 }
 
 struct node *insertBefore(struct node *list, int nb, int n) { 
-    struct node *prev, *curr;
-    for (curr = list; curr != NULL; curr = curr->next) {
-        if (curr->val == nb) {
-            break; 
-        }
-        prev = curr; 
-    }
-
+    struct node *prev, *curr; 
+    for (prev = NULL, curr = list; curr != NULL && curr->val != nb; prev = curr, curr = curr->next);
+    
     if (curr == NULL) {
-        // no element of val nb found 
         return list; 
+    }
+    struct node * new = malloc(sizeof(struct node)); 
+    new->val = n; 
+
+    if (prev == NULL) {
+        new->next = list; 
+        return new;
     }
 
-    struct node * new = malloc(sizeof(struct node)); 
-    if (new == NULL) { 
-        printf("failed\n"); 
-        return list; 
-    }
-    new->val = n; 
+    prev->next = new; 
     new->next = curr; 
-    if (curr == list) {
-        // first element in the list
-        // printf("first element found\n"); 
-        // return list;
-        return new; 
-    }
-    prev->next = new;
-    return list; 
+    return list;
 }
 
 struct node * insertAfter(struct node *list, int nb, int n) {
@@ -191,6 +180,15 @@ struct node *delete_all(struct node * list, int n) {
 }
 
 struct node * move_first_to_last(struct node * list) {
+    struct node * first = list; 
+    struct node * last = list; 
+    for (; last != NULL && last->next != NULL; last = last->next);
+    if (list == NULL) {
+        return list; 
+    }
+    list = list->next; 
+    last->next = first; 
+    first->next = NULL; 
     return list; 
 }
 
@@ -207,6 +205,64 @@ struct node * move_last_to_first(struct node * list) {
     return last; 
 }
 
+struct node * find_largest(struct node * list) {
+    if (list == NULL) {
+        return list; 
+    }
+    struct node * max = list; 
+    for (struct node * p = list; p != NULL; p = p->next) {
+        if (p->val > max->val) {
+            max = p;
+        }
+    }
+    return max; 
+}
+
+int duplicates(struct node * list) {
+    if (list == NULL) {
+        return 0;
+    }
+
+    for (struct node *p = list; p != NULL; p = p->next) {
+        for (struct node *q = p->next; q != NULL; q = q->next) {
+            if (p->val == q->val) {
+                return 1; 
+            }
+        }
+    }
+
+    return 0;
+}
+
+struct node * push_ordered(struct node * list, int n) {
+    struct node *prev, *curr; 
+    for (prev = NULL, curr = list; curr != NULL && curr->val < n; prev = curr, curr = curr->next); 
+    struct node * new = malloc(sizeof(struct node));
+    if (new == NULL) {
+        fprintf(stderr, "Cannot allocate memory\n");
+        return list; 
+    }
+
+    new->val = n; 
+    new->next == curr; 
+
+    if (prev == NULL) {
+        return new;
+    }
+
+    prev->next = new; 
+    return list; 
+}
+
+struct node * find_ordered(struct node * list, int n) {
+    struct node *curr; 
+    for (curr = list; curr != NULL && curr->val < n; curr = curr->next);
+    if (curr != NULL && curr->val == n) {
+        return curr; 
+    }
+    return NULL;
+}
+
 int main() { 
     struct node * head = NULL; 
     head = push(head, 89); 
@@ -218,19 +274,30 @@ int main() {
     head = push(head, 64);
     head = push(head, 15);
     head = push(head, 64);
+     
+    // head = push_ordered(head, 6); 
+    // head = push_ordered(head, 87); 
+    // head = push_ordered(head, 15); 
+    // head = push_ordered(head, 0); 
+    // head = push_ordered(head, 32);
+    // head = push_ordered(head, 64);
+    // head = push_ordered(head, 15);
+    // head = push_ordered(head, 64);
 
     // head = delete_all(head, 15); 
-    head = move_last_to_first(head); 
+    // head = move_last_to_first(head); 
+    head = move_first_to_last(head); 
     // head = insertBefore(head, 0, 17);
-    // head = insertBefore(head, 999, 6464);
+    // head = insertBefore(head, 64, 6464);
     // head = insertAfter(head, 32, 69); 
     // head = insertAfter(head, 89, 6969); 
     printll(head); 
-    // struct node *found = find_last(head, 118);
+    // struct node *found = find_largest(head);
+    // printf(duplicates(head) == 1 ? "list has duplicated elements\n" : "no dupes\n");
     // if (found == NULL) {
     //     printf("nothing found\n"); 
     // } else { 
     //     printf("Found value is: %d\n", found->val);
     // }
-    return 0;
+    return 0; 
 }

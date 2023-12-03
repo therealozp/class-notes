@@ -27,9 +27,9 @@ void sortlast50() {
 
 int main () {
     // printf("Answer: %d\n", f1(f2));
-    // printf("sum of squares from 1 to 10: %d\n", sum(square, 1, 10)); 
-    // printf("sum of first collatz units from 1 to 10: %d\n", sum(collatz, 1, 10)); 
-    sortlast50();
+    printf("sum of squares from 1 to 10: %d\n", sum(square, 1, 10)); 
+    printf("sum of first collatz units from 1 to 10: %d\n", sum(collatz, 1, 10)); 
+    // sortlast50();
     return 0; 
 }
 
@@ -43,7 +43,7 @@ int f2(int i) {
     return i*i + i - 12;
 }
 
-int sum(int g(int), int i, int j) {
+int sum(int g(int x), int i, int j) {
     int s = 0; 
     for (int p = i; p <= j; p++) {
         s += g(p); 

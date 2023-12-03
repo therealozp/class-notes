@@ -1,7 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #define MAXLEN 5
+
+int readline(char *str, int maxlength) {
+    char ch; 
+    int i = 0; 
+    while (isspace(ch = getchar())); 
+    str[i++] = ch; 
+    while ((ch = getchar()) != '\n') { 
+        if (i < maxlength) {
+            str[i++] = ch;
+        }
+    }
+
+    str[i] = '\0';
+    return i; 
+}
 
 void rewindtest() {
     FILE *infile = fopen("input.txt", "r+");
@@ -43,23 +59,21 @@ int line_length(const char *filename, int n) {
 }
 
 int line_length_with_fscanf(const char *filename, int n) {
-    int line = 1; 
-    int count = 0;
-    char ch; 
     FILE *pfile = fopen(filename, "r");
-    while(line != n && !ferror(pfile) && !feof(pfile)) {
-        while(fscanf(pfile, "%c", &ch) && ch != '\n');
-        line++; 
+    if (pfile == NULL) {
+        return 0;
+    }
+    char buff[1001]; 
+    for (int i = 1; i < n && !feof(pfile); i++) {
+        fscanf(pfile, "%[^\n]\n", buff);
+        // printf("%s", buff);
     }
     if (feof(pfile)) {
-        return 0; 
-    }
-
-    while (fscanf(pfile, "%c", &ch) && ch != '\n') {
-        count ++;
-    }
+        return 0;
+    } 
+    fscanf(pfile, "%[^\n]\n", buff);
     fclose(pfile);
-    return count; 
+    return strlen(buff); 
 }
 
 void upperify(const char *filename) {
@@ -101,10 +115,8 @@ void fileanalysis(const char* filename) {
         fprintf(stderr, "error opening file\n"); 
         return;
     }
-    while (!ferror(pfile) && !feof(pfile)) {
-        if (fscanf(pfile, "%c", &ch) == 1) {
-            chcount++;
-        }
+    while (fgets(chs, 1001, pfile) != NULL) {
+        chcount+=strlen(chs);
     }
     rewind(pfile);
     while (!ferror(pfile) && !feof(pfile)) {
@@ -114,28 +126,15 @@ void fileanalysis(const char* filename) {
     }
     rewind(pfile);
     while (!ferror(pfile) && !feof(pfile)) {
-        if (fscanf(pfile, "%c", &ch) == 1 && (ch == '\n')) {
+        if (fscanf(pfile, "%[^\n]\n", chs) == 1) {
             lcount++;
         } 
     }
-    lcount++; // 1 more for eof
     fclose(pfile);
     fprintf(stdout, "Number of chars: %d\n", chcount);
     fprintf(stdout, "Number of words: %d\n", wcount);
     fprintf(stdout, "Number of lines: %d\n", lcount);
     return;
-}
-
-int mod() {
-    int *pmax, *pnext; 
-    int numbers[] = {1, 5, 2, 6, 2, 8, 0}; 
-    pmax = numbers; 
-    pnext = numbers; 
-    while (pnext <= &numbers[6]) {
-        if (*pnext > *pmax) {
-
-        }
-    }
 }
 
 int count_chars(const char *filename) {
@@ -158,15 +157,63 @@ void append_sentence(const char * filename) {
     fclose(fp); 
 }
 
+void scanfiles(const char * filename) {
+    FILE *pfile = fopen(filename, "r"); 
+    if (pfile == NULL) { 
+        fprintf(stderr, "Failed to open file\n"); 
+        return;
+    }
+    char buffer[101]; 
+    while (fgets(buffer, 100, pfile) != NULL) {
+        printf("%s", buffer);
+    }
+    fclose(pfile);
+    return; 
+}
+
+void demo() {
+    char str1[100];
+    char str2[100]; 
+
+    fscanf(stdin, "%[^,]%[^,]" , str1, str2); 
+    printf("%s\n", str1);
+    printf(str2); 
+}
+
+int intcmp(const void *p, const void* q) {
+    return *(int *)p - *(int *)q; 
+}
+
+void read_ints(const char* filename) {
+    FILE * pfile = fopen(filename, "r"); 
+    if (pfile == NULL) {
+        printf("no such file");
+        return; 
+    }
+    int arr[1100];
+    int i = 0;
+    while (!feof(pfile) && !ferror(pfile)) {
+        fscanf(pfile, "%d", &arr[i++]);        
+    }
+    qsort(arr, i, sizeof(int), intcmp); 
+    printf("Maximum element in file is: %d\n", arr[i - 1]);
+    printf("Minimum element in file is: %d\n", arr[0]);
+    return;
+}
+
+
 int main(int argc, char * argv[]) {
-    append_sentence(argv[1]);
+    // append_sentence(argv[1]);
+    // scanfiles(argv[1]);
+    // demo();
     // rewindtest();
-    // printf("%d", line_length_with_fscanf("test2.txt", 1));
+    // printf("%d", line_length_with_fscanf("test.txt", 5));
     // upperify(argv[1]);
     // for (int i = 1; i < argc; i++) {
     //     fcat(argv[i]);
     // }
-    // fileanalysis(argv[1]);
+    fileanalysis(argv[1]);
+    // read_ints(argv[1]);
     // printf("%d\n", count_chars("test.txt"));
     return 0;
 }

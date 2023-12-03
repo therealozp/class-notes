@@ -14,7 +14,6 @@ int read_line(char str[], int n)
   while ((ch = getchar()) != '\n') {
     if (i < n)
       str[i++] = ch;
-    
    }
    str[i] = '\0';
    return i;
