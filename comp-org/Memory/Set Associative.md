@@ -1,4 +1,4 @@
-w> Aims to combine direct mapping and fully associative cache schemes.
+> Aims to combine direct mapping and fully associative cache schemes.
 
 A **set** is a group of blocks that can be indexed. For a number of $2^n$ sets, we will need $n$ bits for **set indexing**. In an *$n$-way set associative* scheme, there will be $n$ **blocks per set**
 
