@@ -54,7 +54,7 @@ callee has access to regs t0-t6, and s2-s4
 however, regs s0-s11 are the CALLER's resources (also called callee-saved registers, because callee is doing the backup)
 in contrast, t registers are saved by callers. so it's called caller-saved registers
 
-**TLDR:** *s0-s11* registers will be saved by the **callee**, and *t0-tx* register will be saved by the **caller.**
+**TLDR:** *s0-s11* registers will be saved by the **callee**, and *t0-t7* register will be saved by the **caller.**
 [[#Important notes]]
 
 ## using the stack pointer
