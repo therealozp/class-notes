@@ -1,4 +1,4 @@
-Is measured against a market basket. Some price rises and some fall, but in general the price increases. 
+mmmIs measured against a market basket. Some price rises and some fall, but in general the price increases. 
 
 Causes: 
 1. **Demand factors**: consumer confidence, income, wealth
