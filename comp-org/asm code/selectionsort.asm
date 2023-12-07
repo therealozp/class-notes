@@ -5,8 +5,8 @@
 .text
 main: 
 	# load address of arr into a3
-	la a3, arr
-	lw a4, size
+	la a0, arr
+	lw a1, size
 	jal ra, selection_sort
 	# jump to end so that it won't run a second time
 	j termine
@@ -28,9 +28,10 @@ findMinimum:
 	sw s3, 0(sp)
 	sw s4, 4(sp)
 	sw ra, 8(sp)
-	# in the selection_sort function, array and N is passed in using a5 and a6. so we are just using the same thing here
-	add s3, x0, a5
-	add s4, x0, a6
+	# in the selection_sort function, array and N is passed in using a0 and a1. so we are just using the same thing here
+	# we will just store it in these s registers and never touch a0 and a1 again as the accessing registers
+	add s3, x0, a0
+	add s4, x0, a1
 	# decalare min_index variable in t5 and loop index in t4
 	addi t5, x0, 0
 	addi t4, x0, 0
@@ -55,9 +56,9 @@ findMinimum:
 			j loop
 	endloop:
 		# deallocate all used memory 
-		lw s3, 0(sp)
-		lw s4, 4(sp)
 		lw ra, 8(sp)
+		lw s4, 4(sp)
+		lw s3, 0(sp)
 		addi sp, sp, 12
 		# set return value a0 = min_index
 		add a0, x0, t5
@@ -65,23 +66,27 @@ findMinimum:
 
 selection_sort: 
 	# using s0, s1, s3, s4
-	addi sp, sp, -20
+	addi sp, sp, -24
 	sw s3, 0(sp)
 	sw s4, 4(sp)
-	sw s0, 8(sp)
-	sw s1, 12(sp)
-	sw ra, 16(sp)
-	# assuming that, by convention, array, length is passed in using a3, a4
-	add s3, x0, a3
-	addi s4, a4, -1
+	sw s5, 8(sp)
+	sw s0, 12(sp)
+	sw s1, 16(sp)
+	sw ra, 20(sp)
+	# assuming that, by convention, array, length is passed in using a0, a1
+	# we will use s3 and s4 to back it up and avoid using a0 and a1 directly
+	add s3, x0, a0
+	addi s4, a1, 0
+	# using s5 to get the n - 1 value
+	addi s5, a1, -1
 	# decalare min_index variable in s1 and loop index in s0
 	addi s0, x0, 0
 	addi s1, x0, 0
-	loop2: bge s0, s4, endloop2
+	loop2: bge s0, s5, endloop2
 		# prepare function arguments
 		slli t2, s0, 2
-		add a5, a3, t2
-		sub a6, a4, s0
+		add a0, s3, t2
+		sub a1, s4, s0
 		# jump to minimum
 		jal ra, findMinimum
 		add s1, x0, a0  # return value of minimum
@@ -102,13 +107,14 @@ selection_sort:
 			j loop2
 	endloop2: 
 		# re-load all variables, including ra, and return
-		lw s3, 0(sp)
+		lw ra, 20(sp)
+		lw s1, 16(sp)
+		lw s0, 12(sp)
+		lw s5, 8(sp)
 		lw s4, 4(sp)
-		lw s0, 8(sp)
-		lw s1, 12(sp)
-		lw ra, 16(sp)
+		lw s3, 0(sp)
 		# deallocate the sp
-		addi sp, sp, 20
+		addi sp, sp, 24
 		jr ra
 	
 termine:
