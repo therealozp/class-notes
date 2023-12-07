@@ -1,0 +1,11 @@
+Boo-boo 11 123.00
+Gir 8 88.00
+Max 3 52.80
+Kujo 8 172.00
+Fritz 4 92.00
+Lucky 3 45.40
+Rex 4 28.90
+Bo 8 76.10
+Yoyo 13 10.50
+Bear 4 7.00
+Rocky 8 56.00

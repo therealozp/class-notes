@@ -3,7 +3,9 @@
   "cssTheme": "Catppuccin",
   "textFontFamily": "Satoshi",
   "enabledCssSnippets": [
-    "obsidian"
+    "obsidian",
+    "image_grid",
+    "media-grid-snippet"
   ],
   "baseFontSize": 17,
   "theme": "obsidian"

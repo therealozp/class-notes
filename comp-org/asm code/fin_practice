@@ -1,0 +1,98 @@
+.data
+	arr: .word 9, 8, 7, 6, 5, 4, 3
+	size: .word 7
+
+.text
+main: 
+	la a0, arr
+	lw a1, size
+	jal ra, selSort
+	j endprog
+
+swap: 
+	lw t0, 0(a0)
+	lw t1, 0(a1)
+	sw t0, 0(a1)
+	sw t1, 0(a0)
+	jr ra
+
+findMin: 
+	addi sp, sp, -8
+	sw s0, 4(sp)
+	sw s1, 0(sp)
+	# s0 is arr, s1 is size
+	add s0, a0, x0
+	add s1, a1, x0
+	
+	# minidx = t0
+	add t0, x0, x0
+	lw t6, 0(s0) #min_E = t6
+	
+	addi t1, x0, 1 #i = 1
+	for: 
+		bge t1, s1, endloop
+		# t2 = arr[i]
+		slli t2, t1, 2
+		add t2, t2, s0
+		lw t2, 0(t2)
+		if: 
+			# if arr[i] >= minE, skip
+			bge t2, t6, endif
+			add t0, x0, t1 #min_idx = i
+			# min_E = arr[min_idx] = arr[i]
+			add t6, x0, t2
+		endif: 
+			addi t1, t1, 1
+			j for
+	endloop: 
+		add a0, x0, t0
+		lw s1, 0(sp)
+		lw s0, 4(sp)
+		addi sp, sp, 8
+		jr ra
+
+selSort:
+	addi sp, sp, -12
+	sw ra, 8(sp)
+	sw s0, 4(sp)
+	sw s1, 0(sp)
+	add s0, x0, a0 # base arr = s0
+	add s1, x0, a1 # n = s1
+	
+	add t0, x0, x0 # t0 = i
+	add t1, x0, x0 # t1 = min_idx
+	addi t2, s1, -1 # t2 = n - 1
+	
+	for_sel: 
+		bge t0, t2, endloop_sel
+		
+		slli t3, t0, 2 # t3 = 4*i
+		add a0, s0, t3 # a0 = base_addr + 4*i
+		
+		sub t3, s1, t0 # t3 = n - i
+		add a1, x0, t3 # a1 = n - i
+		
+		jal ra, findMin
+		add t1, x0, a0 # min_idx = 0 + return findMin
+		if_sel: 
+			beq t1, x0, endif_sel
+			
+			add t4, t1, t0 # t4 = min_idx + i
+			slli t4, t4, 2 # t4 = 4*[min_idx + i]
+			add a0, s0, t4 # a0 = base_addr + t4 = &arr[min_idx + i]
+			
+			slli t5, t0, 2 # t5 = 4*i
+			add a1, s0, t5 # a1 = base_addr + t5 = &arr[i]
+			
+			jal ra, swap
+		endif_sel: 
+			addi t0, t0, 1
+			j for_sel
+	endloop_sel: 
+		lw s1, 0(sp)
+		lw s0, 4(sp)
+		lw ra, 8(sp)
+		addi sp, sp, 12
+		jr ra
+
+endprog:

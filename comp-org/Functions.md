@@ -40,7 +40,7 @@ void bubblesort(int *a, int n) {
 }
 ```
 
-Note that the arguments `*a` and `n` are stored in `a0` and `a1` respectively. However, whenwe call the `swap(&a[j], &a[j + 1])` function, we will **still need** to use those two registers, because it is the **base address** and the **comparer** respectively. So, we will store this in `s3` and `s4`.
+Note that the arguments `*a` and `n` are stored in `a0` and `a1` respectively. However, when we call the `swap(&a[j], &a[j + 1])` function, we will **still need** to use those two registers, because it is the **base address** and the **comparer** respectively. So, we will store this in `s3` and `s4`.
 
 ```
 jal ra, func # store returning address PC + 4 to register RA	
@@ -54,7 +54,7 @@ callee has access to regs t0-t6, and s2-s4
 however, regs s0-s11 are the CALLER's resources (also called callee-saved registers, because callee is doing the backup)
 in contrast, t registers are saved by callers. so it's called caller-saved registers
 
-**TLDR:** *s0-s11* registers will be saved by the **callee**, and *t0-tx* register will be saved by the **caller.**
+**TLDR:** *s0-s11* registers will be saved by the **callee**, and *t0-t7* register will be saved by the **caller.**
 [[#Important notes]]
 
 ## using the stack pointer

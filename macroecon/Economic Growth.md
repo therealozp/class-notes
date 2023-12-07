@@ -39,7 +39,7 @@ A production function measures how an economy **turns inputs into outputs** usin
 The classical form of the production function determines output as a function of labor and capital: 
 $$Output = f(L, K)$$
 By incorporating all the factors of production into the function: 
-$$Output = A \times f(L, K, H, N)$$
+$$\text{Output} = A \times f(L, K, H, N)$$
 According to the above definition, *technology* drives output. 
 ### Improving the factors
 - Improved land or discoveries of resources (oil or natural gas)

@@ -155,6 +155,13 @@ void iterate_wo_extra(char s[]) {
     }
 }
 
+void printfile() {
+    FILE *pfile = fopen("test.txt", "r");
+    char buffer[6];
+    fgets(buffer, 6, pfile);
+    printf("%s", buffer);
+}
+
 int main() {
     // int n = 6; 
 
@@ -209,9 +216,10 @@ int main() {
     // printf("%d", log_base_2(8));
     // typecasting();
     // int arr[] = {1, 2, 3, 4};
-    char s[] = "your mom gay";
-    // mod(arr); 
-    iterate_wo_extra(s);
-    printf("%s", s);
+    // char s[] = "your mom gay";
+    // // mod(arr); 
+    // iterate_wo_extra(s);
+    // printf("%s", s);
+    printfile();
     return 0;
 }

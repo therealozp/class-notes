@@ -2,5 +2,6 @@
   "catppuccin-theme-settings@@catppuccin-theme-accents": "ctp-accent-rosewater",
   "catppuccin-font-styles@@ctp-bold": "var(--ctp-peach)",
   "catppuccin-font-styles@@ctp-italic": "var(--ctp-flamingo)",
-  "catppuccin-font-styles@@ctp-blockquote": "var(--ctp-mauve)"
+  "catppuccin-font-styles@@ctp-blockquote": "var(--ctp-mauve)",
+  "media-grid-snippet@@content-max-width": "var(--content-base-width)"
 }

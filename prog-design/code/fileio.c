@@ -43,15 +43,7 @@ int line_by_line_write (char* filepath) {
         return 1;
     }
 
-    // get output file path
-    char ch, *o = outputpath; 
-    printf("enter output name: ");
-    while ((ch = getchar()) != '\n' && o < outputpath + STRLEN - 1) { 
-        *o = ch; 
-        o++;
-    }
-
-    FILE *pout = fopen(outputpath, "w");
+    FILE *pout = fopen("test2.txt", "w");
     if (pout == NULL) {
         printf("Error opening output file\n");
         return 1;
@@ -59,9 +51,8 @@ int line_by_line_write (char* filepath) {
 
     while (fgets(str, STRLEN+1, pfile) != NULL) {
         // fgets == null when end of input
-        char *p;
         // remove \n to get space
-        for (p = str; *p != '\0'; p++) { 
+        for (char *p = str; *p != '\0'; p++) { 
             if (*p == '\n') {
                 *p = ' ';
             }
@@ -69,22 +60,23 @@ int line_by_line_write (char* filepath) {
         fputs(str, pout);
     }
     fclose(pfile);
+    fclose(pout);
     return 0;
 }
 
 int main() { 
     // FILE *pfile; 
-    char filepath[STRLEN + 1];
-    char ch, *p = filepath; 
-    printf("enter file name: ");
-    while ((ch = getchar()) != '\n' && p < filepath + STRLEN - 1) { 
-        *p = ch; 
-        p++;
-    }
-    *p = '\0';
+    // char filepath[STRLEN + 1];
+    // char ch, *p = filepath; 
+    // printf("enter file name: ");
+    // while ((ch = getchar()) != '\n' && p < filepath + STRLEN - 1) { 
+    //     *p = ch; 
+    //     p++;
+    // }
+    // *p = '\0';
     // read_text(filepath);
     // line_by_line(filepath);
-    line_by_line_write(filepath);
+    line_by_line_write("test.txt");
     return 1;
 }
 

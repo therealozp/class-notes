@@ -15,7 +15,7 @@ void decode(char words[][101], int num_words, char *result) {
     }
     *result = '\0';
 }
-
+ 
 // to get the new name of the output file
 void getName(char *s1, char *s2) {
     char *p, *q = s2;
