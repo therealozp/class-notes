@@ -1,11 +1,11 @@
 ## Magnetic Flux
 Through a conducting loop, magnetic flux through a conducting loop is: 
 $$\Phi = BA$$
-![[Pasted image 20231105202955.png]]
+![[Pasted image 20231105202955 1.png]]
 
 ## Faraday's Law
 
-![[Pasted image 20231105203333.png]]
+![[Pasted image 20231105203333 1.png]]
 
 - A current (thus voltage) was measured when the magnet was either moving towards or away from the loop. 
 - The polarity is different if the magnet was moving towards or away from the loop
@@ -22,7 +22,7 @@ So, when the bar magnet approached the loop, we read a current with an opposite 
 
 ## Transformers
 
-![[Pasted image 20231105205315.png]]
+![[Pasted image 20231105205315 1.png]]
 
 When there is an alternating current $V_P = V_o \cdot \cos{\omega t}$: 
 - the oscillating electric field will generate **a change in flux** through the primary coil
