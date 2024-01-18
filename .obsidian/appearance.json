@@ -1,11 +1,10 @@
 {
-  "accentColor": "",
-  "cssTheme": "Catppuccin",
+  "accentColor": "#efb86b",
+  "cssTheme": "AnuPpuccin",
   "textFontFamily": "Satoshi",
   "enabledCssSnippets": [
     "obsidian",
-    "image_grid",
-    "media-grid-snippet"
+    "image_grid"
   ],
   "baseFontSize": 17,
   "theme": "obsidian"
