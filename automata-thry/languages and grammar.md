@@ -19,18 +19,22 @@ the reversal set of a language is the set of all string reversals, meaning $\set
 ### repetition
 $w^{n}$ means the string obtained after repeating the string $n$ times. as a special case, $w^{0} = \lambda$ for all $w$. 
 ## prefixes and suffixes
-any string of consecutive symbols in some $w$ is said to be a substring of $w$. if $w = vu$, then $v$ and $u$ are said to be the prefix and suffix, respectively, for example, if $w =$ abab, then $\set{\lambda, a, ab, aba, abab}$ is the set of all prefixes
+any string of consecutive symbols in some $w$ is said to be a sub-string of $w$. if $w = vu$, then $v$ and $u$ are said to be the prefix and suffix, respectively, for example, if $w =$ $abab$, then $\set{\lambda, a, ab, aba, abab}$ is the set of all prefixes.
 ## closures
 ### the star 
 the star closure of a language $L^{*}$ is $L^{0}\cup L^{1}\cup L^{2} \cdots$ meaning union of the infinite concatenations.
 ### the positive closure
 basically star closure minus $L^0$.
 
-## grammar
-a grammar is defined by a quadruple $G = \set{V, T, S, P}$ where $V$ is a finite set of objects called **variables**, $T$ is the set of **terminals**, $S$ is the set of **starts**, $P$ is the set of **productions**, 
+## examples
+$L_{1}= \set{\lambda, a, ab}$
+$L_{2} = \set{a^{n}b^{n}: n \geq 0}$
+$L_{3} = \set{(ab)^{n}: n \geq 0}$
+$L_{4}= \set{a, b, ab, aab}$
 
-$V$ and $T$ are always non-empty and disjoint.
+Note, for $L_{2}$ and $L_3$, if the condition should change to be $n\geq 1$, the resulting language will not contain $\lambda$. Similarly, for finite languages such as $L_4$, if it is said to **not** contain $\lambda$, then the language does not contain $\lambda$. 
 
-production rules are the heart of grammar, and always takes the form:
-$$x\rightarrow y$$
-where $x \in (V\cup T)^+$, and $y \in (V\cup T)^*$.
+Suppose that $L_{1} = {a^{n}b^{n}: n\geq 0}$ and $L_2$ defined the same. Then, the concatenation of these two languages will not simply be $L_{3}=\set{a^{n}b^{n}a^{n}b^{n}:n\geq 0}$. Because the $n$ in $L_1$ and $L_2$ is can be out of phase (that is, $n_1$ can be 2 and $n_2$ can be 4 or literally any other value), we cannot simplify both to a single $n_3$.
+
+Instead, the language $L_1L_{2} = \set{a^{n}b^{n}a^{m}b^{m}: n, m \geq 0}$.  
+
