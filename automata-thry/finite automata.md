@@ -25,3 +25,16 @@ $$L(M) = \set{w \in \Sigma^{*}: \delta^{*} (q_{0}, w)\in F}$$
 by contrast, the strings rejected by $M$ will look like: 
 $$\overline{L(M)} = \set{w \in \Sigma^{*}: \delta^{*} (q_{0}, w)\not\in F}$$
 if the **start state is also the final state**, then the string $\lambda$ is accepted by the DFA, else it will **never** be accepted.
+
+A string is regular if it is accepted by a DFA.
+$L_{1} = \set{b^{n}ab^{m}: n \geq 0, m \geq 0}$
+$L_{2}= \set{awa: w \in {a, b}^{*}}$
+$L_{3}= \set{(ab)^{n} : n\geq 0}$
+
+For any regular language $L$, then $\overline L$ is also regular. This can be yielded from the DFA by reversing all status of the nodes, e.g. if it is accepted, then revert it to be not accepted, and vice versa.
+
+## irregular languages
+these languages cannot be accepted by any DFA, if it is finite: 
+- $\set{a^{n}b^{n}: n\geq 0}$
+- $\set{w \in {a, b}^{*}}$, $w$ is a palindrome
+- $\set{w \in {a, b}^{*}: n_{a}(w) = n_{b}(w)}$
