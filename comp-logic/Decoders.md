@@ -2,7 +2,7 @@ $n$ inputs, $2^n$ outputs. Each output represents a minterm.
 ## Active-high decoders
 Voltage high (1) is true, voltage low (0) is false. each output corresponds to a **minterm**. 
 
-For example, suppose a function has $\Sigma m(0, 2, 4)$. Then, for an active high decoder, outputs of 0, 2, 4 should be added with an OR gate to represent the function. []()
+For example, suppose a function has $\Sigma m(0, 2, 4)$. Then, for an active high decoder, outputs of 0, 2, 4 should be added with an OR gate to represent the function. 
 
 Alternatively, to represent it in POS form, we take the product of **maxterms** $M_{1}\cdot M_{3}\cdot M_{5} \cdot M_{6} \cdot M_{7}$, which are equivalent to $\overline m_{1}\cdot \overline m_{3}\cdot \overline m_{5} \cdot \overline m_{6} \cdot \overline m_{7}$. Then, we take outputs 1, 3, 5, 6, 7 and wire them together with a NOR gate. 
 
