@@ -10,3 +10,8 @@ Alternatively, to represent it in POS form, we take the product of **maxterms** 
 Voltage low (0) is true, voltage (high) is false. each output corresponds to a **maxterm.**
 
 To represent the above function, we take outputs 1, 3, 5, 6, 7 and wire them together with an AND gate. Alternatively, wire outputs 0, 2, 4 together with a NAND gate.
+
+## Decoder Expansion
+The enable input $E$ effectively turns the decoder "on/off." For example, in an active-high decoder, $E = 0$ means all inputs will becomes 0, and $E = 1$ means the decoder will work normally. 
+
+Then, to group up a bunch of smaller decoders into one big decoder, we use decoder expansion. A 2-to-4 to a 3-to-8 means chaining the extra output to the enable inputs of each decoder. At that point, the general boolean function becomes $I_{2}I_{1}I_{0}$. 

@@ -13,4 +13,4 @@ The use of this NOT is to implement **subtraction** inside a full adder, by bit 
 ## Analysis
 Used to: 
 - simplify a boolean function implemented by a circuit
-- 
+
