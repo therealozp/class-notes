@@ -6,6 +6,7 @@ e.g. suppose $x$ is rational and $y$ is irrational, prove that $x + y$ is irrati
 > So, $x + y$ must be irrational. 
 
 More formally: 
+
 > Suppose that $x + y$ is rational, that is, it takes the form $\frac{a}{b}$, and $x$ has the form $\frac{c}{d}$
 > Then, the subtraction $x + y - x$ would produce value $\frac{ad - bc}{bd}$, meaning that it $y$ is rational
 > But it isn't 

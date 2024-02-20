@@ -33,3 +33,25 @@ proof 2: proof that all strings in the language is derived from G. since this is
 - base case: $S\rightarrow \lambda$
 - assume that every string of length $2n$ can be derived from G. 
 $\rightarrow$ we have to prove that every string of length $2n + 2$ can be derived from G. 
+
+## right linear / left linear grammars
+a right linear grammar is a grammar where the variables always appear to the right of the terminal symbol, and for example, can be defined as: 
+- $A \rightarrow xB$
+- $A \rightarrow x$
+
+while a left linear grammar is a grammar where the variables always appear to the left of the terminal symbol (in this case, $x$). as an example, it can look like: 
+- $A \rightarrow Bx$
+- $B \rightarrow x$
+
+> a language is a regular language if an only if it has a RLG or a LFG.
+
+knowing this, we can essentially translate these transitions into a dfa.
+### conversions
+#### from rlg language transitions to a [nfa](automata-thry/finite%20automata.md)
+1. for every variable, find the string needed for it to go to another variable.
+2. if the string is more than 1 character long, chain it through another node
+3. if the variable goes to a terminal symbol, send it to the accept state
+
+#### from a regexp to a language
+1. convert it into an nfa
+2. derive the left/right linear language as needed
