@@ -23,9 +23,3 @@ $L(r_{1}\cdot r_{2})$
 $L(r_{1}^*) = (L(r_1))^*$
 
 ![[regular expressions (regex) 2024-02-16 12.58.24.excalidraw|1000]]
-
-raspberry pi - use those to connect to TVs
-website will take control
-slideshow: 
-use an API to access weather/traffic
-cheaper version / 
