@@ -8,7 +8,7 @@ Combination circuits uses boolean operators to determine output from a set of in
 Procedure: truth table -> CSOP -> optimized -> circuit
 ### Half-Adder
 A typical combinational circuit used to add two binary digits together. Constructing a truth table reveals that: 
-- sum is an **XOR** gate
+- sum is an **XOR** gate1
 - carry is an **AND** gate
 
 | x   | y   | sum | carry |

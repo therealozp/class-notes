@@ -5,11 +5,11 @@
 	
 .text
 main: 
-	# loading arguments with a2, a3, a4
+	# loading arguments with a0, a1, a2
+	la a0, arr
+	lw a1, size
+	# a2 is the thing we want to search here
 	addi a2, x0, -3
-	la a3, arr
-	lw a4, size
-	
 	jal ra search
 	j terminate
 	
@@ -19,8 +19,8 @@ search:
 	sw s4, 4(sp)
 	# store array address
 	# this is a trick the professor used (not sure why)
-	add s3, x0, a3
-	add s4, x0, a4
+	add s3, x0, a0
+	add s4, x0, a1
 	# initialize loop variable
 	add t0, x0, x0
 	# index found ? set the default index to -1

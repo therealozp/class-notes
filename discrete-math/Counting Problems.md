@@ -13,5 +13,5 @@ Let:
 - $C \cap B$ are the numbers divisible by 21: 476
 - $A \cap B \cap C$ are the numbers divisible by 42: 238 numbers. 
 
-Applying the intersection rule [[Probability# Inclusion - Exclusion]] onto these sets, we get the numbers divisible by 2, 3, and 7 is ($A \cup B \cup C$) are 7143 numbers.
+Applying the intersection rule [[discrete-math/Probability/Probability# Inclusion - Exclusion]] onto these sets, we get the numbers divisible by 2, 3, and 7 is ($A \cup B \cup C$) are 7143 numbers.
 

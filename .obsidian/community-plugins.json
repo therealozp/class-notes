@@ -2,11 +2,10 @@
   "calendar",
   "dataview",
   "obsidian-git",
-  "obsidian-style-settings",
   "obsidian-tasks-plugin",
   "templater-obsidian",
   "obsidian-excalidraw-plugin",
   "table-editor-obsidian",
-  "obsidian-minimal-settings",
-  "obsidian-contextual-typography"
+  "obsidian-contextual-typography",
+  "quick-latex"
 ]
