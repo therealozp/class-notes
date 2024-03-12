@@ -25,7 +25,6 @@ any string of consecutive symbols in some $w$ is said to be a sub-string of $w$.
 the star closure of a language $L^{*}$ is $L^{0}\cup L^{1}\cup L^{2} \cdots$ meaning union of the infinite concatenations.
 ### the positive closure
 basically star closure minus $L^0$.
-
 ## examples
 $L_{1}= \set{\lambda, a, ab}$
 $L_{2} = \set{a^{n}b^{n}: n \geq 0}$

@@ -43,7 +43,7 @@ for case modulo 1, if a string is followed by 1, the end result would be 11, so 
 ## irregular languages
 these languages cannot be accepted by any DFA, if it is finite: 
 - $\set{a^{n}b^{n}: n\geq 0}$
-- $\set{w \in {a, b}^{*}}$, $w$ is a palindrome
+- $\set{w \in \set{a, b}^{*}}$, $w$ is a palindrome
 - $\set{w \in {a, b}^{*}: n_{a}(w) = n_{b}(w)}$
 
 > **All finite languages are regular.**
