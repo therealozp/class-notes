@@ -33,3 +33,11 @@ another example we can pick is $L = \set{w \in \set{a, b}^{*}: n_{a}(w) < n_{b}(
 
 > the entire crux of the pumping lemma lies in **picking the right string** $w$.
 
+## many, many more examples
+let $L = \set{ww^{R}: w \in \set{a, b}^{*}}$
+1. opp picks $m$.
+2. we pick $w=a^{m}b^{m}b^{m}a^{m}$. then, it is clear that $w$ is in $L$. 
+3. then, we are forced to decompose $w = xyz \rightarrow y = a^{k}: (1\leq k \leq m)$
+4. then: 
+	- $w_{0}= a^{m-k}b^{m}b^{m}a^{m}$, which is clearly not in $L$.
+
