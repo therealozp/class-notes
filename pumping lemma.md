@@ -41,3 +41,42 @@ let $L = \set{ww^{R}: w \in \set{a, b}^{*}}$
 4. then: 
 	- $w_{0}= a^{m-k}b^{m}b^{m}a^{m}$, which is clearly not in $L$.
 
+splitting into different cases: 
+$L = \set{w \in \set{0, 1}^{*} \text{ such that } |w| \text{ is odd and 1 is the middle character}}$.
+then: 
+1. opp picks $m$. 
+2. we pick $w = 0^{m}10^{m}$. 
+3. decompose: $y = 0^k$.
+4. then, we have 2 cases: 
+	- if $k$ is even, then 1 is not the middle character
+	- if $k$ is odd, then the string length is not odd.
+
+$L = \set{w \in \set{a, b}^{*}: n_{a}(w) = n_{b}(w)}$.
+1. opp picks $m$.
+2. we pick $a^{m}b^{m}$.
+3. decompose: $y = a^{k}: 1 \leq k \leq m$.
+4. then, $w_{0}=a^{m-k}b^{m}$.
+
+proof by complement: 
+$L_{7} = \set{w \in \set{a, b}^{*}: n_{a}(w) \not = n_{b}(w)}$.
+we already proved its complement above is irregular, hence it is also irregular.
+
+fail cases: 
+with the same example of $L_{7}$ above, we consider this: 
+2. we pick $a^{m}b^{m + m}$
+3. decompose $y = a^{k}$. 
+4. then, we define $i = \frac{m}{k}+ 1$. then, $w_{i} = a^{m-k}a^{k(\frac{m}{k}+1)}b^{2m}$.
+**this does not work.** because we have no guarantee that $\frac{m}{k}$ will be an actually integer, we cannot assign this to $i$.
+
+alternatively, consider: 
+2. we pick $a^{m}b^{m + m!}$
+3. decompose $y = a^{k}$. 
+4. then, we define $i = \frac{m!}{k}+ 1$. then, $w_{i} = a^{m-k}a^{k(\frac{m!}{k}+1)}b^{m+m!}$
+**since $m!$** will always be divisible by $k$, this solution is correct.
+
+$L = \set{a^{p}b^{q}: q \text{ is a multiple of } p}$
+2. we pick $w = a^{m}b^{2m}$
+3. decompose $y = a^{k}$
+4. then, suppose that $i = 2m + 1$. then: 
+	- $w_{2m+1} = a^{m-k}a^{k(2m+1)}b^{2m} = a^{2mk+m}b^{2m}$, which is not in $L$.
+
