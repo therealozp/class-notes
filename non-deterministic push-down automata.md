@@ -14,4 +14,7 @@ $P_{1}: \text{NDPA}: Q\rightarrow\set{q_{0}, q_{1}, q_{2}, q_{3}}, \Sigma=\set{a
 - $\sigma(q_{2}, b,1)\rightarrow q_{2},\lambda$
 - $\sigma(q_{2}, \lambda,0)\rightarrow q_{1},\lambda$
 
-
+if $L_1$ and $L_2$ are context-free, then:
+- $L_{1}\cup L_{2}$ are also context-free
+- but $L_{1}\cap L_2$ is NOT context-free.
+- and $\overline L_{1}$ is NOT context-free either.
