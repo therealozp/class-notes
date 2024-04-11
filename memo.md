@@ -15,3 +15,8 @@ It would be unfair for me to ask too much of you when I am the disengaged one, b
 - **Talk to each other:** Encourage diverse perspectives and leverage them to innovate. Our project thrives on collaboration, and every idea is a step towards groundbreaking solutions. Trust me when I say that it is always better to have a fresh set of eyes coming in to solve a problem!
 
 Even when I am gone, remember that leadership and innovation are not confined to my role but are a testament to our collective capabilities. You are incredibly talented individuals, and I have full confidence in your ability to push this project to bigger and greater things.
+
+
+I learned that I can be as relaxed or as crazy as I want to be, as spontaneous and as planned as I see fit. I realize that I am free to do as I wish. 
+
+With this freedom, I often find it hard to relate what I want to do versus what I am supposed to do. What I have been doing is tiring because it is in conflict of what I want to do. Now, I want to be able to convince myself that I do what I like, and like what I do.
