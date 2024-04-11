@@ -1,7 +1,8 @@
 Now that I have officially declared my hiatus for 6 months, I want to leave you with a framework that I believe will guide our project successfully in my absence. I urge you to reflect now, for you will see that the person who has been leading you over the past years has NOT been me, but rather, yourselves. This essence of collaboration that we've fostered should not only continue, but also flourish. Hence, before my departure, this shall be the legacy that I pass on to all of you: a survival guide.
 
 **Your Role(s):**
-By now, you should all be aware that each and everyone of you are able to lead not just yourselves, but everyone else if the need arises. Innovation and leadership are not confined to titles: your actions speak volumes.
+By now, you should all be aware that each and everyone of you are able to lead not just
+yourselves, but everyone else if the need arises. Innovation and leadership are not confined to titles: your actions speak volumes.
 
 With this in mind, I encourage each of you to embrace leadership roles, whether by guiding peers through challenges, innovating solutions, or supporting each other's growth. At the end of the day, this is your support system, and no matter the situation, always consider the possibility that someone else will know something that you don't. Strive to make those around you better as a result of your presence. Be a leader, not a boss.
 
