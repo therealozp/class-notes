@@ -47,7 +47,7 @@ while a left linear grammar is a grammar where the variables always appear to th
 
 knowing this, we can essentially translate these transitions into a dfa.
 ### conversions
-#### from rlg language transitions to a [nfa](automata-thry/finite%20automata.md)
+#### from rlg language transitions to a [nfa](finite%20automata.md)
 1. for every variable, find the string needed for it to go to another variable.
 2. if the string is more than 1 character long, chain it through another node
 3. if the variable goes to a terminal symbol, send it to the accept state
