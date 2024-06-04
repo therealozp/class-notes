@@ -1,0 +1,156 @@
+{
+  "main": {
+    "id": "5e082c279ef3a42f",
+    "type": "split",
+    "children": [
+      {
+        "id": "078a99403e99982a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "37c77ada69cb277d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "regularity/regular expressions (regex).md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3f4bbdc07fe1ce8a",
+    "type": "split",
+    "children": [
+      {
+        "id": "17c029fb5af7a19f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1108f26d5707abe7",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "1037bf89643a7545",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "91b2e08b4530054a",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "dfa473f34ba048b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "1138fdae5dbd0bdb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "26c392af16f745e7",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "regularity/regular expressions (regex).md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3d27f0ff9f2dca69",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "regularity/regular expressions (regex).md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "9c0890af00959ac3",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "ce3c55552fdddd33",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "regularity/regular expressions (regex).md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "1108f26d5707abe7",
+  "lastOpenFiles": [
+    "regularity/grammar.md",
+    "regularity/finite automata.md",
+    "regularity/dfa reduction.md",
+    "irregularity/context-free language.md"
+  ]
+}
