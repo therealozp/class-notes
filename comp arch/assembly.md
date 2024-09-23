@@ -2,7 +2,7 @@
 the basic job of a CPU is to run **a lot of instructions**, which are *primitive operations* that the CPU may execute. different CPUs implement different set of instructions, called the **instruction set architecture** (ISA).
 ### design principles
 in designing an assembly language, there are some principles that they all follow: 
-#### simplicity favors regularity
+	#### simplicity favors regularity
 - regularity makes implementation easier.
 - simplicity enables higher performance at lower cost.
 #### smaller is faster
