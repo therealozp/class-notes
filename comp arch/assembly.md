@@ -55,7 +55,7 @@ func6 - 6b | `immediate` - 6b | `rs1` - 5b | `func3` - 3b | `rd` - 5b | `opcode`
 - `srli` shifts right, filling with 0s, meaning dividing with $2^{i}$
 
 ### conditional operations
-branch to a labeled instruction if a condition is true. otherwise, continue sequentially. branch instructions **is the most complicated instruction** the CPU will have to deal with, with second-most being the `log` operation.
+branch to a labeled instruction if a condition is true. otherwise, continue sequentially. branch instructions **is the most complicated instruction** the CPU will have to deal with, with second-most being the `load` operation.
 
 works by interrupting the flow of the program, calculates the address of the target branch, and push the address to the program counter to run.
 ### loop operations
@@ -71,4 +71,37 @@ loop:
 	beq     x0, x0, loop
 exit:
 ```
+
+## basic blocks 
+a basic block is a sequence of instructions that has:
+- no embedded branches (except at the end)
+- no branch targets (except at the beginning)
+the compiler will identify basic blocks to perform optimization, and this process can be further accelerated by an advanced processor.
+
+## procedure calling (function calls)
+generally, when calling a procedure, we have to go through 7 steps:
+1. place parameters in registers `x10 - x17`
+2. transfer control to procedure
+3. acquire storage for procedure (allocate memory)
+4. perform procedure operations
+5. place result in register for caller
+6. return to place where procedure is originally called (stored in `x1`)
+
+### jump and link
+`jal x1, procedureLabel`: 
+- address of following instruction is stored in `x1`
+- jumps to the target address
+
+uses a 20-bit immediate for larger range.
+
+`imm[20]` 1b | `imm[10:1]` 10b | `imm[11]` 1b | `im[19-12]` 8b | `rd` 5b | `opcode` 7b
+
+for a larger jump, for example, to 32bit addresses: 
+- `lui` to load the first `[31:12]` to a temp register
+- `jalr x0, imm[11:0](temp)` to jump to address
+### jump and link register
+`jalr x0, 0(x1)`
+- similar to `jal`, but jumps to the address `(0 + x1)`
+- uses `x0` as `rd` (`x0` cannot be changed)
+- can also be used for **computed jumps** (for, switch/case statements)
 
