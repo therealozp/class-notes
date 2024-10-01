@@ -3,7 +3,7 @@ the basic job of a CPU is to run **a lot of instructions**, which are *primitive
 ### design principles
 in designing an assembly language, there are some principles that they all follow: 
 	#### simplicity favors regularity
-- regularity makes implementation easier.
+	- regularity makes implementation easier.
 - simplicity enables higher performance at lower cost.
 #### smaller is faster
 - c.f. main memory: millions of locations
