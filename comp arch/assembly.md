@@ -164,7 +164,7 @@ sw      x8, 16(sp)
 ```
 
 then, it can be restored by:
-```
+```asm
 lw      x8, 16(sp)
 lw      x7, 12(sp)
 lw      x6, 8(sp)
