@@ -1,5 +1,9 @@
 ## power trends
-clock rate and power has both been increasing, but we have been working to limit power consumption. 
+clock rate and power has both been increasing, but we have been working to limit power consumption. these two metrics are **correlated**, so they scale together
+
+leakage power became a major issue, and we reached the practical limit for cooling.
+
+**Moore's Law** and **Dennard Scaling**: faster, cheaper, lower-power general-purpose computers each year. 
 
 ## reducing power
 suppose that a new CPU has the below specs. what is the impact on dynamic power?
