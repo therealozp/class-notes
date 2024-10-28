@@ -20,7 +20,7 @@ a measurement of program execution speed based on millions of instructions execu
 however, MIPs does not account for: 
 - differences in ISA
 - differences in instruction complexity
-that is why MIPS is **not the benchmark of performance,** because the complexity of instructions can be very different. instead, use **CPU time (response time)** for comparison of performance.
+that is why MIPS is **not the benchmark of performance,** because the complexity of instructions can be very different. instead, use **CPU time** for comparison of performance.
 $$
 \text{MIPS} = \frac{\text{instruction count}}{\text{execution time} \times 10^6}
 $$
