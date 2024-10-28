@@ -1,7 +1,6 @@
 per the IEEE-754 standard, a floating number will always have 3 parts (in order): the **sign bit**, the **exponent** bits, and the **fraction**.
 - single precision is **32 bits**, overflow/underflow if $>10^{38}, <-10^{38}, 10^{-38} < x < 10^{38}$
 - double precision is **64 bits** $>10^{308}, <-10^{308}, 10^{-308} < x < 10^{308}$
-
 ### why use fp?
 - represent values between ints
 - scaling factor means much greater range of values
@@ -17,7 +16,8 @@ for different number sizes (in bits), the amount of bits reserved for the expone
 - 16 bits: 1 - 5 - 10
 - 32 bits: 1 - 8 - 23
 - 64 bits: 1 - 11 - 52
-
+## hardware
+much more complex than integer adder. because doing it in one clock cycle would take too long and would penalize all instructions, the CPU will choose to make it **several cycles**, which can then be pipelined.
 ## floating point to decimal
 to convert a floating point number to a binary, the following general steps should be followed:
 ### separating binary
@@ -42,9 +42,14 @@ take the sign bit, find the sign, and add it to the number. also noteworthy is t
 ## decimal to floating point
 the reverse operation also has somewhat of a similar pattern:
 ### convert to binary
+split the number and the fraction as you would. normally, and convert them into binary representation. do not worry about the sign for the time being.
 ### establish exponent
+write the number as $x \times {2}^0$.
 ### normalize
+find the first 1, and shift it until we have the form $1.\text{something} \times 2^x$ where $x$ is the number of bits
 ### find mantissa
+the mantissa is however many bits after the decimal point you would require
 ### find exponent bits
+find the final exponent by adding it to the bias.
 ### establish sign bit
 
