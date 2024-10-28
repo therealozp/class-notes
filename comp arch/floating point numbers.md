@@ -1,9 +1,22 @@
 per the IEEE-754 standard, a floating number will always have 3 parts (in order): the **sign bit**, the **exponent** bits, and the **fraction**.
+- single precision is **32 bits**, overflow/underflow if $>10^{38}, <-10^{38}, 10^{-38} < x < 10^{38}$
+- double precision is **64 bits** $>10^{308}, <-10^{308}, 10^{-308} < x < 10^{308}$
 
-for different number sizes (in bits), the amount of bits reserved will differ.
+### why use fp?
+- represent values between ints
+- scaling factor means much greater range of values
+- **however**, much slower than int operations, and lose precision in the process.
+### precision vs. accuracy
+- **precision** is the number of bits used to represent it.
+- **accuracy** is the measure of difference between actual value and its computer rep.
+
+*high precision **allows** for high accuracy, but **does not guarantee it.***
+## representation
+for different number sizes (in bits), the amount of bits reserved for the exponent will differ.
 - 8 bits: 1 - 3 - 4
 - 16 bits: 1 - 5 - 10
 - 32 bits: 1 - 8 - 23
+- 64 bits: 1 - 11 - 52
 
 ## floating point to decimal
 to convert a floating point number to a binary, the following general steps should be followed:
