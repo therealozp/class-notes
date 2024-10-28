@@ -43,7 +43,6 @@ an even **faster multiplier** can be attained when we run multiple adders in par
 - `mulh`: multiply high, gives upper 64 bits of product of **2 signed numbers**. can also be used to *check for 64 bit overflow.*
 - `mulhu`: multiply high, gives upper 64 bits of product of **2 unsigned numbers**
 - `mulhsu`: multiply high, gives upper 64 bits of product of **a signed and unsigned number**
-
 ## division
 the process is very similar to long division. in an operation 6 / 2 = 3, 6 is the dividend, 2 is the divisor, 3 is the quotient.
 - first, check for 0 divisor

@@ -1,11 +1,3 @@
-**application software**: written in high-level language
-**system software**:
-- *compiler* translates HL code to machine code
-- *operating system* services the code
-	- handling IO
-	- managing memory and storage
-	- scheduling tasks and sharing resources
-**hardware**: processor, memory, IO controllers
 comp arch is the **abstraction/implementation** layer, that allows us to:
 - execute information
 - process applications
@@ -29,10 +21,13 @@ $\to$ computers are pervasive
 
 first computer booted at Princeton 1952, design by John von Neumann
 ## the architecture circle
-**application software**: written in high level languages, such as Python, C++, Java, etc.
+**application software**: written in high-level language
 **system software**:
-- the **compiler** translates HL code to machine code
-- **operating system** handles I/O, manages memory and storage, and schedules tasks and resources
+- *compiler* translates HL code to machine code
+- *operating system* services the code
+	- handling IO
+	- managing memory and storage
+	- scheduling tasks and sharing resources
 **hardware**: processor, memory, IO controllers
 ## processor
 **datapath**: performs operations on data

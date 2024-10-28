@@ -1,5 +1,5 @@
 ## abstractions (layers of representation/interpretation)
-helps us deal with complexity by abstracting away lower details. 
+helps us deal with complexity by abstracting away lower-level details. 
 #### instruction set architecture
 - the hardware/software interface. 
 - includes critical components for a machine to work correctly, such as **instructions** and **IO devices**.
@@ -15,7 +15,7 @@ the power of computer chips double every year.
 - L1, L2, L3 cache
 - RAM memory
 - non-volatile, flash-based memory (SSD)
-- virtual memory - slowest, highest capacity
+- virtual memory in hard disks (HDD) - slowest, highest capacity
 ## parallelism
 ability to execute multiple instructions at the same time. includes operations such as `fork()` to divide threads, and `join()` to merge them and post-process.
 ## performance measurement and improvement

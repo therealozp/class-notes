@@ -74,15 +74,17 @@ different immediate formats for store instructions:
 - the `immediate` indicates how many bits to shift.
 - `slli` shifts left logical, filling empty space with 0s, meaning multiplication with $2^{i}$
 - `srli` shifts right, filling with 0s, meaning dividing with $2^{i}$
-
 ### b-type: conditional operations
+
+`imm[12,10:5]` - 7b | `rs2` - 5b | `rs1` - 5b | `func3` - 3b | `imm[4:1,11]` - 5b | `opcode` - 7b
+
 branch to a labeled instruction if a condition is true. otherwise, continue sequentially. branch instructions **is the most complicated instruction** the CPU will have to deal with, with second-most being the `load` operation.
 
 works by interrupting the flow of the program, calculates the address of the target branch, and push the address to the program counter to run.
 ### loop operations
 `while (save[i] == k) i += 1;` is compiled to:
 
-```risc
+```asm
 loop:
 	slli    x10, x22, 3
 	add     x10, x10, x25
