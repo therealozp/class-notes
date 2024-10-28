@@ -1,3 +1,8 @@
+## what is performance?
+- **algorithms**: determines number of operations executed
+- **programming languages, compiler, architecture**: determines number machine instructions executed/operation
+- **processor and memory system**: determines how fast instructions are executed
+- **IO system (including OS)**: determines how fast IO operations are executed.
 ### response time and throughput
 **response time** (or execution time): how long it takes for a computer to **perform a task**, such as disk access, memory access, IO activities, OS overhead, CPU execution time, etc.
 
