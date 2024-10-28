@@ -9,7 +9,7 @@ helps us deal with complexity by abstracting away lower-level details.
 
 high level language -> assembly -> machine language -> hardware architecture -> architecture implementation
 ## Moore's law
-the power of computer chips double every year.
+the power of computer chips (density of transistors) double every year.
 ## principle of **locality**/memory hierarchy
 - processor register - super fast, tiny capacity
 - L1, L2, L3 cache
