@@ -36,6 +36,8 @@ bit shift. more formally, it is multiplying the **mantissa** by $2^\text{exponen
 - negative: shift right `|exponent|` bits.
 ### conversion (with the table method)
 basically calculate the value normally, how you convert a binary number to a decimal number (binary conversion).
+
+table method needs 4 rows: exponent, place values (decimal representation), bits, value
 ### sign & final value
 take the sign bit, find the sign, and add it to the number. also noteworthy is the sign bit will **never be used in any calculation**, except for this step.
 
