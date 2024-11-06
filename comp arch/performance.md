@@ -1,3 +1,8 @@
+## what is performance?
+- **algorithms**: determines number of operations executed
+- **programming languages, compiler, architecture**: determines number machine instructions executed/operation
+- **processor and memory system**: determines how fast instructions are executed
+- **IO system (including OS)**: determines how fast IO operations are executed.
 ### response time and throughput
 **response time** (or execution time): how long it takes for a computer to **perform a task**, such as disk access, memory access, IO activities, OS overhead, CPU execution time, etc.
 
@@ -7,15 +12,15 @@
 $$\text{performance} = \frac{1}{\text{execution time}}$$
 when we say *X is N times faster than y*, then:
 - performance of X is 5 times **better** than Y
-- execution time of Y is 5 times **longer** than X
+- execution time of X is 5 times **shorter** than Y
 
 ### million instructions per second
-a measurement of program execution speed based on millions of instructions executed. **faster computer = bigger MIPS**
+a measurement of program execution speed based on millions of instructions executed. generally **faster computer = bigger MIPS**
 
 however, MIPs does not account for: 
 - differences in ISA
 - differences in instruction complexity
-
+that is why MIPS is **not the benchmark of performance,** because the complexity of instructions can be very different. instead, use **CPU time** for comparison of performance.
 $$
 \text{MIPS} = \frac{\text{instruction count}}{\text{execution time} \times 10^6}
 $$
@@ -36,7 +41,10 @@ $$
 \text{CPU time} & = \text{CPU clock cycles} \times \text{clock cycle time} \\ &= \frac{\text{CPU clock cycles}}{\text{clock rate}}
 \end{align}
 $$
-
+performance can be improved by: 
+- reducing number of clock cycles
+- increasing clock rate
+- trade off clock rate and cycle count
 ### instruction count and CPI (cycles per instruction)
 > lower is better
 $$\text{clock cycles} = \text{instruction count} \times \text{cycles per instruction}$$

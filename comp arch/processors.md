@@ -1,3 +1,12 @@
+## semicon manufacturing
+- **die/chip**: an individual rectangular sections cut from wafers
+- **yield**: the *percentage of good dies* from **total number of dies on wafer**
+- **wafer**: slice from the silicon ingot
+- **semiconductor**: substance that doesn't conduct electricity well.
+- **transistor**: on/off switch controlled by electrical signal
+- **bonding**: process where good dies are connected to IO pins of package.
+
+silicon ingots -> blank wafers -> patterned wafers -> tested wafers -> dies -> bonding to package 
 ## multiprocessors
 could be **multicore multiprocessors**: more than one processor per chip
 requires explicitly parallel programming
@@ -7,6 +16,7 @@ requires explicitly parallel programming
 	- load balancing
 	- optimizing communication & synchronization
 
+although circular silicon ingot causes several wasted dice, it allows for **uniform thickness**, less wasted material, and makes it much easier to cut and stack.
 ## integrated circuit cost
 $$\text{cost per die} = \frac{\text{cost per wafer}}{\text{dies per wafer} \times\text{yield}}$$
 $$
