@@ -17,7 +17,7 @@ the flow for arithmetic operations:
 - perform operations
 - store them back to memory (if needed)
 
-addresses are little-endian, and is byte-addresible.
+addresses are little-endian (MSB goes last), and is byte-addressible.
 ## assembly language
 the basic job of a CPU is to run **a lot of instructions**, which are *primitive operations* that the CPU may execute. different CPUs implement different set of instructions, called the **instruction set architecture** (ISA).
 ### design principles
@@ -26,9 +26,10 @@ in designing an assembly language, there are some principles that they all follo
 - regularity makes implementation easier.
 - simplicity enables higher performance at lower cost.
 #### smaller is faster
+- only 32 registers in the CPU for RISC-V
 - c.f. main memory: millions of locations
 #### make the common case fast
-- small constants are very common, so the immediate operands avoid executing another load instructions.
+- small constants are very common, so the immediate operands avoid executing other load instructions.
 #### good design demands good compromises
 different formats makes decoding difficult, but they allow uniform 32-bit instructions. the design of risc-v aims to make formats as similar as possible.
 ## instructions
@@ -99,6 +100,7 @@ exit:
 a basic block is a sequence of instructions that has:
 - no embedded branches (except at the end)
 - no branch targets (except at the beginning)
+
 the compiler will identify basic blocks to perform optimization, and this process can be further accelerated by an advanced processor.
 
 ## procedure calling (function calls)

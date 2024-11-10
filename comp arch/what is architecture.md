@@ -9,6 +9,7 @@ architecture provides feedback to guide application and tech research directions
 	- computers in automobiles
 	- cellphones
 	- search engine, www
+
 $\to$ computers are pervasive
 ## classes of computers
 - **personal computers**: general purpose, variety of software. subject to cost/performance tradeoff
@@ -28,6 +29,7 @@ first computer booted at Princeton 1952, design by John von Neumann
 	- handling IO
 	- managing memory and storage
 	- scheduling tasks and sharing resources
+
 **hardware**: processor, memory, IO controllers
 ## processor
 **datapath**: performs operations on data
