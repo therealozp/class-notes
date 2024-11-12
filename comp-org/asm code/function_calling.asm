@@ -1,103 +1,29 @@
-.data
-		a: .word 8, 1, 6, 5, 3, 4, 2, 7
-		n: .word 8
+To craft a message that balances both your gratitude for Felipe's support and a request for a referral, while avoiding the impression that you're only reaching out for personal gain, you can follow these steps. Here's how you can structure the conversation:
 
-.text
-	la a0, a
-	lw a1, n
-	
-j bubblesort_sp
-swap: 
-	lw t0, 0(a0)
-	lw t1, 0(a1)
-	sw t0, 0(a1)
-	sw t1, 0(a0)
-	jr ra
+### Initial Reach-Out:
+1. **Greeting and Check-in:** Start by catching up briefly and expressing genuine interest in Felipe's current life or work.
+   
+   **Message:**
+   > *Hey Felipe! It's been a while, hope you're doing well! How have things been at Microsoft lately?*
 
-bubblesort: 
-	add s3, a0, x0 # store array address
-	addi s4, a1, -1 # store array length, zero indexed (n - 1)
-	add s0, x0, x0 # initialize first loop variable i
-	
-	for1: bge s0, s4, exit1
-		add s5, x0, x0 # setup boolean variable swapped to false
-		add s1, x0, x0 # initialize second loop variable j
-		sub t4, s4, s0 # initialize second loop limit n - 1 - i 
-		
-		for2: bge s1, t4, exit2
-			# address j in t5
-			slli t5, s1, 2
-			# a0 is already added to s3
-			add t5, s3, t5
-			lw t2, 0(t5)
-			lw t3, 4(t5)
-			
-			# if arr[j+1) >= arr[j]
-			if: bge t3, t2, endif
-				# preparing arguments
-				add a0, t5, x0
-				addi a1, t5, 4
-				# boolean = 1
-				addi s5, s5, 1
-				# jr ra swap
-				jal ra, swap				
-			endif: 
-				addi s1, s1, 1
-				j for2
-		exit2: addi s1, s1, 1
-		
-		# break statement
-		if_outer: beq s5, x0, exit1
-		addi s0, s0, 1
-		j for1
-	exit1: addi s0, s0, 1
-	
-bubblesort_sp: 
-	add s3, a0, x0 # store array address
-	addi s4, a1, -1 # store array length, zero indexed (n - 1)
-	add s0, x0, x0 # initialize first loop variable i
-	
-	for1_sp: bge s0, s4, exit1_sp
-		add s5, x0, x0 # setup boolean variable swapped to false
-		add s1, x0, x0 # initialize second loop variable j
-		sub t0, s4, s0 # initialize second loop limit n - 1 - i 
-		
-		for2_sp: bge s1, t0, exit2_sp
-			# address j in t0
-			slli t1, s1, 2
-			# a0 is already added to s3
-			add t1, s3, t1
-			lw t2, 0(t1)
-			lw t3, 4(t1)
-			
-			# if arr[j+1) >= arr[j]
-			if_sp: bge t3, t2, endif_sp
-				# preparing arguments
-				add a0, t1, x0
-				addi a1, t1, 4
-				# boolean = 1
-				addi s5, s5, 1
-				#storing t1 and t0
-				addi sp, sp, -8 
-				sw t0, 0(sp)
-				sw t1, 4(sp)
-				# jr ra swap
-				jal ra, swap
-				
-				# reload t0, t1
-				lw t0, 0(sp)
-				lw t1, 4(sp)
-				addi sp, sp, 8
-								
-			endif_sp: 
-				addi s1, s1, 1
-				j for2_sp
-		exit2_sp: addi s1, s1, 1
-		
-		# break statement
-		if_outer_sp: beq s5, x0, exit1_sp
-		addi s0, s0, 1
-		j for1_sp
-	exit1_sp: addi s0, s0, 1	
+2. **Mutual Interests/Connection:** Refer back to something you discussed in the past (like ShellHacks or your journey in Leetcode) to maintain a friendly, conversational tone.
 
-	
+   **Message:**
+   > *Since last year, I've taken up on your advice and have been grinding away at Leetcode and just finished my 355th! Thanks to you, I also joined my school's ICPC team and made it to the Regionals in Div 2, but I'm shooting for Div 1 this year too!*
+
+3. **Progress Update:** Share your progress, such as the number of problems solved, and perhaps mention how ICPC was a valuable learning experience. This shows your dedication and growth.
+
+   **Message:**
+   > *I was doing an AI internship over the summer, and it was super cool to experience what the SWE culture is all about first hand. I've also managed to do a bunch more side projects to start my vengeance arc at Shellhacks this year as well :D*
+
+4. **Referral Request:** Transition into the request for a referral, positioning it as an invitation for feedback or validation rather than solely asking for a favor. This way, it feels collaborative rather than transactional.
+
+   **Message:**
+   > *I’ve been doing my research on roles at Microsoft, and I think I’m finally at a point where I could take a shot at it. I’d love to get your thoughts on my progress so far and, if you think it’s appropriate, maybe even a referral? I can send over my resume and project portfolio for you to check out first, if that helps!*
+
+5. **Closing:** End with an open-ended, friendly note.
+
+   **Message:**
+   > *No pressure at all, I really appreciate any advice or help you can offer. And thank you again for all your support along the way!*
+
+This approach shows that you value his input and are genuinely interested in feedback. It keeps the conversation collaborative and avoids the impression that you're just asking for something.
