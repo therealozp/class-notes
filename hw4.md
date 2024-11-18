@@ -190,11 +190,8 @@ function mostFrequentKeyword(document):
     left_freq = mostFrequentKeyword(document[:mid])
     right_freq = mostFrequentKeyword(document[mid:])
     
-    # Merge step: Combine the keyword frequencies from left and right
     combined_freq = mergeFrequencies(left_freq, right_freq)
-    
-    # Identify the most frequent keyword from combined frequencies
-    most_frequent = findMostFrequentKeyword(combined_freq)
+    most_frequent = getMostFrequent(combined_freq)
     return most_frequent
 
 function countKeywords(section):
@@ -215,7 +212,7 @@ function mergeFrequencies(left_freq, right_freq):
             combined_freq[keyword] = count
     return combined_freq
 
-function findMostFrequentKeyword(frequency_dict):
+function getMostFrequent(frequency_dict):
     max_keyword = None
     max_count = 0
     for keyword, count in frequency_dict.items():
@@ -228,4 +225,58 @@ function findMostFrequentKeyword(frequency_dict):
 b.
 this assumes a hashmap implementation.
 - we are dividing the input into 2 different subarrays, and recurring over these 2 sub-inputs.
-- for each sub-input, the total processing step per-output 
+- the time complexity for total cost per output is:
+	- the `mergeFrequencies` function and `getMostFrequent` will only run as much as the number of keys. So, in total, the time complexity is $O(k)$, where $k$ is the number of unique keys.
+	- in the worst case where there is $n$ unique keys, the time complexity is $O(n)$.
+- so, for the same recurrence relation we defined above:
+$$T(n) = 2T\left( \frac{n}{2} \right)+O(n)$$
+we get the final time complexity of $O(n\log n)$.
+
+when it is a binary tree, instead of taking $O(1)$ to retrieve and insert keys on the average case, it would take $O(\log n)$, especially for a balanced binary tree. so, the merging step will now take $O(n\log n)$ for each step, making for a total TC of $O(n\log^{2}{n})$.
+
+if we are considering a binary tree, then the worst case will be when the tree mirrors a linked list. in that case, the worst case time complexity for each key insertion is $O(n)$, and the merging step will be take $O(n^{2})$. at this point, the merge step completely dominates the recurrence relation, and the total TC becomes $O(n^{2})$.
+
+c.
+dividing into 2...
+dividing into 2...
+dividing into 2...
+base case reached: `['apple', 'banana', 'apple']`
+base case reached: `['banana', 'apple', 'orange']`
+	- merged frequencies at this step: `{'apple': 3, 'banana': 2, 'orange': 1}`
+	- most frequent keyword at this step: **apple**
+iteration done
+
+dividing into 2...
+base case reached: `['orange', 'apple', 'orange']`
+base case reached: `['banana', 'orange', 'orange']`
+	- merged frequencies at this step: `{'orange': 4, 'apple': 1, 'banana': 1}`
+	- most frequent keyword at this step: **orange**
+iteration done
+
+- merged frequencies at this step: `{'apple': 4, 'banana': 3, 'orange': 5}`
+- most frequent keyword at this step: **orange**
+iteration done
+
+dividing into 2...
+dividing into 2...
+base case reached: `['apple', 'apple', 'banana']`
+base case reached: `['banana', 'banana', 'apple']`
+	- merged frequencies at this step: `{'apple': 3, 'banana': 3}`
+	- most frequent keyword at this step: **apple**
+iteration done
+
+dividing into 2...
+base case reached: `['orange', 'orange', 'apple']`
+base case reached: `['apple', 'banana', 'orange']`
+	- merged frequencies at this step: `{'orange': 3, 'apple': 2, 'banana': 1}`
+	- most frequent keyword at this step: **orange**
+iteration done
+
+-  merged frequencies at this step: `{'apple': 5, 'banana': 4, 'orange': 3}`
+- most frequent keyword at this step: **apple**
+iteration done
+
+- merged frequencies at this step: `{'apple': 9, 'banana': 7, 'orange': 8}`
+- most frequent keyword at this step: **apple**
+iteration done
+
