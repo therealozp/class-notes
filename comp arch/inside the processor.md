@@ -32,12 +32,12 @@ to fetch instructions or read/write words, the memories need to be 32-bits wide.
 ### control
 sends out the necessary control lines inside the datapath indicating which components to fire on different types of instructions. 
 
-- **Branch**: determines whether a branch is to be taken.
-- **RegWrite**: enable writing to a register file.
-- **MemToReg**: controls whether data is written back **to the register file**.
-- **MemWrite**: enables writing to the data memory.
-- **ALUSrc**: when `0`, the second operand is provided inside the register `rs2`. when `1`, the second operand comes from the immediate itself.
-- **ALUOp**: specifies the operation the ALU should perform.
+- **`Branch`**: determines whether a branch is to be taken.
+- **`RegWrite`**: enable writing to a register file.
+- **`MemToReg`**: controls whether data is written back **to the register file**.
+- **`MemWrite`**: enables writing to the data memory.
+- **`ALUSrc`**: when `0`, the second operand is provided inside the register `rs2`. when `1`, `the` second operand comes from the immediate itself.
+- **`ALUOp`**: specifies the operation the ALU should perform.
 
 | instruction / control lines active | Branch | MemRead | MemToReg   | ALUOp | MemWrite | ALUSrc | RegWrite |
 | ---------------------------------- | ------ | ------- | ---------- | ----- | -------- | ------ | -------- |
