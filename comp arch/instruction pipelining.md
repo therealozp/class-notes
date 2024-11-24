@@ -26,7 +26,7 @@ add: 1-2-3-5
 store: 1-2-3-4
 load: 1-2-3-4-5
 ## hazards
-pipelining is also very much subject to hazards.
+inconveniences that slow the processor down, because of interdependency of results.
 ### structural hazards
 when a required resource is busy, and will be needed in multiple different stages. in a pipeline with a single memory: 
 - `load/store` instructions require access to data memory
@@ -46,11 +46,11 @@ first, we need to establish some common conventions on how processes are represe
 - on the other hand, shading on the **left half** means that the **writing** operation is conducted.
 - if neither is conducted in the operation (such as the MEM stage during the `add` instruction), the background is **blank**.
 
-> right read, left write
+> **right read left write**
 ### forwarding/bypassing
 consider the following instructions:
 
-```asm
+```
 add x1, x2, x3
 sub x4, x1, x5
 ```
@@ -59,12 +59,13 @@ here, `x1` is used immediately as a source reg. after the `add` instruction. thi
 - does not wait until register file is written
 - extra connections in the datapath is required
 
-### load-use data hazards
+more forwarding conditions [here](forwarding%20conditions)
+#### load-use data hazards
 the `load` instruction takes the full 5 stages to finish. however, unlike other r-type instructions where results are available immediately after the EX stage, **load has to wait until MEM is accessed**. 
 
 so, we cannot directly forward the result from EX to the ID stage of the next instruction. instead, we have to squeeze in another `nop` instructions to shift it forward one cycle, in order to save time down the line.
 
-```asm
+```
 ld x1, 0(x2)
 sub x4, x1, x5
 ```

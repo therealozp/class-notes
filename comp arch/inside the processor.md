@@ -30,7 +30,13 @@ another 4 bits is used for the ALUControl, which maps the intended function to i
 ### memories
 to fetch instructions or read/write words, the memories need to be 32-bits wide.
 ### control
-sends out the necessary control lines inside the datapath indicating which components to fire on different types of instructions. 
+sends out the necessary control signals inside the datapath indicating which components to fire on different types of instructions. 
+
+a signal is **asserted** when its logical state is true, and **de-asserted** when it is false/unknown.
+
+behavior with the 1-bit control MUX:
+- when the selection bit is set (1), the MUX selects the input corresponding to 1.
+- otherwise, it will select the data line coming into 0.
 
 - **`Branch`**: determines whether a branch is to be taken.
 - **`RegWrite`**: enable writing to a register file.
@@ -61,3 +67,7 @@ sends out the necessary control lines inside the datapath indicating which compo
 	- sign-extend the **displacement**, or how far an instruction is from the target instruction.
 	- shifts left 1 place to account for halfword displacement
 	- adds to the PC value
+
+the `PCSrc` signal is the one that determines whether the control flow branches or not. this signal is controlled by an AND gate, and:
+- will only be set if the `Branch` signal and the `ALUZero` are both set (e.g. the condition satisfies). otherwise, it is zero.
+- control sets `Branch` only during a `beq`, otherwise, `PCSrc` is 0.
