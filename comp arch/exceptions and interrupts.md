@@ -59,7 +59,13 @@ examples:
 - speculate on load, and roll back if location is updated
 
 the compiler may also reorder instructions:
-- e.g. move loads before branch
+- e.g. move loads before branch: although a load-use data hazard is created, it removes dependencies between instructions.
 - include fix-up instructions to recover from incorrect guess
 
 hardware can still look-ahead for instructions to execute, and buffers the results until they are actually needed; or flushes the buffers on an incorrect speculation.
+
+### scheduling static multiple issues
+compiler must remove some/all hazards
+- reorder instructions into issue packets
+- no dependencies with a packet
+- possibly some dependencies within each packet
