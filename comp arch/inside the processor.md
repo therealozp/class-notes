@@ -47,10 +47,10 @@ behavior with the 1-bit control MUX:
 
 | instruction / control lines active | Branch | MemRead | MemToReg   | ALUOp | MemWrite | ALUSrc | RegWrite |
 | ---------------------------------- | ------ | ------- | ---------- | ----- | -------- | ------ | -------- |
-| r-type instructions                | 0      | 0       | 0          | 10    | 0        | 1      | 1        |
-| load                               | 0      | 1       | 1          | 00    | 0        | 0      | 1        |
+| r-type instructions                | 0      | 0       | 0          | 10    | 0        | 0      | 1        |
+| load                               | 0      | 1       | 1          | 00    | 0        | 1      | 1        |
 | store                              | 0      | 1       | irrelevant | 00    | 1        | 1      | 0        |
-| branch                             | 1      | 0       | 0          | 01    | 0        | 0      | 0        |
+| branch                             | 1      | 0       | 0          | 01    | 0        | 1      | 0        |
 ### r-type
 - reads two register operands
 - performs an arithmetic or a logical operation
