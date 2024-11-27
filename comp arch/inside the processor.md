@@ -11,8 +11,8 @@ every execution of the instruction generally includes 3 different parts:
 	- use the ALU to perform arithmetic, calculate addresses for `load/store`, branch comparisons, etc.
 	- accesses memory for `load/store`
 	- advance program counter
-## datapath
-the first-cut datapath does instruction in one clock cycle. so, each element **can only do one function at a time**, and separation of data mem. versus instruction mem. is needed.
+## data path
+the first-cut data path does instruction in one clock cycle. so, each element **can only do one function at a time**, and separation of data mem. versus instruction mem. is needed.
 ### registers and ALU
 the register file stores **32-bit** values. each register is 5 bits long, and 2 registers can be read at a time. 
 
@@ -42,7 +42,7 @@ behavior with the 1-bit control MUX:
 - **`RegWrite`**: enable writing to a register file.
 - **`MemToReg`**: controls whether data is written back **to the register file**.
 - **`MemWrite`**: enables writing to the data memory.
-- **`ALUSrc`**: when `0`, the second operand is provided inside the register `rs2`. when `1`, `the` second operand comes from the immediate itself.
+- **`ALUSrc`**: when `0`, the second operand is provided inside the register `rs2`. when `1`, the second operand comes from the immediate itself.
 - **`ALUOp`**: specifies the operation the ALU should perform.
 
 | instruction / control lines active | Branch | MemRead | MemToReg   | ALUOp | MemWrite | ALUSrc | RegWrite |
