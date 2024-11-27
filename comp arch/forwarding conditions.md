@@ -27,18 +27,18 @@ here, the procedure of instruction 1 needs to wait for instruction 2, and instru
 ```cpp
 if (MEM/WB.RegWrite
 and (MEM/WB.rd == 0)
-and not (EX/MEM.RegWrite and (EX/MEM.rd ≠ 0) and (EX/MEM.rd == ID/EX.rs1))
-and (MEM/WB.rd = ID/EX.rs1))
+and not (EX/MEM.RegWrite and (EX/MEM.rd == 0) and (EX/MEM.rd == ID/EX.rs1))
+and (MEM/WB.rd == ID/EX.rs1))
     ForwardA = 01
 ```
 
 1. `MEM/WB.RegWrite and (MEM/WB.rd != 0)`:
 ensures that the instruction in the MEM/WB stage is writing to a non-`x0` register. writing to `x0` has no effect, so forwarding is unnecessary.
 
-2. `not(EX/MEM.RegWrite and (EX/MEM.rd ≠ 0) and (EX/MEM.rd ≠ ID/EX.rs1))`:
+2. `not(EX/MEM.RegWrite and (EX/MEM.rd == 0) and (EX/MEM.rd == ID/EX.rs1))`:
 checks whether there is a conflicting instruction EX/MEM that also writes to a register, specifically:
 - `EX/MEM.RegWrite and (EX/MEM.rd != 0)`: The instruction in the EX/MEM stage is writing to a non-`x0` register.
-- `(EX/MEM.rd != ID/EX.rs1)`: `rd` of the instruction in the EX/MEM stage does **not** match the source register `rs1` of the instruction in the ID/EX stage.
+- `(EX/MEM.rd == ID/EX.rs1)`: `rd` of the instruction in the EX/MEM stage **is the same as** the source register `rs1` of the instruction in the ID/EX stage.
 
 if all these conditions are true, the forwarding from the MEM/WB stage is disabled, ensuring the value from the EX/MEM stage is used instead.
 
@@ -47,6 +47,7 @@ if the register being written to in the MEM/WB stage matches the source register
 
 on a MEM hazard, the `Forward` flag is set to 01.
 
+*if the grandparent's `rd` (loaded in MEM/WB) is the same as the parent's `rd` (loaded in EX/MEM) is also the same as the current instruction's `rd` (loaded in ID/EX), we disable MEM forwarding.*
 ### load-use hazard
 checked when the instruction is being decoded in the ID stage. the ALU operand register numbers are accessible with `IF/ID.rs1` and `IF/ID.rs2`. 
 
