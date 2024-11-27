@@ -26,8 +26,8 @@ here, the procedure of instruction 1 needs to wait for instruction 2, and instru
 
 ```cpp
 if (MEM/WB.RegWrite
-and (MEM/WB.rd ≠ 0)
-and not(EX/MEM.RegWrite and (EX/MEM.rd ≠ 0) and (EX/MEM.rd ≠ ID/EX.rs1))
+and (MEM/WB.rd == 0)
+and not (EX/MEM.RegWrite and (EX/MEM.rd ≠ 0) and (EX/MEM.rd == ID/EX.rs1))
 and (MEM/WB.rd = ID/EX.rs1))
     ForwardA = 01
 ```
