@@ -2,7 +2,7 @@ both these terms are used to describe "unexpected" events, requiring a change in
 
 an **exception** arises within the CPU, and an unscheduled event to disrupt program execution used to detect overflow.
 
-an **interrupt** is an exception that comes from **outside** of the professor.
+an **interrupt** is an exception that comes from **outside** of the processor.
 
 | event                               | from where ? | terminology         |
 | ----------------------------------- | ------------ | ------------------- |

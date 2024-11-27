@@ -5,6 +5,8 @@ in pipelining, there are different stages that operates on different instruction
 - but still does not do anything for latency (time from start to finish) per instruction
 - the potential speedup is the number of stages
 
+**latency** is the time from start to finish for a given task, while **throughput** is the number of tasks completed in a given unit time.
+
 however, due to the characteristics of instruction pipelining:
 - the unbalanced lengths of pipe stages reduces speedup
 - "filling" the pipeline and "draining" it (such as, on branch instructions) also reduces speedup
