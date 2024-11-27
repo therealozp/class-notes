@@ -97,7 +97,7 @@ longer pipelines do not have this privilege of early determination of branch out
 instead, we opt for **branch prediction**, and only stalls if the prediction turns out to be wrong. in the pipeline, we are able to predict untaken branches, and fetch the instruction immediately after branch without any stalls.
 
 **static branch prediction**:
-- based on typical branch behavior. for example, in loops and `if` statements, the backwards branch predicted to be taken, and forward to not be taken.
+- based on typical branch behavior. for example, in loops: the backwards branch predicted to be taken, and in `if-else` statements: forward to not be taken.
 
 **dynamic branch prediction**:
 - hardware records actual branch behavior or history
