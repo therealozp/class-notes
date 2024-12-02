@@ -249,3 +249,6 @@ some notes:
 ![[Pasted image 20241201224247.png]]![[Pasted image 20241201224402.png]]
 ![[Pasted image 20241201224416.png]]
 ![[Pasted image 20241201224424.png]]
+
+
+![[Pasted image 20241202003112.png]]
