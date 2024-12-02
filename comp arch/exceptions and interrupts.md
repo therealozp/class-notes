@@ -46,7 +46,7 @@ a multiple issue is a scheme where multiple instructions are launched (or issued
 	- CPU examines the instruction stream and chooses instructions to issue
 	- compiler helps by reordering instructions
 	- CPU resolves hazards **at runtime**
-	- 
+
 ## speculation
 compiler or processor guessing the outcome to remove it as a dependency in executing other instructions. very common in multiple-issue processors.
 
