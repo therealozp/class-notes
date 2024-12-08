@@ -437,4 +437,4 @@ although the first clause is correct, **use case diagrams do not provide a good 
 - **extends**: specializes the behavior of another use case, **used to functionality on an existing use case**. can also be thought as representing an option.
 - **inherits**: also known as **generalization**, where a use case implements the behavior described by another higher-level abstract UC.
 
-3. 
+3. UCDs provide a high-level picture of the system. they present good features to represent flow (sequence of actions), but also dependencies in system, 
