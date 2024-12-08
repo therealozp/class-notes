@@ -432,9 +432,162 @@ although the first clause is correct, **use case diagrams do not provide a good 
 
 ## chapter 6
 1. how are UCDs related to MOPS, MOSS, MOAS?
+
 2. there are three specific relationships in between two use cases in a diagram. what are they? if you were to add functionality to an existing use case, which relationship to use, and how to draw?
 - **includes**: when part of a behavior is likely to be reused, we can factor out that common behavior as an independent use case.
 - **extends**: specializes the behavior of another use case, **used to functionality on an existing use case**. can also be thought as representing an option.
 - **inherits**: also known as **generalization**, where a use case implements the behavior described by another higher-level abstract UC.
 
-3. UCDs provide a high-level picture of the system. they present good features to represent flow (sequence of actions), but also dependencies in system, 
+3. UCDs provide a high-level picture of the system. they present good features to represent flow (sequence of actions), but also dependencies in system. fact or cap?
+**cap**. while it does provide a high-level overview of the system, UCDs do NOT show any flows or dependencies within a system.
+
+## chapter 7
+activity diagrams are meant to show any flow or process within the system. so, they are able to model:
+- business process/workflows **within the org** to describe how business functions are carried out
+- flow within use case by creating visual map for that use case
+- **dependencies between use cases** by using activity notation (but better represented by IOD)
+
+1. process modelling using activity diagrams can model processes documented within use cases as well as processes comprising many use cases. fact or cap?
+**fact**. they are able to model processes within a use case but also processes spanning multiple.
+
+2. BPMN is owned by OMG and is part of UML. fact or cap?
+**cap**. it is owned by OMG, but it is NOT a part of UML.
+
+3. IOD is conceptually similar to an AD, but it models interactions at a higher level compared to AD. fact or cap?
+**fact**. both are used to model flow and processes, but IOD operates as a higher level as it focuses on interactions between objects and refs to other UCs rather than detailed activity flow.
+
+4. activity diagrams are capable of modelling dependencies **between use cases** by using the activity notation to represent use cases. 
+**fact**. they are able to show use cases as an activity and model dependencies between them.
+
+5. how are start and stop activities represented in ADs?
+![[Pasted image 20241208014054.png]]
+
+stop activities can be multiple, and it is optional. there must be a start activity.
+
+6. what do partitions (swimlanes) do?
+they indicate lanes of which activities are performed by actors. the actor that performs the activities is shown as a label on top of the swimlane.
+
+7. how to represent sync points?
+![[Pasted image 20241208014258.png]]
+
+sync points indicate the start/stop of parallel activities, which are activities that don't depend on each other.
+
+8. ADs can show multiple flows that occur simultaneously within a system. fact or cap?
+**fact**. parallelism can be shown by means of a fork-join.
+
+9. ADs can model flow within a use case or a number of use cases. fact or cap?
+**fact**. they are able to model everything. they complement UC documentation by showing a visual representation of the *internals*.
+
+10. how do you represent if-then-else interactions?
+with decision points. like this:
+
+![[Pasted image 20241208014753.png]]
+
+11. unlike UCDs, ADs do not show full system requirements at a glance. so, they are not ideal for organizing and managing requirements. fact or cap?
+**fact.** activity diagrams do not give a complete picture of a system when they are used to model use case behavior. so, they do not show the full requirements of a system at a glance.
+
+12. because ADs do not display time, they are not dynamic. fact or cap?
+**fact.** modelers are prone to assume that the activity flow within an activity diagram includes a timeline; however, because activity diagrams do not display time, they are not considered 
+dynamic.
+
+13. what is the reference notation in an IOD used for?
+to provide reference to another use case or sequence diagram.
+
+14. can IODs show if-then-else relationship between use cases?
+yes.
+
+15. is having a fork but not a join an error?
+duh. all forks should have a join, and all joins need a fork.
+
+## chapter 8
+1. the ------- of an object is based on the current (usually dynamic) values of its attributes.
+the *state* of an object is based on the current (usually dynamic) values of its attributes.
+
+2. classes of a class diagram can be discovered by use case analysis and design-level sequence diagrams. fact or cap?
+**fact**. inspecting the UCD is a starting point for identifying business entities in the problem space. classes can also be discovered by creating and analyzing design-level sequence diagrams by stepping through the execution of the sequence.
+
+3. proper and plural nouns are both inappropriate in a class diagram. fact or cap?
+**fact**. proper nouns usually identifies objects, and plural nouns is just plain wrong. they all have to be common, singular nouns.
+
+4. classes in a diagram should contain three compartments. what are they?
+- **name**: usually a singular, common noun.
+- **attributes**: a list of attributes representing characteristics of a class. they also have their own stereotypes and visibilities.
+- **operations**: using analysis, these operations also represent the behavior of class.
+
+5. how do you represent attributes and operations visibility of classes?
+![[Pasted image 20241208020243.png]]
+
+6. keeping attributes private and operations public ensures that attributes cannot be changed by operations from other classes directly. this is the concept of what?
+**encapsulation**.
+
+7. a design-level class diagram has more classes than those identified in MOPs. which of the following can be a source of an additional classes?
+(a) Prototypes
+(b) Design patterns
+**(c) Language of implementation**: some of the languages have built-in classes.
+**(d) Databases in design**: often mapped to relational db schemas during implementation
+**(e) Forms and interfaces**: anything that enables a user to access system.
+
+8. the operations or messages in a class directly relates to the messages shown on the ----- diagrams.
+sequence diagrams.
+
+## chapter 9
+1. identify three basic class relationships and multiplicities.
+- *inheritance* indicate *something inherits something else*. direction is very important: the pointy end is the parent class (superclass).
+- *aggregation* show that *something has something else*. in this case, the diamond end shows the "whole", or "a bunch of Xs aggregate to become Y." they often contain references of another class, but one class can exist independently of another.
+- *association* is the most basic and common relationships. simply models if the two classes interact with each other in any way.
+
+2. --------- (one word) relationships between two classes can be categorized as “uses”. Furthermore, what does the “uses” mean here?
+**association** relationships.
+
+"uses" typically indicate that associating classes are cohesive: they work together to achieve a goal in the system. furthermore, this also typically indicate that one class might call methods or utilize resources of the other for specific tasks.
+
+3. given the python program, which class relationship of inheritance, aggregation, and association does it represent?
+
+```python
+class Customer:  
+    def __init__(self, name):  
+        self.custName = name
+
+class Account:  
+    def __init__(self, aNum):  
+        self.acctNum = aNum  
+        self.owner = None 
+
+    def setCust(self, cust):  
+        self.owner = cust 
+
+    def display(self):  
+        print(f"Account No: {self.acctNum}, Belongs To: {self.owner.custName}")
+
+c1 = Customer("John Doe")  
+a1 = Account("5566")  
+a1.setCust(c1)
+
+a1.display()
+```
+
+`Account` has a `Customer` as an owner. this relationship is **association** (not aggregation!) because there is nothing here to indicate that `Account` is a collection.
+
+4. object of both classes in Python program cannot exist independently without the other. fact or cap?
+**cap**. they literally do.
+
+5. when two classes are related with aggregation, which one should have the hollow diamond?
+the diamond end shows the "whole", or "a bunch of Xs aggregate to become Y." they often contain references of another class, but one class can exist independently of another.
+
+6. there can be no multiplicities in an inheritance relationship. why?
+because it doesn't make sense. if something is something else, it cannot be a multiple or none of something else.
+
+7. the multiplicity in the aggregator has limited minimal semantic meaning. although not syntactically wrong, it is redundant. fact or cap?
+**facts**. because an aggregation typically already means that one thing is a multiple with some other thing, we don't need to put multiplicity markers.
+
+8. meaning of stereotyped classes, `<<entity>>`, `<<table>>`, `<<boundary>>`, `<<control>>`.
+stereotyped classes are usually optional, but proves high-level groupings for elements in a diagram. therefore, by just referring to a stereotype, it is possible to understand the role of a particular element.
+- `<<entity>>` indicates an object ("core business object")
+- `<<boundary>>` is anything with UI (GUI or not GUI), 
+- `<<table>>` is for databases
+- `<<control>>` for business logic to co-ordinate between `<<entity>>` and `<<boundary>>`.
+
+9. class diagrams cannot show an “if-then-else” scenario and they do not display any concept of time, either, which makes them extremely weak in representing the dynamics of a system. fact or cap?
+**fact**. they are unable to show dynamic or behavioral information, and they do not have any concept of time either. so, class diagrams are extremely weak in representing system dynamics.
+
+## chapter 11
