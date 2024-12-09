@@ -64,9 +64,9 @@ Employs a **fetch-decode-execute cycle** to run programs.
 
 Today's von Neumann model: 
 - Programs and data are: 
-	- stored in a slow to access storage medium, such as a hard disk. [[Memory#Read-only-memory (ROM)]]
+	- stored in a slow to access storage medium, such as a hard disk. [[comp-org/Memory/Memory#Read-only-memory (ROM)]]
 	- copied to a fast-access, volatile storage medium such as RAM prior to execution.
-There are 2 kinds of RAM: *SRAM* (for cache memory, holds **static** data as long as power is provided) and *DRAM* (continuously refreshed, **dynamic**) [[Memory#Random-access-memory (RAM)]]
+There are 2 kinds of RAM: *SRAM* (for cache memory, holds **static** data as long as power is provided) and *DRAM* (continuously refreshed, **dynamic**) [[comp-org/Memory/Memory#Random-access-memory (RAM)]]
 ## 4. Non von-Neumann models
 #### a. Multi-core
 - Multi cores / chips, but single PU
