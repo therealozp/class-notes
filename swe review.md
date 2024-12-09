@@ -591,3 +591,116 @@ stereotyped classes are usually optional, but proves high-level groupings for el
 **fact**. they are unable to show dynamic or behavioral information, and they do not have any concept of time either. so, class diagrams are extremely weak in representing system dynamics.
 
 ## chapter 11
+3. ways to represent an interface (class) in a class diagram:
+- using a normal class representation with an `<<interface>>` stereotype.
+- using the "lollipop" notation.
+
+4. review code sample:
+![[Pasted image 20241208042224.png]]
+
+5. review bidirectional association code sample:
+![[Pasted image 20241208042246.png]]
+
+in a class diagram, a bidirectional association relationship is represented with **the straight line**. a directional relationships is indicated with an arrowhead, for when one class of the association calls the other but not vice-versa.
+
+6. aside from one class only using references of the other, what other ways can associations be implemented?
+- operation arguments
+- return types
+
+established through a calling operation; with the called class specified in the parameter list or return class.
+
+7. when a class designer specifies that one class of the association sends a message to another class but not the other way around, how is the directional association shown?
+shown with a line and arrowhead going from one class to the other. the arrowhead lies on the **class which is called on**.
+
+8. slides 21-23 of chapter 11:
+![[Pasted image 20241208042719.png]]
+
+![[Pasted image 20241208042727.png]]
+
+![[Pasted image 20241208042736.png]]
+
+9. in a class diagram, a class may implement (or realize) more than one interface, and an interface may be realized by a number of different classes. fact or cap?
+**fact**.
+
+one class realizing multiple interfaces:
+```java
+interface Drawable {
+    void draw();
+}
+
+interface Movable {
+    void move();
+}
+
+class Rectangle implements Drawable, Movable {
+    public void draw() {
+        // Implementation of draw
+    }
+    
+    public void move() {
+        // Implementation of move
+    }
+}
+```
+
+one interface realized by multiple classes:
+```java
+interface Shape {
+    double calculateArea();
+}
+
+class Circle implements Shape {
+    public double calculateArea() {
+        // Circle-specific area calculation
+    }
+}
+
+class Rectangle implements Shape {
+    public double calculateArea() {
+        // Rectangle-specific area calculation
+    }
+}
+```
+
+10. attributes defined by an interface cannot be modified by the class that realizes it. fact or cap?
+**it's complicated**. 
+
+if it is "attributes" as in values, then no, the variables defined by the interface are mostly `public static final` variables. 
+
+however, if "attributes" include function implementations, then yes: the interface only ever defines the function signatures, so the implementation can be whatever we want. in this sense, the realizing class can add its own attributes and methods, so long as it fulfills the contract set by the interface.
+
+11. **UNSURE** what is another way to represent a realization relationship in a class diagram? 
+lollipop notation.
+
+13. when objects of the _client_ class change their state as a result of changes in the state of the _supplier_ class, we should model these two classes with a ---------- relationship. How would you represent them in a class diagram?
+a **dependency** relationship, represented with a dashed closed filled arrowhead.
+
+14. aggregation is a strong form of composition. fact or cap?
+**cap**. it is the other way round: aggregation is a strong form of composition.
+
+15. a **solid** (or filled-in) diamond indicates a -------- relationship, meaning the main class is made up entirely of objects in the other class, and cannot exist independently.
+a **composition** relationship. also worth noting:
+- an aggregation relationship is defined *by reference*, aka. with a pointer.
+- a composition relationship is defined *by value*, which means it uses the object itself.
+ 
+ 16. a “by value” aggregation relationship in design should be represented in a class diagram as 
+ (a) a hollow diamond with broken line 
+ (b) a hollow diamond with solid line 
+ (c) a solid or filled diamond with broken line 
+ **(d) a solid or filled diamond with solid line.**
+
+17. why are *collection classes* needed in class-level design diagrams?
+due to multiplicity. for example, if there are more than one Patients in a hospital then there are a set of operation that works on the Patient class (e.g. `getName`), and another that works on the `PatientsCollection`, like `listAllPatients` or something that involves a multiplicity and does not apply to a single instance. 
+
+this helps make implementation goals very clear and well-defined.
+
+18. ------------- (one word) behavior (through method or operator _overloading_) implies, at runtime, the same message has different behavioral effects, depending on which object is instantiated by one of inheriting classes to respond to the message.
+**polymorphic** (from polymorphism)
+
+19. parameterized classes. what are they?
+a parameterized class is a **template class** that defines a generic class with one or more **formal parameters** (e.g., types, values, or other classes) that can be **substituted** when creating an instance of the class.
+
+for example, `List<points>`
+
+20. incorporating _error detection_ and _error handling_ by an object **other** than the object in which the error has occurred is a good design. fact or cap?
+**fact.** good error handling in design incorporates handling an error by an object other than the object in which the error has occurred. this improves the quality of design, as usually the impact of an error in an object at runtime is not always known across the system.
