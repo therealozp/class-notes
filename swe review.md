@@ -717,4 +717,10 @@ for example, `List<points>`
 4. sequence diagrams must have a one-to-one relationship with class diagrams or use cases. fact or cap?
 **cap**. despite the closeness of the mapping between the sequence diagram and the class diagram, sequence diagrams do not have a one-to-one relationship with class diagrams or use cases. 
 
-5. 
+5. an initial sequence diagram in analysis may be drawn with only two objects: actor and system. fact or cap?
+**fact**.
+
+6. when you see message arrow pointing directly to object (as against the timeline), what does it indicate?
+it indicates that the object is created (instantiated) in memory. alternatively, creation of the object.
+
+7. 
