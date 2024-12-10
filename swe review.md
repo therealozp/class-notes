@@ -704,3 +704,6 @@ for example, `List<points>`
 
 20. incorporating _error detection_ and _error handling_ by an object **other** than the object in which the error has occurred is a good design. fact or cap?
 **fact.** good error handling in design incorporates handling an error by an object other than the object in which the error has occurred. this improves the quality of design, as usually the impact of an error in an object at runtime is not always known across the system.
+
+## chapter 12
+1. 
