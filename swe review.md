@@ -1,6 +1,7 @@
 ## chapter 1
 1. science v. engineering
-- scientists is to **answer questions** and **discover information**, while engineers **creates products or processes to solve these problems.**
+- scientists is to **answer questions** and **discover information**
+- engineers **creates products or processes to solve these problems.**
 
 2. definition of engineering by NAE
 - the application of science, because engineers take abstract ideas to build tangible products
@@ -40,7 +41,7 @@ SDLC is inspired by processes from civil engineering, and mech e provides backbo
 - inheritance: extensibility of design + code reuse
 - polymorphism
 
-11. ___ in design makes polymorphism at runtime possible.
+11. ------ in design makes polymorphism at runtime possible.
 **inheritance**
 
 12. SE started evolving in 1970s, fact or cap?
@@ -704,3 +705,31 @@ for example, `List<points>`
 
 20. incorporating _error detection_ and _error handling_ by an object **other** than the object in which the error has occurred is a good design. fact or cap?
 **fact.** good error handling in design incorporates handling an error by an object other than the object in which the error has occurred. this improves the quality of design, as usually the impact of an error in an object at runtime is not always known across the system.
+
+## chapter 12
+1. notation
+![[Pasted image 20241210004833.png]]
+2. it is mandatory to have the return message shown in a sequence diagram. fact or cap?
+**cap**. it is not mandatory.
+
+3. pointing the message arrow to a sending object in a sequence diagram is an error. fact or cap?
+**fact**. it is supposed to be pointing to the receiving object.
+
+4. sequence diagrams must have a one-to-one relationship with class diagrams or use cases. fact or cap?
+**cap**. despite the closeness of the mapping between the sequence diagram and the class diagram, sequence diagrams do not have a one-to-one relationship with class diagrams or use cases. 
+
+5. an initial sequence diagram in analysis may be drawn with only two objects: actor and system. fact or cap?
+**fact**.
+
+6. when you see message arrow pointing directly to object (as against the timeline), what does it indicate?
+it indicates that the object is created (instantiated) in memory. alternatively, creation of the object.
+
+7. icon of a circle with a counterclockwise open arrow in a sequence diagram
+ (a) an entity object 
+ **(b) a control object** 
+ (c) a table object 
+ (d) a boundary object
+
+8. icon with a short bar attached to the bottom edge? icon with a 90-degree rotated T?
+- short bar with bottom edge: **entity object**
+- icon with a 90 degree rotated T: **boundary object**
