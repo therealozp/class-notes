@@ -17,3 +17,16 @@ this is naturally dependent on the cache capacity and number of bits used to add
 
 the location is determined by address of the current location, and determined by: $$\text{block address} \mod \text{num blocks in cache}$$
 in binary, we take the lower $n$ number of bits of the block address, where $n$ is the number of bits required to index cache.
+
+**valid bit**: a field in the table of a memory hierarchy that indicates that the associated block contains valid data.
+
+**tag**: a field in the table that **contains the address information** required to identify whether the associated block corresponds to a requested word. used to *identify the cache*.
+
+so, when is cache hit?
+- store block address and data
+- actually, we only need the **higher-order bits** of the block address, called the **tag index**.
+what if no data?
+- valid bit: 1 = present, 0 = not present
+- initially 0
+
+the tag is compared gain
