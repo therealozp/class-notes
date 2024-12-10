@@ -723,4 +723,12 @@ for example, `List<points>`
 6. when you see message arrow pointing directly to object (as against the timeline), what does it indicate?
 it indicates that the object is created (instantiated) in memory. alternatively, creation of the object.
 
-7. 
+7. icon of a circle with a counterclockwise open arrow in a sequence diagram
+ (a) an entity object 
+ **(b) a control object** 
+ (c) a table object 
+ (d) a boundary object
+
+8. icon with a short bar attached to the bottom edge? icon with a 90-degree rotated T?
+- short bar with bottom edge: **entity object**
+- icon with a 90 degree rotated T: **boundary object**
