@@ -15,7 +15,7 @@ a structure where **each memory location is mapped to exactly one location in ca
 
 this is naturally dependent on the cache capacity and number of bits used to address memory blocks and index cache blocks. number of blocks are usually placed as power of 2 for easy binary addresses.
 
-the location is determined by address of the current location, and determined by: $$\text{block address} \mod \text{num blocks in cache}$$
+the location is determined by address of the current location, with the formula: $$\text{block index} = \text{block address} \mod \text{num blocks in cache}$$
 in binary, we take the lower $n$ number of bits of the block address, where $n$ is the number of bits required to index cache.
 
 **valid bit**: a field in the table of a memory hierarchy that indicates that the associated block contains valid data.
@@ -38,7 +38,7 @@ suppose that:
 
 for example, if the cache size is 1024B, and a physical address length of 32 bits:
 - 10 bits are used for the indexing ($M = 10$ )
-- suppose that 2 bits are used as the offset bit
+- suppose that 2 bits are used as the offset (block size)
  
  the number of bits inside tag $K$ will be $32 - 10 - 2 = 20$.
 
@@ -47,7 +47,7 @@ so, if the tag bit inside the cache and the upper 20 bits of the block address a
 ## block size
 - due to spatial locality, **larger blocks reduce miss rates**.
 - however, in a fixed-sized cache:
-	- making blocks larger means fewer blocks. fewer blocks means more competition for into blocks. more competition means increased miss rates.
+	- making blocks larger means fewer blocks. fewer blocks means more competition for into blocks, because many address blocks to the same section inside cache. more competition means increased miss rates.
 	- larger blocks lead to more pollution
 - larger block sizes also lead to larger miss penalties.
 	- overrides the benefit of reduced miss rates
@@ -81,10 +81,10 @@ on a **data-write miss**, there are two options we can go:
 instead of keeping track of which is which, we keep a note of whether each block inside the cache is "dirty" (affected by write operation.)
 
 when a dirty block is then replaced (for example, by a cache capacity exceed):
-- we write that dirty block from memory
+- we write that dirty block to memory
 - we can also use a write buffer to allow the incoming replacement to be read first.
 
-on a write miss: we just fetch the block to memory and write it back.
+on a write miss: we just fetch the block from memory and write it back later.
 
 ## associative caches
 ### fully associative
