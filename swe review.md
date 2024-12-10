@@ -706,4 +706,15 @@ for example, `List<points>`
 **fact.** good error handling in design incorporates handling an error by an object other than the object in which the error has occurred. this improves the quality of design, as usually the impact of an error in an object at runtime is not always known across the system.
 
 ## chapter 12
-1. 
+1. notation
+![[Pasted image 20241210004833.png]]
+2. it is mandatory to have the return message shown in a sequence diagram. fact or cap?
+**cap**. it is not mandatory.
+
+3. pointing the message arrow to a sending object in a sequence diagram is an error. fact or cap?
+**fact**. it is supposed to be pointing to the receiving object.
+
+4. sequence diagrams must have a one-to-one relationship with class diagrams or use cases. fact or cap?
+**cap**. despite the closeness of the mapping between the sequence diagram and the class diagram, sequence diagrams do not have a one-to-one relationship with class diagrams or use cases. 
+
+5. 
