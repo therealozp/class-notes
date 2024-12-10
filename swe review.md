@@ -1,6 +1,7 @@
 ## chapter 1
 1. science v. engineering
-- scientists is to **answer questions** and **discover information**, while engineers **creates products or processes to solve these problems.**
+- scientists is to **answer questions** and **discover information**
+- engineers **creates products or processes to solve these problems.**
 
 2. definition of engineering by NAE
 - the application of science, because engineers take abstract ideas to build tangible products
@@ -40,7 +41,7 @@ SDLC is inspired by processes from civil engineering, and mech e provides backbo
 - inheritance: extensibility of design + code reuse
 - polymorphism
 
-11. ___ in design makes polymorphism at runtime possible.
+11. ------ in design makes polymorphism at runtime possible.
 **inheritance**
 
 12. SE started evolving in 1970s, fact or cap?
