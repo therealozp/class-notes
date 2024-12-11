@@ -50,7 +50,7 @@ behavior with the 1-bit control MUX:
 | r-type instructions                | 0      | 0       | 0          | 10    | 0        | 0      | 1        |
 | load                               | 0      | 1       | 1          | 00    | 0        | 1      | 1        |
 | store                              | 0      | 1       | irrelevant | 00    | 1        | 1      | 0        |
-| branch                             | 1      | 0       | 0          | 01    | 0        | 1      | 0        |
+| branch                             | 1      | 0       | 0          | 01    | 0        | 0      | 0        |
 ### r-type
 - reads two register operands
 - performs an arithmetic or a logical operation
