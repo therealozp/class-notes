@@ -15,8 +15,7 @@ a structure where **each memory location is mapped to exactly one location in ca
 
 this is naturally dependent on the cache capacity and number of bits used to address memory blocks and index cache blocks. number of blocks are usually placed as power of 2 for easy binary addresses.
 
-the location is determined by address of the current location, with the formula: $$\text{block index} = \text{block address} \mod \text{num blocks in cache}$$
-in binary, we take the lower $n$ number of bits of the block address, where $n$ is the number of bits required to index cache.
+the location is determined by address of the current location, with the formula: $$\text{block index} = \text{block address} \mod \text{num blocks in cache}$$in binary, we take the lower $n$ number of bits of the block address, where $n$ is the number of bits required to index cache.
 
 **valid bit**: a field in the table of a memory hierarchy that indicates that the associated block contains valid data.
 
@@ -43,11 +42,10 @@ for example, if the cache size is 1024B, and a physical address length of 32 bit
  the number of bits inside tag $K$ will be $32 - 10 - 2 = 20$.
 
 so, if the tag bit inside the cache and the upper 20 bits of the block address are the same (and of course valid bit on), then it is a cache hit.
-
 ## block size
 - due to spatial locality, **larger blocks reduce miss rates**.
 - however, in a fixed-sized cache:
-	- making blocks larger means fewer blocks. fewer blocks means more competition for into blocks, because many address blocks to the same section inside cache. more competition means increased miss rates.
+	- making blocks larger means fewer blocks. fewer blocks means more competition for into blocks, because many address blocks maps to the same section inside cache. more competition means increased miss rates.
 	- larger blocks lead to more pollution
 - larger block sizes also lead to larger miss penalties.
 	- overrides the benefit of reduced miss rates
