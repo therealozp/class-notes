@@ -47,11 +47,12 @@ SDLC is inspired by processes from civil engineering, and mech e provides backbo
 12. SE started evolving in 1970s, fact or cap?
 **cap**. SE started evolving in 1960s when Simula67 was brought to life. source: p.12 textbook
 
-13. SSADM is a newer method for Agile-based product development. fact or cap?
+13. structured system analysis and design method (SSADM) is a newer method for Agile-based product development. fact or cap?
 cap. Agile was born in 2000s, SSADM is born in 1980s. source: p. 14-15
 
 14. UML purposes
-visualizing, specifying, constructing, documenting, maintaining. mnemonic: vscodeduma
+visualizing, specifying, constructing, documenting, maintaining. 
+mnemonic: vscodeduma
 
 15. UML is not only modelling standard, but also specifies sequence in which models are to be developed. fact or cap?
 cap. first verse is correct, second is wrong. source: p. 16
@@ -68,7 +69,7 @@ cap. first verse is correct, second is wrong. source: p. 16
 3. UCs can be structured and related to represent a process flow, so they are behavioral instead of structural. how to correct?
 UCDs being behavioral is correct, but the *behavioral aspect is not visible* in the use case diagram. instead, a more "correct" version would be:
 
-UCDs are behavioral because they represent interactions between actors and UCs, and UCs with each other to capture the flow of a process.
+UCDs are behavioral because they represent interactions between actors and UCs; or between UCs to capture the flow of a process.
 
 4. documentation of UCs is a rich source to identify business entities that eventually result in classes. fact or cap?
 **fact**. p.23
@@ -184,11 +185,11 @@ by **identifying business objectives**. first that, then break down the "what, w
 5. the decomposition of the primary ---A----  represents the key areas (i.e., subsystems) of the system to be developed, which (most, if not all) are better modeled as ---B--- in the UML.
 
 the complete sentence:
-This decomposition of the objective reveals the key areas of the system, which are 
+This decomposition of the **objective** reveals the key areas of the system, which are 
 represented as **packages** in UML.
 
 6. by whom should the prioritization process of lower-level business objectives be typically undertaken? 
-a. project manager
+**a. project manager**
 b. domain experts
 c. system users 
 d. business analysts.
@@ -198,7 +199,7 @@ carried out by **project managers** in a workshop environment with domain expert
 7. once decomposed, low-level objectives should be modelled by:
 a. class diagrams
 b. object diagrams
-c. use case diagrams
+**c. use case diagrams**
 d. IODs
 e. communication diagrams
 
@@ -227,13 +228,13 @@ among these 3:
 - **problem space** uses more UCDs and ADs than the other two.
 
 11. if UML is used to create design spec for analyzed user requirements, what diagrams are typically used?
-a. use case 
+*a. use case* 
 b. activity
 c. SMDs
 d. class
 e. sequence
 
-idk
+idk, gonna guess a. for this one.
 
 12. the package in a package diagram can contain classes, components, UCs, and all other related constructs belonging to a particular subsystem. fact or cap?
 **fact**. a package can contain all of the above, but is not necessarily treated as a executable entity, but rather an organizational element in a subsystem.
@@ -254,7 +255,7 @@ with packages (?)
 **weaknesses**: 
 - unable to show technical details, so not easy to use in a technical sense,
 - not object-oriented in nature.
-- tends to get confused with classes
+- packages in a class diagram tends to get confused with classes
 - dependencies can become circular.
 
 ## chapter 4
@@ -282,7 +283,7 @@ d. system development
 e. system testing
 f. quality assurance
 
-all of the above.
+all of the above. p.57
 
 4. a simple class diagram to model relationship among processes, iterations, and increments?
 ![[Pasted image 20241207213711.png]]
@@ -311,7 +312,7 @@ always the **second**. it is a detailed iteration that undertakes completion of 
 developed by CMU Software Engineering Institute, the CMM is the most widely accepted benchmark for measuring and improving a software process. 
 
 there are 5 levels to indicate maturity of software processes:
-- **initial**: applies processes in ad-hoc manner.
+- **initial**: applies processes in ad-hoc (when necessary or needed) manner.
 - **repeatable**: process elements and maps are repeatable.
 - **defined**: every element in process (what, how, who, and supporting guidelines of when) is properly defined.
 - **measured**: process at level 3 can be measured in terms of quality and contribution to process.
@@ -380,7 +381,7 @@ an actor is a role played by a person or thing *external* to the software system
 **(e) A role that initiates an interaction with the system**: literally definition
 
 3. an actor may serve as starting point for interface modelling. fact or cap?
-**cap**. they provide the core starting point, as they indicate how the system is used. they represent the interface of the system, and may serve as the basis for good classes.
+**fact**. they provide the core starting point, as they indicate how the system is used. they represent the interface of the system, and may serve as the basis for good classes.
 
 4. actors are not classes, but may serve as basis for good classes. **fact or cap**? 
 **fact**.
@@ -396,7 +397,7 @@ take for contrast, if a user does not directly interact with the computer screen
 - an **indirect actor** are those who never get to use it directly. for example, a customer will never use the HMS directly, if they just stand and provide info instead of interacting with the system.
 
 7. abstract actors and how they are represented
-these are more important than the previous two, and can be shown in UCDs. *abstract actors* are **parents of concrete actors**. they are more generalized, and from where specialized actors can be derived.
+these are more important than the previous two (primary/secondary, direct/indirect), and can be shown in UCDs. *abstract actors* are **parents of concrete actors**. they are more generalized, and from where specialized actors can be derived.
 
 "Abstract actors can model the common behavior of a system, such as staff logging into the system. Concrete actors model the specific behavior of the system, such as a doctor checking a consultation schedule on the calendar. Since a doctor inherits from staff, there is no need to separately model the log-in procedure for doctors if it has already been modeled for staff."
 
@@ -436,7 +437,7 @@ although the first clause is correct, **use case diagrams do not provide a good 
 
 2. there are three specific relationships in between two use cases in a diagram. what are they? if you were to add functionality to an existing use case, which relationship to use, and how to draw?
 - **includes**: when part of a behavior is likely to be reused, we can factor out that common behavior as an independent use case.
-- **extends**: specializes the behavior of another use case, **used to functionality on an existing use case**. can also be thought as representing an option.
+- **extends**: specializes the behavior of another use case, **used to add functionality on an existing use case**. can also be thought as representing an option.
 - **inherits**: also known as **generalization**, where a use case implements the behavior described by another higher-level abstract UC.
 
 3. UCDs provide a high-level picture of the system. they present good features to represent flow (sequence of actions), but also dependencies in system. fact or cap?
@@ -466,7 +467,7 @@ activity diagrams are meant to show any flow or process within the system. so, t
 stop activities can be multiple, and it is optional. there must be a start activity.
 
 6. what do partitions (swimlanes) do?
-they indicate lanes of which activities are performed by actors. the actor that performs the activities is shown as a label on top of the swimlane.
+they indicate lanes of which activities are performed by which actors. the actor that performs the activities is shown as a label on top of the swimlane.
 
 7. how to represent sync points?
 ![[Pasted image 20241208014258.png]]
@@ -488,8 +489,7 @@ with decision points. like this:
 **fact.** activity diagrams do not give a complete picture of a system when they are used to model use case behavior. so, they do not show the full requirements of a system at a glance.
 
 12. because ADs do not display time, they are not dynamic. fact or cap?
-**fact.** modelers are prone to assume that the activity flow within an activity diagram includes a timeline; however, because activity diagrams do not display time, they are not considered 
-dynamic.
+**fact.** modelers are prone to assume that the activity flow within an activity diagram includes a timeline; however, because activity diagrams do not display time, they are not considered dynamic.
 
 13. what is the reference notation in an IOD used for?
 to provide reference to another use case or sequence diagram.

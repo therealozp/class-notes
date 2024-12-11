@@ -252,3 +252,5 @@ some notes:
 
 
 ![[Pasted image 20241202003112.png]]
+
+![[Pasted image 20241210210313.png]]
