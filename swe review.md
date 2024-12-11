@@ -355,7 +355,7 @@ emphasizes a steady flow of work instead of fixed time-boxed sprints.
 
 19.  three examples of agile methods in SEP:
 - scrum: iterative development with time-boxed sprints.
-- kanban: iterative development by limiting WIP
+- kanban: iterative development by limiting WIP (work-in-progress)
 - EXTREME PROGRAMMING: focuses on engineering practices and customer satisfaction, features test-driven dev, pair programming, and CI.
 
 20. what is user story? is it same as use cases?
@@ -374,11 +374,20 @@ use cases document requirements from a user's perspectives, and also helps with 
 2. which of the following can be an actor? 
 an actor is a role played by a person or thing *external* to the software system, and interacts with system to achieve business goals.
 
-(a) an external system (is not, because no interaction is specified) 
+**(a) an external system** (is not, because no interaction is specified) 
 **(b) time** is considered an actor (time triggered events initiate an interaction or process within a system).
 **(c) An external entity or system that sends or receives a message from the system** is an actor, because it interacts with a system.
 (d) A class that is used to implement the system 
 **(e) A role that initiates an interaction with the system**: literally definition
+
+as a refresher: these qualify as an actor
+- role played by a typical user of the system
+- a role that initiates an interaction with the system
+- time
+- role that derives benefit (achieves goals) from the system
+- “external system” or external device with which the system **under development** will interact (such as a publicly available database, a handheld phone)
+- anything that sends/received a message to the system (such as an external entity)
+- essentially anything that is outside the system
 
 3. an actor may serve as starting point for interface modelling. fact or cap?
 **fact**. they provide the core starting point, as they indicate how the system is used. they represent the interface of the system, and may serve as the basis for good classes.
