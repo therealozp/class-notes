@@ -25,7 +25,7 @@ SDLC is inspired by processes from civil engineering, and mech e provides backbo
 - better communication because of requirements, identify gaps, and improves efficiency
 
 8. databases and business workflows are very well-supported by OO fundamentals. fact or cap?
-**fact**. OO fundamentals result in services that are versatile, changable, and reusable. source: pg. 5, software engineering fundamentals.
+**fact**. OO fundamentals result in services that are versatile, changeable, and reusable. source: pg. 5, software engineering fundamentals.
 
 9. four basic terms in SE
 - programs: structured code specific to a language
@@ -63,7 +63,7 @@ cap. first verse is correct, second is wrong. source: p. 16
 **activity diagram**: **behavioral-static** in nature, because they show activities and sequence in which they occur, *but not exactly when*.
 **class diagram**: **structural-static** in nature, because it does not show any behavioral content. there are no dependencies and no concept of "time".
 
-2. UCs in a UCD cannot be decomposed into layers or levels, i.e., they are all at the same level within the entire requirements model. fact or cap?
+2. UCs in a UCD **cannot be decomposed** into layers or levels, i.e., they are all at the same level within the entire requirements model. fact or cap?
 **fact**. they cannot be decomposed in the way that data-flow diagrams (DFDs) are decomposed.
 
 3. UCs can be structured and related to represent a process flow, so they are behavioral instead of structural. how to correct?
@@ -113,7 +113,7 @@ sequence diagrams.
 **fact**. 
 
 17. preconditions and postconditions can be shown in SDs. fact or cap?
-**fact**. pre/post conditions can be shown in SDs. however, if-then-else interactions are NOT.
+**cap**. pre/post conditions **CANNOT** be visibly shown in SDs. if-then-else interactions are NOT.
 
 19. while activity diagrams are static, sequence diagrams exhibit dynamic characteristics. fact or cap?
 **fact**. SDs are **behavioral-dynamic** in nature. because these events are very time based, we are able to determine what happens between two messages and ascertain them as time progresses.
@@ -185,8 +185,7 @@ by **identifying business objectives**. first that, then break down the "what, w
 5. the decomposition of the primary ---A----  represents the key areas (i.e., subsystems) of the system to be developed, which (most, if not all) are better modeled as ---B--- in the UML.
 
 the complete sentence:
-This decomposition of the **objective** reveals the key areas of the system, which are 
-represented as **packages** in UML.
+This decomposition of the **objective** reveals the key areas of the system, which are represented as **packages** in UML.
 
 6. by whom should the prioritization process of lower-level business objectives be typically undertaken? 
 **a. project manager**
@@ -227,7 +226,7 @@ among these 3:
 - **solution space** uses design level class diagrams to specify lowermost details.
 - **problem space** uses more UCDs and ADs than the other two.
 
-11. if UML is used to create design spec for analyzed user requirements, what diagrams are typically used?
+11. if UML is used to create design spec for analyzed user requirements, what *three* diagrams are typically used?
 *a. use case* 
 b. activity
 c. SMDs
@@ -401,9 +400,11 @@ as a refresher: these qualify as an actor
 
 take for contrast, if a user does not directly interact with the computer screen at the bank. they are still considered a primary, because it is for them that the system exists.
 
-6. what does indirect actor mean?
+6. what does indirect actor mean? in case both direct and indirect actors exist in use case modeling, only direct actors should appear in use cases. fact or cap?
 - a **direct actor** are those who actually *use* the system. for example, and admin entering patient details is a direct actor.
 - an **indirect actor** are those who never get to use it directly. for example, a customer will never use the HMS directly, if they just stand and provide info instead of interacting with the system.
+
+only direct actors should appear in UCD
 
 7. abstract actors and how they are represented
 these are more important than the previous two (primary/secondary, direct/indirect), and can be shown in UCDs. *abstract actors* are **parents of concrete actors**. they are more generalized, and from where specialized actors can be derived.
@@ -601,6 +602,10 @@ stereotyped classes are usually optional, but proves high-level groupings for el
 **fact**. they are unable to show dynamic or behavioral information, and they do not have any concept of time either. so, class diagrams are extremely weak in representing system dynamics.
 
 ## chapter 11
+1. ![[Pasted image 20241201205145.png]]
+
+2. ![[Pasted image 20241201204834.png]]
+
 3. ways to represent an interface (class) in a class diagram:
 - using a normal class representation with an `<<interface>>` stereotype.
 - using the "lollipop" notation.
