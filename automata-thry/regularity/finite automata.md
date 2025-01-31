@@ -1,12 +1,12 @@
 ## deterministic FA
-a deterministic finite accepter (dfa) is determined by a quintuple $M = \set{Q, \Sigma, \delta, q_{0}, F}$, where: 
+a deterministic finite accepter (or automaton) (dfa) is determined by a 5-tuple $M = \set{Q, \Sigma, \delta, q_{0}, F}$, where: 
 - $Q$ is a finite set of **internal states**
 - $\Sigma$ is a finite set of symbols called the **input alphabet**
 - $\delta: Q \times \Sigma \rightarrow Q$ is a **transition function**
 - $q_{0}\in Q$ is the **initial state**
 - $F \subseteq Q$ is the set of **final states.**
 
-for example, take a dfa $M = \set{(q_{0}, q_{1}, q_{2}), (0, 1), \delta, q_{0}, \set{q_{1}}}$ 
+for example, take a DFA $M = \set{(q_{0}, q_{1}, q_{2}), (0, 1), \delta, q_{0}, \set{q_{1}}}$ 
 - $\delta(q_{0}, 0) \rightarrow q_{0}$
 - $\delta(q_{0}, 1) \rightarrow q_{1}$
 - $\delta(q_{1}, 0) \rightarrow q_{0}$

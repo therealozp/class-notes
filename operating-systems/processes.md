@@ -1,0 +1,30 @@
+a process is a running program. a process consists of:
+- memory (address space), contains instructions and data
+- something else
+
+each process has its own virtual memory space, unless explicitly specified. in modern OSes, there are shared libraries (`.dll` or `.so`), which also execute their own processes.
+## process creation
+the OS exposes several APIs to the OS, including:
+- **create**: creates a process
+- **halt**: to stop a runaway process
+- **wait**: wait for a process to stop running
+- **miscellaneous control**: to pause/resume a process
+- **status**: gets status info
+
+to actually create a process:
+- loads program code (initially packaged in an **executable**) to main memory (RAM, the address space of process). 
+
+**note**: the OS loads programs **lazily**, meaning only necessary parts are loaded during execution.
+
+- allocates memory for runtime stack (static data, variables, etc.)
+- allocates program **heap**, used for explicitly requested dynamic data. `free(), malloc()`
+- other initialization tasks on setup. a program has three open file descriptors (`stdin, stdout, stderr`)
+- **start program** at entry point, `main()`. at this point, the OS transfers control of CPU to the new process.
+
+## states
+a process can be in one of 3 states:
+- **running**: already running on the processor
+- **ready**: ready to run, but the OS hasn't ran it yet for whatever reason.
+- **blocked**: the process has performed some kind of operation. when it initiates I/O request, it becomes *blocked*, and frees up the processor for other processes.
+
+## data structures of a process

@@ -1,3 +1,4 @@
+
 ## what is performance?
 - **algorithms**: determines number of operations executed
 - **programming languages, compiler, architecture**: determines number machine instructions executed/operation
