@@ -28,3 +28,11 @@ a process can be in one of 3 states:
 - **blocked**: the process has performed some kind of operation. when it initiates I/O request, it becomes *blocked*, and frees up the processor for other processes.
 
 ## data structures of a process
+to keep track of the state of each process, the OS will likely keep some sort of **process list** for:
+- all ready processes
+- currently running processes
+- in some way, blocked processes, so that when some I/O event finishes, it wakes the correct process to run it again.
+
+another data structure the OS employs is the **register context**, which holds all the content currently in registers of a stopped process. 
+
+when said process is stopped, its registers will be saved to this memory location. when it is time to unfreeze, the OS re-loads this stored data to resume the process.
