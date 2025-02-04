@@ -3,7 +3,6 @@
   "cssTheme": "Sanctum",
   "textFontFamily": "Satoshi",
   "enabledCssSnippets": [
-    "obsidian",
     "image_grid"
   ],
   "baseFontSize": 17,
