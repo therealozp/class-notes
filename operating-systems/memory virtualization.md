@@ -5,7 +5,7 @@ a solution to virtualizing memory is loading multiple processes:
 - execute each one for a little bit
 - switch processes between them in memory
 
-however, this will result in a protection issue, where other processes may wrongly attempt to access the current process of memory.
+however, this will result in a protection issue, where other processes may wrongly attempt to access the current process of mpemory.
 
 the OS ensures that there is a chunk of physical memory available for a process, which the process uses from the virtual address space to run. it always creates an **abstraction** of physical memory:
 - address space contains all about a running process
