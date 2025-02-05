@@ -28,7 +28,7 @@ a process can be in one of 3 states:
 
 the transition between processes can be described with a FSM as follows:
 
-![[Pasted image 20250204233641.png]]
+![[state-switches.png]]
 ## data structures of a process
 to keep track of the state of each process, the OS will likely keep some sort of **process list** for:
 - all ready processes
