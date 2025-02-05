@@ -2,11 +2,6 @@
 takes a physical resource (processor, memory, disk, etc.) and makes it into a **virtual form** of itself.
 
 the virtual form is more **general, powerful, and easy to use**. the OS is also referred to as a virtual machine.
-## system calls (syscalls)
-allows a user to tell an OS what to do:
-- the OS provides some interfaces (API, `stdlib`)
-- a typical OS exports a few hundred system calls (run programs, access memory, access devices, etc.)
-
 ## as a resource manager
 the OS:
 - makes it easy to run programs -> **sharing CPU**
