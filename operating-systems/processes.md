@@ -12,21 +12,23 @@ the OS exposes several APIs to the OS, including:
 - **status**: gets status info
 
 to actually create a process:
-- loads program code (initially packaged in an **executable**) to main memory (RAM, the address space of process). 
+1.  loads program code (initially packaged in an **executable**) to main memory (RAM, the address space of process). 
 
-**note**: the OS loads programs **lazily**, meaning only necessary parts are loaded during execution.
+**note**: the modern OS loads programs **lazily** (contrast with **eager** loading in earlier OSes), meaning only necessary parts are loaded during execution.
 
-- allocates memory for runtime stack (static data, variables, etc.)
-- allocates program **heap**, used for explicitly requested dynamic data. `free(), malloc()`
-- other initialization tasks on setup. a program has three open file descriptors (`stdin, stdout, stderr`)
-- **start program** at entry point, `main()`. at this point, the OS transfers control of CPU to the new process.
-
-## states
+2. allocates memory for **runtime stack** (static data, variables, etc.)
+3. allocates program **heap**, used for explicitly requested dynamic data. `free(), malloc()`
+4. other initialization tasks on setup. a program has three open file descriptors (`stdin, stdout, stderr`)
+5. **start program** at entry point, `main()`. at this point, the OS transfers control of CPU to the new process.
+## process states
 a process can be in one of 3 states:
 - **running**: already running on the processor
 - **ready**: ready to run, but the OS hasn't ran it yet for whatever reason.
 - **blocked**: the process has performed some kind of operation. when it initiates I/O request, it becomes *blocked*, and frees up the processor for other processes.
 
+the transition between processes can be described with a FSM as follows:
+
+![[Pasted image 20250204233641.png]]
 ## data structures of a process
 to keep track of the state of each process, the OS will likely keep some sort of **process list** for:
 - all ready processes
