@@ -1,4 +1,4 @@
-A [[grammar]] G is context-free if all production rules are of the form: 
+a [[grammar]] G is context-free if all production rules are of the form: 
 $A\rightarrow x,$ where $A \in V \text{ and } x \in \set{V\cup T}^{*}$
 or in English, if the LHS of the transition function is only **one** variable, then it is a context-free language.
 
