@@ -13,13 +13,12 @@ $$
 T_{\text{turnaround}} = T_{\text{completion}} - T_{\text{arrival}}
 $$
 ### fairness
-how even CPU power is put toward each job.
+how even CPU power is put toward each job. a scheduler that maximizes this metric is the [[proportional share scheduler]] and, especially. the [[proportional share scheduler#Linux completely fair scheduler (CFS)|completely fair scheduler]].
 ### response time
 period from when job arrives until the first time it is **scheduled**.
 $$
 T_{\text{responose}} = T_{\text{scheduled}} - T_{\text{arrival}}
 $$
-
 ## scheduling tactics
 ### first come, first served (FIFO)
 very simple to implement. does exactly what the name says, process each job in the order it is received. 
@@ -100,5 +99,5 @@ when that request is fulfilled, an interrupt is raised, and the OS moves the pro
 ## no more oracles
 now, we violate the last assumption, and execution times of jobs **are unknown** to us.
 
-with that change, it is clear that STCF does not work, because the scheduler would not know which job to prioritize. to resolve this, we use the **[[multi-level feedback queue (MLFQ)]]**
+with that change, it is clear that STCF does not work, because the scheduler would not know which job to prioritize. to resolve this, we use the **[[multi-level feedback queue (MLFQ)]]**.
 
