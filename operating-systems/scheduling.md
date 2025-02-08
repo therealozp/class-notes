@@ -100,14 +100,5 @@ when that request is fulfilled, an interrupt is raised, and the OS moves the pro
 ## no more oracles
 now, we violate the last assumption, and execution times of jobs **are unknown** to us.
 
-with that change, it is clear that STCF does not work, because the scheduler would not know which job to prioritize. to resolve this, we use the **multi-level feedback queue** (MLFQ).
-## mlfq
-an MLFQ is a scheduler that learns from the past to predict the future. its primary objective is to: 
-- optimize **turnaround time**, so try to run shorter jobs first
-- minimize **response time**, without a priori (deducing from general principle) knowledge of job length.
-
-### basic rules
-a MLFQ has a number of distinct **queues**, that are assigned a different priority levels. when a job is ready to run, it is loaded on a single queue. 
-- among the queues, jobs are chosen to run from **higher** queues..
-- use [[scheduling#round robin|round robin]] scheduling among jobs in the same queue.
+with that change, it is clear that STCF does not work, because the scheduler would not know which job to prioritize. to resolve this, we use the **[[multi-level feedback queue (MLFQ)]]**
 
