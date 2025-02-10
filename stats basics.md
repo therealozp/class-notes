@@ -16,5 +16,3 @@ measures how **varied** the output can be (or how dispersed it is) around the me
 > "how good is the mean as a guess?"
 ## chain rule (kinda)
 	a function of a random variable **is a random variable**.11
-
-
