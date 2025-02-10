@@ -50,3 +50,78 @@ t -> t * f | f
 f -> N
 ```
 
+### shift-reduce parsing
+at every step, either:
+- shift (push) an input symbol (token) onto the stack, and consume from the input, **or**
+- reduce the stack from `[o1, o2, o3, ..., oN]` using the rule $N\to \sigma_{1}, \sigma{2}, \dots, \sigma_{N}$ to make the stack.
+
+also called **bottom-up** parsing and LR (process input **left-to-right**, builds **rightmost derivation**, or always choosing to process the *rightmost non-terminal* in a grammar).
+
+
+
+balanced parentheses grammar:
+
+```R
+S' -> S$
+S  -> (S)S | epsilon
+```
+
+for a grammar:
+
+```R
+pgm -> expr$ # ($ indicates EOF)
+expr -> f(expr) | 0
+```
+
+for a grammar defined by:
+
+```
+S' -> S$
+S  -> (S)S | epsilon
+```
+
+| stack  | input | action                     |
+| ------ | ----- | -------------------------- |
+| ` `    | `()$` | shift                      |
+| `(`    | `)$`  | reduce by $S \to \epsilon$ |
+| `(S`   | `)$`  | shift                      |
+| `(S)`  | `$`   | reduce by $S\to \epsilon$  |
+| `(S)S` | `$`   | reduce by $S \to S(S)$     |
+| `S`    | `$`   | shift                      |
+| `S$`   | ` `   | reduce by $S' \to S$       |
+| `S'`   | ` `   | accept                     |
+|        |       |                            |
+## LR(0)
+a simple version of what real parsers are. the '0' means that the parser has no lookahead (LA) symbols
+
+defined as an NFA controlling a stack. the NFA states are items, for example
+
+```
+S -> E$
+E -> T + E | T
+T -> x
+```
+
+to derive the items of the NFA, we can insert a dot into each of the possible position of every production rule:
+
+```
+S -> .E$
+S -> E.$     # this indicates stop @EOF
+
+E -> .T + E
+E -> T. + E
+E -> T +. E
+E -> T + E.
+
+E -> .T
+E -> T.
+
+T -> .x
+T -> x.
+```
+
+we get the trace for $N\to \sum_{1}\sigma \sum_{2}$, where:
+- $\sum$ indicates a **possibly empty** sequence of tokens
+- $\sigma$ is a symbol
+- and $N$ is a non-terminal
+
