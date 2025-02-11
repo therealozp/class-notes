@@ -125,3 +125,8 @@ we get the trace for $N\to \sum_{1}\sigma \sum_{2}$, where:
 - $\sigma$ is a symbol
 - and $N$ is a non-terminal
 
+**rules**: 
+- anytime we encounter the transition: $N \to \Sigma_{1}\cdot\sigma\Sigma_{2}$, we can consume the $\sigma$ to move to the state $N \to \Sigma_{1}\sigma\cdot\Sigma_{2}$
+- anytime we encounter a non-terminal $N$: $N \to \Sigma_{1}\cdot N'\Sigma_{2}$, we can use a $\epsilon$ transition to switch non-terminals $N'\to \cdot\Sigma_{3}$.
+
+parse stack for LR parsers contain the state numbers. show the symbols on the stack in the exam!c
