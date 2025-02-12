@@ -54,7 +54,7 @@ so, with these 2 system calls, we can add on to our timestamps as follows:
 | at boot (kernel mode) |                                       |                                              |                                                  |
 | 1                     | initializes **trap table**            |                                              |                                                  |
 | 2                     |                                       | remembers the address of the syscall handler |                                                  |
-| at run (kernel mode)  |                                       |                                              |                                                  |
+| at run                | (kernel mode)                         |                                              |                                                  |
 | 3                     | creates entry for process list        |                                              |                                                  |
 | 4                     | allocates memory for the program      |                                              |                                                  |
 | 5                     | loads program into memory             |                                              |                                                  |
