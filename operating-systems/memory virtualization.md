@@ -70,4 +70,12 @@ to accomplish this, the OS must intervene on three junctures:
 - **on context switch**: the OS must save and store the base-and-bound pairs of registers in the [[processes#data structures of a process|process structure]], or the **process control block** (PCB).
 
 ### base and bad
-the base and bound approach makes memory fragmented, and big, unallocated chunks
+the base and bound approach makes memory fragmented, and big, unallocated chunks of empty space will appear. another downside is that, if the requested virtual memory cannot be accommodated in physical memory, it will also cause problems. 
+## segmentation
+to solve the problems introduced by base and bound, we have segmentation.
+
+a segment is just a **contiguous portion of the address space** of a particular length. there are also logically different segments, like stack (grows bottom up), heap (grows top down) and code (which just does not grow).
+
+each segment is placed in different parts of the physical memory, and base-and-bound is used under the hood.
+### address translation
+same 
