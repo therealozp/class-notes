@@ -68,3 +68,6 @@ to accomplish this, the OS must intervene on three junctures:
 - **on startup**: the OS must find space for the address space in physical memory. OS accomplishes this via a **free list**, which is a list of the range of physical memory that is currently not in use. the nodes of the free list indicates the address of said block.
 - **on termination**: memory must be reclaimed for use. OS will put this memory back on the free list on termination.
 - **on context switch**: the OS must save and store the base-and-bound pairs of registers in the [[processes#data structures of a process|process structure]], or the **process control block** (PCB).
+
+### base and bad
+the base and bound approach makes memory fragmented, and big, unallocated chunks
