@@ -55,9 +55,7 @@ at every step, either:
 - shift (push) an input symbol (token) onto the stack, and consume from the input, **or**
 - reduce the stack from `[o1, o2, o3, ..., oN]` using the rule $N\to \sigma_{1}, \sigma{2}, \dots, \sigma_{N}$ to make the stack.
 
-also called **bottom-up** parsing and LR (process input **left-to-right**, builds **rightmost derivation**, or always choosing to process the *rightmost non-terminal* in a grammar).
-
-
+also called **bottom-up** parsing and **LR parsing** (process input **left-to-right**, builds **rightmost derivation**, or always choosing to process the *rightmost non-terminal* in a grammar).
 
 balanced parentheses grammar:
 
@@ -92,7 +90,7 @@ S  -> (S)S | epsilon
 | `S'`   | ` `   | accept                     |
 |        |       |                            |
 ## LR(0)
-a simple version of what real parsers are. the '0' means that the parser has no lookahead (LA) symbols
+again, the LR class of parser belongs to the shift-reduce/bottom-up class of parsers. LR(0) is a simple version of what production-environment parsers are. the '0' means that the parser has no lookahead (LA) symbols.
 
 defined as an NFA controlling a stack. the NFA states are items, for example
 
@@ -120,6 +118,8 @@ T -> .x
 T -> x.
 ```
 
+> **NOTE**: never write the $\epsilon$ transition state. $A\to\epsilon$ **does NOT** constitute a valid state $A\to.\epsilon$, because it creates epsilon transitions.
+
 we get the trace for $N\to \sum_{1}\sigma \sum_{2}$, where:
 - $\sum$ indicates a **possibly empty** sequence of tokens
 - $\sigma$ is a symbol
@@ -129,4 +129,86 @@ we get the trace for $N\to \sum_{1}\sigma \sum_{2}$, where:
 - anytime we encounter the transition: $N \to \Sigma_{1}\cdot\sigma\Sigma_{2}$, we can consume the $\sigma$ to move to the state $N \to \Sigma_{1}\sigma\cdot\Sigma_{2}$
 - anytime we encounter a non-terminal $N$: $N \to \Sigma_{1}\cdot N'\Sigma_{2}$, we can use a $\epsilon$ transition to switch non-terminals $N'\to \cdot\Sigma_{3}$.
 
-parse stack for LR parsers contain the state numbers. show the symbols on the stack in the exam!c
+parse stack for LR parsers contain the state numbers. show the symbols on the stack in the exam!
+
+- push the state $q$ on the stack which has the item $S\to .N$
+- repeat until error/accept:
+	- let $s$ be the state on the top of the stack.
+	- if $N\to\Sigma_{1}.T\Sigma_{2}$ is an item in $s$, and $T$ is next input, then **shift**.
+		1. push the $T$ onto the stack
+		2. push $s'$, where $s \to^{T}s'$
+		3. consuming $T$ from input
+	- if $N\to\Sigma.$ is an item in $s$, **reduce**.
+		1. popping $\Sigma$ and its corresponding states, now $s'$ is on top of the stack (and has the item $N'\to \Sigma N\Sigma$)
+		2. pushing N
+		3. pushing $s'$, where $s'\to^{N}s''$
+	- if $S\to N.end$ is an item in $s$, and $end$ is the next input, **accept**.
+	- if 0 (parse error, external) or more than 1 (parse conflict, internal) of the above rules apply, **error**.
+
+a parse table indicates which state we can go to after we reduce (aka when we reduce, we move on to the next state)
+
+suppose that we are operating on the following language:
+
+```
+S -> E$
+E -> T + E
+E -> T
+T -> x
+```
+
+we start by filling out all the shift operations. $sN$ means "shift the input and move to state $N$.
+
+| state | x   | +   | $      | E   | T   |
+| ----- | --- | --- | ------ | --- | --- |
+| 0     | s2  |     |        |     |     |
+| 1     |     |     | accept |     |     |
+| 2     |     |     |        |     |     |
+| 3     |     | s4  |        |     |     |
+| 4     | s2  |     |        |     |     |
+| 5     |     |     |        |     |     |
+then, we can add in the `goto` operations, which consumes a non-terminal. $gN$ moves to state $N$.
+
+| state | x   | +   | $      | E   | T   |
+| ----- | --- | --- | ------ | --- | --- |
+| 0     | s2  |     |        | g1  | g3  |
+| 1     |     |     | accept |     |     |
+| 2     |     |     |        |     |     |
+| 3     |     | s4  |        |     |     |
+| 4     | s2  |     |        | g5  | g3  |
+| 5     |     |     |        |     |     |
+finally, add in the `reduce` operations, which pops the state and the current token on stack, before moving to another state. unlike the above two, $rN$ reduces **by the rule $N$**.  however, the reduce operations **fill out the entire row!**
+
+| state | x   | +         | $      | E   | T   |
+| ----- | --- | --------- | ------ | --- | --- |
+| 0     | s2  |           |        | g1  | g3  |
+| 1     |     |           | accept |     |     |
+| 2     | r3  | r3        | r3     |     |     |
+| 3     | r2  | **s4/r2** | r2     |     |     |
+| 4     | s2  |           |        | g5  | g3  |
+| 5     | r1  | r1        | r1     |     |     |
+in state 2, on the "+" input, we see that there is two possible actions the parser could take. since these two actions are shift/reduce, we call this a **shift-reduce conflict**. another possible type is the **reduce-reduce conflict**, but *never* a shift-shift conflict.
+
+this is illegal, and we say that this language is **cannot** be parsed by the $LR(0)$ algorithm, or $G \not\in LR(0)$.
+### parse trace
+we can use a parse trace table to keep track of where the parser is at any given input. assuming the same language $G$ as above, we attempt to parse `x$`:
+
+| stack | input | action |
+| ----- | ----- | ------ |
+| 0     | x$    | s2     |
+| 0x2   | $     | r3     |
+| 0T3   | $     | r2     |
+| 0E1   | $     | accept |
+
+## SLR parser
+stands for simple LR, and has a lookahead length of 1. here, $follows(N)$ indicate a set of tokens that can follow a token $N$.
+
+so, using the language $G$ above has:
+- $follows(E) = \{ \$ \}$
+- $follows(T) = \{+, \$ \}$
+
+1. draw the LR(0) finite state machine
+2. compute all the follows (lookahead length of 1)
+3. reduce only if the input matches one of the follows and correct state.
+
+bottleneck: the LR parsers can chain tokens, maxing out the stack, before popping each token. this is an extremely inefficient use of space.
+

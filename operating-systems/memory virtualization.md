@@ -78,4 +78,13 @@ a segment is just a **contiguous portion of the address space** of a particular 
 
 each segment is placed in different parts of the physical memory, and base-and-bound is used under the hood.
 ### address translation
-same 
+similar to what we have done above, the OS keeps track of an **offset** variable which indicates where the actual block begins, and obfuscates the true memory location. so, we once again arrive at:
+
+```
+physical address = offset + base_addr
+```
+
+### segmentation fault
+if the program attempts to access an illegal address beyond the end of the heap, the OS throws a segfault and kills the program.
+
+so, if the program's heap starts at 4KB, and is allowed 2KB, the furthest it could go is 6KB. if the program tries to reach 7KB, we reach a segfault.
