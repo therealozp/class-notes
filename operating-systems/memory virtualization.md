@@ -187,3 +187,43 @@ attempts to reduce memory overhead of page tables by adding segmentation to the 
 
 this solution works, but for large and sparsely-used heaps, there can still be a lot of resource waste.
 #### multi-level page tables
+instead of using a linear page table, why not make it a tree? 
+
+the main ideas are:
+- split page table into page-sized units
+- if entire page of page table entries is invalid, don't allocate it. so, the portions that we allocate can be very dynamic.
+
+so, we can break it down to multiple levels. an abstract way is to make page tables point to one another, but in the page table entry, we can **break the virtual address into multiple parts**. for example, consider a two-level page table. the virtual address in this case would include:
+- a **page directory** index: points to a page table
+- a **page table index**: points to a page frame in memory
+- offset within the page
+
+then, our page directory can hold multiple "pointers" to different page tables, instead of having one massive linear table. 
+
+if a process ever only use a small portion of its virtual address space, this approach ensures that only the necessary page tables are allocated. thus, we save overhead while still making sure that our process has enough space to grow.
+## swap memory
+another small part on the hard disk, reserved for the OS to swap pages into when the memory eventually hits capacity. this allows the OS to maintain its lies of having infinite virtual memory for multiple concurrently running processes.
+
+when the memory reaches capacity, the OS moves pages to swap to make room for new pages. of course, the OS will not wait until the memory is full to begin swapping, because this can create **deadlocks**. instead, it always keep some small portion of memory free, and does this very proactively.
+ 
+**page fault** occurs when a page is needed, but is not on memory. then, the OS needs to go back into the hard disk, copies the required page to memory, and then copy that page to the TLB.
+### replacement policy
+similar to the TLB, we also have to consider the page replacement policies of swap, such as LRU and random replacement.
+
+LRU is very expensive, because it needs to keep some sort of timestamp or access history, which is more actions then realistically needed. instead, we use a more practical approach, such as the **clock algorithm**.
+
+the OS keeps some metadata, in the form of **use bit** and the **dirty bit**.
+- **use** is set to 1 when page is accessed
+- **dirty** is set to 1 when the page is modified. evicting a clean page is free, because we don't have to write it back to the disk, which costs another memory write/hard disk access.
+
+ the **clock algorithm** is an efficient **approximation** using a circular list.
+1. arrange pages in a circular list (like a clock)
+2. a hand (pointer) moves around the circle, checking pages one by one.
+3. if the **use bit** of a page is **0**, evict the page.
+4. if the **use bit** is **1**, clear it (set to 0) and move the hand to the next page.
+5. repeat until a page with **Use bit = 0** is found and evicted.
+
+### thrashing
+in modern PCs, the demands of the set of running processes simply exceeds the available physical memory, which keeps the OS consistently paging. 
+
+instead, we can either limit the number of jobs to run less jobs, or kill memory intensive jobs entirely.
