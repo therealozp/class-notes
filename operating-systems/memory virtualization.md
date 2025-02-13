@@ -88,3 +88,67 @@ physical address = offset + base_addr
 if the program attempts to access an illegal address beyond the end of the heap, the OS throws a segfault and kills the program.
 
 so, if the program's heap starts at 4KB, and is allowed 2KB, the furthest it could go is 6KB. if the program tries to reach 7KB, we reach a segfault.
+
+### stack address translation
+the memory allocated to the stack **grows backward**. so, we need extra support from hardware to check which way segment grows. here, 1 indicates the positive direction (down), and 0 indicates up.
+
+| segment | base | size | grow direction |
+| ------- | ---- | ---- | -------------- |
+| code    | 32K  | 2K   | 1              |
+| heap    | 34K  | 2K   | 1              |
+| stack   | 28K  | 2K   | 0              |
+
+we can even further divide these by using the first few MSBs of the virtual address, i.e.
+
+| segment | bits |
+| ------- | ---- |
+| code    | 00   |
+| heap    | 01   |
+| stack   | 10   |
+| -       | 11   |
+
+so, the way it will be referenced is:
+
+```
+	+------------+
+000 |            |
+	|    code    |
+001 |            |
+	|            |
+010 |    heap    |
+	|            |
+011 |            |
+	|            |
+100 |    stack   |
+	|            |
+101 |            |
+	|            |
+110 |   unalloc  |
+	|            |
+111 |            |
+	|            |
+	+-------------+
+```
+
+## paging
+the idea behind paging is splitting the address space into different **pages** of fixed size. compare this to segmentation, where logical segments (code, heap, stack) can have variable sizes.
+
+physical is also split into page (frames), where the page table **per process** is needed to map virtual pages to physical frames. this yields two main advantages:
+- memory can be managed flexibly. we don't need to know how heap and stack grows, nor do we need to know how it is used.
+- memory management is simple, because the *page in address space* and the *page frame* are the **same size**, which makes it easy to allocate and maintain a free list.
+
+a page table entry usually consists of the following:
+- valid bit: if the translation is valid
+- protection bit: indicating rwx (read, write, execute) permissions
+- present bit: if page table is in memory or on disk
+- dirty bit: if the entry is modified since the time it is brought into memory
+- accessed bit: self explanatory due to the name
+### address translation
+the address in general consists of two components: the page/frame number, and the offset (within the page). the hardware is able to translate the virtual page number (VPN) into a physical frame address.
+### where is it stored?
+there are many different ways we can store pages. the simplest form it can take is a **linear page table**, or an array. the drawback to this is page tables can grow *very large*. for a system with a 32-bit address space and 4KB pages:
+-  $4KB = 2^{2} \times 2^{10}B$, which means 12 bits are reserved for the offset.
+-  32 - 12 = 20 bits are reserved for the virtual page number.
+- 4MB = $2^{20}$ entries, with 4 bytes per entry
+
+the page table **for each process** is stored on memory
