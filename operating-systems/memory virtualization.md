@@ -226,4 +226,4 @@ the OS keeps some metadata, in the form of **use bit** and the **dirty bit**.
 ### thrashing
 in modern PCs, the demands of the set of running processes simply exceeds the available physical memory, which keeps the OS consistently paging. 
 
-instead, we can either limit the number of jobs to run less jobs, or kill memory intensive jobs entirely.
+instead, we can either limit the number of jobs to run less jobs, or kill memory intensive jobs entirely.[]
