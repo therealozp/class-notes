@@ -139,7 +139,7 @@ parse stack for LR parsers contain the state numbers. show the symbols on the st
 		2. push $s'$, where $s \to^{T}s'$
 		3. consuming $T$ from input
 	- if $N\to\Sigma.$ is an item in $s$, **reduce**.
-		1. popping $\Sigma$ and its corresponding states, now $s'$ is on top of the stack (and has the item $N'\to \Sigma N\Sigma$)
+		1. popping $\Sigma$ and its corresponding states. now, $s'$ is on top of the stack (and has the item $N'\to \Sigma_{1} N\Sigma_{2}$)
 		2. pushing N
 		3. pushing $s'$, where $s'\to^{N}s''$
 	- if $S\to N.end$ is an item in $s$, and $end$ is the next input, **accept**.
