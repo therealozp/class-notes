@@ -1,5 +1,4 @@
 this is the one true **fair-share** scheduler, which guarantees the system that each job will obtain a certain percentage of CPU time. however, a big drawback to this scheduler is that it performs **horrible in turnaround or response time**.
-
 ## basic concepts
 the entire system revolves around the concepts of **tickets**, which is CPU currency that represents the share of a certain resource that a process should receive.
 
@@ -20,6 +19,8 @@ under the hood, the user allocates tickets among their own jobs in whatever **ti
 a process can also perform **ticket transfer**, which temporarily hands off its tickets to *another process*, or go through **ticket inflation**, which temporarily raises or lowers the number of tickets it owns. 
 - if a process needs more CPU time, it can boost its own tickets.
 
+of course, this can only be done if the processes trust one another. 
+### implementation
 in implementation, the system probably keeps a list of processes and the number of allocated tickets: 
 
 ```

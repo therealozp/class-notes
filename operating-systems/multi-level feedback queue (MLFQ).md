@@ -23,13 +23,13 @@ with the naive MLFQ, if there are too many interactive jobs in the system, the l
 
 or, the process can **game the scheduler**, and executes 99% of the time slice, and then issue an I/O request. this keeps it at near full utilization at the highest priority.
 
-or another issue, where the program may start off as CPU-intensive, but then switches mode to being interactive with I/O. in this case, will it ever climb back to the necessary priority?
-
+or another issue, where the program may start off as CPU-intensive, but then switches mode to being interactive with I/O. in this case, will it ever climb back to the necessary priority? probably not.
 ### solutions
 to address the issue of too many interactive jobs, the MLFQ will often perform a priority reset, where it **moves all jobs to the topmost queue**. 
 
 to prevent gaming the scheduler, we add in an additional rule: once a job uses its time slice at a given level (regardless of how many times it has relinquished CPU control), we reduce the CPU priority (push it to a lower queue).
 
+when we say "regardless of how many times it has relinquished control", we mean that if the time slice is 6ms, then as long as a process uses 6ms (be it in one go, or through multiple different slices and a break in between), it gets bumped.
 ### mlfq tuning
 the higher-priority queue should have short time slices (< 10ms) to support interactive jobs. on the other hands, lower-priority queues should have longer time slices, to accommodate CPU-intensive jobs.
 

@@ -1,4 +1,4 @@
-the early OS does not have any interactivity, so it loads only **one process** in memory, resulting in very poor utilization and efficiency.
+cthe early OS does not have any interactivity, so it loads only **one process** in memory, resulting in very poor utilization and efficiency.
 ### multiprogramming & time sharing
 a solution to virtualizing memory is loading multiple processes:
 - execute each one for a little bit

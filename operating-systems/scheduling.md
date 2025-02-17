@@ -13,7 +13,7 @@ $$
 T_{\text{turnaround}} = T_{\text{completion}} - T_{\text{arrival}}
 $$
 ### fairness
-how even CPU power is put toward each job. a scheduler that maximizes this metric is the [[proportional share scheduler]] and, especially. the [[proportional share scheduler#Linux completely fair scheduler (CFS)|completely fair scheduler]].
+how evenly CPU power is put toward each job. a scheduler that maximizes this metric is the [[proportional share scheduler]] and, especially. the [[proportional share scheduler#Linux completely fair scheduler (CFS)|completely fair scheduler]].
 ### response time
 period from when job arrives until the first time it is **scheduled**.
 $$

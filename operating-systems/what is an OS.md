@@ -15,6 +15,5 @@ to virtualize memory, the OS makes use of the virtual memory, to simulate the "i
 - on a write, it specifies the data written to be written to the address
 
 physical memory can only be accessed by the OS. uses virtual addresses to communicate, and maps down to physical memory on execution.
-
 ## concurrency
 the OS is juggling multiple things at once, and multi-threaded processes also exhibit the concurrency problem. 
