@@ -212,3 +212,49 @@ so, using the language $G$ above has:
 
 bottleneck: the LR parsers can chain tokens, maxing out the stack, before popping each token. this is an extremely inefficient use of space.
 
+### more sets
+- $follows(N)$ indicates all **tokens** that immediately follows a substring derived from $N$
+- $nullable(\Sigma)$ is true if and only if $\Sigma$ can expand into $\epsilon$
+- $first(\Sigma)$ indicates all **tokens** that can begin an expansion of $\Sigma$
+
+consider the language:
+
+```
+S -> Z$
+Z -> XYZ | d
+X -> Y | a
+Y -> ep | c
+```
+
+| token | null | first   | follows |     |
+| ----- | ---- | ------- | ------- | --- |
+| S     | F    | a, c, d |         |     |
+| Z     | F    | a, c, d | $       |     |
+| X     | T    | a, c    | a, c, d |     |
+| Y     | T    | c       | a, c, d |     |
+## LR(1)
+LR(1), aka the **canonical LR parser** has massive parse tables, too many DFA states, making parsing too complicated. one of the two choices of building production-level parsers, but normally we use the LALR parser.
+
+we call this canonical LR, because any LR parser $LR(k)$, for any constant $k$, can be reducible to some form of $LR(1)$. $LR(1)$ has all the computation possible for any standard programming language.
+
+LR(1) is similar in concept to LR(0), except items have lookaheads.  takes the form:
+$$N\to\Sigma_{1}.\Sigma_{2}.\ \ \ \ \ T$$
+where $T$ is the lookahead character, to tell the parser **when to reduce**.
+### transitions
+- on $N\to\Sigma_{1}.\sigma\Sigma_{2}\ \ \ \ \ T$, consume a $\sigma$ to go to $N\to\Sigma_{1}\sigma.\Sigma_{2}\ \ \ \ \ T$
+- on $N\to\Sigma_{1}.N'\Sigma_{2}\ \ \ \ \ T$, consume $\epsilon$ and go to $N' \to .\Sigma_{3}\ \ \ \ \ T'$, where $N'\to \Sigma_{3}$ is a valid rule and $T'\in first(\Sigma_{2}T)$ 
+
+consider the example language
+
+```
+S -> A$
+A -> (A) | a
+```
+
+to parse with an LR(1):
+- first, write the starting state. in this case, `S -> .A$`
+- we see there is a dot in front of the token `A`, we chase down all possible states that starts with `A`
+- now, we need to compute the lookahead. meaning that, whichever state that we originated from, we find the first character **AFTER THE DOT MOVED**, in this case, for state 0, is \$.
+## LALR
+to derive an LALR parser, we go from LR(1) and merge its DFA states where **states only differ in the lookaheads.**
+
