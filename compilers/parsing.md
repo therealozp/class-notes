@@ -256,8 +256,51 @@ A -> (A) | a
 
 to parse with an LR(1):
 - first, write the starting state. in this case, `S -> .A$`
-- we see there is a dot in front of the token `A`, we chase down all possible states that starts with `A`
+- we see there is a dot in front of the token `A` we chase down all possible states that starts with `A`
 - now, we need to compute the lookahead. meaning that, whichever state that we originated from, we find the first character **AFTER THE DOT MOVED**, in this case, for state 0, is \$.
-## LALR
-to derive an LALR parser, we go from LR(1) and merge its DFA states where **states only differ in the lookaheads.**
 
+with these rules, we can construct the DFA with the following states:
+
+![[lr1_parsing.png]]
+
+then, following the DFA, we are able to construct a parse table as follows, numbered for states:
+
+| state / token | (   | a   | )   | $   | A   |
+| ------------- | --- | --- | --- | --- | --- |
+| 0             | s3  | s2  |     |     | g1  |
+| 1             |     |     |     | acc |     |
+| 2             |     |     |     | r3  |     |
+| 3             | s7  | s6  |     |     | g4  |
+| 4             |     |     | s5  |     |     |
+| 5             |     |     |     | r2  |     |
+| 6             |     |     | r3  |     |     |
+| 7             | s7  | s6  |     |     | g8  |
+| 8             |     |     | s9  |     |     |
+| 9             |     |     | r2  |     |     |
+
+## LALR
+to derive an LALR parser, we go from LR(1) and merge its DFA states where **states only differ in the lookaheads, but have the same items everywhere else.** as we can see above, for a simple language, there are already 10 states. so, having the LALR parser will enable us to reduce the number of states even further.
+
+looking at our DFA for LR(1) above, we see that there is an awful lot of states that are being duplicated. from what we found:
+
+```
+state 2 === state 6
+state 3 === state 7
+state 4 === state 8
+state 5 === state 9
+```
+
+when merging entries for the parse table, we just look at the two relevant states and compare each cell with its counterpart.
+
+looking at states 2 and 6 for example, we see that ")" has `r3` in 6 but empty in 2. similarly, "\$" has a `r3` on 2, but empty on 6. whenever these situations (transition available in one but not in the other), we merge the state with whichever one has the value.
+
+so, merging them together, we get the final resultant table for LALR:
+
+| state / token | (   | a   | )   | $   | A   |
+| ------------- | --- | --- | --- | --- | --- |
+| 0             | s3  | s2  |     |     | g1  |
+| 1             |     |     |     | acc |     |
+| 2             |     |     | r3  | r3  |     |
+| 3             | s7  | s6  |     |     | g4  |
+| 4             |     |     | s5  |     |     |
+| 5             |     |     | r2  | r2  |     |
