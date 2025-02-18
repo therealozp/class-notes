@@ -208,7 +208,10 @@ so, using the language $G$ above has:
 
 1. draw the LR(0) finite state machine
 2. compute all the follows (lookahead length of 1)
-3. reduce only if the input matches one of the follows and correct state.
+3. reduce only if the input matches one of the follows and correct state. for example:
+	- if the stack currently has the token $T$, and the next input is $+$
+	- instead of reducing $E \to T$, the parser sees that $+\not\in follows(E)$, so it will **not reduce**
+	- instead, the token $+$ is shifted in, and parsing continues as usual.
 
 bottleneck: the LR parsers can chain tokens, maxing out the stack, before popping each token. this is an extremely inefficient use of space.
 
