@@ -137,7 +137,7 @@ auxiliary routines
 2. C declarations
 	- use the `%{ %}` to insert a literal, inserted verbatim on top of the `lex.yy.c` generated file.
 
-```
+``` 
 %{
 #define DEBUG_LEX 0
 #include <stdio.h>
