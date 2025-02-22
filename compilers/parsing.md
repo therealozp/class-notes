@@ -419,4 +419,4 @@ E -> if E then 0
 E -> 0
 ```
 
-because there is the same E token, this language is infinitely recursive, and does not even belong in $LL(k)$.
+	because there is the same E token, this language is infinitely recursive, and does not even belong in $LL(k)$.
