@@ -30,7 +30,19 @@ rules are written in Backus-Naur form (BNF), which looks like:
 - $N ::= \Sigma_{1} \mid \Sigma_{2}$
 - ...
 
-a language is called **right-recursive** if the non-terminal on the LHS in same as the **rightmost symbol** on the RHS of the production rule. similarly, a **left-recursive** language if the non-terminal on the LHS is **same as the leftmost symbol** of the RHS. 
+a language is called **right-recursive** if the non-terminal on the LHS in same as the **rightmost symbol** on the RHS of the production rule. 
+
+```
+E -> T + E
+T -> epsilon
+```
+
+similarly, a **left-recursive** language if the non-terminal on the LHS is **same as the leftmost symbol** of the RHS.
+
+```
+E -> E + T
+T -> epsilon
+```
 
 **ambiguous** CFGs means that, for the same language, there can be multiple ways to compile (> 1 parse trees) for the same program.
 
