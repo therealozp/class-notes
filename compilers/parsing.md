@@ -212,7 +212,7 @@ we can use a parse trace table to keep track of where the parser is at any given
 | 0E1   | $     | accept |
 
 ## SLR parser
-stands for simple LR, and has a lookahead length of 1. here, $follows(N)$ indicate a set of tokens that can follow a token $N$.
+stands for simple LR, and has a lookahead length of 1. here, $follows(N)$ indicate a set of tokens terminal symbols that can appear **immediately after a non-terminal** in a derivation.
 
 so, using the language $G$ above has:
 - $follows(E) = \{ \$ \}$
@@ -407,7 +407,7 @@ the parse stack we mentioned before is not explicitly defined, but rather, we ma
 | $N_1$        | rule#   |         |     |
 | $N_2$        |         |         |     |
 | ...          |         |         |     |
-each cell means "if we are on the token $N_{1}$ and encounter the peek $T_{1}$, parse by the rule defined there.""
+each cell means "if we are on the token $N_{1}$ and encounter the peek $T_{1}$, parse by the rule defined there."
 
 to build the parse table, we follow: $\forall N\to\Sigma$:
 - $\forall T \in first(\Sigma)$: put $N \to \Sigma$ at (row N, column T) **and**
