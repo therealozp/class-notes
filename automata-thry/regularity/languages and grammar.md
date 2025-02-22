@@ -1,11 +1,11 @@
 ## languages
 1. we start with a finite non-empty set $\Sigma$ of symbols, called **alphabet**.
-2. then we have stings, which are **finite** sequences of symbols from the alphabet, e.g $\Sigma = \set{a, b}$ then "abab" or "abbabab" are strings on $\Sigma$. 
+2. then we have strings, which are **finite** sequences of symbols from the alphabet, e.g. $\Sigma = \set{a, b}$ then "abab" or "abbabab" are strings on $\Sigma$. 
 3. the "=" notation means a certain variable will have a value "abaa". the length of a string is denoted with $\mid w \mid$.
 
 If $\Sigma$ is the alphabet, then we use $\Sigma ^*$ to denote the set of strings obtained by concatenation zero or more symbols from $\Sigma$. $\Sigma ^*$ will always contain $\lambda$, while $\Sigma ^+$ does not contain $\lambda$. 
 
-the set $\set{a,aa, bbb}$ is a language on $\Sigma$, and because it is finite, we call it the finite language. by contrast, the set $\set{a^{n}b^{n} : n \geq 0}$ is an infinite language.
+the set $\set{a,aa, bbb}$ is a language on $\Sigma$, and because it is finite, we call it a finite language. by contrast, the set $\set{a^{n}b^{n} : n \geq 0}$ is an infinite language.
 
 since languages are sets, we can also define the union, intersection, and difference of the two. the complement is defined with respect to $\Sigma ^*$, so the complement of $L$ is $L^{C}= \Sigma ^*-L$.
 ### concatenation

@@ -2,6 +2,8 @@ a **translator** is a program that takes in a program (source code) written in s
 
 a **compiler**, is a translator where $T$ needs to be a (possibly virtual) machine language. 
 
+in contrast, an **interpreter** translates the code to a lower-level language **just-in-time**, so it does it as the program runs. the compiler translates everything into another target language before execution.
+
 ```
         +----------+
 src --> |          | --> target
