@@ -146,7 +146,7 @@ auxiliary routines
 
 3. regex macros
 
-```
+```c
 digits: `[0-9]`
 whitespace: `[ \t\r\n]+`
 ```
