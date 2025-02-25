@@ -59,3 +59,4 @@ this causes a lot of resources to be wasted, and should be avoided whenever poss
 when a warp needs to wait for a high latency operation, the processor **selects another warp** on the ready queue, and schedule it for execution.
 
 to achieve high degrees of parallelization, we need to have a high number of warps (so that we always have something to do). for this reason, an SM supports far more warps than the actual number of cores it has.
+
