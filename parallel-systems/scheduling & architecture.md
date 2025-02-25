@@ -1,8 +1,26 @@
+threads/blocks require resources to execute, so the **streaming multiprocessor (SMs)** can accommodate a limited number of threads/blocks at once, while *other blocks* have to wait before it is finished.
+
 in reality, we can launch up to millions of threads, but only thousands of blocks. even then, we should launch the number of blocks in the thousands, not just 4 blocks. 
 
-threads in **different blocks** are **asynchronous** (but threads in the *same block* are *synchronous*). this allows blocks to execute in any order, parallel or sequentially. 
+## architecture
+threads are assigned to SMs at the granularity of the **block**, so all threads in a block are assigned **to the same SM**. this makes for *efficient collaboration*.
 
-so, when writing CUDA programs, we try to write code that do not require synchronicity.
+so, threads in the same block can collaborate in ways that threads in different blocks cannot:
+- barrier synchronization
+- shared memory
+- other stuff
+
+## scheduling considerations
+all threads in a block assigned to an SM simultaneously, so it will only ever is assigned when SM secures enough resources. otherwise, running stuff at the same time **leads system to a deadlock**.
+
+### transparent scalability
+threads in **different blocks** are **asynchronous** (but threads in the *same block* are *synchronous*). 
+- allows blocks to execute in any order
+- parallel or sequentially. 
+
+this allows massive code reuse, where the same code can be run on different devices with different amount of hardware parallelism.
+
+so, when writing CUDA programs, we try to write code that **do not require synchronicity.**
 ## warps
 these are **groups of threads**, and the basic unit of scheduling. blocks assigned to an SM are **further divided** into warps for the host to schedule. 
 
@@ -38,3 +56,6 @@ run C;
 this causes a lot of resources to be wasted, and should be avoided whenever possible.
 
 ### latency hiding
+when a warp needs to wait for a high latency operation, the processor **selects another warp** on the ready queue, and schedule it for execution.
+
+to achieve high degrees of parallelization, we need to have a high number of warps (so that we always have something to do). for this reason, an SM supports far more warps than the actual number of cores it has.

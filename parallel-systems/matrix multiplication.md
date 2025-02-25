@@ -41,7 +41,7 @@ float = sum = 0.0f
 
 for (int i = 0; i < N / tile_size; i ++) {
 	A_s[dx][dy] = A[row * N + i * tile_size + dx];
-	B_s[dx][dy] = B[(i * tile_size + dy) * N + col]
-	
+	B_s[dx][dy] = B[(i * tile_size + dy) * N + col];
 }
 ```
+
