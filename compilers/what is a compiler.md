@@ -13,7 +13,6 @@ C   --> |          | --> x86, ARM
 ```
 
 a job of a compiler is not only to compile valid programs, but also have an option to **reject invalid programs**.
-
 ## phases of compilation
 **source program** *--lexical analyzer (lexer, tokenizer, scanner)-->* **token stream** *--parser-->* **tokens organized into categories** *--parser actions-->* **abstract syntax trees (ASTs)** *--semantic analysis (type checking)-->* **valid (well-typed) ASTs + symbol table** *--code generation-->* **machine code**
 

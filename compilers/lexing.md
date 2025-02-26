@@ -101,7 +101,6 @@ DFA accepting all binary number of the form $0^{n}1^{n}$, where $n\in N$:
 this language cannot be accepted by a DFA. because the DFA has a finite number of states, however many states are allocated out for counting the amount of 0s, we would need the same amount of states to count the 1s.
 
 meaning, if you have 1 million states, a language with 1,000,001 states will exhaust the states. so, this DFA is impossible. **however,** bounding $n$ with an actual number will mitigate this problem, e.g. $n \leq 200$, by making it a finite language.
-
 ## regex
 a regular expression can be formed in the following ways:
 - a symbol $\sigma$, e.g. "a"
