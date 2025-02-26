@@ -14,4 +14,4 @@ shared memory is in the L1 cache of each streaming multiprocessor (SM). in essen
 | `int localVar`                           | register | thread | thread      |     |
 | `int localVar[N}`                        | global   | thread | thread      |     |
 
-	unlike traditional C programming, where declaring `int local` allocates memory on the **stack**, e.g. main memory, the same decl. on the GPU will put the value in a **register**. 
+unlike traditional C programming, where declaring `int local` allocates memory on the **stack**, e.g. main memory, the same decl. on the GPU will put the value in a **register**. 
