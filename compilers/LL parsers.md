@@ -2,7 +2,7 @@ also called **predictive parsing**, **recursive-descent**, or **top-down**. call
 - process input from left to right
 - it expands non-terminals with rules from left-to-right, creating a **leftmost** derivation.
 
-![[Pasted image 20250219173245.png]]
+![[parser sets.png]]
 
 easier to code. consists of three main things:
 
@@ -29,9 +29,17 @@ S -> e$
 e -> IF e THEN e | PRINT e | 0 | 1
 ```
 
-then, we can write some parse functions for each non-terminal as follows:
+then, we can write some pseudocode for the parse functions for each non-terminal as follows:
 
 ```c
+void consume(Token t) {
+	if (peek == t) {
+		consume t from input
+	} else {
+		throw EXTERNAL syntax err
+	}
+}
+
 void parseS() {
 	parseE();
 	consume($);
@@ -49,6 +57,9 @@ void parseE() {
 		case PRINT: {
 			consume("PRINT");
 			parseE();
+			
+			// MANDATORY RETURN TO AVOID FALL THROUGH
+			return; 
 		}
 		case 0: {
 			consume("0");
@@ -58,16 +69,30 @@ void parseE() {
 			consume("1");
 			return; 
 		}
-		default: error
+		default: error // EXTERNAL ERROR
 	}
 }
 ```
 
 the parse stack we mentioned before is not explicitly defined, but rather, we make use of the **recursive call stack** to parse.
 
-> you can **NEVER** have a left-recursive language be parsed with an LL parser.
+> you can **NEVER** have a left-recursive language be parsed with an LL parser. thus, we have the one-way implication: left recursive $\Rightarrow \not\in L L(1)$. note that this implication only applies **one-way**, meaning if it is not in $L L(1)$, it does not have to be left-recursive.
 
 ### LL parse table
+### auxiliary sets
+- $follows(N)$ indicates all **tokens** that immediately follows a substring derived from $N$
+- $nullable(\Sigma)$ is true if and only if $\Sigma$ can expand into $\epsilon$
+- $first(\Sigma)$ indicates all **tokens** that can begin an expansion of $\Sigma$
+
+to start the LL-parsing process, we first need to construct the table:
+
+| production rule | $first(RHS)$                                | $n ullable(RHS)$ | $follows(LHS)$        |
+| --------------- | ------------------------------------------- | ---------------- | --------------------- |
+| prod 1          | all beginning tokens of the right-hand side | is RHS nullable? | what follows the LHS? |
+**to save time**: we only ever have to compute the follow set *if the RHS is nullable*.
+
+### parse table
+to compute the parse table, we construct the following, where $N$ are production rules and $T$ are terminals:
 
 | token / peek | $T_{1}$ | $T_{2}$ | ... |
 | ------------ | ------- | ------- | --- |
