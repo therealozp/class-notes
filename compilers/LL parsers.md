@@ -124,3 +124,35 @@ E -> 0
 ```
 
 because there is the same E token, this language is infinitely recursive, and does not even belong in $LL(k)$.
+
+## $L L (k)$ and $L L (*)$
+for some languages, for example
+
+```
+S -> A$
+A -> Bx
+A -> By
+B -> xB
+B -> y
+```
+
+because of the nature of `B`'s expansion, which is $x^*y$, we are unable to determine the $k$-lookahead of `A`, for any finite value of $k$. so, a solution is to use $L L (*)$, which matches a **regular expression** instead of a token.
+
+```c
+parseA() {
+	switch (lookaheads match): 
+		case x*yx: {
+			parseB();
+			consume(x);
+			return;
+		}
+		
+		case x*yy: {
+			parseB();
+			consume(y);
+			return;
+		} 
+}
+```
+
+the quadratic time arises from the processing of these regexes, which have to go through the entire sequence of lookaheads (length $n$) for each character in the input (length $n$). TODO: disambiguate

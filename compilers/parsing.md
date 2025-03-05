@@ -61,3 +61,15 @@ e -> e + t | t
 t -> t * f | f
 f -> N
 ```
+
+yacc: yet another compiler compiler.
+## LL vs LR
+### LL parsing
+LL parsing tends to need a lot of rewriting the grammar to eliminate left-recursion. so, it is very time-consuming.
+
+on the contrary, predictive parsers are **faster**. however, only applies when you actually hand-write the parser. once you have introduced another third-party tool into the mix, you lose all performance benefits.
+
+possible tools are ANTLR (another tool for language recognition), which generates an $L L (*)$ language. this also makes it quadratic time.m
+### LR parsers
+is usually the goto, unless you have a lot of time to waste and value performance; the grammar is so small where hand-writing is so easy, or you want convenience of another modern tool (say, ANTLR).
+

@@ -271,3 +271,15 @@ similar thing for right-associative. **non-associativity** means that we cannot 
 1 == 2 == 3 (syntax error)
 1 < 2 < 3 (syntax error)
 ```
+
+## LR-maxxing
+in a paper by Donald Knuth, he proved that any derivative of $LR(k)$ can be rewritten in some form of $LR(1)$. that is why $LR(1)$ is called the **canonical LR** parser.
+### GLR - generalized LR
+sees conflicts as a non-deterministic path to explore, so it does **not** reject conflicts, but rather explores all of them. parses non-deterministically, basically asking "is there a way to parse this that makes grammatical sense?"
+
+as the program is parsed, we start building up an exponential amount of paths. however, it is **not actually exponential**, but more like **polynomial**. so, people started figuring out that there is a **polynomial upper bound** to the size of the graphs. because it is acyclic, all branching paths **will eventually rejoin**, limiting the upper bound size to polynomial.
+
+represents parse trees as graphs, and on a conflict, explore both paths.
+
+the worse-case running time of the GLR parser is $O(n^3)$.
+
