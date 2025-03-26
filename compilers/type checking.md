@@ -194,3 +194,66 @@ int typeNameToNumber(char *typeName) {
 	}
 }
 ```
+
+## type checking algorithm
+don't try to diverge from the provided algorithm, as some checks will eventually be missed if not followed. type checkers have to check a great many things for uniqueness.
+
+1. class names are unique.
+
+2. superclass. all types in classes symtable and main block symtable are valid:
+	- throw the -3 variables for stuff that is non-existent. the -3 in symbol table should only be the `Object` superclasses.
+	- non-`Object` superclass types need to have >= 0 symbols.
+	- class type $\ne$ superclass type
+	- superclass is **not** final
+	- class variable field types needs to be >= -1
+	- all local variable types >= -1
+	- method return + parameter types >= -1
+these are all semantic typings. if any of the above checks fail, display a descriptive error message for what the error is, along with the line number.
+
+3. check class hierarchy to make sure it is a hierarchy (acyclic). 
+	- to do this, we rely on the class numbers, and check for either condition not holding: either $C \not \le C' \lor C' \not \le C$. as long as this condition is true, it is a hierarchy. $t < t'$ means $t$ is a subtype of $t'$
+	- either that, or for each class entry, walk up the hierarchy by accessing the superclass field, and **make sure that it reaches `Object`.** 
+	- there can only be as many walk-ups as there are classes defined in the program.
+
+4. subtyping
+	- `null` is a subtype of every other types.
+	- `nat` is not a a subtype nor supertype of anything except itself.
+	- subtyping should work even if there are cycles in a graph. (?)
+
+5. `join` operations: to determine the result of an expression. the join is only the lowest upper bound (lowest common ancestor) of each type.
+	- to save time, if-then-else branches should either evaluate to `Object` or `nat`
+	- the rule is, if statements will return the joined types of the two sub-expressions
+
+```c
+int join(int t1, int t2) {
+	// returns the join of 2 joinable types
+	if (isSubtype(t1, t2)) {
+		return t2;
+	}
+	if (isSubtype(t2, t1)) {
+		return t1;
+	}
+	
+	return join(classesST[t1].superclass, t2);
+}
+```
+
+6. all field names are unique in their classes and superclasses.
+
+7. for all declared methods:
+	- method name is unique in its defining class
+	- methods in superclasses with the **same method name** have the **same signature** (e.g. same return type and param type) and it is **not final**.
+	- methods parameter and local variable names have no duplicates.
+	- method's expression list body needs to be well-typed, meaning all expressions need to be well-typed, and the final type would be whatever the last expression is. 
+	- the type of the expr-list should be a subtype of the method's declared return type.
+$$
+\frac{e_{1}:t_{1}\dots e_{n}:t_{n}}{e_{1};e_{2 };\dots e_{n}:t_{n}}
+$$
+
+8. main block variable names have no duplicates.
+9. main block expr list is well typed, so it could be any type. (>= -2)
+### type checking an expression
+
+```c
+int typeExprs(ASTree *t, [context info])
+```
