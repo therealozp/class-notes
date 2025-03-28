@@ -79,7 +79,12 @@ so, we can build the symbol table for the following snippet:
 
 ```java
 class C extends Obj {...}
-main {nat n; C c; Object o; 0;}
+main {
+	nat n;
+	C c; 
+	Object o; 
+	0;
+}
 ```
 
 then, the symbol table for the following would be:
@@ -118,12 +123,12 @@ typedef struct {
 	int isFinal;
 	
 	// luckily, we have the perfect data structure to store the fields
-	VarDecl* fields;
+	VarDecl* varList;
 	int numVars; // how many fields do we have
 	
 	MethodDecl* methodList
 	int numMethods;
-}
+} ClassDecl
 ```
 
 so, for example, if we want to access the type of the **third** field of the **second** user-defined class, we can access it with something like:
@@ -200,7 +205,7 @@ don't try to diverge from the provided algorithm, as some checks will eventually
 1. class names are unique.
 
 2. superclass. all types in classes symtable and main block symtable are valid:
-	- throw the -3 variables for stuff that is non-existent. the -3 in symbol table should only be the `Object` superclasses.
+	- throw the -3 variables for stuff that is non-existent. the only correct -3 in symbol table should be `Object`'s superclasses.
 	- non-`Object` superclass types need to have >= 0 symbols.
 	- class type $\ne$ superclass type
 	- superclass is **not** final
