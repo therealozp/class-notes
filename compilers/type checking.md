@@ -53,7 +53,6 @@ printNat(x + 6);
 is this valid? probably. probably not! depends on what the value of `x` is. so, we need the context of what `x` is to be able to see if it is valid. 
 ## symbol tables
 a data structure that maps variables to their types. we should have 2 global symbol tables - get/set in `setupSymbolTables(ASTree *x)` -> at this point, there is no type checking.
-
 ### main block symbol table
 - an array of `VarDecl`s for the the main block. size = `numMainBlockLocals`.
 - type definition for the `VarDecls` structure:
@@ -253,7 +252,53 @@ $$
 8. main block variable names have no duplicates.
 9. main block expr list is well typed, so it could be any type. (>= -2)
 ### type checking an expression
+at any point in time, code involving identifiers are **context-sensitive**, meaning that they are well-typed in one context, but might not be in the other.
+
+to type check an expression list, iterate over each of the expression, ensure each of them are well typed. if so, return the type of the **last expression**.
+
+anything that could be executed needs to be type checked.
 
 ```c
-int typeExprs(ASTree *t, [context info])
+int typeExprList(ASTree *t, [context info]) {
+		// context info contains 2 numbers to see in which class/method we are executing
+	if (ill_typed) return -3;
+}
 ```
+
+```c
+int typeExpr(ASTree *t, [context info]) {
+	// always check for NULL first!
+	if (t == NULL) internalTCerror(...);
+	
+	switch (t->typ) {
+		case NAT_LITERAL_EXPR:
+			return -1;
+		case NULL_EXPR:
+			return -2;
+		case NOT_EXPR: // !E
+			// get the type T1 of t's child expr (t->children->data)
+			// check that type of T1 == -1
+			// if yes, return -1
+			// if no, externalTCerror(); (descriptive message with line number)
+		case PLUS_EXPR: // E + E
+			// get type T1 = typeExpr(t's first child, [same ctx]);
+			// get type T2 = typeExpr(t's second child, [same ctx]);
+			// check T1 == T2 == -1
+			// if yes, return -1
+			// if no, externalTCError();
+		
+	}
+}
+```
+
+for the most complicated suite of expressions, i.e. anything that involves identifiers: `ID`, `E.ID`, `ID(E)`, `E.ID(E)`, `ID = E`, `E.ID = E`, we can look at the following:
+
+if the `ID` isn't after a dot and isn't a method:
+- search for `ID` as a parameter, and then a local, and then a class field (of the current class and any inherited from super class). 
+- in a main block, it could only be a local. 
+- if the `ID` not found, we throw an error. **this order is important** due to scope punctures.
+if the `ID` isn't after a dot but it **is a method**:
+- search for `ID` as a method name, defined in the current class and super class. not found -> throw an error.
+- also check that argument `expr` is a subtype of the method's declared parameter type.
+- if all of these happen, the return type is whatever is declared in the method.
+
