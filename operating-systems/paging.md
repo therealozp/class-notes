@@ -15,8 +15,7 @@ the address in general consists of two components: the page/frame number, and th
 ### where is it stored?
 there are many different ways we can store pages. the simplest form it can take is a **linear page table**, or an array. the drawback to this is page tables can grow *very large*. for a system with a 32-bit address space and 4KB pages:
 -  $4KB = 2^{2} \times 2^{10}B$, which means 12 bits are reserved for the offset.
--  32 - 12 = 20 bits are reserved for the virtual page number.
-- 4MB = $2^{20}$ entries, with 4 bytes per entry
+-  32 - 12 = 20 bits are reserved for the virtual page number. so, there can be $2^{20}$ pages in memory. supposing that each entry is 4 bytes, we get a grand total of 4MB of storage!
 
 the page table **for each process** is stored on memory. so, to find the location of any given PTE, the OS needs to find the **starting location** of said page table. so, for every memory reference the OS needs to make an extra reference.
 
@@ -44,7 +43,6 @@ optimally, we want to replace the one that will not be used in the near future. 
 a second option is using LRU, which is very close to optimal, but has immense overhead.
 
 in these cases, random replacement yields "good-enough" performance for little to no overhead. 
-
 ### memory optimizations
 linear tables are mostly empty spaces. to reduce this overhead, we have several options:
 #### paging + segmentation hybrid
