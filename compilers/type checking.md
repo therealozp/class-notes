@@ -106,8 +106,9 @@ a valid class tree will always have the `Object` class as the root.
 
 ```c
 ClassDecl *classesST // an array of size numClasses
-		   classesSt[0] // class ST for object
-		   classesSt[1] // 1st class defined by program
+
+classesSt[0] // class ST for object
+classesSt[1] // 1st class defined by program
 ```
 
 a `ClassDecl` object is a `struct` with the following fields:

@@ -1,5 +1,4 @@
-
-;l;also called **bottom-up** parsing and **shift-reduce parsing**. the name comes from the parser processing input **left-to-right**, builds **rightmost derivation**, or always choosing to process the *rightmost non-terminal* in a grammar.
+also called **bottom-up** parsing and **shift-reduce parsing**. the name comes from the parser processing input **left-to-right**, builds **rightmost derivation**, or always choosing to process the *rightmost non-terminal* in a grammar.
 
 at every step, either:
 - shift (push) an input symbol (token) onto the stack, and consume from the input, **or**

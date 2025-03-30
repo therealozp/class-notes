@@ -1,5 +1,4 @@
 just makes everything more convenient by eliminating the need for fluff like semicolons, braces, and parenthesis. made possible by pushing this to another dimension.
-
 ## construction
 ### for LL
 hijacking the parse functions given from an LL parser, we can derive something like:
