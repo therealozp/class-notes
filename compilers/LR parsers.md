@@ -165,11 +165,10 @@ so, using the language $G$ above has:
 2. compute all the follows (lookahead length of 1)
 3. reduce only if the input matches one of the follows and correct state. for example:
 	- if the stack currently has the token $T$, and the next input is $+$
-	- instead of reducing $E \to T$, the parser sees that $+\not\in follows(E)$, so it will **not reduce**
+	- instead of reducing $E \to T$, the parser sees that $+\not\in follows(E)$, so it will **not reduce**. TLDR, we look at the follow set of the LHS of the rule, and reduce only when the input matches the follow set.
 	- instead, the token $+$ is shifted in, and parsing continues as usual.
 
 bottleneck: the LR parsers can chain tokens, maxing out the stack, before popping each token. this is an extremely inefficient use of space.
-
 ### more sets
 - $follows(N)$ indicates all **tokens** that immediately follows a substring derived from $N$
 - $nullable(\Sigma)$ is true if and only if $\Sigma$ can expand into $\epsilon$
@@ -211,7 +210,7 @@ A -> (A) | a
 
 to parse with an LR(1):
 - first, write the starting state. in this case, `S -> .A$`
-- we see there is a dot in front of the token `A` we chase down all possible states that starts with `A`
+	- we see there is a dot in front of the token `A` we chase down all possible states that starts with `A`
 - now, we need to compute the lookahead. meaning that, whichever state that we originated from, we find the first character **AFTER THE DOT MOVED**, in this case, for state 0, is \$.
 
 with these rules, we can construct the DFA with the following states:
