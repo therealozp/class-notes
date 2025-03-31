@@ -4,7 +4,6 @@ the semantic values clarify the meaning of tokens.
 some examples for tokens:
 - identifiers: user-defined strings
 - data types
-
 ## implementation
 what the lexer does, is that it parses characters in real time as it is processed. the algorithm goes:
 
