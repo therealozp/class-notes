@@ -11,3 +11,7 @@ conduct a prefix sum scan for each block, grab the last value and do prefix sum 
 [4, 4, 4, 4] -> [4, 8, 12, 16]
 
 ```
+
+## brent-kung optimization
+will be asked to do this on the exam. specifically, the re-derivation of the index to be a function of the `threadId.x` and the `stride` to minimize control divergence.
+
