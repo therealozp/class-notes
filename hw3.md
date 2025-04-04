@@ -98,8 +98,8 @@ to calculate this, there is a few things we need to consider. because the DRAM r
 as discussed above, we are also able to calculate the time it takes to run 1 iteration:
 - each `bbop_xor` command takes 25 ACTIVATE commands, and 11 PRECHARGE command, for a sum total of $25\times 20 + 11 \times 10 = 610 \text{ ns}$.
 - each `bbop_and` and `bbop_or` command takes 11 ACTIVATE commands, and 5 PRECHARGE commands, for a sum total of $11 \times 20 + 5 \times 10 = 270 \text{ ns}$.
-- in total, we have 2 XORs, 2 ANDs, and 2 ORs, which is $610 \times 3 + 270 \times 2 = 2370 \text{ ns}$/iter
+- in total, we have 2 XORs, 2 ANDs, and 2 ORs, which is $610 \times 2 + 270 \times 3 = 2030 \text{ ns}$/iter
 
 so, for each bit, we can run $\frac{1}{2030 \times 10^{-9}}$ operations per second. with $2^{16}$ bits, we are able to run:
-$$\frac{65536}{2370 \times 10^{-9}} = 2.765 \times 10^{10}\text{ OPS}$$
+$$\frac{65536}{2030 \times n\times 10^{-9}} = \frac{3.228 \times 10^{10}}{n}\text{ OPS}$$
 
