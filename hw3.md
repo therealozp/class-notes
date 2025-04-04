@@ -50,14 +50,14 @@ for ( int i = 0; i < 16; i ++){
 ```
 
 3. final speedup
-each `bbop_xor` command takes 25 ACTIVATE commands, and 11 PRECHARGE command, for a sum total of $25\times 50 + 11 \times 20 = 720 \text{ cycles}$.
+each `bbop_xor` command takes 25 ACTIVATE commands, and 11 PRECHARGE command, for a sum total of $25\times 50 + 11 \times 20 = 1470 \text{ cycles}$.
 
 each `bbop_or` command takes 11 ACTIVATE commands, and 5 PRECHARGE commands, for a sum total of $11 \times 50 + 20 \times 5 = 650 \text{ cycles}$.
 
 so, the total cycle cost is:
-$16\times(720 \times 2 + 650) = 33,440 \text{ cycles}$
+$16\times(1470 \times 2 + 650) = 57,440 \text{ cycles}$
 
-for a speed up of $293.971$ times.
+for a speed up of $171.142$ times.
 
 ## Part 2
 1. determine $K$ and $M$.
@@ -97,9 +97,9 @@ to calculate this, there is a few things we need to consider. because the DRAM r
 
 as discussed above, we are also able to calculate the time it takes to run 1 iteration:
 - each `bbop_xor` command takes 25 ACTIVATE commands, and 11 PRECHARGE command, for a sum total of $25\times 20 + 11 \times 10 = 610 \text{ ns}$.
-- each `bbop_and` and `bbop_or` command takes 11 ACTIVATE commands, and 5 PRECHARGE commands, for a sum total of $11 \times 20 + 5 \times 10 = 320 \text{ ns}$.
-- in total, we have 2 XORs, 2 ANDs, and 2 ORs, which is $610 \times 3 + 320 \times 2 = 2030 \text{ ns}$/iter
+- each `bbop_and` and `bbop_or` command takes 11 ACTIVATE commands, and 5 PRECHARGE commands, for a sum total of $11 \times 20 + 5 \times 10 = 270 \text{ ns}$.
+- in total, we have 2 XORs, 2 ANDs, and 2 ORs, which is $610 \times 3 + 270 \times 2 = 2370 \text{ ns}$/iter
 
 so, for each bit, we can run $\frac{1}{2030 \times 10^{-9}}$ operations per second. with $2^{16}$ bits, we are able to run:
-$$\frac{65536}{2030 \times 10^{-9}} = 3.228 \times 10^{10}\text{ OPS}$$
+$$\frac{65536}{2370 \times 10^{-9}} = 2.765 \times 10^{10}\text{ OPS}$$
 
