@@ -36,14 +36,15 @@ is the same as
 not (student.country[i] != "Switzerland" || student.language[i] != "German")
 ```
 
-so, the logical choice here would be to use the `bbop_or` command, as we essentially are writing to the final input array `false` if both of them are equal, or `true` if either of them are not equal. to get the final result, we need to perform another `not` operation to revert the output, though.
+so, the logical choice here would be to use the `bbop_or` command, as we essentially are writing to the final input array `false` if both of them are equal, or `true` if either of them are not equal. since AMBIT usually works with DRAM cells that has a dual contact capacitor, it can store both the value and its complement at the same time. so, we just take the complemented value, and we get the correct result.
 
 final code:
 
 ```c
 for ( int i = 0; i < 16; i ++){
-	bbop_xor 0x08000000, 0x05000000 + i *8192, 0x0A000000 ;
-	bbop_xor 0x09000000, 0x06000000 + i *8192, 0x0B000000 ;
+	// offset the array by the base addr
+	bbop_xor 0x08000000, 0x05000000 + i*8192, 0x0A000000 ;
+	bbop_xor 0x09000000, 0x06000000 + i*8192, 0x0B000000 ;
 	bbop_or  0x07000000, 0x08000000, 0x09000000 ;
 }
 ```
