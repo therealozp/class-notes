@@ -266,7 +266,8 @@ anything that could be executed needs to be type checked.
 
 ```c
 int typeExprList(ASTree *t, [context info]) {
-		// context info contains 2 numbers to see in which class/method we are executing
+		// context info contains 2 numbers
+		// to see in which class/method we are executing
 	if (ill_typed) return -3;
 }
 ```
