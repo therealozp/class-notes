@@ -24,5 +24,5 @@ the "canonical" definition:
 - R5 always contains the heap pointer
 - R0 always contains 0
 
-assigning the registers like this, we can quickly check memory correctness by R7 > R6 > R5. the top frame from the stack will always be from main.
+assigning the registers like this, we can quickly check memory correctness by R7 > R6 > R5. the top frame from the stack will always be from main. every DJ expression gets translated to DISM code that, when finished running, leaves the expressions's result on top of the program stack.
 
