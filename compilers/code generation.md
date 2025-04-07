@@ -9,3 +9,20 @@ the program heap stores all the dynamically allocated data.
 ![[Pasted image 20250326181316.png]]
 
 at program begin execution: 
+
+the frame pointer points to the current stack frame. at any given point in time, there can **only be 1 frame pointer**.
+
+the stack pointer points to the next available space for the stack to use. similarly, the heap pointer `hp` will point to the next spot available for heap use. stack will grow upwards, heap grows downward. 
+
+**in DJ, the heap pointer only grows**, because we do not have a garbage collector.
+
+DISM, by default, has 8 registers. using 3 of the 8 for `fp`, `hp`, and `sp`, we are down to 5. reserve another one for the hardwired 0, we now have 4 registers left to play with.
+
+the "canonical" definition:
+- R7 always contains the frame pointer
+- R6 always contains the stack pointer
+- R5 always contains the heap pointer
+- R0 always contains 0
+
+assigning the registers like this, we can quickly check memory correctness by R7 > R6 > R5. the top frame from the stack will always be from main.
+
