@@ -212,8 +212,7 @@ don't try to diverge from the provided algorithm, as some checks will eventually
 	- superclass is **not** final
 	- class variable field types needs to be >= -1
 	- all local variable types >= -1
-	- method return + parameter types >= -1
-these are all semantic typings. if any of the above checks fail, display a descriptive error message for what the error is, along with the line number.
+	- method return + parameter types >= -1  a descriptive error message for what the error is, along with the line number.
 
 3. check class hierarchy to make sure it is a hierarchy (acyclic). 
 	- to do this, we rely on the class numbers, and check for either condition not holding: $C \not \le C'$ or $C' \not \le C$. as long as this condition is true, it is a hierarchy. $t < t'$ means $t$ is a subtype of $t'$
