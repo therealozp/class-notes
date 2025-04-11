@@ -4,7 +4,7 @@
 - **Direct Mapped Cache**: 
 	- A block can be placed in exactly one location in the cache
 	- (Block Address) % (no. of blocks in cache)
-	- For each memory block, th[]()ere is only **one** location in cache where it can map to.
+	- For each memory block, there is only **one** location in cache where it can map to.
 	- Will also need a **valid bit**
 
 ![[Pasted image 20231106125739.png]]
