@@ -46,6 +46,16 @@ for `PLUS_EXPR`:
 
 ![[Pasted image 20250407180049.png]]
 
+for `NEW_EXPR`:
+
+1. let n be the number of fields (including inherited fields) in class C
+2. let `hp + n + 1` < `MAX_DISM_ADDR` (otherwise, halt)
+3. let t = type number for C
+4. `⭐mov 1 1`
+5. repeat n times:
+	- `⭐ str 5 0 0; ` allocate a field
+	- `⭐ add 5 5 1; ` increment the heap pointer
+
 > exam notes: use a 5-winged star (⭐) to define the action of outputting to a file.
 > exam notes: underlining text indicates something that needs to be filled in.
 
@@ -129,3 +139,101 @@ void decSP() {
 ```
 
 for branch names, if we keep reusing them, we will run into branch name duplicates. theoretically, we would require an infinite bank of names to pull from. to resolve this, we keep a global `labelNum` variable and keep incrementing it to generate infinite names.
+
+## layout
+1. initialize `fp`, `hp`, `sp` (max of `fp` is 65536, of `hp` is 1)
+2. allocate space for main locals
+3. call `codeGenExprs(main block)`
+4. `⭐ hlt 0; ` normal program termination
+5. create landing pad for the method `* #class1method0: mov 0 0`
+6. prologue for class 1, method 0: allocate locals, initialize to 0
+7. body of class 1, method 0
+8. epilogue for class 1, method 0: clean up and pop things off
+repeat 5, 6, 7, 8 for any other methods.
+
+**finally:** have an execution lookup table to know what is being called. at this step, we generate the `vtable`.
+
+steps 1 and 2 form the **main block prologue**, step 4 is the **main block epilogue**. essentially, a *prologue* is code that is run before the main block/method body. 
+active callers:
+- method prologue
+- method body
+- method epilogue
+## method calls
+that means we also need a label to mark the prologue/epilogues of each method in each class.
+
+at the function call site, we know the parameter and the return address. so at the return address, we are going to push the return address `ra` and the parameter, and inside the prologue, we will be able to allocate the locals.
+
+just before the method prologue (codegen for method call must make stack like this)
+
+![[Pasted image 20250409175025.png]]
+
+return address is relevant to the callee's frame. the dynamic caller object address goes next, so we can always make sure that when `this` is called, it will always be in the position `calleeFrame - 1`.
+
+if you want to add more arguments, the dynamic incoming arguments can come right after, and keep track of how many arguments there are.
+
+the caller does this and jumps to the vtable and lets the vtable figure out the rest.
+### code gen
+1. make `return_label = label_num++`
+2. push `#__retLabel__` on the stack
+3. push `this` if `ID(E)` or `codeGenExpr(E)` if we are executing `E.ID(E)`.
+4. push static class and static method numbers for method being called
+5. do `codeGen(expr_inside_parentheses)`
+6. jump to the vtable, to figure out which prologue to execute: `*jmp 0 #VTABLE`. because all **labels are numbers**, the `VTABLE` label will never conflict.
+7. `*#__retLabel__: mov 0 0`, return here from method.
+
+vtable will not overwrite anything, but only read them. specifically, it reads the 3 values after `ra` and figures out which prologue to jump to.
+
+## examples
+consider the following DJ code:
+
+```java
+class C1 extends Object {
+	nat f(C1 o) { 
+		o.g(3); 
+	}
+	nat g(nat n) {
+		n;
+	}
+}
+
+class C2 extends C1 {
+	nat g(nat n) {
+		n + 2;
+	}
+}
+
+main {
+	C1 c;
+	while (1) {
+		if (readNat() == 0) {
+			c = new C1();
+		} else {
+			c = new C2();
+		}
+		readNat(c.f(c));
+	}
+}
+```
+
+in the above examples, `c` can be different objects at compile time, depending on which input is being fed into. **statically,** `c` is an instance of `C1`, but dynamically, *we do not know*. so, when we are trying to execute `f` and it eventually calls `g`, **which `g` are we calling?** 
+
+therefore, this necessitates the use of the vtable. a vtable is a virtual method table (aka dynamic dispatch table) that will dynamically figure out which method is being called. 
+
+when trying to the dynamic caller object address, static class #, and static method #, **do not use the frame ptr**. we do not know how big the temporaries are going to be. instead, use `sp` because we know that we only have to count a fixed amount (i.e. +2, 3, and 4). 
+
+> there can only be 1 `vtable` per program. `vtable` should not modify stack values.
+
+```
+vtable jumps to correct method prologue
+based on values @ M[sp + 2], M[sp + 3], and M[M[sp + 4]] -> for type
+```
+
+the `vtable` for the above function would be: 
+
+| static class # | static method # | dynamic caller type | dynamic class # | dynamic method # |
+| -------------- | --------------- | ------------------- | --------------- | ---------------- |
+| 1              | 0               | 1                   | 1               | 0                |
+| 1              | 0               | 2                   | 1               | 0                |
+| 1              | 1               | 1                   | 1               | 1                |
+| 1              | 1               | 2                   | 2               | 0                |
+| 2              | 0               | 2                   | 2               | 0                |
