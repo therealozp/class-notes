@@ -237,3 +237,59 @@ the `vtable` for the above function would be:
 | 1              | 1               | 1                   | 1               | 1                |
 | 1              | 1               | 2                   | 2               | 0                |
 | 2              | 0               | 2                   | 2               | 0                |
+
+![[Pasted image 20250414172202.png]]
+## ID versus ID = E
+for operations on the standalone ID, such as `n == 3` or `obj == null`, we care about what the actual value of the ID `n` is. for other sets of instructions, such as assignment `n = 3` or `obj = null`, we don't necessarily have to differentiate at all.
+
+so, for the standalone ID `ID`, we need the rvalue of the expression (aka the value). by contrast, for ID = E, we need the lvalue (or left value), which is the address. we can easily convert the lvalue into an rvalue, but impossible to do so vice versa.
+
+### code gen for ID
+
+```
+if ID is a param/local
+	push the rvalue on the stack
+else
+	ID must be a field of the `this` (calling) object.
+	1. get field offset for the ID within the object
+	2. using offset + base address (of the this object), compute A = address of selected field
+	3. push M[A] onto stack.
+```
+
+consider the following:
+
+```java
+class C1 extends Object {
+	nat n;
+}
+class C2 extends C1 {
+	nat n;
+}
+class C2 extends C3 {
+	nat n;
+}
+class C3 extends C4 {
+	nat n;
+}
+```
+
+how will these classes be structured in memory? a rule to remember is to **always layout inherited field first.**
+
+no matter what, we want the offset for C1 (no matter its dynamic class) will always be constant. so, we can have the cascade effect that we desire.
+
+![[Pasted image 20250414173948.png]]
+
+for checking `E.ID`, we follow a similar concept, except:
+1. ID cannot be param/local. so we can codegen E to get base object address, as well as the select ID field in that object
+2. check and halt if E evaluates to null.
+
+for assignment operations such as `ID = E`, we do the same operations for ID, except:
+1. we only need to compute lvalue = A for ID
+2. also have to codegen the expression to get a result `r`
+3. store `r` in memory at address A
+4. make `r` be the value on top of stack. since codegen already handles this, we don't need to pop the value at all.
+
+for dot-assignment operations such as `E1.ID = E2`, we do same operations as for ID = E, except:
+1. `ID` cannot be a local or parameter, must be a field of `E1`, so we will need to codegen `E1` to get the base address 
+2. check and halt if `E1` evaluates to null
+3. code gen for `E2` before `E1`
