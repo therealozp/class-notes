@@ -17,10 +17,12 @@ so, with a 20% parallelizability factor, we can get the $T_{affected} = 10$, and
 
 assuming that we have an infinite amount of processors, we theorize that the $affected$ portion of the program can be completed instantaneously, i.e.
 $$\frac{T_{affected}}{\text{improvement factor}} = 0$$
-so, we can get the equation:
+so, the maximum speedup achievable with 20% of code being unparallelizable is: $$\frac{50}{5} =10\times$$we can get the equation:
 $$T_{improved} = T_{total}\times (1-\%\text{parallizable code})$$
 which gives us the line chart:
 ![[Pasted image 20250418113035.png]]
+and speedup as follows:
+![[Pasted image 20250418220133.png]]
 
 *b. A brilliant student was able to modify the algorithm from part a) such that the parallelized portion of the algorithm now represents 95% of the total runtime. Suppose this machine learning algorithm runs on a system with 20 processors, and the parallelizable portion of the algorithm achieves a speedup of 16x.*  
 *What is the overall speedup that can be achieved?*
@@ -30,7 +32,10 @@ $$T_{improved}=\frac{T_{affected}}{\text{improvement factor}} + T_{\text{{unaffe
 
 we get:
 $$T_{improved} = \frac{50\times 0.95}{16} + 50\times 0.05=5.46875$$
-
+ so, the final speedup is:
+ $$
+ \frac{50}{5.46875} = 9.142\times
+$$
 3. Using the information in Figures 1a, 1b, and 1c, as well as Amdahl's law, complete the following tasks:
 a. *Calculate the speed-up of the memory module when each CiM circuit (B,C,D) is used as an accelerator with respect to the GPU implementation (setup A).*
 
