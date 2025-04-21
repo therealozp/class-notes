@@ -242,7 +242,7 @@ the `vtable` for the above function would be:
 ## ID versus ID = E
 for operations on the standalone ID, such as `n == 3` or `obj == null`, we care about what the actual value of the ID `n` is. for other sets of instructions, such as assignment `n = 3` or `obj = null`, we don't necessarily have to differentiate at all.
 
-so, for the standalone ID `ID`, we need the rvalue of the expression (aka the value). by contrast, for ID = E, we need the lvalue (or left value), which is the address. we can easily convert the lvalue into an rvalue, but impossible to do so vice versa.
+so, for the standalone ID `ID`, we need the `rvalue` of the expression (aka the value). by contrast, for ID = E, we need the `lvalue` (or left value), which is the address. we can easily convert the `lvalue` into an `rvalue`, but impossible to do the reverse.
 
 ### code gen for ID
 
