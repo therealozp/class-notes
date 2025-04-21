@@ -140,6 +140,21 @@ void decSP() {
 
 for branch names, if we keep reusing them, we will run into branch name duplicates. theoretically, we would require an infinite bank of names to pull from. to resolve this, we keep a global `labelNum` variable and keep incrementing it to generate infinite names.
 
+## class declarations
+```
+1. let n = num fields
+2. check HP + n + 1 < MAX_DISM_ADDR
+3. let t = type# for C
+4. *mov 1 1
+5. repeat n times:
+	1. *str 5 0 0; allocate a field
+	2. *add 5 5 1; HP++
+6. *mov 2 t; R2 <- new object type
+7. *str 5 0 2; top of heap = type
+8. *str 6 0 5; push new object address
+9. *add 5 5 1; HP++
+10. decSP();
+```
 ## layout
 1. initialize `fp`, `hp`, `sp` (max of `fp` is 65536, of `hp` is 1)
 2. allocate space for main locals
