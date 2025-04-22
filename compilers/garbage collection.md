@@ -117,4 +117,52 @@ similar to mark and sweep, except:
 - we don't even need a free list. all things that needs to be dealloc'ed will be at the heap pointer.
 - solves fragmentation.
 **cons**: 
-- more overhead, even longer pauses.
+- more overhead, even longer pauses when the GC eventually runs
+
+### copying GC
+a variation of mark-and-compact, where we don't have to spend more time recalculating the new addresses for objects.
+
+in this implementation, cap the max size of the heap. sacrifices half of the heap to trade off performance. since we have 2 halves, we can just copy one to the other and alternate which section to use.
+1. set max heap size
+2. divide the heap into halves
+3. only use the half until it's full, then:
+	1. traverse all reachable objects (DFS/BFS), copy into contiguous memory in the other half (the "to space")
+	2. update all program variables (and fields and temporaries) to use the new addresses
+
+**pros**: 
+- all the same as mark and compact, except no running overhead unless we run out of **half** the heap memory
+**cons**:
+- can only use half of the heap for objects
+- lose all of the benefits from "floating" the stack and heap boundary.
+- object-size bloating.
+- may be a long pause (much shorter than mark and compact)
+
+## generational GCs
+set max heap size, and divide the heap into generations 1 to $n$. typically, $n=4$, which is what JVM uses. higher number contains **longer-surviving** objects.
+
+- new objects get allocated to generation 1. 
+- when a generation $G$ fills up, we collect all generations from 1 to $G$. collection can be m&s, m&c, copying, etc.
+- during a collection in gen $G$, copy all surviving objects (those surviving $c$ collections, typically, 1, 2, or 3. for JVM, $c = 1$) into $G+1$.
+
+**weak generational hypothesis:** most objects live for a short time
+most heap memory is used for objects with short lives
+
+generation/size
+1/1MB
+2/4MB
+3/16MB
+
+exponential build up to "flush" the small heap space fairly regularly, keep space for older gen items
+
+typically, in industrial-strength GCs:
+- generational. minor collections are copying from one gen to the next
+- occasionally, perform a full M+C (a major collection) followed by a copying GC to defragment even the oldest generations
+- try do do all of this as incrementally as possible. 
+
+**pros**:
+- relatively efficient, without long pauses due to incremental nature
+- all garbage gets collected
+**cons**:
+- complex to implement
+- object-size bloating
+- stack and heap boundary doesn't float
