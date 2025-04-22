@@ -275,16 +275,16 @@ consider the following:
 
 ```java
 class C1 extends Object {
-	nat n;
+	nat m;
 }
 class C2 extends C1 {
 	nat n;
 }
-class C2 extends C3 {
-	nat n;
+class C3 extends C1 {
+	nat p;
 }
-class C3 extends C4 {
-	nat n;
+class C4 extends C2 {
+	nat q;
 }
 ```
 
