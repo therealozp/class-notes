@@ -295,6 +295,6 @@ for assignment operations such as `ID = E`, we do the same operations for ID, ex
 4. make `r` be the value on top of stack. since codegen already handles this, we don't need to pop the value at all.
 
 for dot-assignment operations such as `E1.ID = E2`, we do same operations as for ID = E, except:
-1. `ID` cannot be a local or parameter, must be a field of `E1`, so we will need to codegen `E1` to get the base address 
-2. check and halt if `E1` evaluates to null
-3. code gen for `E2` before `E1`
+5. `ID` cannot be a local or parameter, must be a field of `E1`, so we will need to codegen `E1` to get the base address 
+6. check and halt if `E1` evaluates to null
+7. code gen for `E2` before `E1`
