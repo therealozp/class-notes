@@ -172,7 +172,9 @@ just before the method prologue (codegen for method call must make stack like th
 
 ![[Pasted image 20250409175025.png]]
 
-return address is relevant to the callee's frame. the dynamic caller object address goes next, so we can always make sure that when `this` is called, it will always be in the position `calleeFrame - 1`.
+return address is relevant to the callee's frame. 
+
+the dynamic caller object address goes next, so we can always make sure that when `this` is called, it will always be in the position `calleeFrame - 1`.
 
 if you want to add more arguments, the dynamic incoming arguments can come right after, and keep track of how many arguments there are.
 
