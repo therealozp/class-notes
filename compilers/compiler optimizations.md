@@ -149,7 +149,207 @@ print r2
 ^pop r1 off of program stack
 print r1
 ```
-### side notes
+### constant folding
+when trivial operations occur in target code (for constants or *immediates*), merge them.
+
+```
+r1 <- 5 + 5
+
+rewrite: 
+
+r1 <- 10
+```
+### constant propagation
+propagate a register's constant value. many of these optimizations open up opportunities for other optimizations to occur.
+
+```
+r1 <- 10
+r2 <- r1 + 3
+
+const propagate:
+
+r1 <- 10
+r2 <- 10 + 3
+
+const folding:
+
+r1 <- 10
+r2 <- 13
+```
+
+### common subexpression elimination
+remove redundant code that calculates a subexpression
+
+```
+i = j + 4*k
+m = i + 4*k
+
+/* AN: the +4*k operation is very common, seen in things like
+ptr arithmetic for array indexing, etc. */
+
+after cse:
+
+n = 4 * k
+i = j + n
+m = i + n
+```
+
+### dead code elimination
+remove useless code that never gets executed (has no effect on computation, such as no-ops, etc.)
+
+```
+beq 0 0 #1
+add 1 1 1
+#1: ptn 0
+hlt 0
+ptn 0
+
+-> dead code elim: add never gets executed
+beq 0 0 #1
+#1: ptn 0
+hlt 0
+ptn 0
+
+-> branch always land at one place, #1 is not even needed
+ptn 0
+hlt 0
+ptn 0
+
+-> whatever thing goes after halt
+ptn 0
+hlt 0
+```
+### method inlining
+massive time benefit for OOPLs. idea is to insert method body directly into call site, to avoid executing method call + return instruction sequences. only doable when, compiler statically knows which method is being called (without relying on vtable).
+
+very good for OOP because most methods are short, and can be inlined.
+
+```
+class C extends Object {
+	nat v;
+	nat f(nat n) {
+		v = n;
+		printNat(n);
+	}
+}
+
+main {
+	C x;
+	x = new C();
+	x.f(5);
+}
+```
+
+the naive implementation would be replacing `x.f(5)` with the method body:
+
+```
+v = n;
+printNat(n);
+```
+
+but here, `n` is not defined. so, replacing wherever `n` occurs (non-trivial task) with the argument: 
+
+```
+v = 5;
+printNat(5);
+```
+
+then, as a last step, since `v` is not defined, we also have to include the property prefix:
+
+```
+x.v = 5;
+printNat(5);
+```
+
+### hoisting loop code
+removing the constant computation for loop
+
+```
+r1 <- 0;
+
+#L: print r1
+r1 <- r1 + 1
+r2 <- 3
+(r1 < r2) => goto #L
+```
+
+here, the assignment `r2 <- 3` is redundant, never to be used again. so, what we can do is lift it out of the loop:
+
+```
+r1 <- 0;
+r2 <- 3; // exec'd once instead of 3 times
+
+#L: print r1
+r1 <- r1 + 1
+(r1 < r2) => goto #L
+```
+
+### loop unrolling
+if the compiler knows (statically) the loop will be executed X times, just write the loop body X times.
+
+```
+r1 <- 0
+r2 <- 3
+
+#L: print r1
+r1 <- r1 + 1
+(r1 < r2) => goto #L
+```
+
+after unroll:
+
+```
+r1 <- 0
+r2 <- 3
+
+print r1
+r1 <- r1 + 1 (0)
+
+print r1
+r1 <- r1 + 1 (1)
+
+print r1
+r1 <- r1 + 1 (2)
+```
+
+now, to apply the rest of our optimizations.
+after constant propagation:
+
+```
+r1 <- 0
+r2 <- 3
+
+print r1
+r1 <- 0 + 1 (0)
+
+print r1
+r1 <- r1 + 1 (1)
+
+print r1
+r1 <- r1 + 1 (2)
+```
+
+after folding the first, and other various optimizations.
+
+```
+r1 <- 0
+r2 <- 3 // also candidate for removal for unused code
+
+print r1
+r1 <- 1
+
+print r1
+r1 <- 1 + 1 // after propagation and folding, second time. 
+
+print r1
+r1 <- 3 // after propagation and folding, third time
+```
+### eliminate tail recursion
+something to do with **continuation passing style** (CPS). make recursion fast, and only a select few compilers do this.
+#### side notes
 quines are programs that outputs itself.
 
 the set of real number $\mathbb{R}$ is uncountably infinite. proof with Cantor's diagonalization.
+the set of all Turing machines (and algorithms, or programs) are **countably** infinite (image a program as binary bits, which form a natural number, which is countably infinite.)
+
+the set of problems are **uncountable**. can use a simple proof similar to Cantor's diagonalization for **languages**, as infinite languages are *horizontally infinite*, so a similar proof can be constructed.
