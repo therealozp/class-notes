@@ -18,3 +18,8 @@ shuffle instructions allow you to grab register (variable values) from sibling t
 parallel reduction kernel (line 29 onwards): `start` variable indicates the starting address of whichever chunk we want to process.
 
 during the reduction scan, we notice that only the first thread will ever have divergence, because entire warps should have bailed out. i.e. 
+
+exclusive scan:
+
+work inefficient: start with as many threads as elements
+work efficient: start with half as many threads
