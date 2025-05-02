@@ -87,13 +87,30 @@ RAIDs are designed to detect and recover from certain kinds of disks faults with
 	- working means all blocks can be read from or written to
 	- failed means a disk is **permanently** lost.
 all of the housekeeping is done by the RAID controller, which immediately knows when a disk has failed. 
-
 ### considerations
 to evaluate a RAID system, we evaluate it on three things: capacity, reliability, and performance.
 
 we also take into consider some performance metrics:
 - single request latency: time taken to complete a single IO operation, which is important for interactive systems.
 - steady-state throughput: how much data the system can handle under sustained workloads. measures ability to handle high-bandwidth tasks like backup, video streaming, or database systems.
+
+workloads can either be **sequential**, or **random**. for the sake of argument, let's assume that a disk can transfer data at $S$ MB/s under sequential load, and $R$ MB/s under random load.
+
+take the following example:
+- 10MB average transfer load
+- 10KB average random load
+- seek time: 7ms
+- rotational delay: 3ms
+- disk transfer rate: 50MB/s
+
+then, the time to access a sequential load is: $\frac{10}{50}\times 1000 + 7 + 3 = 210ms$
+time to access a random load is: $\frac{10}{50} + 7 + 3 = 10.2ms$
+
+then, $S=\frac{10MB}{210ms} = 47.62MB/s$
+$R=\frac{10KB}{10.2ms} = 0.981MB/s$
+
+so, we could clearly see why random loads are much, much slower.
+
 #### RAID 0: striping
 RAID 0 is the simplest form of RAID, where all blocks are just **striped**, meaning that blocks are spread across disks in a **round-robin** fasion.
 
@@ -111,3 +128,30 @@ in terms of:
 - **capacity**: RAID 0 is perfect, because all N disks are usable (useful capacity)
 - **performance**: RAID 0 is excellent because of perfect striping, so all disks are utilized in parallel.
 - **reliability**: RAID 0 is bad, because any disk failure will lead to data loss.
+- **single request latency**: identical to that of a single disk
+- **steady-state throughput**:
+	- sequential workload: $N\cdot S\ \text{MB/s}$
+	- random workload: $N\cdot R\ \text{MB/s}$
+
+#### RAID 1: mirroring
+simply copies whatever writes made to one disk, to other disks. RAID 1 tolerates disk failures extremely well.
+- copy more than one of each block in the system
+- copies placed on separate disks
+
+in terms of:
+- **capacity**: comparing to RAID 0, RAID 1 is very expensive, because only $\frac{N}{2}$ disks are useful.
+- **reliability**: however, in an $N$-disk system, RAID 1 can tolerate failures of any one disk (and up to $\frac{N}{2}$ disks depending on which fails)
+- **performance**:
+for each logical write, it takes **two physical** writes to complete, and suffers the **worst-case delay** for seek and rotation for both requests.
+
+steady-state throughput:
+- sequential write: $\frac{N}{2}\cdot S\text{ MB/s}$. each logical write needs 2 physical writes
+- sequential read: $\frac{N}{2}\cdot S\text{ MB/s}$. we only read from $\frac{N}{2}$ disks to keep reads contiguous, so we end up only getting that much bandwidth.
+- random write: $\frac{N}{2}\cdot R\text{ MB/s}$
+- random read: $N\cdot R\text{ MB/s}$. now, we can use the power of all the disks to distribute reads.
+#### RAID 10 vs. RAID 01
+10 means stripes of pairs, and 01 means pairs of stripes.
+
+![[Pasted image 20250502122215.png]]
+
+#### RAID 4: parity disk
