@@ -36,8 +36,11 @@ however, polling and interrupts depend on the device, and isn't always the best 
 ## data movement
 the CPU wastes a lot of time copying large chunks of data from memory to device. slow, and wastes a lot of CPU cycles.
 
+![[Pasted image 20250503113936.png]]
+
 by contrast, using a direct-memory-access (DMA) controller, we offload this task to the DMA and free up the CPU to do other things. we copy data by telling the DMA controller "where the data lives in memory" and "how much data to copy". then, when completed, it just raises and interrupt and let IO begin on disk.
 
+![[Pasted image 20250503113945.png]]
 ## device interaction
 we've covered interaction with disk and memory, but what about to devices?
 
@@ -54,6 +57,5 @@ these are the file system specifics of which disk class it is using. for example
 however, there is a big problem: abstraction means that many of the devices' special functionality will go unused (in this generic interface layer). thus, we introduce a secondary layer: **device drivers**.
 ### device drivers
 over 70% of OS code are device drivers. any device drivers are needed because you might plug it into the system. they are also the primary contributor to kernel crashes, making even more bugs.
-
 #### IDE disk driver
 has 4 types of registers (control, command, status, and error) with `in` and `out` IO instructions.

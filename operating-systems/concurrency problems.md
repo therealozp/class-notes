@@ -24,12 +24,10 @@ thd->proc_info = NULL;
 ```
 
 2 threads are trying to access this at the same time, which is bad. to solve, wrap a mutex around where they try to access data.
-
 ### order violation
 when a specific order is not enforced. recall the ordering mechanism in [[semaphores#as condition variables]] where we want the parent to always execute after the child.
 
 to resolve this, let the higher-order function signal a condition variable, and the lower-order function waits on that signal. 
-
 ## deadlock bugs
 ### why do they occur?
 oftentimes, this is due to **complex dependency** between components.
@@ -50,12 +48,12 @@ we need both locks on `v1` and `v2` to have everything execute correctly. howeve
 
 **all four** of the below conditions are **required** for a deadlock to occur:
 
-| condition                           | description                                                                                                        |
-| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| mutual exclusion                    | threads can claim exclusive control of whatever resource they require                                              |
-| hold-and-wait                       | threads will hold resources allocated to them until they acquire the rest of their stuff                           |
-| no preemption                       | resources cannot be forcibly removed from whatever thread holding them                                             |
-| circular wait (cyclic dependencies) | a cyclic dependency situation where each thread holds **at lease one resource** requested by next threads in chain |
+| condition                           | description                                                                                                        | solution                     |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ---------------------------- |
+| mutual exclusion                    | threads can claim exclusive control of whatever resource they require                                              | wait-free data structures    |
+| hold-and-wait                       | threads will hold resources allocated to them until they acquire the rest of their stuff                           | acquire all locks at once    |
+| no preemption                       | resources cannot be forcibly removed from whatever thread holding them                                             | `trylock` + random delay     |
+| circular wait (cyclic dependencies) | a cyclic dependency situation where each thread holds **at lease one resource** requested by next threads in chain | provide an absolute ordering |
 ### cyclic dependency
 one of the main features behind the dining philosophers problem. in this case:
 - thread 1 holds lock L1, and waiting for L2 to be released to execute.
@@ -109,7 +107,7 @@ however, livelocks are still a possibility.
 ## avoidance via scheduling
 in some scenarios, we would like to not encounter and patch at all if possible. in this case:
 - we need to know which locks various threads might grab during their execution
-- subsequently schedules them in such a way that deadlocks cannot occur (for example, let functions execute at different times).
+- subsequently schedules them in such a way that deadlocks cannot occur (for example, let functions requiring **different locks** execute at the **same time**).
 
 however, this scheduling needs more effort to compute, with also the added demerit of reduced concurrency.
 

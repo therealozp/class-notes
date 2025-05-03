@@ -43,13 +43,13 @@ void *child(void *arg) {
 int main(void) {
     sem_init(&s, 0, 0);   // initial count = 0
     printf("parent: begin\n");
-
+	
     pthread_t c;
     pthread_create(&c, NULL, child, NULL);
-
+	
     sem_wait(&s);         // wait until child posts
     printf("parent: end\n");
-
+	
     sem_destroy(&s);
     return 0;
 }
@@ -90,7 +90,7 @@ int main(int argc, char *argv[]) {
 }
 ```
 
-essentially, we are letting `MAX` threads (of producers and consumers combined) go at the same time. because producers wait on `empty`, and consumers wait on `full`, they both need elements already consumed and produced, respectively, to keep doing their job.
+essentially, we are letting `MAX` threads (of producers and consumers combined) go at the same time. because producers wait on `empty`, and consumers wait on `full`, they both need elements already consumed and produced respectively (hence **positive** semaphore values), to keep doing their job.
 
 however, doing this will cause a race condition when we `get()` and `put()`. because the threads that DO pass through can access it without restriction, it can overwrite each-other's data.
 

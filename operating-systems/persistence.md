@@ -15,6 +15,8 @@ the **spindle** is connected to a motor that spins the entire set of platters ar
 
 to read and write, the **disk head** is used. it is attached to an arm that glides across the surface. 
 
+![[Pasted image 20250503114325.png]]
+
 measuring the time taken to read/write involves computing some sort of delay, so the **rotational delay** measures time for the desired sector to be reached. note that the disk can only ever spin one way, so on the other side of the head, it would take $R - 1$ timesteps to reach a "previous" sector. 
 ### multiple tracks
 for multiple tracks, the head usually will have to seek, while the disks spin to reach the correct location. 
@@ -31,17 +33,17 @@ for multiple tracks, the head usually will have to seek, while the disks spin to
 - tranfer
 
 ### track skew
-supposing that we have a disk where the different sectors all line up with each other. in this case, if all of the tracks have sectors immediately "next" to each other on different tracks. moving the arm can risk overshooting or undershooting the actual sector.
+supposing that we have a disk where the different sectors all line up with each other. in this case, if all of the tracks have sectors immediately "next" to each other on different tracks. moving the arm can risk overshooting or undershooting the actual sector, meaning we have to wait an additional full rotation to get the sector back.
 
 so, this makes sure that sequential reads can be done properly even when crossing track boundaries.
 
+![[Pasted image 20250503114611.png]]
 ### track buffer (cache)
 holds data read from or written to the disk. allows the drive to quickly respond, and only borrow a very little set of memory (8-16MB)
 
 two main ways to update the cache:
-- **write-back**: a write is marked successful when there is confirmation that the requested block is put in data memory. this is faster, but dangerous because of data loss
 - **write through**: actually admitting the write has been completed after the write has actually been written to disk.
-
+- **write-back**: a write is marked successful when there is confirmation that the requested block is put in data memory. this is faster, but dangerous because of data loss
 ## IO time
 $$T_{\text{I/O}} = T_{\text{seek}}+T_{\text{rotation}} + T_{\text{transfer}}$$
 and IO rate:
@@ -74,7 +76,7 @@ when RAID receives an IO request, a few things must be done:
 1. calculates which disk to actually access
 2. issues one or more physical IOs to do so
 
-for example, in a mirrored RAID system where two copies of each block are kept on separate disks, RAID needs to perform **two physical IOs** for every one logical IO issued.
+for example, in a mirrored RAID system (RAID 1) where two copies of each block are kept on separate disks, RAID needs to perform **two physical IOs** for every one logical IO issued.
 
 RAID consists of:
 - a microcontroller to run firmware to direct RAID operations

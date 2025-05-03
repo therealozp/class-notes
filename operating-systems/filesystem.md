@@ -102,6 +102,7 @@ if we are creating a file, we also are allocating space for a directory, which c
 
 ![[Pasted image 20250502225307.png]]
 
+the reason why we need to read the data bitmap before writing (for the file's data block) to avoid corrupting neighbor data. this can happen because of partial writes or similar, if one block is not completely full and can still fit a sector of data writes, we should not over-write that block completely, but check which ones are available first.
 ### caching and buffering
 reading and writing files are very expensive, and a lot of IO is spent just for this purpose. if a file has a very deeply-nested pathname (`/1/2/3/.../100/file.txt`), we need one inode to read the directory's inode, and at least another to read its data - meaning we need to perform hundreds of reads just to open the file.
 
