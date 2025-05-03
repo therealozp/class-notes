@@ -120,4 +120,3 @@ many database systems have a deadlock detection system and subsequent recovery.
 - a deadlock detector runs periodically
 - builds a resource graphs and checks for cycles
 - if there is a deadlock, restart the system
-

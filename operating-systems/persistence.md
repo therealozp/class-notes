@@ -155,3 +155,6 @@ steady-state throughput:
 ![[Pasted image 20250502122215.png]]
 
 #### RAID 4: parity disk
+
+![[Pasted image 20250503011700.png]]
+
