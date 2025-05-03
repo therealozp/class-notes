@@ -71,3 +71,17 @@ the rationale behind this kind of design is because:
 a directory contains a list of (entry name, inode number) pairs. each directory has another two extra files `.` and `..` representing current and parent directory, respectively.
 
 ## access paths
+because the OS is only ever aware of the root directory's inode number (2), accessing a file means doing a lot of tree traversals to get to where we want. 
+
+consider an example case: `open("/foo/bar")`:
+- traverse the root directory
+- the filesystem reads in the block that contains inode 2, and looks inside it to find pointer to data block. 
+- at some point, we reach are able to find the `foo` directory inode. 
+- then, we traverse the block that has that inode, and traverse recursively until we reach the desired node `bar`
+- finally, we check permissions, allocate a file descriptor, and returns the fd to the user.
+
+when `read()` is issued, we need to read the first block of the file, so we consult the inode to find that block's location.
+- doing so, we update the inode with new "last accessed time"
+- update in-memory open file table for fd and offset
+
+when the file is closed, we should deallocated. but for now, that's all the fs needs to do - no disk IO takes place currently.
