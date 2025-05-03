@@ -87,7 +87,6 @@ context switching defines the flow that is involved when we want to switch betwe
 there are a number of ways where the OS can regain control of the CPU:
 - cooperative approach: wait for system calls
 - non-cooperative approach: OS takes control
-
 #### cooperative
 processes will periodically give up the CPU through system calls such as `yield`. at this point, the OS can choose to run some other task at its discretion.
 
