@@ -1,7 +1,6 @@
 to implement a file system, there are two considerations we should think about:
 - **data structures**: what type of on-disk structures does the file system uses to organize data and metadata?
 - **access methods**: how does the fs map the syscalls made by a process, such as `open`, `read`, `write`, etc, and which structures are read during the execution of said syscalls?
-
 ## organization
 suppose that we have a filesystem of 64 blocks, each 4KB each. 
 
@@ -72,7 +71,7 @@ a directory contains a list of (entry name, inode number) pairs. each directory 
 
 ## access paths
 because the OS is only ever aware of the root directory's inode number (2), accessing a file means doing a lot of tree traversals to get to where we want. 
-
+#### reading
 consider an example case: `open("/foo/bar")`:
 - traverse the root directory
 - the filesystem reads in the block that contains inode 2, and looks inside it to find pointer to data block. 
@@ -85,3 +84,38 @@ when `read()` is issued, we need to read the first block of the file, so we cons
 - update in-memory open file table for fd and offset
 
 when the file is closed, we should deallocated. but for now, that's all the fs needs to do - no disk IO takes place currently.
+
+![[Pasted image 20250502223348.png]]
+
+#### writing
+in this case, a `write()` syscall is issued. we update the file with new contents.
+
+a file may allocate a block (unless the block is being overwritten).
+- need to update data block and data bitmap
+- generates 5 IOs:
+	- read the data bitmap
+	- write the data bitmap (to reflect new state to the disk, indicating that some new block has been allocated)
+	- read the inode
+	- write to update the inode (more data blocks, last access, etc.)
+	- one write to the actual block.
+if we are creating a file, we also are allocating space for a directory, which causes a lot of IO traffic.
+
+![[Pasted image 20250502225307.png]]
+
+### caching and buffering
+reading and writing files are very expensive, and a lot of IO is spent just for this purpose. if a file has a very deeply-nested pathname (`/1/2/3/.../100/file.txt`), we need one inode to read the directory's inode, and at least another to read its data - meaning we need to perform hundreds of reads just to open the file.
+
+in order to reduce this traffic, filesystems aggressively use system memory (DRAM) to cache these accesses.
+- early fs uses fixed-size cache to hold popular blocks, but static partitioning of memory can be wasteful.
+- modern systems use dynamic partitioning, and a unified page cache. 
+the larger the cache, the more read IO can be avoided.
+
+however, this only applies exclusively to read operations. because write traffic has to go to disk (for persistence) anyways, so caching does nothing.
+
+instead, we can use write buffering:
+- delaying writes by batching updates to smaller set of IO
+- buffering a number of writes in memory, and then let fs schedule the subsequent IOs
+- avoid writes
+
+however, some applications can still force-flush data to disk by calling `fsync()`, or by just doing direct IO.
+
