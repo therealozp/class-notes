@@ -8,7 +8,7 @@ TMs are all FSMs, so they have finite states and finite input, but infinitely lo
 
 a TM is a 7 tuple:
 - state set
-- multiple alphabets $\Sigma$, also called the "input alphabet". $\_{}\not\in \Sigma$
+- multiple alphabets $\Sigma$, also called the "input alphabet". $\_{} \text{ (blank)}\not\in \Sigma$
 - tape alphabet (every symbol that could appear on the tape) $\Gamma$
 - transition function $\delta$: from a position on the tape with a certain state and input $Q\times \Gamma$, we can go to another state, rewrite the current cell, and move the head left or right $Q\times \Gamma \times \{ L, R \}$
 - initial state
