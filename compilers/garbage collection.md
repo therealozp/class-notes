@@ -1,4 +1,4 @@
-consider the following snippet:
+	consider the following snippet:
 
 ```
 main {
