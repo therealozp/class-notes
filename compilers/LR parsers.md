@@ -191,7 +191,9 @@ Y -> ep | c
 ## LR(1)
 LR(1), aka the **canonical LR parser** has massive parse tables, too many DFA states, making parsing too complicated. one of the two choices of building production-level parsers, but normally we use the LALR parser.
 
-we call this canonical LR, because any LR parser $LR(k)$, for any constant $k$, can be reducible to some form of $LR(1)$. $LR(1)$ has all the computation possible for any standard programming language.
+we call this canonical LR, because any language in $LR(k)$, for any constant $k$, can be reducible to some form of $LR(1)$. $LR(1)$ has all the computation possible for any standard programming language.
+
+this is not to say that $LR(k) \equiv LR(1)$, it is that the languages can be transformed into another form that can be parsed by $LR(1)$.
 
 LR(1) is similar in concept to LR(0), except items have lookaheads.  takes the form:
 $$N\to\Sigma_{1}.\Sigma_{2}.\ \ \ \ \ T$$

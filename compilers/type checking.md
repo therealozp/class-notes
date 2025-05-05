@@ -29,7 +29,7 @@ n1 = new natList();
 n1.data = n2;
 ```
 
-without any type checking, the type `natList` is assignable to the variable of type `nat`. if the `data` field is accessed without intervention, it may intrude in a memory section defined by another block, thus granting arbitrary memory occupation.
+without any type checking, the type `natList` is assignable to the variable of type `nat`. if the `data` field is accessed without intervention, it may intrude in a memory section defined by another block, thus granting memory occupation.
 
 ## strong vs. weakly typed languages
 type-safe (aka strongly-typed) programming languages ensure that all language-level values only get used in allowed ways. 
