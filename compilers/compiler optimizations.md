@@ -39,7 +39,7 @@ then, $\exists$ an always halting TM $M_{1}$ that inputs $<M, s>$  and:
 - else, $M_{1}$ rejects.
 
 next, define a TM $M_{2}$ that takes input $M_{3}$. suppose that $M_{2}$ runs $M_{1}$ as a subroutine (knowing that $M_{1}$ always halt):
-- if $M_{1}$ accepts $<M_{3}, M_{3}>$, then $M_{2}$ enters and infinite loop. 
+- if $M_{1}$ accepts $<M_{3}, M_{3}>$, then $M_{2}$ enters an infinite loop. 
 - else, $M_{2}$ accepts.
 
 consider $M_{2}$ on an input $M_{2}$. using $M_1$ as an oracle to tell us the behavior of the program, we do the opposite.
