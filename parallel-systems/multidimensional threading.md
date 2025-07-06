@@ -58,11 +58,9 @@ __global__ void blur_kernel(unsigned char* image, unsigned char* blurred, unsign
 	  
 	if (outRow < height && outCol < width) {  
 		unsigned int average = 0;  
-		for (int inRow = outRow - BLUR_SIZE;
-		inRow < outRow + BLUR_SIZE + 1;
+		for (int inRow = outRow - BLUR_SIZE; inRow < outRow + BLUR_SIZE + 1;
 		++inRow) {  
-			for (int inCol = outCol - BLUR_SIZE;
-			inCol < outCol + BLUR_SIZE + 1;
+			for (int inCol = outCol - BLUR_SIZE; inCol < outCol + BLUR_SIZE + 1;
 			++inCol) {  
 				average += image[inRow*width + inCol];  
 			}  
