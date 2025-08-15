@@ -59,7 +59,6 @@ Rice's theorem states: **every non-trivial property of programs is undecidable.*
 it's undecidable to even implement a perfect compiler. no matter what we do, an expert human can implement assembly of a program much better than a machine ever could.
 
 so, the problem of fully optimizing programs is undecidable. a fully opimizing compiler produces, $\forall$ source programs $S$, optimal (most efficient, fewest instrs) target code $\equiv S$.
-
 #### the full-employment theorem
 **proof**: assume that fully-optimizing compiler $C$ exists. additionally, consider source pgm $p$ without I/O.
 

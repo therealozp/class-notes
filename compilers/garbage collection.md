@@ -1,4 +1,4 @@
-	consider the following snippet:
+consider the following snippet:
 
 ```
 main {
@@ -82,7 +82,7 @@ now that `o2` also has a 0 reference, we can collect them as well. however, note
 
 **pros**:
 - pretty simple (can be implemented for DJ)
-- collection is performed incremental. it only ever gets really slow for large graphs with a lot of references.
+- collection is performed incrementally. it only ever gets really slow for large graphs with a lot of references.
 - garbage is collected immediately as soon as reference goes to 0.
 
 **cons**:
