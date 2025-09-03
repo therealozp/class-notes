@@ -27,7 +27,7 @@ in designing an assembly language, there are some principles that they all follo
 - simplicity enables higher performance at lower cost.
 #### smaller is faster
 - only 32 registers in the CPU for RISC-V
-- c.f. main memory: millions of locations
+- compare with main memory: millions of locations
 #### make the common case fast
 - small constants are very common, so the immediate operands avoid executing other load instructions.
 #### good design demands good compromises

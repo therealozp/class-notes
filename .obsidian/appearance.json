@@ -3,9 +3,9 @@
   "cssTheme": "Sanctum",
   "textFontFamily": "Satoshi",
   "enabledCssSnippets": [
-    "obsidian",
     "image_grid"
   ],
   "baseFontSize": 17,
-  "theme": "obsidian"
+  "theme": "obsidian",
+  "showRibbon": false
 }

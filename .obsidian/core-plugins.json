@@ -27,7 +27,13 @@
   "publish": false,
   "sync": false,
   "properties": true,
+<<<<<<< HEAD
   "footnotes": false,
   "bases": true,
   "webviewer": false
+=======
+  "webviewer": false,
+  "footnotes": false,
+  "bases": true
+>>>>>>> origin/main
 }

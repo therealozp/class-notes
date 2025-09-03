@@ -25,7 +25,7 @@ the naive implementation for the multiplier can be expressed as:
 	- if = 1: add multiplicand to **result**, put it in the product register
 	- if = 0: skip this step
 	- end of the loop: 
-		- multiplicand <<= 1
+		- multiplicand <<= 1 
 		- multiplier >>= 1
 
 instead, a more optimized approach can be attained as we shift the result continuously. this way, instead of using a 128-bit ALU, we will only need to use 64.
