@@ -1,5 +1,5 @@
 a. and b.
-![[Pasted image 20250903013916.png]]
+![[Pasted image 20250905135206.png]]
 
 c.
 The profit-maximizing price and quantity is 100 and 2500, respectively. So, the total revenue would be:
@@ -15,3 +15,6 @@ $$TR = 3750 \times 75 = 281250$$
 so, producing at the profit-maximizing price **will not** maximize total revenue.
 
 e.
+The largest marginal profit that we can possibly get will always be the **first unit produced**, where $P - LAC$ is maximized. In this case, the maximum profit margin the firm is able to receive will be $150 - 50 = 100$.
+
+So, in part c), we are not maximizing profit margin. To maximize profit margin, we are only producing 1 unit. At the optimal output level $Q^*$, our profit margin is $100 - 50 = 50$.
