@@ -1,1 +1,0 @@
-log-log model is used to represent the **elasticity.** 
