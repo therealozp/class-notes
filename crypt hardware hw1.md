@@ -1,6 +1,6 @@
 6. we can XOR the plaintext with the ciphertext to get a sequence of keys. then, since we are using the same key (supposing that key length is 128 bits in length), we can inspect the sequence for repeating chains of 128. that same chain of 128 is the key that we need to decrypt all other ciphertext.
 
-7. since we know that the period of the LFSR is 200 bits, we only need to examine 200 consecutive bits of the plaintext and the ciphertext
+7. since we know that the period of the LFSR is 200 bits, we only need to examine 200 consecutive bits of the plaintext and the ciphertext to get a **possibly shifted** version of the key. because 
 
 8. tapping the channel to get the plaintext and the ciphertext, we can XOR them with each other and investigate the key:
 
