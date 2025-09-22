@@ -7,12 +7,12 @@ even though the $SRATC$ will also decrease on the short run graphs as well, this
 
 no capital constraint in the long run. 
 
-you are not exiting the industry despite losing money in the short run, if you can later on use the correct amount of capital and produce at a profit. always look at the long-run cost structure before making a strategic decision.
+you are not exiting the industry despite losing money in the short run, because later on, you can adjust to the correct amount of capital and produce at a profit. always look at the long-run cost structure before making a strategic decision.
 
-the minimum efficient scale (MES) is the smallest amount of production we can go at to take advantage of all the economies of scale. to compete in the long run, a firm needs to have equal (or smaller) LRATC as their competitors. this does **not** necessarily mean that the firm needs to produce as much as their competitors, they just need to reach the MES.
+the minimum efficient scale (MES) is the smallest amount of production we can go at to take advantage of all scale economies are reached. to compete in the long run, a firm needs to have **equal (or smaller) LRATC** as their competitors. this does **not** necessarily mean that the firm needs to produce as much as their competitors, they just need to reach the MES.
 
 the MES is not necessarily the profit-maximizing point of production. "maximizing" means finding the intersection with the marginal point. it is just a **threshold to reach if you want to survive the long run** without a cost disadvantage.
-### how does this happen?
+#### how does this happen?
 - technical process of production. so if a product requires a lot of capital to produce, it generally gets more efficient.
 - meshing of equipment, so that the capacity of machines are not wasted. 
 	- a newspaper agency has a printing press of capacity 5k/day, and a folding machine of 3k a day.
@@ -20,6 +20,10 @@ the MES is not necessarily the profit-maximizing point of production. "maximizin
 	- if it produces 30k, 6 PPs and 10 folding machines mesh perfectly.
 - justifying the use of more expensive technology for production
 
+## learning economies of scale
+LAC curve just shifts down as the cumulative Q rises. strategic rivalry might push managers to go rapidly along the learning curve to not compete at a cost disadvantage.
+
+![[Pasted image 20250922154300.png]]
 ## diseconomies of scale
 - management diseconomies
 	- 
@@ -27,8 +31,9 @@ the MES is not necessarily the profit-maximizing point of production. "maximizin
 	- a brilliant chef who opens a restaurant decides to open up another one. not being able to manage both at the same time, because he has to spread himself over two restaurants.
 
 ## economies of scope
+two conditions for achieving economies of scope:
 - shared inputs 
-- if you are producing at the profit-maximizing point for X, the opportunity cost of using it for Y is **zero**.
+- if you are producing at the profit-maximizing point for X, the opportunity cost of using it for Y is **zero**. meaning, you don't have to sacrifice any of X's inputs to produce Y.
 
 this is **different from** joint products: if you have enough inputs for one product, you automatically also get another product as a byproduct.
 
@@ -65,6 +70,8 @@ if you can convince the consumer that you are of higher quality, then the single
 spreading advertising/branding costs over a large number of different products.
 #### q7
 pecuniary (purchasing) economies of scale are when big firms get discount on larger amount of inputs. as you expand output, the input costs go down.
+
+so, a valid strategy can be to expand production to take advantage of purchasing economies of scale can add to outputs.
 
 the MES is **not** affected by the pecuniary economies of scale. however, due to the PES, we might even achieve an even lower long run average cost.
 #### q8
