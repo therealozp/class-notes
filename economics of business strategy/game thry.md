@@ -15,7 +15,7 @@ a **Nash equilibrium** are cells where the firm makes the best possible decision
 
 a pair of decisions where **both firms** make the best decisions for themselves individually given what their rival is doing.
 ## strategic stability
-a strategically stable pair of decision is a decision where **not a single player** is able to **unilaterally** change their decision, and make more profit. a **unilateral change** from one firm is one firm moving, while the other does not. 
+a strategically stable pair of decision is a decision where **not a single player** is able to **unilaterally** change their decision and make more profit. a **unilateral change** from one firm is one firm moving, while the other does not. 
 
 in other words, a strategically stable pair means, for each pair, if one guy moves, both will. 
 
