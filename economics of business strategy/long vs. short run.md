@@ -11,3 +11,4 @@ economic profit belongs to owner of the firm, so increase in economic profit mak
 
 accounting profit follows GAAP, which does **not** include implicit costs. so, AP will always be larger than EP. 
 
+the value of the firm is the price for which the firm can be sold. 
