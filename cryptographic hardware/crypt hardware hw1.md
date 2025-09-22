@@ -36,6 +36,9 @@ $\implies(y_{2} -y_{1})=a(x_{2}-x_{1}) \mod m$
 $\implies a=(y_{2} -y_{1})(x_{2}-x_{1})^{-1} \mod m$
 
 so, to be able to derive the multiplicative inverse of $x_{2}-x_{1}$, we need to choose the plaintext such that $gcd(x_{2}-x_{1}, m) = 1$.
+
+after deriving the multiplicative inverse of $x_{2}-x_{1}$, we can compute $a$. after successfully computing $a=a_{0}$, Oscar compute $b$ by substituting into one of the two encryption algorithm:
+$$b=y_{1}-a_{0}x_{1}$$
 ### problem 6
 we can XOR the plaintext with the ciphertext to get a sequence of keys. then, since we are using the same key (supposing that key length is 128 bits in length), we can inspect the sequence for repeating chains of 128. that same chain of 128 is the key that we need to decrypt all other ciphertext.
 ### problem 7
