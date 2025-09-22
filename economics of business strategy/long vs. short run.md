@@ -12,3 +12,11 @@ economic profit belongs to owner of the firm, so increase in economic profit mak
 accounting profit follows GAAP, which does **not** include implicit costs. so, AP will always be larger than EP. 
 
 the value of the firm is the price for which the firm can be sold. 
+
+price elasticity measures the sensitivity (or the proportion of ratio) of demand to price. the most important factor of elasticity is the availability of substitutes. 
+
+"sunk costs and fixed costs are two names for the same type of costs": sunk costs are fixed costs, but not vice versa. for example, a portion of the costs (for example, when renting equipment) can be sunk, but it can be recoverable (if the building is sublet, or equipment returned.) fixed costs are important for short-run decisions, but any form of sunk cost should not be referred toward when making long-run decisions.
+
+a firm owns the building in which it operates. the cost of the building is a fixed cost, as it is still being used in operation. the cost can even be recoverable by leasing the space out.
+
+A firm spends $1 million each quarter to lease a building for that quarter. Is the cost of the building a fixed cost or a sunk cost or both? it is a fixed, sunk cost. however, if the firm decides to sublease the space or break an early lease, then a portion of the cost can be recoverable, and not sunk.
