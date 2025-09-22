@@ -74,3 +74,28 @@ R&D expenditure produces uncertain benefits, in that you don't know what you exa
 
 if R&D is necessary, the market survivors are typically multi-service.
 
+q9
+
+#### q10
+a.
+to check if a product can experience an economies of scale, the **average cost of production** should decrease as more outputs are produced. 
+
+in this case, for product X: 
+- when producing 50 units of X, costs an average of 2
+- when producing 90 units of X, costs an average $\frac{210}{90} = 2.33$
+
+for product Y:
+- when producing 8 units of Y, $\frac{150}{8} = 17.5$
+- when producing 10 units of Y, $\frac{320}{10}=32$
+
+since average costs is increasing, there is no economies of scale for either X or Y.
+
+b. 
+to check if a firm benefits from economies of scope, add its constituents individually and compare to they are produced together.
+
+in this case, 
+- $LTC(8, 50) < LTC(8, 0) + LTC(0, 50),$ and 
+- $LTC(10, 90) < LTC(10, 0) + LTC(0, 90)$ 
+at both production levels, there are economies of scope. however, this might not always be true, where one level may indicate scope, and one level might not.
+
+note: learning economies of scale means achieving a cumulative amount of product will lead to a decrease in average costs for all points beyond that threshold.

@@ -12,3 +12,5 @@ $$E = \frac{P}{P-A}$$
 where:
 - $P$ is the **price intercept** of the inverse demand curve
 - $A$ is the price at which we are calculating the elasticity
+
+the most important factor influencing elasticity of demand is the **availability of substitutes**.
