@@ -1,4 +1,4 @@
-oligopoly means rival firms' profits are dependent on rivals' strategy.
+ oligopoly means rival firms' profits are dependent on rivals' strategy.
 
 early 1900: Edgeworth and Nash finalized a critical element:
 - to maximize your profit, you need to predict how your rival will respond
@@ -11,7 +11,7 @@ business tactics vs strategy:
 	- to make better profit than just using tactics alone
 	- to protect that profit against rival firms in the long run
 
-the term "business strategy" was not used until earlyM 1900s, because there were very few oligopolies until the late 1800 and 1900. 
+the term "business strategy" was not used until early 1900s, because there were very few oligopolies until the late 1800 and 1900. 
 - expansion of geographic markets led to the emergence of oligopoly markets with fierce competition
 - price wars -> destructive competition that insured only the largest firm survives
 - set up trusts, which were legal cartels, and let a few of them control output and prices 

@@ -4,7 +4,7 @@ the amount of ASICs we can run in parallel with the budget is: $\frac{10^{6}}{10
 then, to compute the time of an average key search, we can obtain this number with relation to the Age of the Universe by:
 $$\frac{2^{128}}{5\times 10^{8} \times 10^{4}\times 10^{10} } = 6.805\times 10^{15} \text{ age of the universe}$$
 ### problem 2
-the multiplicative inverse of 5:
+for a number $x$ to be a multiplicative inverse in a ring, $1\equiv x\times 5\mod Z$. then, the multiplicative inverse of 5:
 - in $Z_{11}: 5^{-1}\equiv 9 \mod 11$
 - in $Z_{12}: 5^{-1}\equiv 5 \mod12$
 - in $Z_{13}: 5^{-1}\equiv 8 \mod 13$
@@ -13,7 +13,7 @@ the multiplicative inverse of 5:
 $3^{10} \mod 13$: we can see that $1\equiv 3^{3}\mod 13$, so decompose $3^{10}$ into $3^{3}\times 3^{3}\times 3^{3}\times 3$. then, our final result is:
 $$3\equiv 3 \times 1\times 1\times 1 \mod 13$$
 #### pt2
-$7^{10} \mod 13$: we can see that $10\equiv 7^{2}\mod 13$, so we can decompose into: $10\times10\times10\times10\times10\mod 13$.
+$7^{10} \mod 13$: we can see that $10\equiv 7^{2}\mod 13$, so we can decompose $7^{10} = 7^{2}\times7^{2}\times7^{2}\times7^{2}\times7^{2}$ into: $10\times10\times10\times10\times10\mod 13$.
 
 then, knowing that $9\equiv10^{2} \mod 13$, we can further decompose: $9\times 9 \times 10 \mod 13$
 
