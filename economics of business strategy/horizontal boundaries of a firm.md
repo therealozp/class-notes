@@ -13,7 +13,13 @@ the MES is not necessarily the profit-maximizing point of production. "maximizin
 #### how does this happen?
 economies of scale generally happen due to three main reasons: 
 - **most common**: the spreading of the indivisible, fixed costs over the increasing amount of output.
-- capital-intensive (when the process relies more heavily on machinery instead of labor or materials) process. so if a product requires a lot of capital to produce, it generally gets more efficient, because indivisible costs are more likely to get spread out.
+- specialization and division of labor
+- technological factors, meshing of equipment or justifying more expensive technology
+
+
+capital-intensive processes, when the process relies more heavily on machinery instead of labor or materials. so if a product requires a lot of capital to produce, it generally gets more efficient, because indivisible costs are more likely to get spread out.
+
+honorable mentions:
 - meshing of equipment, so that the capacity of machines are not wasted. 
 	- a newspaper agency has a printing press of capacity 5k/day, and a folding machine of 3k a day.
 	- if the agency only produces 5k a day, you would need 2 folding machines - and have a leftover capacity of 1k.
@@ -25,19 +31,24 @@ suppose that Google extends itself to producing autonomous vehicles. even though
 LAC curve just shifts down as the cumulative Q rises. strategic rivalry might push managers to go rapidly along the learning curve to not compete at a cost disadvantage.
 
 ![[Pasted image 20250922154300.png]]
-## diseconomies of scale
-- management diseconomies
-	- 
-- specialized inputs spread too thinly: when producing too much things at the same time, the non-reproducible inputs for a certain good are spread across different other goods as well. so, without the specialized input, the **average cost rises**.
-	- a brilliant chef who opens a restaurant decides to open up another one. not being able to manage both at the same time, because he has to spread himself over two restaurants.
-
 ## economies of scope
 two conditions for achieving economies of scope:
 - shared inputs 
 - if you are producing at the profit-maximizing point for X, the opportunity cost of using it for Y is **zero**. meaning, you don't have to sacrifice any of X's inputs to produce Y.
 
 this is **different from** joint products: if you have enough inputs for one product, you automatically also get another product as a byproduct.
+#### q2
+economies of scale generally happen due to three main reasons: 
+- **most common**: the spreading of the indivisible, fixed costs over the increasing amount of output.
+- specialization and division of labor
+- technological factors, meshing of equipment or justifying more expensive technology
 
+#### q3: diseconomies of scale
+- management diseconomies
+	- monitoring and controlling employees lower down the chain
+	- management must delegate work
+- specialized inputs spread too thinly: when producing too much things at the same time, the non-reproducible inputs for a certain good are spread across different other goods as well. so, without the specialized input, the **average cost rises**.
+	- a brilliant chef who opens a restaurant decides to open up another one. not being able to manage both at the same time, because he has to spread himself over two restaurants.
 #### q4:
 $$LTC(Q_{m}) = 900,000+50\times 5000 = 1,150,000$$
 a. 
@@ -66,7 +77,6 @@ when there are economies of scope, usually the multiservice/multiproduct compani
 however, there is not a good framework to compute an average cost for multiservice firms.
 
 if you can convince the consumer that you are of higher quality, then the single-service firm might still be survive. stuff like consumer perception, quality, etc. are not in the cost equations.
-
 #### q6
 spreading advertising/branding costs over a large number of different products.
 #### q7
@@ -81,7 +91,6 @@ R&D for improving products, having more products, or lower costs of production. 
 R&D expenditure produces uncertain benefits, in that you don't know what you exactly want. for example, pharma company researches anti-inflammatory, but accidentally produces a drug to reduce blood pressure. if a multiservice company happens to cover this, then we are getting a much better payoff.
 
 if R&D is necessary, the market survivors are typically multi-service.
-
 ### q9
 without the effects of a learning economy: the firm only sets to produce the optimal level of output based on demand.
 
@@ -109,11 +118,3 @@ in this case,
 at both production levels, there are economies of scope. however, this might not always be true, where one level may indicate scope, and one level might not.
 
 note: learning economies of scale means achieving a cumulative amount of product will lead to a decrease in average costs for all points beyond that threshold.
-
-I am applying to HackJunction because I believe it is more than just a hackathon: it is a place where ideas that feel urgent can be tested, sharpened, and shared with people who care. The world is full of complex, stubborn problems and too few opportunities to try solving them under pressure with people who are smart, motivated, and welcoming of risk. That is what draws me to Junction: the chance to turn a spark of frustration or curiosity into something that actually works, in a real prototype, in a short time.
-
-I have built tools before, under less-than-ideal circumstances, because someone needed them now, not later. For example, I created a real-time tool for comparing telemetry of 3D printers in my lab, built a high-velocity log aggregation system to make data accessible to engineers, and worked on legal-text summarization tools that turn walls of content into usable insights. These projects were never about impressing someone else, but they were dedicated to fixing broken workflows and rescuing people from repetitive failures. I bring with me a mindset: if something feels inefficient or painful, I dig in until it is not.
-
-I will show up to HackJunction with an attitude of contribution. I intend to learn from others’ domain knowledge, pivot fast, and push for prototypes that matter. I think I should be selected because I relish these high-intensity moments: the kind that force me to decide quickly, abandon perfection, try something wild, and then iterate. My strongest work has come from being uncomfortable, being early, being the one to clean up a mess so something usable emerges.
-
-Thank you for considering my application. Being part of Junction would mean more than another hack—it would mean a chance to build something meaningful with others who also believe that software should solve real problems, not just show off. I missed Hack the Uncertainty once with the visa application in 2023, and I feel like this will be my chance for redemption. 
