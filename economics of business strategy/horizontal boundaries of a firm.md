@@ -1,5 +1,3 @@
-## conglomerate mergers
-suppose that Google extends itself to producing autonomous vehicles. even though this does not necessarily benefit from the economies of scale, there are certain financial reasons why a big conglomerate wants to extend out to a new product/service.
 ## economies of scale
 the firm is enjoying a decreasing **long-run average cost** over the long run range of production. however, economies of scale is strictly a long-run phenomenon.
 
@@ -9,17 +7,20 @@ no capital constraint in the long run.
 
 you are not exiting the industry despite losing money in the short run, because later on, you can adjust to the correct amount of capital and produce at a profit. always look at the long-run cost structure before making a strategic decision.
 
-the minimum efficient scale (MES) is the smallest amount of production we can go at to take advantage of all scale economies are reached. to compete in the long run, a firm needs to have **equal (or smaller) LRATC** as their competitors. this does **not** necessarily mean that the firm needs to produce as much as their competitors, they just need to reach the MES.
+the minimum efficient scale (MES) is the smallest amount of production we can go at to take advantage of all scale economies. to compete in the long run, a firm needs to have **equal (or smaller) LRATC** as their competitors. this does **not** necessarily mean that the firm needs to produce as much as their competitors, they just need to reach the MES.
 
 the MES is not necessarily the profit-maximizing point of production. "maximizing" means finding the intersection with the marginal point. it is just a **threshold to reach if you want to survive the long run** without a cost disadvantage.
 #### how does this happen?
-- technical process of production. so if a product requires a lot of capital to produce, it generally gets more efficient.
+economies of scale generally happen due to three main reasons: 
+- **most common**: the spreading of the indivisible, fixed costs over the increasing amount of output.
+- capital-intensive (when the process relies more heavily on machinery instead of labor or materials) process. so if a product requires a lot of capital to produce, it generally gets more efficient, because indivisible costs are more likely to get spread out.
 - meshing of equipment, so that the capacity of machines are not wasted. 
 	- a newspaper agency has a printing press of capacity 5k/day, and a folding machine of 3k a day.
 	- if the agency only produces 5k a day, you would need 2 folding machines - and have a leftover capacity of 1k.
 	- if it produces 30k, 6 PPs and 10 folding machines mesh perfectly.
 - justifying the use of more expensive technology for production
-
+## conglomerate mergers
+suppose that Google extends itself to producing autonomous vehicles. even though this does not necessarily benefit from the economies of scale, there are certain financial reasons why a big conglomerate wants to extend out to a new product/service.
 ## learning economies of scale
 LAC curve just shifts down as the cumulative Q rises. strategic rivalry might push managers to go rapidly along the learning curve to not compete at a cost disadvantage.
 
@@ -81,8 +82,10 @@ R&D expenditure produces uncertain benefits, in that you don't know what you exa
 
 if R&D is necessary, the market survivors are typically multi-service.
 
-q9
+### q9
+without the effects of a learning economy: the firm only sets to produce the optimal level of output based on demand.
 
+because learning economies generally reduce costs, a firm is motivated to produce as much as possible to move further along the learning curve. so, charging a lower price now would sell more unit, which allows them to learn faster and lowers future costs. 
 #### q10
 a.
 to check if a product can experience an economies of scale, the **average cost of production** should decrease as more outputs are produced. 

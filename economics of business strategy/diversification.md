@@ -1,9 +1,10 @@
 diversification is a horizontal decision. 
 #### q11: why diversify
 - leads to increase in profit due to some efficiency reason (economies of scope), either through increasing revenue or reducing costs
-- the principle-agent problem: when there owners of the firms are different from the managers of the firm. (separation between ownership and management)
-	- misaligned incentives, and owners are unable to determine if mangers are making bad decisions
+- internal capital markets: lets a corporate unit move money from a cash-rich business to cash-poor business
 
+the principle-agent problem: when there owners of the firms are different from the managers of the firm. (separation between ownership and management)
+- misaligned incentives, and owners are unable to determine if mangers are making bad decisions
 #### q12
 first profit-based reason for diversification is **complementarities**. 
 - can add to revenue
@@ -17,7 +18,6 @@ three possibilities:
 	- will works well if there is a particular skillset that allows them to be very profitable in multiple different field
 	- this logic is **not** widely thought to be successful. case in point, Disney. 
 	- (rarely there's gonna be a Steve Jobs who smurfs on everyone)
-
 #### q13
 a. 
 they have profitable investments, like R&D, advertising, expanding to multiple different geographic regions. they move cash from cash-rich divisions to more cash-constrained divisions.
@@ -32,7 +32,7 @@ b.
 "buying undervalued firms will increase the value of current firm" - bad CEOs
 - **the winner's curse**: if a big firm bid a certain value, other opponents come in and bid it up (so it's not undervalued anymore). so, if you're the winner, other bidders don't think that they are worth that much money
 - good CEOs are already busy focusing on their own product, instead of searching out for other companies. 
-- antitrust approval, 
+- antitrust approval is very complicated, and govt probably wants to avoid monopolies
 #### q15
 a. 
 managers undertake mergers knowing that they can reduce a firm's value - but they don't care:
