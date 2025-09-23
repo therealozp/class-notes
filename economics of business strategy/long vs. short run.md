@@ -13,7 +13,7 @@ accounting profit follows GAAP, which does **not** include implicit costs. so, A
 
 the value of the firm is the price for which the firm can be sold. 
 
-price elasticity measures the sensitivity (or the proportion of ratio) of demand to price. the most important factor of elasticity is the availability of substitutes. 
+price elasticity measures the sensitivity (or the proportion of ratio) of demand to price. the most important factor influencing elasticity is the availability of substitutes. 
 
 "sunk costs and fixed costs are two names for the same type of costs": sunk costs are fixed costs, but not vice versa. for example, a portion of the costs (for example, when renting equipment) can be sunk, but it can be recoverable (if the building is sublet, or equipment returned.) fixed costs are important for short-run decisions, but any form of sunk cost should not be referred toward when making long-run decisions.
 

@@ -23,7 +23,7 @@ the term "business strategy" was not used until early 1900s, because there were 
 	- vertically integrated
 	- large amounts of capital 
 	- extensive scale and scope economies
-	- this interdependence led the C-suite offices to think about business strategy as a means of competition.
+	- this interdependence led the C-suites to think about business strategy as a means of competition.
 - John von Neumann and Oscar published the solutions for:
 	- zero-sum games (military)
 	- non-zero-sum (business)
