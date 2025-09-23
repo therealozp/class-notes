@@ -109,3 +109,11 @@ in this case,
 at both production levels, there are economies of scope. however, this might not always be true, where one level may indicate scope, and one level might not.
 
 note: learning economies of scale means achieving a cumulative amount of product will lead to a decrease in average costs for all points beyond that threshold.
+
+I am applying to HackJunction because I believe it is more than just a hackathon: it is a place where ideas that feel urgent can be tested, sharpened, and shared with people who care. The world is full of complex, stubborn problems and too few opportunities to try solving them under pressure with people who are smart, motivated, and welcoming of risk. That is what draws me to Junction: the chance to turn a spark of frustration or curiosity into something that actually works, in a real prototype, in a short time.
+
+I have built tools before, under less-than-ideal circumstances, because someone needed them now, not later. For example, I created a real-time tool for comparing telemetry of 3D printers in my lab, built a high-velocity log aggregation system to make data accessible to engineers, and worked on legal-text summarization tools that turn walls of content into usable insights. These projects were never about impressing someone else, but they were dedicated to fixing broken workflows and rescuing people from repetitive failures. I bring with me a mindset: if something feels inefficient or painful, I dig in until it is not.
+
+I will show up to HackJunction with an attitude of contribution. I intend to learn from others’ domain knowledge, pivot fast, and push for prototypes that matter. I think I should be selected because I relish these high-intensity moments: the kind that force me to decide quickly, abandon perfection, try something wild, and then iterate. My strongest work has come from being uncomfortable, being early, being the one to clean up a mess so something usable emerges.
+
+Thank you for considering my application. Being part of Junction would mean more than another hack—it would mean a chance to build something meaningful with others who also believe that software should solve real problems, not just show off. I missed Hack the Uncertainty once with the visa application in 2023, and I feel like this will be my chance for redemption. 
