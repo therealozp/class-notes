@@ -1,4 +1,5 @@
 ## problem 1
+## problem 1
 $A(x) = x^{2}+ 1$, and $B(x)=x^{3}+x^{2}+1$
 $$\begin{align}
 \implies A(x) + B(x)  &= x^{2}+1+x^{3}+x^{2}+1 \\
