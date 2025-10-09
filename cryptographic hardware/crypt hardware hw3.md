@@ -21,7 +21,7 @@ $$
 $$
 ## problem 2
 the number of seconds taken to crack the 192-bit key:
-$$\frac{2^{192}}{3\times 10^{7}\times10^{5}}=1.58\times 10^{45} \text{ seconds} = 5 \times 10^{37} \text{ years}$$
+$$\frac{2^{192}}{3\times 10^{7}\times10^{5}}=2.09\times 10^{45} \text{ seconds} = 6.63 \times 10^{37} \text{ years}$$
 ## problem 3
 hash subkey $H(x)=x^{27}+x^{25}+x^{20}+x^{4}+x+1$
 irreducible polynomial $P(x)=x^{128}+x^{7}+x^{2}+x+1$
@@ -90,7 +90,7 @@ $$
 \begin{align}
 &q_{3}\equiv a_{3}b_{3} \oplus a_{3}b_{0} \oplus a_{2}b_{1} \oplus a_{1}b_{2} \oplus a_{0}b_{3} \\
 & q_{2}\equiv a_{3}b_{3}\oplus a_{3}b_{2} \oplus a_{2}b_{3} \oplus a_{2}b_{0} \oplus a_{1}b_{1} \oplus a_{0}b_{2} \\
-& q_{1}\equiv a_{3}b_{2}\oplus a_{3}b_{1} \oplus a_{2}b_{2} \oplus a_{1}b_{3}\oplus a_{1}b_{0} \oplus a_{0}b_{1} \\
+& q_{1}\equiv a_{3}b_{2}\oplus a_{2}b_{3}\oplus a_{3}b_{1} \oplus a_{2}b_{2} \oplus a_{1}b_{3}\oplus a_{1}b_{0} \oplus a_{0}b_{1} \\
 & q_{0} \equiv a_{3}b_{1}\oplus a_{2}b_{2} \oplus a_{1}b_{3} \oplus a_{0}b_{0}
 \end{align}
 $$
