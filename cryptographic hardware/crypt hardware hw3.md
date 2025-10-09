@@ -66,3 +66,32 @@ x^{120}+x^{118}+x^{113}+x^{94}+x^{93}+x^{91}+x^{89}+x^{77}+x^{73}+x^{64} \\
 &\quad+x^{15}+x^{14}+x^{13}+x^{8}+x^{5}+x^{3}
 \end{align}
 $$
+## problem 4
+$a(x) = a_{3}x^{3}+a_{2}x^{2}+a_{1}x+a_{0}$
+$b(x) = b_{3}x^{3}+b_{2}x^{2}+b_{1}x+b_{0}$
+$P(x)=x^{4}+x+1$
+
+$$
+\begin{align}
+a(x) \times b(x) &= (a_{3}x^{3}+a_{2}x^{2}+a_{1}x+a_{0}) \times (b_{3}x^{3}+b_{2}x^{2}+b_{1}x+b_{0}) \\
+&=a_{3}b_{3}x^{6}+a_{3}b_{2}x^{5}+a_{3}b_{1}x^{4}+a_{3}b_{0}x^{3}+ \\
+&\quad a_{2}b_{3}x^{5} +a_{2}b_{2}x^{4}+a_{2}b_{1}x^{3}+a_{2}b_{0}x^2+ \\
+&\quad a_{1}b_{3}x^{4}+a_{1}b_{2}x^{3}+ a_{1}b_{1}x^{2}+a_{1}b_{0}x +\\
+&\quad  a_{0}b_{3}x^{3}+a_{0}b_{2}x^{2}+a_{0}b_{1}x+a_{0}b_{0}
+\end{align}
+$$
+
+- reducing $x^{6}\equiv x^{3}+x^{2}$
+- reducing $x^{5}\equiv x^{2}+x$
+- reducing $x^{4}\equiv x+1$
+
+then, for the resultant multiplication $q(x)$:
+$$
+\begin{align}
+&q_{3}\equiv a_{3}b_{3} \oplus a_{3}b_{0} \oplus a_{2}b_{1} \oplus a_{1}b_{2} \oplus a_{0}b_{3} \\
+& q_{2}\equiv a_{3}b_{3}\oplus a_{3}b_{2} \oplus a_{2}b_{3} \oplus a_{2}b_{0} \oplus a_{1}b_{1} \oplus a_{0}b_{2} \\
+& q_{1}\equiv a_{3}b_{2}\oplus a_{3}b_{1} \oplus a_{2}b_{2} \oplus a_{1}b_{3}\oplus a_{1}b_{0} \oplus a_{0}b_{1} \\
+& q_{0} \equiv a_{3}b_{1}\oplus a_{2}b_{2} \oplus a_{1}b_{3} \oplus a_{0}b_{0}
+\end{align}
+$$
+
