@@ -51,7 +51,7 @@ In the special case that $a = \phi(n), \ b = e, \ y = d$ and $gcd(a, b) = 1$:
 $$gcd(a, b) = ax + by \rightarrow 1 = \phi(n)\cdot x+ed$$
 or, in other words, $ed \equiv 1(\mod \phi(n))$.
 
-In general, the EEA will allow us to, for any integers $a$ and $b$, compute the respective $x$ and $y$. 
+In general, the EEA will allow us to, for any integers $a$ and $b$, compute the respective $x$ and $y$
 How to: construct the EEA table. Work by filling in the columns with the quotient, remainder, $x$, and $y$.
 The formula for getting $x_i = x_{i-2} - q \times x_{i - 1}$, and the similar goes for $y$.
 
