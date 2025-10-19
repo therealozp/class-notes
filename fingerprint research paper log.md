@@ -10,3 +10,4 @@ current challenge: going from the orientation + frequency maps to the phase fiel
 2. splitting a fingerprint image into many large sections will introduce blocking when being filtered, but can be somewhat mitigated with gabor filtering.
 
 how do we go from the orientation + frequency map 
+
