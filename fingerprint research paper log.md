@@ -11,3 +11,5 @@ current challenge: going from the orientation + frequency maps to the phase fiel
 
 how do we go from the orientation + frequency map 
 
+issue: going from a phase gradient to a phase itself.
+- strategy 
