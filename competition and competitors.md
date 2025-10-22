@@ -19,7 +19,27 @@ doing the same thing for firm 2, we can also get the BRC for firm 2:
 $$q_{2}=\frac{a-c}{2b} -\frac{1}{2}q_{1}$$
 the term $\frac{a -c}{2b}$ is exactly what the profit-maximizing quantity of a monopolistic firm ($Q_{M}$) in the market is.
 
-if the rival firm is already producing at the competitive level, producing one more unit will reduce the average cost -> everyone loses money.
+*note*: if the rival firm is already producing at the competitive level, producing one more unit push the price down **below** the average cost -> everyone loses money. 
+
+the Cournot assumption is that the quantity produced by the opponent is determined - i.e. both view themselves as a second-mover. 
+
+when plotting the graph:
+- plotting two values on the two axes
+	- $Q_{c}=\frac{a-c}{b}$ on the x-axis, where X is the quantity produced in a perfectly competitive environment
+	- $Q_{m}=\frac{a-c}{2b} = \frac{1}{2}Q_{c}$ on the y axis, where $Q_{m}$ is the qty produced in a monopoly market. 
+### Nash duopoly
+after deriving the equation for q2 with respect to q1, and then the inverse, the Nash equilibrium for the Cournot duopoly will be where these two lines **intersect**. in this case, $q_{1,CD}=q_{2,CD}=\frac{a-c}{3b}$. in this case, both firms are maximizing their outputs given what they think the opponent is going to be.
+
+then, the total amount produced in the market would be $q_{1,CD}+q_{2, CD}=\frac{2(a-c)}{3b}$.
+
+the Nash equilibrium in this case is **non-cooperative**, in the fact that they do not maximize the joint profit. they only try to maximize themselves. c
+### cartel profit
+right now, both firms' BRC only maximizes their own profit, **not the joint profit**. to maximize the joint profit as a cartel, the total amount produced in the market is $\frac{a-c}{2b}$.
+### across $n$ firms
+$$Q_{m} = \frac{a-c}{(n+1)b}$$
+$$q_{i, \text{n firms}}=\frac{1}{n+1}Q_{C}$$
+total output across $n$ firms:
+$$Q=\frac{n}{n+1}Q_{c}$$
 ## q1
 a competitor of a firm (firm A) is any firm, in any product or geographic region, whose presence impinges upon firm A's ability to raise prices.
 
@@ -59,3 +79,5 @@ in a monopolistic market, $MR = 100 - 2Q$. so, at the point $MR = MC\implies 100
 substituting to find price: $P =55$. so, the total economic profit: $(55 -10)\times 45=2025.$
 
 ## q7
+a. because each firm is producing at the level that maximizes their own profit given what they think their opponent is doing. 
+b. the firms' BRC is maximizing their own profit, not the joint profit. they completely ignore the results of their rivals.  
