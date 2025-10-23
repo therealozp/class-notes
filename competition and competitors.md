@@ -40,6 +40,23 @@ $$Q_{m} = \frac{a-c}{(n+1)b}$$
 $$q_{i, \text{n firms}}=\frac{1}{n+1}Q_{C}$$
 total output across $n$ firms:
 $$Q=\frac{n}{n+1}Q_{c}$$
+## Bertrand duopoly
+occurs when products are differentiated.
+$$Q_{A} = a+bP_{A} + cP_{B}$$
+$$Q_{B} = d + eP_{B} + fP_{A}$$
+
+in the above equations:
+ - $a, d> 0$
+ - $b, e < 0$
+ - $c, f > 0$
+
+assume that both firms $A$ and $B$ have constant costs $c_{A}$ and $c_{B}$ respectively. then:
+- $C_{A}(Q_{A})=c_{A}Q_{A}$
+- $C_{B}(Q_{B})=c_{B}Q_{B}$
+
+after computing the best response curve for each firm, the **slope** for each term tells you how much a firm should raise prices, given however much the other firm raises their prices.
+
+
 ## q1
 a competitor of a firm (firm A) is any firm, in any product or geographic region, whose presence impinges upon firm A's ability to raise prices.
 
