@@ -73,3 +73,13 @@ $$\begin{align}
 
 so, the inverse of 6 mod 13 is 11.
 
+## problem 7
+a. 
+on average, the number of clock cycles taken to run $1.5k$ multiplication operations is $1.5ck^{3}$. then comparing the ratios between running RSA with 1024 bits versus 512 bits:
+
+$$\frac{1.5c\times 1024^{3}}{1.5c \times 512^{3}}=\frac{2^{30}}{2^{27}}=8 \text{ times}$$
+so, 1024 bit RSA is 8 times slower than 512 bits.
+
+b.
+using Karatsuba's multiplication with a lesser weight on the exponent and calculating the ratio:
+$$\frac{1024^{2.585}}{512^{2.585}}=2^{2.585}=6 \text{ times}$$
