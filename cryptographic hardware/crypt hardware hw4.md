@@ -1,4 +1,4 @@
-## problem 1
+	## problem 1
 despite public-key cryptography having a lot of useful features and relatively simple processes, we still use symmetric-key cryptography for its security and speed. generally, symmetric key algorithms such as AES are much more performant when it comes to encrypting large volumes of data.
 
 furthermore, symmetric key algorithms are much harder to break. for example, AES will require a brute force key search of $2^{n}$ bits, where $n$ can go up to 512, while public-key exchanges rely on hard mathematical problems such as discrete logarithms or prime factorization. while still difficult, these are much easier for an attacker to "guess" than something like AES.
@@ -50,14 +50,15 @@ $$\begin{align}
 
 ## problem 5
 
-| quotient   | remainder      | s              | t                |
-| ---------- | -------------- | -------------- | ---------------- |
-|            | 26             | 1              | 0                |
-|            | 7              | 0              | 1                |
-| 26 / 7 = 3 | 26 - 7 x 3 = 5 | 1 - 0 x 3 = 1  | 0 - 1 x 3 = -3   |
-| 7 / 5 = 1  | 7 - 5 x 1 = 2  | 0 - 1 x 2 = -2 | 1 - 2 x (-3) = 7 |
-|            |                |                |                  |
-so, the inverse of 7 in the ring $Z_{26}$ is 7.
+| quotient   | remainder      | s                 | t                  |
+| ---------- | -------------- | ----------------- | ------------------ |
+|            | 26             | 1                 | 0                  |
+|            | 7              | 0                 | 1                  |
+| 26 / 7 = 3 | 26 - 7 x 3 = 5 | 1 - 0 x 3 = 1     | 0 - 1 x 3 = -3     |
+| 7 / 5 = 1  | 7 - 5 x 1 = 2  | 0 - 1 x 1 = -1    | 1 - 1 x (-3) = 4   |
+| 5 / 2 = 2  | 5 - 2 x 2 = 1  | 1 - (2 x -1) = 3  | -3 - (2 x 4) = -11 |
+
+so, the inverse of 7 in the ring $Z_{26}$ is 26 - 11 = 15.
 
 ## problem 6
 according to Fermat's Little Theorem: if $p$ is a prime number, $a^{p-1}\equiv 1 \mod p$, so $a \times a^{p-2}\equiv 1$. then, the inverse of $a$ would be $a^{p-2}$.
