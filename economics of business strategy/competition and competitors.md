@@ -98,3 +98,14 @@ substituting to find price: $P =55$. so, the total economic profit: $(55 -10)\ti
 ## q7
 a. because each firm is producing at the level that maximizes their own profit given what they think their opponent is doing. 
 b. the firms' BRC is maximizing their own profit, not the joint profit. they completely ignore the results of their rivals.  
+
+## q9
+
+
+## q11
+Bertrand equilibria has 0 economic profit, operating under the assumption of perfect competition. Cournot is closer to monopoly, so the economic profit is positive.
+
+it differs because in Bertrand competes in prices, but Cournot competes in quantities. The law of one price for homogeneous goods states that, for a homogeneous good, there is only one price in the market for that, so consumers are able to force it down to the competitive level in Bertrand.
+
+use Cournot when: firms produce products that can be stored (warehoused), or a large batch that does not have to be sold at once (controlled quantities)
+use Bertrand when: in the service industry (you can't store services), where you have to set prices first and discover the quantity.
