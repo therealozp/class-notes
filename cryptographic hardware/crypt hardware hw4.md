@@ -1,4 +1,4 @@
-	## problem 1
+## problem 1
 despite public-key cryptography having a lot of useful features and relatively simple processes, we still use symmetric-key cryptography for its security and speed. generally, symmetric key algorithms such as AES are much more performant when it comes to encrypting large volumes of data.
 
 furthermore, symmetric key algorithms are much harder to break. for example, AES will require a brute force key search of $2^{n}$ bits, where $n$ can go up to 512, while public-key exchanges rely on hard mathematical problems such as discrete logarithms or prime factorization. while still difficult, these are much easier for an attacker to "guess" than something like AES.
