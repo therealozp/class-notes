@@ -5,7 +5,7 @@ competition metrics:
 - competing in quantities (Cournot competition): the decision variable for a firm's profit is the amount they produce. manufacturers typically produce in quantities. e.g. auto manufacturing where they forecast an MSRP based on their opponents' decisions - price is "discovered" in the market
 - competing in prices: the decision variable is how high a firm sets their prices. **quantity** is discovered in the market.
 ## Cournot competition
-the myopic Cournot's assumption: always believe that the rival will leave the output the same, despite us changing our own output.
+the myopic Cournot assumption: always believe that the rival will leave the output the same, despite us changing our own output.
 
 suppose that firm 1 produces at $q_{1}$, and firm 2 at $q_{2}$. together, they produce $Q =(q_{1}+q_{2})$. the profit function for firm 1 would be:
 $$\begin{align}
@@ -41,7 +41,7 @@ $$q_{i, \text{n firms}}=\frac{1}{n+1}Q_{C}$$
 total output across $n$ firms:
 $$Q=\frac{n}{n+1}Q_{c}$$
 ## Bertrand duopoly
-occurs when products are differentiated.
+occurs when products are differentiated. when goods are homogeneous, Bertrand's duopoly will naturally dissolve into perfect competition.
 $$Q_{A} = a+bP_{A} + cP_{B}$$
 $$Q_{B} = d + eP_{B} + fP_{A}$$
 
