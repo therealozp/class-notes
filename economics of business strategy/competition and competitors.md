@@ -94,14 +94,11 @@ then, the total economic profit earned would be $(P_{c} - LAC)\times Q_{c} = (10
 in a monopolistic market, $MR = 100 - 2Q$. so, at the point $MR = MC\implies 100-2Q=10$, so $Q=45$. 
 
 substituting to find price: $P =55$. so, the total economic profit: $(55 -10)\times 45=2025.$
-
 ## q7
 a. because each firm is producing at the level that maximizes their own profit given what they think their opponent is doing. 
 b. the firms' BRC is maximizing their own profit, not the joint profit. they completely ignore the results of their rivals.  
-
 ## q9
-
-
+when the goods are homogeneous, the market will follow the law of one price. so, if firm A prices itself even slightly higher than perfectly competitive, customers would all flock over to the other firms. so, when firms are competing in prices, the prices will all be forced down to the competitive level.
 ## q11
 Bertrand equilibria has 0 economic profit, operating under the assumption of perfect competition. Cournot is closer to monopoly, so the economic profit is positive.
 
