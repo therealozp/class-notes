@@ -1,9 +1,14 @@
+## q1
+make means a firm performs the activity itself, while buy would mean that it is purchased from an independent firm.
+
 ## q2
 a. the litmus test for whether doing something in-house gives you a competitive advantage, is that it is **cheaper to do it in house**, compared to if you would purchase it from a marketplace. always choose which one is cheaper: making it in house vs. from an external supplier.
 
-b. focusing on the supplier profits rather than highlighting the actual costs that you undergo. 
+b. focusing on the supplier profits rather than highlighting the actual costs that you undergo. just because a firm makes an economic profit, it doesn't mean we can make it cheaper than the profit-inclusive price.
 
 c. producing in house or not, whenever we produce something in house and the price suddenly rises, the cost of flying the passengers will now also have the **opportunity costs** of not selling that same gallon. so, if you think about it, the total economic costs are always the same.
+
+instead, hedging with futures might be a a more efficient way to manage input price fluctuations.
 
 d. the issue with buying up all distributors to foreclose them, new distributors will arrive, because now there is virtually no barriers to entry.
 that way, when you foreclose all distributors:
@@ -11,7 +16,7 @@ that way, when you foreclose all distributors:
 - economy opens up and more distributors will come
 
 ## q3
-gains and losses when hedging are irrelevant to the total cost of the firm themselves. whenever you own and asset, there will always be an opportunity cost of using the asset instead of selling it.
+gains and losses when hedging are irrelevant to the total cost of the firm themselves. whenever you own and asset, there will always be an opportunity cost of using the asset instead of selling it. then, **hedging does not change the economic cost** nor economic profit earned using the input.  
 
 reasons to "buy": get this service externally, outsourcing, etc. from a **market firm**.
 - patents and proprietary information
