@@ -10,7 +10,6 @@ three main types of entry:
 - geographic market entry: firms that originally start outside our market, but geographically enters into ours.
 
 if enter: have to obtain capital to last the 10 year gap, or find a way to.
-
 - risk: unknown, but predictable. we are able to describe the probabilities of some of the outcomes.
 - uncertainty: we know **nothing**, and we can predict nothing. 
 most of the time, firms have subjective probabilities - instead of not having anything at all.
@@ -21,6 +20,15 @@ a decision maker's tolerance is their choice to treat two different gambles.
 - risk-neutral if you don't really care (indifferent) about which one, if they have the same expected value. for a risk-neutral decision maker, **only the expected value matters**.
 
 we typically assume that a decision maker is risk-neutral, meaning they will always go for whichever decision yields the higher expected value.
+
+it needs to be the case that our rival needs to **believe** that our strategy is permanent.
+
+for example, before a new firm enters, you would want to expand your output capacity, which shows entering firms that the incumbent firms already have the massive capacity to expand.
+## strategic exit
+
+## entry deterring strategies
+
+## exit-forcing strategies
 
 ## factors influencing entry
 
