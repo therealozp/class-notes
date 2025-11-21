@@ -78,3 +78,26 @@ a force exit strategy. usually consists of 2 phases:
 2. recoupment: predator bumps price up again
 
 the discussion in this case, is going to be how much we will lose in phase 1, and how much we can regain in phase 2. 
+
+the longer the predation phase goes, the more percentage of the losses you will incur. predatory pricing will only ever hold in court if:
+- there are barriers to entry to the market. 
+- the losses incurred by the incumbent firm are large, and it is still able to recoup the lost profit.
+
+b.
+the **strategic** circumstances in which predatory pricing might succeed is through reputation.
+
+suppose you decide to engage in a pointless predatory episode, despite knowing that these losses are unrecoverable. but, you are signaling to other rivals that you are **aggressive** and will engage in predation just to get all the market share. (Robert Crandal, American Airlines)
+
+this is super costly, and definitely not cheap. and will take multiple episodes for this to work.
+## dq6
+the decision to enter is risky, and you have to decide that the present value of the expected stream of future profit is large enough to cover sunk costs. entering firms predict the post-entry competitions based on the pre-entry competition. if your competitors are aggressive, probably don't enter. if they are sticking comfortably at the Nash equilibrium, 
+
+the ideal solution is sometimes, you would accommodate other entrants, to soften the blow and cover the profits loss by theincrease of product amount in the market.
+### capacity expansion
+the threat of us expanding our production frontier, to produce more and lowering the price. expansion means adding capital to the firm, and get loads more output quickly and cheaply. in reality, we don't want to do this to hinder our profits - we want to have this as a threat. 
+
+so, this is an entry deterring strategy. we need to make this decision **before** the new firms enter. if you think that capacity expansion works, then you do it quick.
+- you want the costs of this expansion to be **sunk**. this is to show the commitment to expanding capacity. selling your excess capacity is just accommodating. 
+- the expansion needs to **lowers marginal costs** (meaning the profit-maximizing quantity will go up)
+
+for example, in the same Star and BB competition. if Star decides to expand their shop with outdoor seating 
