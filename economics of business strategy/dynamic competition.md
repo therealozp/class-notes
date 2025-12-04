@@ -75,3 +75,21 @@ so, in this case, beta will cheat.
 
 ## dq6
 "when rival firms operating at or near their productive capacity, price wars are much less likely to occur," this is true because we are already producing near our max, so we can't lower prices down by a substantial amount.
+
+## facilitating practices
+legal techniques or strategies that duopolist firms can follow to make cooperation more likely. two main focuses:
+- **price matching:** when both firms price match, it decreases likelihood of a price cut. for the same good, we will charge the same as our rival. 
+	- when the price matching is announced, it will become a **strategic commitment** (or a strategic promise)
+	- when the rival pulls the trigger on the price cut, it pulls our trigger as well. then, the customer monitors them, at no cost. 
+	- we all want to be price matchers to protect themselves from rivals' price cuts.
+- **sale-price guarantee**: another credible promise, which says "when you buy something now and the price drops later, we will give you back that money."
+	- strategically, this just makes it less likely for the firm themselves to cut prices. this is a **signaling** strategy, which shows to the rivals that they do not want to cut price.
+	- also incentivizes rivals to follow the sale-price guarantee. if rivals don't, the original firm withdraws it. (otherwise, the rivals will abuse it and cuts their price)
+	
+## dq7
+this is price matching
+
+## dq8
+a. the main motive here isn't to stimulate demand, because the number of TVs sold wouldn't change much (because it is a durable good).
+
+b. see the sale-price guarantee section above. usually, this can be pretty bad for the consumer, because sale events can be less frequent after the SPG is announced.
