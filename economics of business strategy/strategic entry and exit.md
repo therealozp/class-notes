@@ -21,21 +21,40 @@ a decision maker's tolerance is their choice to treat two different gambles.
 
 we typically assume that a decision maker is risk-neutral, meaning they will always go for whichever decision yields the higher expected value.
 
-it needs to be the case that our rival needs to **believe** that our strategy is permanent.
+it needs to be the case that our rival needs to **believe** that our strategy is permanent. for example, before a new firm enters, you would want to expand your output capacity, which shows entering firms that the incumbent firms already have the massive capacity to expand.
 
-for example, before a new firm enters, you would want to expand your output capacity, which shows entering firms that the incumbent firms already have the massive capacity to expand.
-## strategic exit
+we will only be talking about risk-neutral decision makers for the most part. a risk neutral decision maker will only enter the market if the **expected stream of future profits** exceed the **expected cost of entry**.
+$$PV_{\text{expected profits}}>\text{expected costs}$$
+the **present value** of a future stream of profit/cost of entry is affected by the recurring profit, and the **discount rate**, which is how the firm expects the value of money to fall. 
 
-## entry deterring strategies
-
-## exit-forcing strategies
-
+given the profit $\Pi$, discount rate per period $r$, and number of periods (could be yearly, monthly) $n$, the present value can be computed as:
+$$PV=\frac{E(\Pi_{1})}{1 + r} + \frac{E(\Pi_{2})}{(1 + r)^2} +\dots+\frac{E(\Pi_{n})}{(1 + r)^n}$$
+where $E(x)$ is the expected value.
 ## factors influencing entry
 - structural factors
 - strategic factors
-## dq 1
 
+## dq 1
+a **barrier to entry** is anything that makes it more profitable to be an incumbent firm.
+$E(\Pi)=0.25\times-2+0.5\times 2.5+0.25 \times 10=4.5\text{ mil.}$
+
+so, the present value of future profits:
+$$\frac{4.5}{1.08}+\frac{4.5}{1.08^{2}}+\dots + \frac{4.5}{1.08^{10}} \approx 30.2\text{ mil.}$$
+costs breakdown:
+- 2M license fee sunk
+- 40M, half sunk -> 20M
+- 3M training costs sunk
+- 5M advertising sunk
+total costs: 30M
+
+since PV benefits > PV costs, Hipro should enter the market.
+
+b. 
+when adjusting for the 10% discount rate:
+$$\frac{4.5}{1.10}+\frac{4.5}{1.10^{2}}+\dots + \frac{4.5}{1.10^{10}} \approx 27.7\text{ mil.}$$
+now, PV benefits < costs, so they should not enter the market.
 ## dq 2
+
 
 ## dq3
 
