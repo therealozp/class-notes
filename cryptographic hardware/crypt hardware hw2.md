@@ -254,6 +254,6 @@ Reducing $x^{4}\equiv x+1\mod P(x)$, we get the final coefficients for $A^{i+1}$
 $a_{3}'=a_{2}$
 $a_{2}'=a_{1}$
 $a_{1}'=a_{0}\oplus a_{3}$
-$a_{0}'=\oplus a_{3}$
+$a_{0}'=a_{3}$
 
 so, we only need 1 additional XOR gate in the $x$ module to complete the LSB multiplier. In total, we need $5$ XOR gates and $4$ AND gate.
