@@ -35,7 +35,6 @@ where $E(x)$ is the expected value.
 - strategic factors
 
 ## dq 1
-a **barrier to entry** is anything that makes it more profitable to be an incumbent firm.
 $E(\Pi)=0.25\times-2+0.5\times 2.5+0.25 \times 10=4.5\text{ mil.}$
 
 so, the present value of future profits:
@@ -54,17 +53,39 @@ when adjusting for the 10% discount rate:
 $$\frac{4.5}{1.10}+\frac{4.5}{1.10^{2}}+\dots + \frac{4.5}{1.10^{10}} \approx 27.7\text{ mil.}$$
 now, PV benefits < costs, so they should not enter the market.
 ## dq 2
+a. 
+a **barrier to entry** is anything that makes it more profitable to be an incumbent firm. there are usually 2 types of barriers to entry:
+- structural barriers: something underlying about demand or cost that deters new firm from entering. usually, this asymmetry is some type of sunk cost that incumbent firms have already incurred, but the entering firms have to go through. 
+- strategic barriers:
 
+b. 
+scale economies: incumbent firms in the market typically produce at the minimum efficient scale. when new firm enters:
+- they clearly cannot enter at a small scale, because that is an extreme cost disadvantage -> they need to enter at a large scale.
+- incumbent firms can keep prices low due to their low LAC, but they can still generate profit. entrants cannot reach this point without huge long-run losses!
 
+![[Pasted image 20251206154712.png]]
+
+c.
+scope economies can cause asymmetry as well, because a multi-product firms already inherits some of the cost savings brought by shared R&D, common inputs, or advertising. that means that there will also be the same cost asymmetry for new firms to enter the market by producing a single input.
+
+d.
+consumer lock-in can create structural barriers, because of the nature of the product that makes a **high switching costs**. this can be:
+- contracts (for phone companies)
+- learning curves for new products (software or technologies)
+
+e.
+network externalities are defined as the individual consumer's satisfaction depending on how many other users consume it. for example,
+- dating apps, because they are more enjoyable to use when there is a lot of people using it
+- phone types, such as digital or analog phones that have different means of processing
+- complimentary products, for example, in the case of Apple where their products make it easier for the consumer to use in the "ecosystem"
 ## dq3
-
-a. the incumbent firms need to have either a cost advantage, or a revenue advantage (network externalities, consumer lock in). there also needs to be a case where the entering firm can't quickly overcome the asymmetry either.
+a. the incumbent firms need to have either a **cost advantage, or a revenue advantage** (network externalities, consumer lock in). there also needs to be a case where the entering firm can't quickly overcome the asymmetry either.
 
 the only way that the entering firm can overcome this asymmetry is entering on a large scale, and incurring a huge setup cost, **which are all sunk**. if these costs don't exist, then there are no barriers to entry/exit.
 
 b.
 - scale economies - entering on a cost disadvantage
-- scope economies - 
+- scope economies - new entrants face cost disadvantage
 ## dq4
 ### limit pricing
 limit pricing is a strategy to **prevent entry**. it is usually cheaper to deter entry than to force a firm to exit later. so, limit pricing is **lowering your price** before a firm enters. you can still some economic profit, but *not maximum* profit. 
