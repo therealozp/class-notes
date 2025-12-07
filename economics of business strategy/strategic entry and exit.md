@@ -25,14 +25,12 @@ it needs to be the case that our rival needs to **believe** that our strategy is
 
 we will only be talking about risk-neutral decision makers for the most part. a risk neutral decision maker will only enter the market if the **expected stream of future profits** exceed the **expected cost of entry**.
 $$PV_{\text{expected profits}}>\text{expected costs}$$
+### time value of money
 the **present value** of a future stream of profit/cost of entry is affected by the recurring profit, and the **discount rate**, which is how the firm expects the value of money to fall. 
 
 given the profit $\Pi$, discount rate per period $r$, and number of periods (could be yearly, monthly) $n$, the present value can be computed as:
 $$PV=\frac{E(\Pi_{1})}{1 + r} + \frac{E(\Pi_{2})}{(1 + r)^2} +\dots+\frac{E(\Pi_{n})}{(1 + r)^n}$$
 where $E(x)$ is the expected value.
-## factors influencing entry
-- structural factors
-- strategic factors
 
 ## dq 1
 $E(\Pi)=0.25\times-2+0.5\times 2.5+0.25 \times 10=4.5\text{ mil.}$
@@ -56,7 +54,13 @@ now, PV benefits < costs, so they should not enter the market.
 a. 
 a **barrier to entry** is anything that makes it more profitable to be an incumbent firm. there are usually 2 types of barriers to entry:
 - structural barriers: something underlying about demand or cost that deters new firm from entering. usually, this asymmetry is some type of sunk cost that incumbent firms have already incurred, but the entering firms have to go through. 
-- strategic barriers:
+	- barriers created by the govt. in some form of license/patent laws
+	- economies of scale
+	- essential input barriers
+	- consumer lock-in
+	- brand loyalties
+	- network externalities
+- strategic barriers: comes from incumbent firms actively altering the way potential rivals view the profitability of entering. for example, limit pricing, capacity expansion, etc.
 
 b. 
 scale economies: incumbent firms in the market typically produce at the minimum efficient scale. when new firm enters:
@@ -74,12 +78,14 @@ consumer lock-in can create structural barriers, because of the nature of the pr
 - learning curves for new products (software or technologies)
 
 e.
-network externalities are defined as the individual consumer's satisfaction depending on how many other users consume it. for example,
-- dating apps, because they are more enjoyable to use when there is a lot of people using it
-- phone types, such as digital or analog phones that have different means of processing
-- complimentary products, for example, in the case of Apple where their products make it easier for the consumer to use in the "ecosystem"
+network externalities occur for one of two reasons:
+- the usefulness of the product require connecting customers
+	- dating apps, because they are more enjoyable to use when there is a lot of people using it
+	- phone types, such as digital or analog phones that have different means of processing
+- complimentary products are important to the consumer
+	- Apple where their products make it easier for the consumer to use in the "ecosystem"
 ## dq3
-a. the incumbent firms need to have either a **cost advantage, or a revenue advantage** (network externalities, consumer lock in). there also needs to be a case where the entering firm can't quickly overcome the asymmetry either.
+a. the incumbent firms need to have either a **cost advantage, or a revenue advantage** (network externalities, consumer lock in). it needs to be the case where the entering firm **cannot** quickly overcome the asymmetry either.
 
 the only way that the entering firm can overcome this asymmetry is entering on a large scale, and incurring a huge setup cost, **which are all sunk**. if these costs don't exist, then there are no barriers to entry/exit.
 
@@ -92,9 +98,9 @@ limit pricing is a strategy to **prevent entry**. it is usually cheaper to deter
 
 limit pricing is lower than the profit-maximizing price, but still higher than costs. because the original price is high enough, to the entering firm, a little cut due to price reduction is still good enough for economic profit. so, you can just limit price until the future stream of profit is small enough so that the cost can't be covered by the entering firm. 
 ### asymmetric situation 1: cost advantages
-let's say Star Coffee is currently selling coffee at 4 bucks a cup. suppose that another firm, Burnt Beans, wants to open in the same mall, and compete with Star. 
+let's say Star Coffee is currently selling coffee at $4 a cup. suppose that another firm, Burnt Beans, wants to open in the same mall, and compete with Star. 
 
-Star believes that 3 dollars is the limit pricing, but she needs to commit to this price for a whole year. for example, Star asks the owner of the mall to create a contract that says "do not change price for the whole year", and tapes it to the wall for the owner of Burnt Beans to see.
+Star believes that $3 is the limit pricing, but she needs to commit to this price for a whole year. for example, Star asks the owner of the mall to create a contract that says "do not change price for the whole year", and tapes it to the wall for the owner of Burnt Beans to see.
 
 the characteristics of limit pricing:
 - higher than the incumbent firms' LRATC
@@ -130,14 +136,14 @@ suppose you decide to engage in a pointless predatory episode, despite knowing t
 
 this is super costly, and definitely not cheap. and will take multiple episodes for this to work.
 ## dq6
-the decision to enter is risky, and you have to decide that the present value of the expected stream of future profit is large enough to cover sunk costs. entering firms predict the post-entry competitions based on the pre-entry competition. if your competitors are aggressive, probably don't enter. if they are sticking comfortably at the Nash equilibrium, 
+the decision to enter is risky, and you have to decide that the present value of the expected stream of future profit is large enough to cover sunk costs. entering firms predict the post-entry competitions based on the pre-entry competition. if your competitors are aggressive, probably don't enter. if they are sticking comfortably at the Nash equilibrium, then there is a chance they might accommodate.
 
-the ideal solution is sometimes, you would accommodate other entrants, to soften the blow and cover the profits loss by theincrease of product amount in the market.
+the ideal solution is sometimes, you would accommodate other entrants, to soften the blow and cover the profits loss by the increase of product amount in the market.
 ### capacity expansion
-the threat of us expanding our production frontier, to produce more and lowering the price. expansion means adding capital to the firm, and get loads more output quickly and cheaply. in reality, we don't want to do this to hinder our profits - we want to have this as a threat. 
+the threat of us expanding our production frontier, to produce more and lowering the price. expansion means adding capital to the firm, and get loads more output quickly and cheaply. in reality, we don't want to do this to hinder our profits - we only want to have this as a threat. 
 
 so, this is an entry deterring strategy. we need to make this decision **before** the new firms enter. if you think that capacity expansion works, then you do it quick.
 - you want the costs of this expansion to be **sunk**. this is to show the commitment to expanding capacity. selling your excess capacity is just accommodating. 
 - the expansion needs to **lowers marginal costs** (meaning the profit-maximizing quantity will go up)
 
-for example, in the same Star and BB competition. if Star decides to expand their shop with outdoor seating 
+for example, in the same Star and BB competition. if Star decides to expand their shop with outdoor seating, then this expands their capacity and further drives price down because of the increase in quantity. however, this might just lower it enough to a point where BB does not see any profit entering.
