@@ -1,16 +1,21 @@
 ## dq1
 a. 
-a strategic move is an action that a firm takes **before** its rival makes a decision. 
+a strategic move is an action that a firm takes **before** its rival makes a decision, that can be used to manipulate the rivals' decision to make more profit for yourself.
+
+a strategic move needs to be credible. a threat is credible if, when the time comes to carry out the threat, it is in the threatening firm's best interest to follow through and carry out the threat. 
+
+generally, three main types of strategic moves
 - strategic commitments **(unconditional)**. 
-- strategic threat **(conditional)**. a threat is credible if, when the time comes to carry out the threat, it is in the threatening firm's best interest to follow through and carry out the threat. (might be damaging to the other firm)
-- strategic promises **(conditional)**. only makes sense if it is profitable to *both firms* when it comes time to carry out the promise.
+- strategic threat **(conditional)**. might be damaging to the other firm. takes the form "if you take action A, i will take action B. action B will certainly be bad for you".
+- strategic promises **(conditional)**. only makes sense if it is profitable to the promising firm when it comes time to carry out the promise. takes the form "if you take action A, i will take action B. action B will certainly be desirable for you".
 
 
 b. 
+it needs to be credible because a rival will ignore the strategic move if it is not credible. 
 
 c.
 - irreversible: it needs to be credible
-- understandable: if the rival can't understand the commitment, they won't believe it
+- understandable: if the rival can't understand the commitment, they will not deem it credible
 - visible: if they can't see it, they don't know what is going on
 
 d.
