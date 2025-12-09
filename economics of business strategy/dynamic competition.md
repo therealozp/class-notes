@@ -74,7 +74,7 @@ then, because the present value of the cost $PV_{cos t}$ outweighs the present v
 h. 
 changing to a 30% per month discount rate:
 $$PV_{benefit}=\frac{100}{1.30}+\frac{100}{1.30^{2}}=136,000$$
-$$PV_{cost}=\frac{125}{1.30^{2}}+\frac{125}{1.30^{4}}=101,000$$
+$$PV_{cost}=\frac{125}{1.30^{3}}+\frac{125}{1.30^{4}}=101,000$$
 so, in this case, beta will cheat.
 
 ## dq6

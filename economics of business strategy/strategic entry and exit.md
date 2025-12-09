@@ -17,9 +17,7 @@ most of the time, firms have subjective probabilities - instead of not having an
 a decision maker's tolerance is their choice to treat two different gambles.
 - risk-averse if you choose to take the less risky option, given that both have equal expected values.
 - risk-loving if we choose the more risky option.
-- risk-neutral if you don't really care (indifferent) about which one, if they have the same expected value. for a risk-neutral decision maker, **only the expected value matters**.
-
-we typically assume that a decision maker is risk-neutral, meaning they will always go for whichever decision yields the higher expected value.
+- risk-neutral if you don't really care (indifferent) about which one, if they have the same expected value. for a risk-neutral decision maker, **only the expected value matters**. they will always go for whichever decision yields the higher expected value.
 
 it needs to be the case that our rival needs to **believe** that our strategy is permanent. for example, before a new firm enters, you would want to expand your output capacity, which shows entering firms that the incumbent firms already have the massive capacity to expand.
 
