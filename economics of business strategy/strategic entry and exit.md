@@ -106,7 +106,7 @@ the characteristics of limit pricing:
 - higher than the incumbent firms' LRATC
 - low enough so that the entering firms would have negative profit (profit cannot cover cost of entry)
 
-if an incumbent firm **could** change their price after another firm enters, **they would**. note that the Nash price in the duopoly is higher than the limit price, so the incumbent firm could unilaterally change their prices and make more profit. 
+the entrant **knows** that if an incumbent firm **could** change their price after another firm enters, **they would**. the Nash price in the duopoly is higher than the limit price, so the incumbent firm could unilaterally change their prices and make more profit. 
 
 limit pricing can only work if the incumbent firm can convince the entering firm that they can commit to charging the limit price post-entry.
 ### asymmetric situation 2: signaling theory
@@ -147,3 +147,6 @@ so, this is an entry deterring strategy. we need to make this decision **before*
 - the expansion needs to **lowers marginal costs** (meaning the profit-maximizing quantity will go up)
 
 for example, in the same Star and BB competition. if Star decides to expand their shop with outdoor seating, then this expands their capacity and further drives price down because of the increase in quantity. however, this might just lower it enough to a point where BB does not see any profit entering.
+
+entry deterring: limit pricing + capacity expansion
+exit forcing: predatory pricing

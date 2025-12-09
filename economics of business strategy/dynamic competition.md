@@ -9,7 +9,6 @@ generally, three main types of strategic moves
 - strategic threat **(conditional)**. might be damaging to the other firm. takes the form "if you take action A, i will take action B. action B will certainly be bad for you".
 - strategic promises **(conditional)**. only makes sense if it is profitable to the promising firm when it comes time to carry out the promise. takes the form "if you take action A, i will take action B. action B will certainly be desirable for you".
 
-
 b. 
 it needs to be credible because a rival will ignore the strategic move if it is not credible. 
 
@@ -88,11 +87,11 @@ legal techniques or strategies that duopolist firms can follow to make cooperati
 	- when the rival pulls the trigger on the price cut, it pulls our trigger as well. then, the customer monitors them, at no cost. 
 	- we all want to be price matchers to protect themselves from rivals' price cuts.
 - **sale-price guarantee**: another credible promise, which says "when you buy something now and the price drops later, we will give you back that money."
-	- strategically, this just makes it less likely for the firm themselves to cut prices. this is a **signaling** strategy, which shows to the rivals that they do not want to cut price.
+	- strategically, this is saying that "this sucks because I don't want to lose profit, so I will be less likely to cut prices". this is a **signaling** strategy, which shows to the rivals that they do not want to cut price.
 	- also incentivizes rivals to follow the sale-price guarantee. if rivals don't, the original firm withdraws it. (otherwise, the rivals will abuse it and cuts their price)
 	
 ## dq7
-this is price matching
+this is price matching, so both firms will be incentivized to price high. 
 
 ## dq8
 a. the main motive here isn't to stimulate demand, because the number of TVs sold wouldn't change much (because it is a durable good).
