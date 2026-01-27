@@ -57,12 +57,15 @@ suppose that our IDS wants to block any host performing malicious reconnaissance
 
 in this case, the IDS can do exactly what it is programmed to do, but can be vulnerable to false positives and negatives. 
 
-- **sound enforcers:** does not allow false negatives to happen, but may exhibit false positives. an "easy" way to sound enforce is just disallowing everything. overly strict.
+- **sound enforcers:** never exhibits false negatives, but may exhibit false positives. an "easy" way to sound enforce is just disallowing everything. overly strict.
 - **complete enforcers**: never exhibits false positives, but may exhibit false negatives. complete enforcement looks like allowing everything. overly lenient.
 
-policy $\subset$ properties $\subset$ safety $\subset$ liveness
+policy $\subset$ properties $\subset$ safety and liveness
+![[Pasted image 20260126153251.png]]
 ## trace
-a **trace** (or **run**, or **execution**) is a sequence of actions of security relevant actions (or **events**). consider the program `echo`,  where our traces are (separated by semicolons). traces may be **converging** (terminating) or **diverging** (non-terminating).
+a **trace** (or **run**, or **execution**) is a sequence of actions of security relevant actions (or **events**). 
+
+consider the program `echo`,  where our traces are (separated by semicolons). traces may be **converging** (terminating) or **diverging** (non-terminating).
 
 ```
 input('a');output('a') // if the program waits for inputs and hangs
@@ -77,7 +80,4 @@ then, a program is just a set of traces. and a policy is a set of programs (of a
 
 a policy $P=\{\mathcal{p_{1}}, \mathcal{p_{2}},\dots\}$
 a policy $P=\{\{ t_{1}^{1};t_{2}^{1};t_{3}^{1},\dots \}, \{ t_{1}^{2};t_{2}^{2};t_{3}^{2},\dots \},\dots\}$
-
-## properties
-a policy $P$ is a property if and only if there exists a **precise** set of good traces $G$ such that:$$\forall \text{ programs }\mathcal{p}:\mathcal{p} \in P \iff\mathcal{p} \subseteq G$$(a program is only good only when it exhibits the good traces).
-
+a policy $P$ where there are no null dereferencing: $P_{1}=\{ \{ t_{1}, t_{2},\dots \}\ |\ \forall i: \text{read(0)}\not\in t_{i}\}$
