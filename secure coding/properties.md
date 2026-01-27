@@ -36,4 +36,4 @@ can be classified into **safety** or **liveness**, or into the CIA classificatio
 - confidentiality: constrains that some subjects **may not read** some objects. 
 - integrity: constrains that some subjects **may not write** some objects.
 - availability: some subjects may access some objects when needed.
-
+ 
