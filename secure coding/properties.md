@@ -50,7 +50,7 @@ denote "the **finite** prefix of $t$" as $\leq t$. then, rules for prefixes are:
 - $t_{1}\leq t_{1};t_{2}$ if $t_{1}$ is finite. 
 - $a_{i};a_{j};\dots \not \leq a_{i};a_{j};\dots$ (because LHS is infinite; RHS does **not** have to be finite).
 
-a property $G$ is safety if and only if $\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$, where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**.
+a property $G$ is safety if and only if $$\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$$where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**.
 
 consider again, the no-null dereference policy. then, $G_{1}=\{ t \ | \ \text{read(0)}\not\in t \}$. take the trace $a_{1};a_{2};a_{3};\dots$ then, $\epsilon$ doesn't contain $\text{read(0)}$, and if $a_{1}$ isn't bad, then all the prefixes aren't bad, and so on.
 
@@ -61,6 +61,42 @@ on the other hand, consider $G_{1}'=\{ t \ | \ \text{read(0)}\not\in t \}$. then
 so, a mechanism detecting safety can just monitor the actions for as long as it is good, and once it goes bad, the mechanism can step in.
 
 ## liveness
-a dual to safety. says that there is always a way to fix a bad trace. so, a property $G$ is liveness if and only if $\forall \text{ finite }t_{1}$, $\exists t_{2} : t_{1};t_{2}\in G$. to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
+a dual to safety. says that there is always a way to fix a bad trace. so, a property $G$ is liveness if and only if $$\forall \text{ finite }t_{1},\ \exists t_{2} : t_{1};t_{2}\in G$$to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
 
-for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$.
+for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$. we can prove the reverse similarly, to show that $G_{1}$ is not safety.
+
+$G_{3}=\{ t \mid \text{req(i)} \in t \implies \text{send(i)} \in t \}$. 
+
+consider $G_{4}=\{ t\mid t \text{ is finite} \}$. this is the "termination" property.
+we can easily prove that $G_{4}$ is liveness. by definition of liveness, $t_{1}$ must already be finite. then, $t_{1} \in G_{4} \implies t_{1};\epsilon\in G_{4}$ (our $t_{2}$ in this case would be the empty trace $\epsilon$).
+
+however, we can prove that this is not safety. suppose that there is an infinite trace $a_{1};a_{2};a_{3};\dots$ then, all the prefixes of this trace is finite (meaning $\text{prefixes(t)}\in G_{4}$); but **the trace itself** is infinite, meaning $t\not\in G_{4}$. so, this is not safety.
+## $P_{all}$
+there is **exactly one** policy that exhibits both safety and liveness. $P_{all}$ considers **all** traces good. then, because all traces are good, you can fix a trace by doing nothing (liveness); and all of its prefixes are also good (safety).
+$$\begin{align}
+P_{all}=\{ p\mid true \} \\
+G_{all}=\{ t \mid true \}
+\end{align}$$
+## decomposing
+any property can be uniquely identified by separating it into a safety component and a liveness component. also, we can conjoin (aka intersect) a safety and a liveness into a property **that is neither**.
+
+consider $G_{1}$ and $G_{4}$, then let $G_{5}=G_{1}\cap G_{4}$. $G_{4}$ says that any trace can be fixed; but in $G_{5}$, we can't fix it with `read(0)`. so, it is not liveness. similarly, if we take the trace `r(1);r(1);...`, then this trace satisfies $G_{1}$, all of its prefixes are good, but it doesn't satisfy $G_{4}$. so, it is not safety either.
+
+in practice, liveness is very hard to enforce. so, we typically would try to approximate this with a safety (i.e. by setting a deadline), so a conversion is needed. combining two safeties is far easier. if we have a safety $G_{1}$ that a trace does not have `read(0)`, and another safety $G_{1}''$ that a trace does not have `write(0)`, then, the combination of those safeties is just monitoring both for `read(0)` and `write(0)` at a time.
+
+Theorem: $\forall \text{ props } G \ \exists \ G_{S}, G_{L}$ such that:
+1. $G=G_{S}\cap G_{L}$
+2. $G_{S}$ is safety, $G_{L}$ is liveness
+
+proof: suppose we have two sets $G_{s}$ and $G_{L}$ such that:
+$$\begin{align}
+G_{s}=\{ t \mid& \ \text{a. }t\in G \text{, or}\\ 
+&\ \text{b. } t\text{ is finite} + t \text{ is fixable acc. to } G \text{, or}\\
+&\ \text{c. } t\text{ is infinite} + \text{all of t's prefixes have been included in }G_{S}. \\
+\}
+\end{align}$$
+$$\begin{align}
+G_{L}=\{ t \mid& \ \text{a. }t\in G \text{, or}\\ 
+&\ \text{b. } t\text{ is finite} + t \text{ is unfixable acc. to } G \text{, or}\\
+\}
+\end{align}$$
