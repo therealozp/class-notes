@@ -1,5 +1,7 @@
 a policy $P$ is a property if and only if there exists a **precise** set of good traces $G$ such that:$$\forall \text{ programs }\mathcal{p}:\mathcal{p} \in P \iff\mathcal{p} \subseteq G$$in plain English: a program is only good only when it exhibits good traces. 
 
+if the set of good traces $G$ is found, then the property is also automatically defined. so, we can describe a property with its set $G$.
+
 for **properties**, you can look at every execution in isolation, and they should all be "good". **policies**, on the other hand, still require some sort of dependency in programs ("this program is good, given that this program is also able to do this").
 
 ### proving a policy
@@ -27,13 +29,38 @@ alternatively, with the same assumption, consider the program $p=\varnothing$. t
 
 also proves that, **for a policy to be an property, it needs to accept an empty set** (or a policy need to allow a program to do nothing.)
 ## enforcement
-to enforce a property, it needs to be the case where the enforce is **dynamic**, as we need to be able to look at each trace in isolation. a dynamic enforcer is **not** able to enforce non-property policies.
+to enforce a property, it needs to be the case where the enforcer is **dynamic**, as we need to be able to look at each trace in isolation. a dynamic enforcer is **not** able to enforce non-property policies.
 ## categorization
 can be classified into **safety** or **liveness**, or into the CIA classification. CIA is only used **strictly for properties**, and used in infosec:
 - subjects/principals are actors (active), meaning users, processes, threads, methods, etc.
 - objects/resources are those that are accessed (passive) e.g. data, devices, memory, values in memory, etc.
 
+CIA describes the following:
 - confidentiality: constrains that some subjects **may not read** some objects. 
 - integrity: constrains that some subjects **may not write** some objects.
 - availability: some subjects may access some objects when needed.
- 
+
+a limitation of the CIA classification is that access control descriptions are strictly limited to **read and write**, whereas it can also be executed. then, *confidentiality* and *integrity* are **access-control properties** (some subjects may not access some objects in certain ways).
+
+## safety
+denote "the **finite** prefix of $t$" as $\leq t$. then, rules for prefixes are:
+- $\epsilon \leq t$ for any $t$
+- $a\leq a$
+- $a \leq a;t$
+- $t_{1}\leq t_{1};t_{2}$ if $t_{1}$ is finite. 
+- $a_{i};a_{j};\dots \not \leq a_{i};a_{j};\dots$ (because LHS is infinite; RHS does **not** have to be finite).
+
+a property $G$ is safety if and only if $\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$, where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**.
+
+consider again, the no-null dereference policy. then, $G_{1}=\{ t \ | \ \text{read(0)}\not\in t \}$. take the trace $a_{1};a_{2};a_{3};\dots$ then, $\epsilon$ doesn't contain $\text{read(0)}$, and if $a_{1}$ isn't bad, then all the prefixes aren't bad, and so on.
+
+$G_{1}$ is safety because a trace can only contain $\text{read(0)}$ if and only if one of its prefixes contain $\text{read(0)}$. a trace is in $G$ if and only if all of its prefixes are also in $G$. 
+
+on the other hand, consider $G_{1}'=\{ t \ | \ \text{read(0)}\not\in t \}$. then, this is still a policy (you can construct this set of traces), but it is not safety. if we encounter the trace`r(1);r(1);r(0)`, then the first prefix is bad, meaning everything else is bad. once the prefix goes bad at a certain length, it stays bad for everything after.
+
+so, a mechanism detecting safety can just monitor the actions for as long as it is good, and once it goes bad, the mechanism can step in.
+
+## liveness
+a dual to safety. says that there is always a way to fix a bad trace. so, a property $G$ is liveness if and only if $\forall \text{ finite }t_{1}$, $\exists t_{2} : t_{1};t_{2}\in G$. to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
+
+for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$.
