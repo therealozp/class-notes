@@ -1,3 +1,4 @@
+
 a policy $P$ is a property if and only if there exists a **precise** set of good traces $G$ such that:$$\forall \text{ programs }\mathcal{p}:\mathcal{p} \in P \iff\mathcal{p} \subseteq G$$in plain English: a program is only good only when it exhibits good traces. 
 
 if the set of good traces $G$ is found, then the property is also automatically defined. so, we can describe a property with its set $G$.
