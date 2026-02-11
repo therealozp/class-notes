@@ -98,6 +98,6 @@ G_{s}=\{ t \mid& \ \text{a. }t\in G \text{, or}\\
 \end{align}$$
 $$\begin{align}
 G_{L}=\{ t \mid& \ \text{a. }t\in G \text{, or}\\ 
-&\ \text{b. } t\text{ is finite} + t \text{ is unfixable acc. to } G \text{, or}\\
+&\ \text{b. } t\text{ is finite} + t \text{ is unfixable acc. to } G \\
 \}
 \end{align}$$

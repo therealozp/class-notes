@@ -21,4 +21,12 @@ attackers will exploit vulnerabilities (or bugs)
 			- spear phishing: hyper-specific phishing, targeting only 1 victim.
 3. software trusts that attackers/users to have limited resources
 	- attackers may use more-than-expected resources, in the case of Denial of Service (DoS), or distributed DoS (DDoS) (e.g. with a botnet)
-	- 
+4. software trusts the environment in which it executes (hardware or software) 
+
+## tradeoffs
+more security = lower usability (passwords, security pop-ups)
+more security = lower performance or running time (permission checks on the OS, resource monitors that all consume resources)
+more security = lower bandwidth (no firewalls = faster network ops)
+more security = higher code and data size (to use on security data structures and mechanisms)
+more security = more energy consumed to keep it running
+more security = more personnel (human resources and developer time to maintain, to monitor, etc.)
