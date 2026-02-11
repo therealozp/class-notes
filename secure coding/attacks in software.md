@@ -1,5 +1,5 @@
-software threats
-attack vectors: how the attack occurs. we could view that there is exactly one high-level attach vector: subverting (undermining) trust that software places in something.
+attack vectors: how the attack occurs. 
+we could view that there is exactly one high-level attack vector: subverting (undermining) trust that software places in something.
 
 attackers will exploit vulnerabilities (or bugs)
 
