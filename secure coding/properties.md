@@ -49,7 +49,7 @@ denote "the **finite** prefix of $t$" as $\leq t$. then, rules for prefixes are:
 - $a\leq a$
 - $a \leq a;t$
 - $t_{1}\leq t_{1};t_{2}$ if $t_{1}$ is finite. 
-- $a_{i};a_{j};\dots \not \leq a_{i};a_{j};\dots$ (because LHS is infinite; RHS does **not** have to be finite).
+- $a_{i};a_{j};\dots \not \leq a_{i};a_{j};\dots$ because LHS is infinite. (RHS does **not** have to be finite)
 
 a property $G$ is safety if and only if $$\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$$where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**.
 
@@ -57,14 +57,14 @@ consider again, the no-null dereference policy. then, $G_{1}=\{ t \ | \ \text{re
 
 $G_{1}$ is safety because a trace can only contain $\text{read(0)}$ if and only if one of its prefixes contain $\text{read(0)}$. a trace is in $G$ if and only if all of its prefixes are also in $G$. 
 
-on the other hand, consider $G_{1}'=\{ t \ | \ \text{read(0)}\not\in t \}$. then, this is still a policy (you can construct this set of traces), but it is not safety. if we encounter the trace`r(1);r(1);r(0)`, then the first prefix is bad, meaning everything else is bad. once the prefix goes bad at a certain length, it stays bad for everything after.
+on the other hand, consider $G_{1}'=\{ t \ | \ \text{read(0)}\in t \}$. then, this is still a policy (you can construct this set of traces), but it is not safety. if we encounter the trace`r(1);r(1);r(0)`, then the first prefix is bad, meaning everything else is bad. once the prefix goes bad at a certain length, it stays bad for everything after.
 
 so, a mechanism detecting safety can just monitor the actions for as long as it is good, and once it goes bad, the mechanism can step in.
 
 ## liveness
 a dual to safety. says that there is always a way to fix a bad trace. so, a property $G$ is liveness if and only if $$\forall \text{ finite }t_{1},\ \exists t_{2} : t_{1};t_{2}\in G$$to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
 
-for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$. we can prove the reverse similarly, to show that $G_{1}$ is not safety.
+for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$. we can prove the reverse similarly, to show that $G_{1}$ is not liveness.
 
 $G_{3}=\{ t \mid \text{req(i)} \in t \implies \text{send(i)} \in t \}$. 
 

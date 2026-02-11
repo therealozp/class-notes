@@ -62,7 +62,7 @@ in this case, the IDS can do exactly what it is programmed to do, but can be vul
 policy $\subset$ properties $\subset$ safety and liveness
 ![[Pasted image 20260126153251.png]]
 ## trace
-a **trace** (or **run**, or **execution**) is a sequence of actions of security relevant actions (or **events**). 
+a **trace** (or **run**, or **execution**) is a sequence of security relevant actions (or **events**). 
 
 consider the program `echo`,  where our traces are (separated by semicolons). traces may be **converging** (terminating) or **diverging** (non-terminating).
 
