@@ -51,7 +51,7 @@ denote "the **finite** prefix of $t$" as $\leq t$. then, rules for prefixes are:
 - $t_{1}\leq t_{1};t_{2}$ if $t_{1}$ is finite. 
 - $a_{i};a_{j};\dots \not \leq a_{i};a_{j};\dots$ because LHS is infinite. (RHS does **not** have to be finite)
 
-a property $G$ is safety if and only if $$\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$$where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**.
+a property $G$ is safety if and only if $$\forall t : t\in G\iff \text{prefixes}(t) \subseteq G$$where $\text{prefixes}(t)$ is the set of all finite prefixes. the set of prefixes can be infinite, but each prefix is finite. a safety says insecure traces are irremediable (or a bad thing can't be fixed). **an access-control property is a safety**. safety properties are closed under intersection, meaning you can create a new safety policy by enforcing both in parallel.
 
 consider again, the no-null dereference policy. then, $G_{1}=\{ t \ | \ \text{read(0)}\not\in t \}$. take the trace $a_{1};a_{2};a_{3};\dots$ then, $\epsilon$ doesn't contain $\text{read(0)}$, and if $a_{1}$ isn't bad, then all the prefixes aren't bad, and so on.
 
@@ -60,7 +60,6 @@ $G_{1}$ is safety because a trace can only contain $\text{read(0)}$ if and only 
 on the other hand, consider $G_{1}'=\{ t \ | \ \text{read(0)}\in t \}$. then, this is still a policy (you can construct this set of traces), but it is not safety. if we encounter the trace`r(1);r(1);r(0)`, then the first prefix is bad, meaning everything else is bad. once the prefix goes bad at a certain length, it stays bad for everything after.
 
 so, a mechanism detecting safety can just monitor the actions for as long as it is good, and once it goes bad, the mechanism can step in.
-
 ## liveness
 a dual to safety. says that there is always a way to fix a bad trace. so, a property $G$ is liveness if and only if $$\forall \text{ finite }t_{1},\ \exists t_{2} : t_{1};t_{2}\in G$$to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
 
