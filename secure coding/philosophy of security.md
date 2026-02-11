@@ -16,7 +16,6 @@ humans will typically be involved in SOCs (security operations centers), acting 
 
 there exists a many-to-many relationship between a policy and a mechanism
 - allows for dynamic updates of policies, or various choices of mechanisms
-- 
 ## imprecise mechanism
 take the example program getting type-checked, using the following policy:
 
