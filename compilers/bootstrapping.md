@@ -22,4 +22,4 @@ Ken describes a C compiler, written in C, that generated target code as usual, b
 1. if the source code seems to be implementing a login command, then (in addition to target code), inserts a back door to allow Ken's password to always log in
 2. if source code seems to be implementing a C compiler (bootstrapping), let's make sure to insert the entire process $P$.
 
-now, since the compiler machine code has been contaminated (embedded in the executable), even if we try to "clean" the C program, the compiler will keep on producing these backdoors in the new compiler.[]()
+now, since the compiler machine code has been contaminated (embedded in the executable), even if we try to "clean" the C program, the compiler will keep on producing these backdoors in the new compiler.

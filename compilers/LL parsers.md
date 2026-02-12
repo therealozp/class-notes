@@ -1,4 +1,4 @@
-balso called **predictive parsing**, **recursive-descent**, or **top-down**. called the **LL** parser because:
+also called **predictive parsing**, **recursive-descent**, or **top-down**. called the **LL** parser because:
 - process input from left to right
 - it expands non-terminals with rules from left-to-right, creating a **leftmost** derivation.
 
