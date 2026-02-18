@@ -1,7 +1,12 @@
-attack vectors: how the attack occurs. 
-we could view that there is exactly one high-level attack vector: subverting (undermining) trust that software places in something.
+>[!note] definition
+>**attack vectors**: how the attack occurs. 
 
-attackers will exploit vulnerabilities (or bugs)
+we could view that there is exactly one high-level attack vector: subverting (undermining) trust that software places in something. 
+
+for a long time, people have tried to define some kind of metric to measure security. for example, comparing multiple vulnerabilities that range from minor annoyances (pop ups), to catastrophes such as data wipes. so, to tackle this, we define attack surfaces as a metric.
+
+>[!note] definition
+**attack surfaces**: a measurement of how much/many untrusted inputs a program takes.
 
 1. software trusts (makes assumptions about) user input
 	- attacker may provide unexpected input $\implies$ can be mitigated by **validating (or sanitizing** inputs.
@@ -30,3 +35,26 @@ more security = lower bandwidth (no firewalls = faster network ops)
 more security = higher code and data size (to use on security data structures and mechanisms)
 more security = more energy consumed to keep it running
 more security = more personnel (human resources and developer time to maintain, to monitor, etc.)
+
+ransomware may encrypt/scramble data, or even more dangerous, exfiltrate data. institutions such as PII (personal identifiable data) like hospitals or financial institutions are most vulnerable. so, there maybe some payment involved in a form of hush money.
+## design principles
+1. validate/sanitize inputs. really needs to be creative on how user provides inputs, because there are a number of ways attackers can provide input to attack a machine.
+2. try to handle errors securely.
+	- no leakage of confidential info via error messages, etc.
+	- when the program fails, enter a secure state. don't enter an insecure state. 
+3. use layers of heterogeneous mechanisms
+	- defense in depth. have mechanisms to prevent, detect, contain, and recover.
+		- prevention: firewalls, passwords, access controls, etc. the only mechanism to operate before attacks occur.
+		- detection: auditing, antiviruses.
+			- malicious software (malware) are polymorphic. you can always slightly modify malware to make it ever so slightly different, but retain the observable behavior to bypass antiviruses (for example, add no-ops)
+		- contain: via replication
+			- when machine is attacked, shut down the attacked machine and use replicase
+		- recover: reverting to a backup
+4. adhere to the principle of least privilege (need-to-know basis)
+5. avoid "security by obscurity"
+	- encapsulate any secretes being relied on into cryptographic keys
+6. be careful about when + how keys are stored. 
+	- we want to isolate these secrets
+	- use special-purpose hardware to store keys securely (Windows TPM)
+	- actively delete stuff that aren't used (**actively overwritten**, not garbage collected)
+- 
