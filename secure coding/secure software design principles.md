@@ -72,4 +72,53 @@ for something to be MFA, there needs to be multiple factors. PWs and PINs combo 
 | user 5 | r      | x      |      |
 | ...    |        |        |      |
 
-RBAC - role based access control, where roles determines perms.
+RBAC - role based access control, where roles determines perms
+
+### mandatory access control (MAC)
+system determines authorizations, not users. in other words, users cannot determine authorization decisions (hard-coded).
+
+traditionally used with multi-level security (MLS, top secret -> secret -> public/unclassified). in general, it can be classified into lattices.
+
+- Bell - La Padula model: no read-ups, no write-downs. this is a conjunction of two safety properties, so it is also safety. enforces confidentiality in the CIA triad.
+	- no subject can read anything at a higher level than where they are at
+	- no subject at a higher level (i.e. top secret) should write down to a lower level of authorization
+- Biba Integrity model: no read downs, no write ups. enforces integrity instead
+in reality, we use both. also in reality, we also have exceptions. so we have mechanisms to enforce exceptions.
+### discretionary access control
+users can affect authorization decisions. 
+
+## program memory segmentation
+
+![[Pasted image 20260225160507.png]]
+
+- heap: stores dynamically allocated data (i.e. from `malloc`, `new`, etc.)
+- stack: stack of frames/activation records. each frame keeps track of data that is locally relevant to that function/method/procedure.
+
+consider the program code:
+
+```c
+void f() {
+	... (1)
+	g(args); (2)
+	...
+}
+```
+
+at point `(1)`
+![[Pasted image 20260225161718.png]]
+
+at invocation point of `g(args)`, the code in `f` goes as follows:
+in here, `f` knows at least 2 major things that `g` doesn't know:
+- the arguments
+- when `g()` finishes executing, where does it return to? (return addr)
+
+stack preparation: 
+![[Pasted image 20260225162458.png]]
+
+then, we jump to code for `g()` or, `g()`'s prologue:
+![[Pasted image 20260225163650.png]]
+- note, that the frame pointer in x86 is called `ebp`, or "extended base pointer", as it is the base of the current frame
+- the stack pointer is called `esp`, or "extended stack pointer"
+
+then, after `g()`'s execution, we will have to "pop" g's frame off:
+![[Pasted image 20260225164430.png]]
