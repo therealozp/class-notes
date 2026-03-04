@@ -26,9 +26,7 @@ the mean must be constant, we cannot have $E(y_{t})=\mu_{t}$ where $\mu_{t}\neq 
 	- first part of this assumption being true is $\sigma^{2}<\infty$
 	- second part involves **autocorrelations**
 ## autocorrelation
-definition is the autocovariance function.
-
-let $\tau$ be displacement (how many periods apart. then the autocovariance
+let $\tau$ be displacement (how many periods apart. then, the autocovariance function is:
 $$\begin{align}
 \gamma(t, \tau) & = cov(y_{t}, y_{t-\tau}) \\
 & =E[(y_{t}-\mu_{t})(y_{t-\tau}-\mu_{t-\tau})]
@@ -42,5 +40,9 @@ $$\gamma(t=6, 3)=\gamma(t=20, 3)=\gamma(t=150, 3)$$
 but, 
 $$\gamma(t=6, 3)\neq\gamma(t=6, 4)$$
 
+if $\gamma(\tau)$ denotes autocovariance between $y_{t}$ and $y_{t-\tau}$, then $\gamma(0)= E[(y_{t}-y)(y_{t}-y)] = \sigma^{2} <\infty$
 
+then, the autocorrelation $\rho$ is defined as:
+$$\rho(\tau)=\frac{\gamma(\tau)}{\gamma(0)}\iff \rho(0)=\frac{\gamma(0)}{\gamma(0)}= 1$$
 
+if a series is covariance stationary
