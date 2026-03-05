@@ -6,7 +6,6 @@ the conditional expectation of $y_{t}$ is denoted as $E[y_{t}\mid\Omega _{T -1}]
 for white noise, this should be independent, meaning:
 - $E(\epsilon_{t}) = E(\epsilon_{t} \mid \Omega_{T-1}) = 0$
 - $E[(\epsilon_{t}-\mu)^{2}] = E[(\epsilon_{t}-\mu)^{2}\mid \Omega_{T-1}] = \sigma^{2}$
-
 ## lag operator
 define a lag operator $L$. then, $Ly=y_{t-1}$, and $L^2y_{t}=y_{t-2}$
 
@@ -48,7 +47,7 @@ $$\begin{align}
 \end{align}$$
 ### approximately rational distributed log
 $$B(L)\approx\frac{\Theta(L)}{\Phi(L)}$$
-but $p$ and $q$ are small. this is the family of ARIMA$(p, q)$ models. an ARIMA$(p, q)$ process looks like:
+but $p$ and $q$ are small. this is the family of $ARMA(p, q)$ models. an $ARMA(p, q)$ process looks like:
 $$y_{t}=B(L)\epsilon_{t}$$
 and $$\Phi(L)y_{t}=\Theta(L)\epsilon_{t}$$
 
