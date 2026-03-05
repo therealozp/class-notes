@@ -58,3 +58,55 @@ but, even with properly-implemented NX bits, attackers can still:
 		- "gadgets" are short sequences of instructions in code mem
 		- they usually end with `ret` ("return" instruction)
 		- there are a Turing-complete set of gadgets on any machine running the C library. so, an attacker can basically put together ANY algorithm.
+- the attacker can overwrite basically anything, from locals, old frame pointers, intermediates, etc.
+	- if the locals are important (loop variables, secret keys, etc.), they can all be read or overwritten. 
+	- there is also the class of heap-based buffer overflows, where they could overwrite stuff on the heap as well.
+		- if the stack-heap boundary floats around (like it does in a lot of architectures), it could overwrite stuff on the stack as well
+	- return addresses are a big problem, but things like these can cause trouble too.
+
+## finding buffer overflows
+1. the ideal case is attackers have access to source code. so, examine source, if available.
+2. otherwise, they can decompile the executable, or reverse-engineer it.
+3. fuzz-testing the program
+	- fuzzing: use software to give the program a bunch of corner cases (very long/short inputs) and **monitor unexpected behaviors**. does it crash? does it do any handling?
+	- checking memory usage like memory leaks (if the memory consumption keeps growing)
+	- you can fuzz with source code (white box) and without (black box).
+		- symbolic execution (white box): program analysis to determine, for all program blocks B, which inputs cause that block to execute. the idea is that symbolic execution will become too complicated as there are more blocks and inputs to cover it.
+		- concolic execution (concrete symbolic execution): analysis can be guided by concrete input. this is combining symbolic execution with with choosing specific inputs. 
+
+```
+x = 2
+x += y
+
+  v this is a guard
+if x > 4 {something}
+             ^ this is a block
+```
+
+## Morris worm
+the most widespread buffer overflow attack. exploits the `fingerd` daemon (background processes), which displays information about users.
+
+"worm" is kind of similar to a virus (self-replicating malware), but "worms" specifically target networks. launched by Robert Morris in 1988, while he was a student.
+
+stack-smashed with more characters 
+
+## prevention
+- use extreme caution (or avoid entirely) the functions `gets`, `scanf` (`gets(buffer)` is equivalent to `scanf("%s", buf)`), `strcpy`, `strcat`, `sprintf`, `sscanf`, `fscanf`, etc.
+- instead, use n-ary versions of unsafe functions. still not exactly safe, because it also now depends on the programmer as well.
+	- these *might* differ on how they handle corner cases, i.e. null terminators, so still needs a manual analysis instead of straight replace
+	- `char * fgets(char * str, int num)` which lets you define limit from the start. 
+	- `char * gets_s(char * str, rsize_t n)`, available since C11
+	- `strncopy`
+
+```
+[||||||||] dest buf <- overflowing this one
+[||||||||||||||||||||] src buf
+```
+
+- find and use safer string libraries
+- check boundaries on array operations
+- use type-safe programming languages
+
+there are additional protections provided by the modern OS, for example:
+- compiler warnings
+- 
