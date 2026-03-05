@@ -70,5 +70,46 @@ $$\begin{align}
 &=\theta \sigma^{2}
 \end{align}$$
 
+then, the first autocorrelation term of $MA(1)$:
+$$\rho(1)=\frac{\theta \sigma^{2}}{(1+\theta^{2})\sigma^{2}}=\frac{\theta}{1+\theta^{2}}$$
+similarly, for $\gamma(2)$
+$$\begin{align}
+\gamma(2) &=  E[(\epsilon_{t} +\theta\epsilon_{t -1})(\epsilon_{t - 2} +\theta\epsilon_{t - 3})]  \\
+&=E[\epsilon_{t}\epsilon_{t-2}] + \theta E[\epsilon_{t - 1}\epsilon_{t-2}]+ \theta E[\epsilon_{t}\epsilon_{t-3}]+\theta^{2}E[\epsilon_{t-1}\epsilon_{t-3}] \\
+&=0+0+0+0 \\
+&=0 \\
+\implies &\rho(2) = 0
+\end{align}$$
+applying the same logic, all autocorrelation terms $\rho(\tau) = 0 \ \forall \tau > 1$.
 
+#### partials
+for $MA(1)$ models, the partial correlations die off toward 0. if $\theta>0$, they alternate signs; if $\theta<0$, they stay on one side. in either case, both converge to 0.
 
+>[!NOTE] conclusion
+>all $MA$ models are covariance stationary.
+
+if $\lvert\theta\rvert<1$, $MA(1)$ is **invertible**, meaning
+$$y_{t}=(1+\theta L)\epsilon_{t} \iff \epsilon_{t}=\frac{y_{t}}{1+\theta L}$$
+
+## $MA(2)$
+$$y_{t}=\epsilon_{t}+\theta_{1}\epsilon_{t - 1}+\epsilon_{2}\epsilon_{t-2}$$
+similar to $MA(1)$:
+- unconditional mean is $0$
+- conditional mean $E[y_{t}\mid \Omega_{t-1}]=\theta_{1} \epsilon_{t-1} +\theta_{2}\epsilon_{t-2}$
+
+the autocorrelations also follow the same trend. $\rho(1) \neq 0$, $\rho(2) \neq 0$, but $\rho(3)=\rho(4)=\dots=\rho() = 0$. therefore:
+$$\rho(\tau)= 0 \ \forall \tau > 2$$
+
+we can generalize this for all $MA(q)$. 
+$$
+\begin{cases} \rho(\tau) \neq 0 & \text{if } \tau \leq q \\ \rho(\tau) = 0 & \text{if } \tau > q \end{cases}
+$$
+for all $MA(q)$ models, the partial correlations converge to $0$.
+
+## $AR(p)$ models
+takes the formula
+$$y_{t}=\phi_{1} y_{t-1}+\phi_{2}y_{t-2}+\dots+\phi_{p}y_{t-p}+\epsilon _{t}$$
+### $AR(1)$
+$$y_{t}=\phi y_{t-1}+\epsilon_{t}$$
+expressed in terms of lag operators:
+$$$\epsilon_{t}=(1-\phi_{1} L)y_{t}$$
