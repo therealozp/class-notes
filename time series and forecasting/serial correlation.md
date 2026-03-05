@@ -6,5 +6,4 @@ $$\begin{align}
 \end{align}$$
 if there is no serial correlation, the **DW statistic = 2**. after expanding the equation and calculating the expected value.
 
-when running a regression, we can find a formula for errors: $$e_{t} = \phi e_{t -1} + v_{t}$$
-if $v_{t}$ is noise, then the coefficient $\phi$ determines if there is serial correlation. if $\phi = 0$, there is no serial correlation.
+when running a regression, we can find a formula for errors: $$e_{t} = \phi e_{t -1} + v_{t}$$if $v_{t}$ is noise, then the coefficient $\phi$ determines if there is serial correlation. if $\phi = 0$, there is no serial correlation.

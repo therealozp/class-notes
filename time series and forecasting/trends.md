@@ -20,8 +20,8 @@ higher-order models tend to model data better, but forecasts will generally be l
 | linear     | 21.464 | 21.512 | .888        | 387.625  |     |
 | 2nd degree | 21.244 | 21.310 | .901        | 399.260  |     |
 | 3rd degee  | 20.670 | 20.743 | .949        | 417.731  |     |
-
 ## constant growth rate
+a typical way of adjusting data is using [[indices and growth rates]]. for example, taking the natural log with give us growth rate:
 $$\ln(y_{t})=\alpha+\beta_{1} \text{ Time} + \beta_{2}\text{ Shutdown} +\epsilon_{t}$$
 the forecast values on the left will be the growth rate. to get the actual forecast (levels), we need to go through another exponentiation.
 

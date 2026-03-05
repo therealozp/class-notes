@@ -1,5 +1,4 @@
 can be measured using the $R^2$ criteria, or the adjusted $\bar R^2$. adjusted $R^{2}$ will always be smaller than $R^2$. for the $R^2$, larger is better (models data better)
-
 ### information criteria
 alternatively, an **information criteria (IC)** is also used to measure how well the model performs. information criteria adjusts the sum of squared residuals by the sample size and the degrees of freedom lost (or the number of things we are estimating). the two main ICs we typically use:
 

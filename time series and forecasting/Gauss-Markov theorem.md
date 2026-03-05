@@ -25,7 +25,7 @@ $$\begin{bmatrix}
 0 & 0 & 0 & \sigma_{4}^{2} \end{bmatrix}$$
 where $\sigma_{i} \neq \sigma_{j}$.
 ## serial correlation
-if there is a serial correlation, then all the terms inside the std dev matrix are no longer zero. instead: 
+if there is a [[serial correlation]], then all the terms inside the std dev matrix are no longer zero. instead: 
 $$\begin{bmatrix}
 \sigma_{1}^{2} & \sigma_{21} & \sigma_{31} & \sigma_{41} \\
 \sigma_{12} & \sigma_{2}^{2} & \sigma_{32} & \sigma_{42} \\
