@@ -44,5 +44,3 @@ if $\gamma(\tau)$ denotes autocovariance between $y_{t}$ and $y_{t-\tau}$, then 
 
 then, the autocorrelation $\rho$ is defined as:
 $$\rho(\tau)=\frac{\gamma(\tau)}{\gamma(0)}\iff \rho(0)=\frac{\gamma(0)}{\gamma(0)}= 1$$
-
-if a series is covariance stationary
