@@ -14,9 +14,6 @@ $\implies$ cycles are ordered sets of observations, in this class, it's time. it
 the phrase "sample path" might sometimes be used. the data generating process (DGP) is the underlying model driving the realizations. when working with cycles, there is a 3-step process:
 1. methods of characterizing cycles (identification processes)
 2. modelling cycles (build a model + estimate it)
-<<<<<<< HEAD
-3. forecast of cycles (use the fitted model to make forecasts)
-=======
 3. forecast of cycles (use the fitted model to make forecasts)
 
 we have some requirements on realization (data series) that must be met to work with cycles, primarily that **data must be stable**
@@ -47,4 +44,3 @@ if $\gamma(\tau)$ denotes autocovariance between $y_{t}$ and $y_{t-\tau}$, then 
 
 then, the autocorrelation $\rho$ is defined as:
 $$\rho(\tau)=\frac{\gamma(\tau)}{\gamma(0)}\iff \rho(0)=\frac{\gamma(0)}{\gamma(0)}= 1$$
->>>>>>> origin/main
