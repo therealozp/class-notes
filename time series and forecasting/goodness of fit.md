@@ -1,9 +1,10 @@
 can be measured using the $R^2$ criteria, or the adjusted $\bar R^2$. adjusted $R^{2}$ will always be smaller than $R^2$. for the $R^2$, larger is better (models data better)
+$$R^{2}=1 - \frac{MSE}{\sigma^{2}}$$
 ### information criteria
 alternatively, an **information criteria (IC)** is also used to measure how well the model performs. information criteria adjusts the sum of squared residuals by the sample size and the degrees of freedom lost (or the number of things we are estimating). the two main ICs we typically use:
 
 - Akaike IC
-$$\text{AIC} = \frac{\exp\left( \frac{2K}{T} \right)}{T}\sum^T_{i}e_{i}^2$$
+$$\text{AIC} = \frac{\exp\left( \frac{2K}{T} \right)}{T}\sum^T_{i}e_{i}^2=e^{\frac{2K}{T}}\times MSE$$
 - Schwartz (Bayes) IC 
 $$SIC=\frac{T^{\frac{K}{T}}}{T}\sum^T_{i}e_{i}^2=T^{\frac{K}{T}}\times MSE$$
 ## consistency
