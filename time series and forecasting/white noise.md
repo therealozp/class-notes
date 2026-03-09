@@ -23,13 +23,13 @@ squaring both sides, we get $T \hat{\rho}(\tau)^{2}\sim \mathcal{X}^2$.
 statistics tell us that if we have $m$ variable $\sim \mathcal{X}_{1}^2$, then their sums $\sim \mathcal{X}_{m}^{2}$ (chi-squared with $m$ d.o.f.)
 
 ### Box-Pierce Q statistic
+usually only works with really big samples
 $$Q_{BP}=T\sum^{m}_{\tau=1}\hat{\rho}(\tau)^{2} \sim \mathcal{X}^{2}_{m}$$
-under the null hypothesis of white noise. 
-
-this only works with really big samples, so we can opt to use another:
-
+under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we fail to reject, indicating there is some degree of autocorrelation.
 ### Ljung-Box Q statistic
 $$Q_{LB}=\frac{T\times 2}{T-\tau}Q_{BP} \sim \mathcal{X}^{2}_{m }$$
+under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we fail to reject, indicating there is some degree of autocorrelation.
+
 so, we have to choose the $m$ carefully. 
 - $m$ too big $\to$ no longer a good chi-squared approximation
 - $m$ too small $\to$ we lose power of the test

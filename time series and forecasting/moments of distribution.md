@@ -27,5 +27,5 @@ $$K=\frac{E[(X-\mu)^4]}{\sigma^4}$$
 for all norm dists, $K=3$
 
 ## tests for normality
-Jarque-Bera test
+Jarque-Bera test: null hypothesis is data is normally distributed. if p-value of JB is < 0.05, then we reject the null hypothesis.
 $$JB = \frac{T}{6}\left( \hat{\mathcal{S}} + \frac{1}{4}(\hat{K}-3)^2 \right)\approx\mathcal{X}^2$$
