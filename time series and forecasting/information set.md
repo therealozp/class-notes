@@ -7,7 +7,7 @@ we can have future $X$'s in $\Omega_{T}$, but **never** $y$'s and $e$'s.
 ## cycles
 we've seen these before with sine waves, musical notes, etc. but we are looking for something different. seasonality is an example, and we can say that **seasonal data displays cycles**.
 
-think of cycles as some dynamic that is not captured by seasonality. **cycles require persistence**, i.e. the present is related to the past (and thus the future is related to the present)
+think of cycles as some dynamic that is not captured by [[seasonality]]. **cycles require persistence**, i.e. the present is related to the past (and thus the future is related to the present)
 
 $\implies$ cycles are ordered sets of observations, in this class, it's time. it can also be spatial, ordered by distance.
 

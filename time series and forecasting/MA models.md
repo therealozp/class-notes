@@ -8,7 +8,7 @@ so, for the class of $MA(1)$ models:
 - $y_{t}=\epsilon_{t} + \theta \epsilon_{t - 1}$
 - $y_{26}=\epsilon_{26} + \theta \epsilon_{25}$
 
-then, based on the definition of the lag operator $L$, we can define:
+then, based on the definition of the [[lag operator]] $L$, we can define:
 $$MA(1)=y_{t}=(1+\theta L)\epsilon_{t}$$
 then, for any arbitrary $q$:
 $$MA(q) = y_{t} = \sum^{q}_{i = 0}\theta_{i}L^{i}\epsilon_{t}$$
