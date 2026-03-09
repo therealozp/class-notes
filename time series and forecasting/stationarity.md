@@ -67,5 +67,3 @@ but this does seem that there some kind of trend going on still, so if we run an
 >[!NOTE] note
 >so, if there is seasonality, we can remove the seasonal effects; if there is a trend, then we can detrend the data. otherwise, the first difference will often work as well.
 
-
-
