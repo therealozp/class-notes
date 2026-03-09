@@ -14,9 +14,11 @@ an unbiased estimator $\hat{\beta}$ of $\beta$ means $E(\hat{\beta}) = \beta$
 
 ## variance - covariance matrix
 $$\begin{bmatrix}
-\epsilon_{1}^2 & \epsilon_{2}\epsilon_{1} & \epsilon_{3}\epsilon_{1} & \epsilon_{4}\epsilon_{1} \\
-\dots\end{bmatrix}$$
-
+\epsilon_{1}^2 & \epsilon_{2}\epsilon_{1} & \epsilon_{3}\epsilon_{1} & \epsilon_{4}\epsilon_{1}  \\
+\epsilon_{1}\epsilon_{2} & \epsilon_{2}^{2} & \epsilon_{3}\epsilon_{2} & \epsilon_{4}\epsilon_{2} \\
+\epsilon_{1}\epsilon_{3 } & \epsilon_{2}\epsilon_{3} & \epsilon_{3}^{2} & \epsilon_{4}\epsilon_{3} \\
+\epsilon_{1}\epsilon_{4} & \epsilon_{2}\epsilon_{4} & \epsilon_{3}\epsilon_{4} & \epsilon_{4}^{2}
+\end{bmatrix}$$
 ## heteroskedasticity
 $$\begin{bmatrix}
 \sigma_{1}^{2} & 0 & 0 & 0 \\

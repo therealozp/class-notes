@@ -65,7 +65,7 @@ but this does seem that there some kind of trend going on still, so if we run an
 ![[Pasted image 20260303214433.png]]
 
 >[!NOTE] note
->so, if there is seasonality, we can remove the seasonal effects; if there is a trend, then we can detrend the data.
+>so, if there is seasonality, we can remove the seasonal effects; if there is a trend, then we can detrend the data. otherwise, the first difference will often work as well.
 
-otherwise, the first difference will often works as well.
+
 

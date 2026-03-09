@@ -7,7 +7,7 @@ we can have future $X$'s in $\Omega_{T}$, but **never** $y$'s and $e$'s.
 ## cycles
 we've seen these before with sine waves, musical notes, etc. but we are looking for something different. seasonality is an example, and we can say that **seasonal data displays cycles**.
 
-think of cycles as some dynamic that is not captured by seasonality. **cycles require persistence**, i.e. the present is related to the past (and thus the future is related to the present)
+think of cycles as some dynamic that is not captured by [[seasonality]]. **cycles require persistence**, i.e. the present is related to the past (and thus the future is related to the present)
 
 $\implies$ cycles are ordered sets of observations, in this class, it's time. it can also be spatial, ordered by distance.
 
@@ -25,22 +25,3 @@ the mean must be constant, we cannot have $E(y_{t})=\mu_{t}$ where $\mu_{t}\neq 
 2. variance/covariance structure has to be stable over time
 	- first part of this assumption being true is $\sigma^{2}<\infty$
 	- second part involves **autocorrelations**
-## autocorrelation
-let $\tau$ be displacement (how many periods apart. then, the autocovariance function is:
-$$\begin{align}
-\gamma(t, \tau) & = cov(y_{t}, y_{t-\tau}) \\
-& =E[(y_{t}-\mu_{t})(y_{t-\tau}-\mu_{t-\tau})]
-\end{align}$$
-with first order stationarity $\mu_{t}=\mu_{t-\tau}=\mu$, 
-$$\begin{align}
-\gamma(t, \tau) =E[(y_{t}-\mu)(y_{t-\tau}-\mu))]
-\end{align}$$
-to be covariance stationary, $\gamma(t, \tau)$ depends only on $\tau$, not on $t$. so, for a covariance stationary series:
-$$\gamma(t=6, 3)=\gamma(t=20, 3)=\gamma(t=150, 3)$$
-but, 
-$$\gamma(t=6, 3)\neq\gamma(t=6, 4)$$
-
-if $\gamma(\tau)$ denotes autocovariance between $y_{t}$ and $y_{t-\tau}$, then $\gamma(0)= E[(y_{t}-y)(y_{t}-y)] = \sigma^{2} <\infty$
-
-then, the autocorrelation $\rho$ is defined as:
-$$\rho(\tau)=\frac{\gamma(\tau)}{\gamma(0)}\iff \rho(0)=\frac{\gamma(0)}{\gamma(0)}= 1$$

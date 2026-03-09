@@ -4,6 +4,9 @@ also measured by the Durbon-Watson (DW) statistic:
 $$\begin{align}
 \frac{\sum_{t=2}^{T}(\epsilon_{t} - \epsilon_{t - 1})^{2}}{\sum^{T}_{t=1}e_{t }^{2}}
 \end{align}$$
-if there is no serial correlation, the **DW statistic = 2**. after expanding the equation and calculating the expected value.
+after expanding the equation and calculating the expected value, the DW statistic will return a value from 0 to 4. 
+- if there is no serial correlation, the **DW statistic = 2**. 
+- anything < 2 indicates a positive serial correlation
+- anything > 2 indicates negative serial correlation
 
 when running a regression, we can find a formula for errors: $$e_{t} = \phi e_{t -1} + v_{t}$$if $v_{t}$ is noise, then the coefficient $\phi$ determines if there is serial correlation. if $\phi = 0$, there is no serial correlation.

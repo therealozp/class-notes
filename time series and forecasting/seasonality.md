@@ -4,12 +4,16 @@ to check for seasonality, we essentially set a bunch of seasonal variables for e
 $$\begin{align}
 y_{t}=\beta_{1}\text{Jan} + \beta_{2}\text{Feb} + \beta_{3}\text{Mar} +\dots+\beta_{12}\text{Dec} + \epsilon_{t}
 \end{align}$$
+for models with seasonal data, the $R^{2}$ is useful measure of [[goodness of fit]]. the centered and uncentered $R^2$ are two viable metrics:
 
-for models with seasonal data, the $R^{2}$ is useful. the centered and uncentered $R^2$ are two viable metrics:
+$$\text{centered }R^{2}=1 - \frac{\sum^{T}_{i = 1}e_{i}^{2}}{\sum^{T}_{i = 1}(y_{i} - \bar{y})^2}$$
+$$\text{uncentered }R^{2}=1 - \frac{\sum^{T}_{i = 1}e_{i}^{2}}{\sum^{T}_{i = 1}y_{i}^2}$$
+typically, $\text{uncentered }R^{2}\geq \text{centered } R^{2}$. note that if the sample mean $\bar{y}=0$, centered and uncentered $R^2$ are equal. 
 
-$$\text{uncentered }R^{2}=1 - \frac{\sum^{T}_{i = 1}e_{i}^{2}}{\sum^{T}_{i = 1}(y_{i} - \bar{y})^2}$$
-$$\text{centered }R^{2}=1 - \frac{\sum^{T}_{i = 1}e_{i}^{2}}{\sum^{T}_{i = 1}y_{i}^2}$$
-note that if the sample mean $\bar{y}=0$, centered and uncentered $R^2$ are equal. the rule of thumb is:
+>[!NOTE] note
+>we only use **centered** $R^2$, never uncentered.
+
+the rule of thumb is:
 - $R^{2}< 0.1$: no real evidence of seasonality
 - $0.1\leq R^{2}< 0.25$: there's no seasonal effects, in the sense that fluctuations happening every period. but, you might have one or two cases where they are different - in that case, look at the coefficients
 - $0.25\leq R^{2}< 0.5$: reasonable evidence of seasonality, take a closer look
