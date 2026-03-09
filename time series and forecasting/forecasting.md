@@ -18,5 +18,13 @@ e_{t+h}^{c}=y_{t+h}-\hat{y}_{t+h}^{c}
 
 $c$ generally performs the best, across the MSE and MAE metrics, so any selection criterion has to choose model $c$. not all model that has smallest MSE will also have smallest MAE.
 
+we typically try to forecast three things:
+### point estimate (a single value)
+estimate price of a gallon of gasoline on February 2nd, for example. if we can derive the coefficients of the regression, we can simply yield the value immediately by replace the time variable with whatever we are forecasting for.
+### interval forecast (range)
+instead of forecasting a single value, we forecast a range of values. so, we can try for something like forecasting a gallon of gasoline costing within so and so range. to do this, we rely on the standard errors and the actual forecast. for example, for a 95% forecast:
+$$\text{upper bound}=\text{forecast} + 1.96 \sigma$$
+### density forecast
+too hard
 ## in-sample forecasting
 cut off data at a certain point (truncation), and use the remaining data to fit a model. then, we can use that fitted model to forecast the observation of the dependent variable that we cut off.

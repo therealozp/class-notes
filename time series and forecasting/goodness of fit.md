@@ -18,4 +18,5 @@ as our model becomes more complicated, the variance of the error terms **goes do
 
 AIC is asymptotically efficient.
 
-> when there is a split decision, the class default is SIC. AIC may be used, but the justification should be because it is asymptotically efficient.
+>[!NOTE]
+when there is a split decision, the class default is SIC. AIC may be used, but the justification should be because it is asymptotically efficient.
