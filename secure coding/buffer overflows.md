@@ -71,7 +71,7 @@ but, even with properly-implemented NX bits, attackers can still:
 	- fuzzing: use software to give the program a bunch of corner cases (very long/short inputs) and **monitor unexpected behaviors**. does it crash? does it do any handling?
 	- checking memory usage like memory leaks (if the memory consumption keeps growing)
 	- you can fuzz with source code (white box) and without (black box).
-		- symbolic execution (white box): program analysis to determine, for all program blocks B, which inputs cause that block to execute. the idea is that symbolic execution will become too complicated as there are more blocks and inputs to cover it.
+		- symbolic execution (white box): program analysis to determine, for all program blocks B, which inputs cause that block to execute. however, SE will become too complicated as code grows, because there are far more blocks and inputs to cover it.
 		- concolic execution (concrete symbolic execution): analysis can be guided by concrete input. this is combining symbolic execution with with choosing specific inputs. 
 
 ```
