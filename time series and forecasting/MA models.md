@@ -86,7 +86,6 @@ for $MA(1)$ models, the partial correlations die off toward 0. if $\theta>0$, th
 
 if $\lvert\theta\rvert<1$, $MA(1)$ is **invertible**, meaning
 $$y_{t}=(1+\theta L)\epsilon_{t} \iff \epsilon_{t}=\frac{y_{t}}{1+\theta L}$$
-
 # $MA(2)$
 $$y_{t}=\epsilon_{t}+\theta_{1}\epsilon_{t - 1}+\epsilon_{2}\epsilon_{t-2}$$
 similar to $MA(1)$:
