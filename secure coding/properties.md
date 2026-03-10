@@ -16,9 +16,9 @@ for this particular problem:
 1. if $p\in P_{1}$, then by the def. of $P_{1}$, $\forall t \in p: \text{read(0)}\not\in t$. then, $p\subseteq G_{1}$
 2. consider any $p \subseteq G_{1}$. by def. of $G_{1}$, $\forall t \in p: \text{read(0)}\not\in t$. then, $p\in P$
 ### proving a non-property
-on the other hand, consider the non-property policy $P_{2}$, where a cryptographic key generator generates all 64-bit keys. $P_{2}=\{ \{ t_{1};\text{output}(k_{1}),t_{2};\text{output}(k_{2}),\dots \} \ |\ \{ k_{1}, k_{2}, \dots \}=\text{the set of all 64-bit numbers}\}$
-
-then, proving that something is NOT a property involves a proof by contradiction. then, by way of contradiction, assume that $P_{2}$ is a property with good traces $G_{2}$, such that $\forall p: p\in P\iff p\subseteq G_{2}$.
+proving that something is NOT a property involves a proof by contradiction. consider the non-property policy $P_{2}$, where a cryptographic key generator generates all 64-bit keys. 
+$$P_{2}=\{ \{ t_{1};\text{output}(k_{1}),t_{2};\text{output}(k_{2}),\dots \} \ |\ \{ k_{1}, k_{2}, \dots \}=\text{the set of all 64-bit numbers}\}$$
+then, by way of contradiction, assume that $P_{2}$ is a property with good traces $G_{2}$, such that $\forall p: p\in P\iff p\subseteq G_{2}$.
 
 then, let $t_{0}=\text{output}(00\dots 00)$. 
 1. consider the case where $t_{0}\in G_{2}$. let $p=\{ t_{0} \}$, meaning $p\in G_{2}$. however, $p$ only ever outputs the key 00...00, and no matter how many times it is ran, it will only ever output that key. a property really concerns itself with **the whole universe** of traces. so in this case, $p\notin P_{2}$.

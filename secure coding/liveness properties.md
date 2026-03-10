@@ -1,6 +1,6 @@
-a dual to [[safety properties|safety]]. says that there is always a way to fix a bad trace. so, a [[properties|property]] $G$ is liveness if and only if $$\forall \text{ finite }t_{1},\ \exists t_{2} : t_{1};t_{2}\in G$$to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. 
+a dual to [[safety properties|safety]]. says that there is always a way to fix a bad trace. so, a [[properties|property]] $G$ is liveness if and only if $$\forall \text{ finite }t_{1},\ \exists t_{2} : t_{1};t_{2}\in G$$to prove that a property is not liveness, we can simply find a $t_{1}$ such that there is no $t_{2}$ that can fix the problem. for example, consider $G_{1}=\{ t\mid \text{read(0)} \not\in t \}$. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$. we can prove the reverse similarly, to show that $G_{1}$ is not liveness.
 
-for example, consider $G_{1}$ from above. then, if $t_{1}$ is $\text{read(0)}$, then by definition of $G_{1}, \forall t_{2} : t_{1};t_{2}\not\in G_{1}$. we can prove the reverse similarly, to show that $G_{1}$ is not liveness.
+however, the property $G_{1}'=\{ t \ | \ \text{read(0)}\in t \}$ is indeed liveness. for any $t_{1}$, you can make a valid trace by appending $\text{read(0)}$ at the end.
 
 $G_{3}=\{ t \mid \text{req(i)} \in t \implies \text{send(i)} \in t \}$. 
 
