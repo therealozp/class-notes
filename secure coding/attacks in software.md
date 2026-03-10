@@ -1,35 +1,36 @@
 >[!note] definition
->**attack vectors**: how the attack occurs. 
+>**attack vectors**: how the attack occurs. there is exactly one high-level attack vector: subverting (undermining) trust that software places in something. 
 
-we could view that there is exactly one high-level attack vector: subverting (undermining) trust that software places in something. 
+overall, there are 4 different things that software trusts (make assumptions about) that lets attackers mount attacks:
+### user input
+- attacker may provide unexpected input $\implies$ can be mitigated by **validating (or sanitizing** inputs.
+	- buffer overflows, SQL injections, XSS, etc.
+	- confused deputy attack: input causes software to misuse its privileges (permissions) on behalf of the less-privileged attacker. (also a kind of privilege escalation attack)
+		- think about a situation where a compiler compiles a source file, and an attacker specifies the name of the target program as some system file (such as a `passwords` file)
+		- then, once `passwords` is overwritten, no one else could log onto the server, and the machine is effectively brought down.
+### users to behave certain ways.
+- attacker is a privileged user who doesn't behave correctly. aka insider attack, this is usually the most difficult type of attack to prevent because the user needs all of their privileges. 
+	- examined after-the-fact with auditing/logging
+	- Principle of Least Privilege
+	- require multiple insiders to authorize the sensitive actions.
+- attacker convince users to behave otherwise 
+	- social engineering: attacker psychologically convinces user to perform insecure action
+		- phishing: social engineering by pretending to be a trustworthy entity in electronic communication
+		- smishing: phishing, but through SMS
+		- spear phishing: hyper-specific phishing, targeting only 1 victim.
+### attackers/users to have limited resources
+attackers may use more-than-expected resources, in the case of Denial of Service (DoS), or distributed DoS (DDoS) (e.g. with a botnet)
 
-1. software trusts (makes assumptions about) user input
-	- attacker may provide unexpected input $\implies$ can be mitigated by **validating (or sanitizing** inputs.
-		- buffer overflows, SQL injections, XSS, etc.
-		- confused deputy attack: input causes software to misuse its privileges (permissions) on behalf of the less-privileged attacker. (also a kind of privilege escalation attack)
-			- think about a situation where a compiler compiles a source file, and an attacker specifies the name of the target program as some system file (such as a `passwords` file)
-			- then, once `passwords` is overwritten, no one else could log onto the server, and the machine is effectively brought down.
-2. software trusts users to behave certain ways.
-	- attacker is a privileged user who doesn't behave correctly. aka insider attack, this is usually the most difficult type of attack to prevent because the user needs all of their privileges. 
-		- examined after-the-fact with auditing/logging
-		- Principle of Least Privilege
-		- require multiple insiders to authorize the sensitive actions.
-	- attacker convince users to behave otherwise 
-		- social engineering: attacker psychologically convinces user to perform insecure action
-			- phishing: social engineering by pretending to be a trustworthy entity in electronic communication
-			- smishing: phishing, but through SMS
-			- spear phishing: hyper-specific phishing, targeting only 1 victim.
-3. software trusts that attackers/users to have limited resources
-	- attackers may use more-than-expected resources, in the case of Denial of Service (DoS), or distributed DoS (DDoS) (e.g. with a botnet)
-4. software trusts the environment in which it executes (hardware or software) 
+### the environment in which it executes (hardware or software) 
+the operating system or the chip that software is executed on can sometimes be compromised.
 
 ## tradeoffs
-more security = lower usability (passwords, security pop-ups)
-more security = lower performance or running time (permission checks on the OS, resource monitors that all consume resources)
-more security = lower bandwidth (no firewalls = faster network ops)
-more security = higher code and data size (to use on security data structures and mechanisms)
-more security = more energy consumed to keep it running
-more security = more personnel (human resources and developer time to maintain, to monitor, etc.)
-
+overall, more security means: 
+- lower usability (passwords, security pop-ups, pop-up fatigue)
+- lower performance or running time (permission checks on the OS, resource monitors that all consume resources)
+- lower bandwidth (no firewalls = faster network ops)
+- higher code and data size (to use on security data structures and mechanisms)
+- more energy consumed to keep it running
+- more personnel (human resources and developer time to maintain, to monitor, etc.)
 ## resources
-most attackers will try to attack and gain access to memory.
+most attackers will try to attack and gain access to [[programs in memory|memory]].
