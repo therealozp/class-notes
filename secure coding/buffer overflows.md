@@ -108,5 +108,64 @@ stack-smashed with more characters
 - use type-safe programming languages
 
 there are additional protections provided by the modern OS, for example:
-- compiler warnings
-- 
+- compiler warnings/errors. some functions don't generate warnings despite being unsafe (`scanf`, `strcmp`, etc.)
+- stack canaries/speed bumps - StackGuard
+- address space layout randomization - ASLR
+- control flow integrity (CFI)
+### StackGuard
+inserts a canary in between the return address and other information. the idea is the canary is a secret value that the attacker doesn't know about, and before we jump to the address defined by RA, we check that the canary has not been modified.
+
+canaries may be reused.
+
+1. put a "random" (crypt-secure) and/or a null byte right before the RA
+2. check canary hasn't been verified before jumping to the RA.
+
+the "random" can sometime be a null byte. although it offers less protection, it ensures that all string reads end right there without infringing on the return address.
+
+limitations: 
+- attacker might guess or brute force canary
+- attacker might exploit other vulnerabilities to read the canary off the stack (i.e. through format-string vulns.)
+- only mitigates RA-overwriting attacks
+
+this only exhibit false negatives, never false positives. there's never any reason why the canary should ever be modified, so there will never be a false positive. false negatives is when the return address is modified with the same value, or with a zero-overwrite.
+
+### ASLR
+idea is to make it harder for attackers to figure out pointer values by randomizing the base address locations of each of the segments in memory (stack, heap, globals, code/"text"); so that the pointer values are different from machine to machine.
+
+ASLR tries to protect pointers essentially by shuffling everything.
+
+limitations:
+- attacker may still exploit other values (e.g. format string vulns) to learn the base addresses
+- attacker can guess/brute force the base addresses
+	- finding essentially one pointer into the segment will essentially give the offset and the base address of the segment. so, even though the base addr is different, the offset remains the same.
+- only tries to protect pointers (including return addresses)
+
+### control flow integrity
+assumptions:
+1. no-write-code is active
+2. NX bits are in place
+3. special codes are only used for this purpose. nothing else.
+
+a big problem in C/C++ vulnerabilities is that there is usually a lot of jumps/branches taken that we really should **never** be able to.
+
+so, we can rely on the control flow graph (as a directed graph) of the program to check if this destination is allowed from X source.
+- treat each instruction as a node/vertex
+- there exists and edge (from $i \to j$) when an instruction $j$ can immediately follow $i$.
+
+before any computed jump instruction, check that the destination is valid. 
+- embed at every valid destination a special code (doesn't need to be secret, but needs unique in the fact that it serves no other purpose)
+- check before jumping for the correct code
+
+```
+-> check for the correct code here
+beq zero, R5, #1
+// passes through here if not zero
+...
+
+#1: nop **code** instruction
+```
+
+even with the simplest implementation with the same code for every single valid jump destination, we get the benefit of guarding privileged function execs. so, consider the old example of the file reading before security checks, the attacker can only jump to the beginning of the file open - meaning no security checks can be bypassed.
+
+limitations:
+- "mimicry" attacks: sometimes, CFGs are imprecise. the attacker can follow the valid path inside the graph to jump to disallowed instructions (as long as it stays on the valid control flow path).
