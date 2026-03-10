@@ -52,7 +52,7 @@ the OS uses NX bits to implement execution space protection. Windows call them D
 but, even with properly-implemented NX bits, attackers can still:
 - change RA to valid code (**not** the [[attacks in software|confused deputy attack]])
 	1. point to privileged function, right after the security checks to bypass checks.
-	2. begin `exec` system call (for example, via `cmd.exe` or `/bin/sh`, which executes arbitrary scripts given as an argument, and passes the script on the stack. (called a **return-to-libc** attack)
+	2. begin `exec` system call (for example, via `cmd.exe` or `/bin/sh`, which executes arbitrary scripts given as an argument, and passes the script on the stack. (called a **return-to-libc** (ret2libc) attack)
 	3. return-oriented programming: find an expressive set of "gadgets" and chain them together (a ROP chain) to form malware
 		- "gadgets" are short sequences of instructions in code mem
 		- they usually end with `ret` ("return" instruction)
