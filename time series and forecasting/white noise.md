@@ -16,19 +16,18 @@ but sometimes, this is not immediately clear.
 $$\hat{\rho}(\tau)=\frac{\sum_{t=1+\tau}(y_{t}-\bar{y})(y_{t - \tau}-\bar{y})}{\sum_{t=1}(y_{t}-\bar{y})^2}$$
 then, the variance can be calculated with:
 $$var(\hat{\rho}(\tau))=\frac{1}{T}\left[ 1+2\sum_{j\neq 1}^{T}\hat{\rho}^2(j) \right]$$
-
 if we have white noise (normal, iid), then the distribution of sample autocorrelations $\hat{\rho}(\tau)\sim N\left( 0, \frac{1}{T} \right)\iff \sqrt{T }\hat{\rho}(T) \sim N(0, 1)$
 
 squaring both sides, we get $T \hat{\rho}(\tau)^{2}\sim \mathcal{X}^2$. 
-statistics tell us that if we have $m$ variable $\sim \mathcal{X}_{1}^2$, then their sums $\sim \mathcal{X}_{m}^{2}$ (chi-squared with $m$ d.o.f.)
+statistics tell us that if we have $m$ variables $\sim \mathcal{X}_{1}^2$, then their sums $\sim \mathcal{X}_{m}^{2}$ (chi-squared with $m$ d.o.f.)
 
 ### Box-Pierce Q statistic
 usually only works with really big samples
 $$Q_{BP}=T\sum^{m}_{\tau=1}\hat{\rho}(\tau)^{2} \sim \mathcal{X}^{2}_{m}$$
-under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we fail to reject, indicating there is some degree of autocorrelation.
+under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we reject that it follows white noise, indicating there is some degree of autocorrelation.
 ### Ljung-Box Q statistic
 $$Q_{LB}=\frac{T\times 2}{T-\tau}Q_{BP} \sim \mathcal{X}^{2}_{m }$$
-under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we fail to reject, indicating there is some degree of autocorrelation.
+under the null hypothesis of white noise. meaning, if p-value $< 0.05$, we reject that it follows white noise, indicating there is some degree of autocorrelation.
 
 so, we have to choose the $m$ carefully. 
 - $m$ too big $\to$ no longer a good chi-squared approximation

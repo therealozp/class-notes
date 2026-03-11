@@ -1,7 +1,7 @@
 to see which model predicts best, we can look at the forecast errors:
 - $\hat{y_{t+h}}$: forecast of $h$ periods ahead
 - $y_{t+h}$: actual value of $h$ periods ahead
-- $e_{t +h}=y_{t+h}-\hat{y_{t+h}}$
+- $e_{t +h}=y_{t+h}-\hat{y}_{t+h}$
 
 suppose 3 different models $a, b, c$ are ran:
 $$\begin{align}

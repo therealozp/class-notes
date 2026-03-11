@@ -1,8 +1,7 @@
 ## mean
 **mean** (also called expected value):
 - $\mu=E[X]$
-- sample mean $\frac{1}{N}\sum_{i=1}^{N} X_{i}$
-
+- sample mean $\frac{1}{T}\sum_{i=1}^{T} X_{i}$
 ## variance
 - $\sigma^2=E[(X-\mu)^2]$ 
 - sample variance $\sigma^{2}=\frac{1}{T}\sum_{i=1}^{T} (x_{i}-\bar{x})$. we don't typically use this formulation, because it is already biased (we already estimated this)
@@ -27,5 +26,5 @@ $$K=\frac{E[(X-\mu)^4]}{\sigma^4}$$
 for all norm dists, $K=3$
 
 ## tests for normality
-Jarque-Bera test: null hypothesis is data is normally distributed. if p-value of JB is < 0.05, then we reject the null hypothesis.
+Jarque-Bera test: null hypothesis is data is normally distributed. if p-value of JB is < 0.05, then we reject the null hypothesis (meaning that the data is not normally distributed).
 $$JB = \frac{T}{6}\left( \hat{\mathcal{S}} + \frac{1}{4}(\hat{K}-3)^2 \right)\approx\mathcal{X}^2$$

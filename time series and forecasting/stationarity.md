@@ -1,5 +1,5 @@
-we have some requirements on realization (data series) that must be met to work with cycles, primarily that **data must be stable**
-stability in this case is covariance stationary, or second-order stationary
+we have some requirements on realization (data series) that must be met to work with cycles, primarily that **data must be stable.** in this case, stability means covariance stationary, or second-order stationarity.
+
 1. mean must be stable over time (1st order)
 $$E(y_{t})=\mu \ \forall t$$
 the mean must be constant, we cannot have $E(y_{t})=\mu_{t}$ where $\mu_{t}\neq \mu_{t-h}$
@@ -40,7 +40,7 @@ growing series are not covariance stationary:
 
 ![[Pasted image 20260303214053.png]]
 
-we can take the logarithm (to get the growth rate), which **sometimes** will work, but not always:
+we can take the logarithm to get the percentage change, which **sometimes** will work, but not always:
 
 ![[Pasted image 20260303214151.png]]
 

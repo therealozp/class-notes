@@ -14,7 +14,7 @@ then, for any arbitrary $q$:
 $$MA(q) = y_{t} = \sum^{q}_{i = 0}\theta_{i}L^{i}\epsilon_{t}$$
 where $\theta_{0}$ = 1.
 
-if we recall [[conditional v. unconditional expectations#approximately rational distributed log]], we defined the $\Theta(L)$ operator to be
+if we recall the definition for [[conditional v. unconditional expectations#approximately rational distributed lag|approximately rational distributed lags]], we defined the $\Theta(L)$ operator to be
 $$\Theta(L)=\sum^{q}_{i = 0}\theta_{i}L^{i}$$
 ## $MA(1)$
 specifically for $MA(1)$ where $y_{t} = (1 + \theta L)\epsilon_{t}$, we can find the unconditional mean and variance as follows:

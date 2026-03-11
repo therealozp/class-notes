@@ -6,8 +6,8 @@ the conditional expectation of $y_{t}$ is denoted as $E[y_{t}\mid\Omega _{T -1}]
 for white noise, this should be independent, meaning:
 - $E(\epsilon_{t}) = E(\epsilon_{t} \mid \Omega_{T-1}) = 0$
 - $E[(\epsilon_{t}-\mu)^{2}] = E[(\epsilon_{t}-\mu)^{2}\mid \Omega_{T-1}] = \sigma^{2}$
-## distributed log
-$(1-L)^{2}=1-2L+L^{2}$, so we can run an infinite order distributed log:
+## distributed lag
+$(1-L)^{2}=1-2L+L^{2}$, so we can run an infinite order distributed lag:
 $$\sum^\infty_{i = 0}b_{i}L^{i}$$
 ### Wold's theorem
 let $y_{t}$ be a zero mean, covariance stationary process. $y_{t}$ can be constructed as:
@@ -22,10 +22,9 @@ $$\begin{align}
 E[y_{t} \mid \Omega_{t-1}] &= E\left(   \sum^{\infty}_{i=0}b_{i}L^{i}\epsilon_{t}\mid \Omega _{T-1}\right) \\
 & =\sum^{\infty}_{i=0}b_{i}\epsilon_{t}
 \end{align}$$
-
 - unconditional variance varies:
 $$var(y_{t}) = var\left[ \sum^\infty_{i=0}b_{i}L^i \epsilon_{i}\right]=\sum^\infty_{i=0}b_{i}^{2}\sigma^{2}$$
-- conditional variance is constant:, so we can opt to use another:
+- conditional variance is constant:
 $$var(y_{t}\mid \Omega _{t-1}) = E[(y_{t}-E(y_{t})^{2)}\mid \Omega_{t-1}]=\sigma ^{2}$$
 >[!NOTE]
 >in practice, a stationary series with cycles can be modeled as a high-order moving average (but it needs a lot of data)

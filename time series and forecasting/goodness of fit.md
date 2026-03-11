@@ -9,7 +9,7 @@ alternatively, an **information criteria (IC)** is also used to measure how well
 $$\text{AIC} = \frac{\exp\left( \frac{2K}{T} \right)}{T}\sum^T_{i}e_{i}^2=e^{\frac{2K}{T}}\times MSE$$
 - Schwartz (Bayes) IC 
 $$SIC=\frac{T^{\frac{K}{T}}}{T}\sum^T_{i}e_{i}^2=T^{\frac{K}{T}}\times MSE$$
-## consistency
+## asymptotic consistency
 a model selection criterion $IC$ is consistent if and only if:
 - when the correct model (also called the *data generating process*, or dgp) is among the models we are comparing, the chance that $IC$ chooses the correct model approaches $100\%$ as $T$ (number of timestamps) gets larger
 - when the true dgp is **not** among the models we are estimating, the possibility of choosing the **best estimation** $100\%$ as $T$ gets larger

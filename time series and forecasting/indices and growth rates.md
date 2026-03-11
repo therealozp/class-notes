@@ -12,6 +12,6 @@ we can also take the natural log $\ln$ of the values, which approximates growth 
 $$\ln(x_{t}) - \ln (x_{t - 1})\approx \frac{{x_{t} - x_{t - 1}}}{x_{t}}$$
 another use case:
 $$q_{x}=aP_{x}^{b}P_{y}^{c}P_{z}^{c}I^{e} \iff \ln(q_{x}) =\ln a + b\ln P_{x}+c\ln P_{y}+d\ln P_{z}+e\ln I$$
-a series that is not covariance stationary can **sometimes** be made stationary by taking the log. this does **not** work with the mean, though!
+a series that is not [[stationarity|covariance stationary]] can **sometimes** be made stationary by taking the log. this does **not** work with the mean, though!
 
 for constant growth rate series, we can use logs.

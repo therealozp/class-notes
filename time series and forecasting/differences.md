@@ -6,7 +6,7 @@ and quarterly:
 $$dy_{t}=y_{t}-y_{t-4}$$
 and annually (also called the annual difference or seasonal differences):
 $$dy_{t}=y_{t}-y_{t-12}$$
->[!ERROR] note
+>[!ERROR] important
 >when we annually difference the dependent variables, we also have to **difference the dummy variables** as well (except for time variables, or seasonal variables)
 ## forecasting
 in the differences model, we are forecasting the differences., so, essentially, we are forecasting $\hat{dy}_{t+h}$. to convert them into actual values, we have to add them to whatever real value we had before. or, in formulaic form:
