@@ -1,6 +1,6 @@
 a policy $P$ is a property if and only if there exists a **precise** set of good [[traces]] $G$ such that:$$\forall \text{ programs }\mathcal{p}:\mathcal{p} \in P \iff\mathcal{p} \subseteq G$$in plain English: a program is only good only when it exhibits good traces. 
 
-if the set of good traces $G$ is found, then the property is also automatically defined. so, we can describe a property with its set $G$.
+if the set of good traces $G$ is [[secure software design principles]]found, then the property is also automatically defined. so, we can describe a property with its set $G$.
 
 >[!NOTE]
 when a policy is a property, you can look at every execution in isolation, and they should all be "good". normal policies, on the other hand, non-properties require some sort of dependency in programs ("this program is good, given that this program is also able to do this").

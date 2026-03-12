@@ -1,10 +1,3 @@
-type-safe/strongly-typed languages provide type safety: **all** language-level values will only be used in appropriate ways (for example, no adding 2 functions together). 
-
-- type-safe languages: Java, Python, Ruby, most scripting languages. if your language is dynamically typed, might as well add type safety. values are usually stored in 
-`[type tag | data]` formats.
-- weakly-type languages: **some** language-level values will only be used in appropriate ways e.g. C and C++. these languages are usually lower level, so it comes with more performance benefits.
-- untyped languages: no types. i.e. assembly, machine code, etc.
-
 consider the following C function:
 
 ```c
@@ -77,7 +70,7 @@ but, even with properly-implemented NX bits, attackers can still:
 x = 2
 x += y
 
-  v this is a guard
+     v this is a guard
 if x > 4 {something}
              ^ this is a block
 ```
@@ -104,7 +97,7 @@ stack-smashed with more characters
 
 - find and use safer string libraries
 - check boundaries on array operations
-- use type-safe programming languages
+- use [[type safety|type-safe]] programming languages
 
 there are additional protections provided by the modern OS, for example:
 - compiler warnings/errors. some functions don't generate warnings despite being unsafe (`scanf`, `strcmp`, etc.)
@@ -114,9 +107,9 @@ there are additional protections provided by the modern OS, for example:
 ### StackGuard
 inserts a canary in between the return address and other information. the idea is the canary is a secret value that the attacker doesn't know about, and before we jump to the address defined by RA, we check that the canary has not been modified.
 
-canaries may be reused.
+values for canaries may be reused.
 
-1. put a "random" (crypt-secure) and/or a null byte right before the RA
+1. put a "random" (cryptographically secure) and/or a null byte right before the RA
 2. check canary hasn't been verified before jumping to the RA.
 
 the "random" can sometime be a null byte. although it offers less protection, it ensures that all string reads end right there without infringing on the return address.

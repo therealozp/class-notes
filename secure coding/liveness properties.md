@@ -2,7 +2,7 @@ a dual to [[safety properties|safety]]. says that there is always a way to fix a
 
 however, the property $G_{1}'=\{ t \ | \ \text{read(0)}\in t \}$ is indeed liveness. for any $t_{1}$, you can make a valid trace by appending $\text{read(0)}$ at the end.
 
-$G_{3}=\{ t \mid \text{req(i)} \in t \implies \text{send(i)} \in t \}$. 
+$G_{3}=\{ t \mid \text{req(i)} \in t \implies \text{send(i)} \in t \}$ can also be fixed by just putting a $\text{send(i)}$ where it is needed.
 
 consider $G_{4}=\{ t\mid t \text{ is finite} \}$. this is the "termination" property.
 we can easily prove that $G_{4}$ is liveness. by definition of liveness, $t_{1}$ must already be finite. then, $t_{1} \in G_{4} \implies t_{1};\epsilon\in G_{4}$ (our $t_{2}$ in this case would be the empty trace $\epsilon$).
