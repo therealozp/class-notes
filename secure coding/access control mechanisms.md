@@ -33,4 +33,4 @@ traditionally used with multi-level security (MLS, top secret -> secret -> publi
 - Biba Integrity model: no read downs, no write ups. enforces integrity instead
 in reality, we use both. also in reality, we also have exceptions. so we have mechanisms to enforce exceptions.
 ### discretionary access control
-users can affect authorization decisions. 
+users can affect authorization decisions. ****
