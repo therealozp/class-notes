@@ -32,5 +32,9 @@ overall, more security means:
 - higher code and data size (to use on security data structures and mechanisms)
 - more energy consumed to keep it running
 - more personnel (human resources and developer time to maintain, to monitor, etc.)
-## resources
-most attackers will try to attack and gain access to [[programs in memory|memory]].
+
+memory corruption attacks:
+- out of bounds writes
+	- buffer overflows (including stack based/heap based)
+- format string attacks
+- integer overflows

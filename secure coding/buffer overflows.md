@@ -82,7 +82,7 @@ the most widespread buffer overflow attack. exploits the `fingerd` daemon (backg
 
 stack-smashed with more characters 
 
-## prevention
+## mitigation
 - use extreme caution (or avoid entirely) the functions `gets`, `scanf` (`gets(buffer)` is equivalent to `scanf("%s", buf)`), `strcpy`, `strcat`, `sprintf`, `sscanf`, `fscanf`, etc.
 - instead, use n-ary versions of unsafe functions. still not exactly safe, because it also now depends on the programmer as well.
 	- these *might* differ on how they handle corner cases, i.e. null terminators, so still needs a manual analysis instead of straight replace
