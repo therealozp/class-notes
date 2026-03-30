@@ -33,8 +33,27 @@ overall, more security means:
 - more energy consumed to keep it running
 - more personnel (human resources and developer time to maintain, to monitor, etc.)
 
-memory corruption attacks:
-- out of bounds writes
-	- buffer overflows (including stack based/heap based)
-- format string attacks
-- integer overflows
+## attacks
+- memory corruption attacks:
+	- out of bounds writes
+		- buffer overflows (including stack based/heap based)
+	- format string attacks
+	- integer overflows
+- null pointer dereferences (segfaults) may cause crash and DOS or enter an error state
+- use-after-frees
+	- p1 points to struct of type `s`, p2 points to same object, and free p1, try to use s2
+- broken type safety (type confusion)
+	- p1 is an object of type `S`
+	- p2 points to same as p1, but cast as type `T`
+	- access fields in p2 (type `T`), that doesn't exist in `S`.
+- double-free vulnerabilities: free some block of memory twice, which screws up the heap manager. this may corrupt the data structure used for managing the heap memory (also called the free list)
+
+```c
+free(p); // the free list indicates this slot is available
+...
+... // malloc(p') occurs somewhere here
+... // malloc'ed into the slot that was just freed
+free(p); // slot is freed again 
+use p`; // use-after-free
+```
+
