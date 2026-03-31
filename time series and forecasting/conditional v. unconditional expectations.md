@@ -28,7 +28,6 @@ $$var(y_{t}) = var\left[ \sum^\infty_{i=0}b_{i}L^i \epsilon_{i}\right]=\sum^\inf
 $$var(y_{t}\mid \Omega _{t-1}) = E[(y_{t}-E(y_{t})^{2)}\mid \Omega_{t-1}]=\sigma ^{2}$$
 >[!NOTE]
 >in practice, a stationary series with cycles can be modeled as a high-order moving average (but it needs a lot of data)
-
 ### rational finite distributed lags
 $$B(L)=\frac{\Theta(L)}{\Phi(L)}$$
 where:
