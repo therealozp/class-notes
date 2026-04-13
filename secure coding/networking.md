@@ -105,3 +105,57 @@ web applications: client-server software, where client runs in a browser. typica
 web-apps can be developed with web-app frameworks, e.g. ASP.NET, Django for Python, Ruby on Rails, Spring on Java, JS/TS.
 
 with multi-tier objects, state handling needs to be secured. in server-client models, the state is **serialized** (marshalling) before sending to the client, who deserializes it later (un-marshalling).
+
+## client-state manipulation
+attacker modifies state stored on client and returned to server.
+
+refer to pizza model. suppose that instead of the value of the HTML saying "Pay 5.50", the client can modify the HTML to say 0.01 instead. then, the payment API call will only issue a charge for 0.01 instead of 5.50.
+### mitigation
+1. keep state on server, but send client a session ID/key (SID)
+	- application generates a random number, the SID, and use a DB to map back to state
+	- using a CSPRNG. not truly random, just sort of random, but it should be unpredictable. if the attacker manages to crack a portion of the number, it should not help them decode the ones before.
+	- `hash(sid + client details)` like IP addresses to session state,
+	- app sends client the session ID, e.g. in a hidden value,
+	- when client returns the SID (e.g. GET/sid....), the server can look up the session state.
+	$\to$ might block hosts sending several invalid (sid + client details) combo.
+	
+2. send client state but use cryptography to enforce integrity.
+	- application creates and sends a MAC (message authentication code) or digital signature with the state send to client
+	- client returns state + MAC/signature to the server
+	- server checks that MAC/signature is valid for the returned state
+	- preferred if there is minimal state, because server can remain stateless. otherwise, #1 is preferred because there is less information to manage.
+
+## attacks with SID
+if we have session ID embedded into the URL, there might be some problems:
+- session hijacking: when someone sends a URL containing an SID to others, they may tamper with session
+	- especially through the HTTP `referrer` field, showing which URL the user came from. a sysadmin would have access to these SIDs, opening them up to hijacking
+- session fixation: attacker sends victim a URL with known SID
+	- attacker has access to all actions of the victim
+### mitigation
+1. don't put SIDs in URLs. instead, use POST variables. in the same pizza example, the requests might be changed into the following. note that the data is still visible in the packet, but it is not encoded in the URL.
+
+```
+POST /submit_order HTTP/1.0
+...
+sid%...
+pay%yes
+...
+```
+
+2. exchange and expire SIDs frequently (especially when there are sensitive operations)
+3. hash both the SID and client info
+4. use cookies. the HTTP request would still be a GET request. a HTTP header **from server**: 
+
+```
+HTTP/1.0 200 OK
+set_cookie:sid=...;secure
+<html>...
+```
+
+the `secure` flag tells the browser and server that these cookies should **only** be sent over TLS. so in this case, the cookie is automatically sent with every communication between the browser and the server. when the user clicks "yes" to payment, the browser sends:
+
+```
+GET /submit_order?pay=yes HTTP/1.0
+...
+cookie:sid=...
+```
