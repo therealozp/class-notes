@@ -159,3 +159,17 @@ GET /submit_order?pay=yes HTTP/1.0
 ...
 cookie:sid=...
 ```
+
+## CSRF or XSRF
+stands for cross-site request forgery. attack in which a privileged client (the victim's browser, because it has an SID cookie) sends and fulfills web-app request on behalf of of a less-privileged 3rd party attacker, using the victim's SID. most of this generally is to fulfill a money transfer request.
+
+the URLs can be of embedded content (images/videos) that the browser goes to fetch automatically, and this URL could be poisoned. 
+
+### mitigation
+- everything about refreshing and expiring the session still applies
+- generate a CSRF token
+	- just a randomly generated number from a CSPRNG
+	- server embeds the hidden token in HTML forms and only satisfies requests with the proper tokens. the URLs sent by the attacker won't have these CSRF tokens.
+	- hash tokens and client details, store them in a database for validity checks
+
+and don't trust scripts (JS) from the client.
