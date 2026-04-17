@@ -1,4 +1,4 @@
-there exists 2 common layered models for computer communications.
+there exists 2 common layered models for computer communications: TCP/IP model and the OSI model.
 
 ## TCP/IP model
 also known as Internet Protocol Suite. 
@@ -27,7 +27,6 @@ consists of:
 		- host addressing
 - link layer: transmits data (grouped into packets/frames) between devices on the same physical link (i.e. on the same network)
 	- each network device has a link-layer address, e.g. a MAC (media access control) Ethernet + Wi-Fi networks use a 48-bit MAC address (defined in IEEE 802)
-
 
 ![[Pasted image 20260401154333.png]]
 
