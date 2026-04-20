@@ -23,3 +23,9 @@ P(y_{T+1}\mid \Omega_{T})&=E(y_{T+1}\mid \Omega_{T}) \\
 &=0 + \theta_{1}\epsilon_{T} + \theta_{2}\epsilon_{T - 1}
 \end{align}
 $$
+and the 2-step prediction is:
+$$\begin{align}
+P(y_{T+1}\mid \Omega_{T})&=E(y_{T+1}\mid \Omega_{T}) \\
+&=E(\epsilon_{T+1}\mid\Omega_{T}) + \theta_{1}E(\epsilon_{T}\mid\Omega_{T}) + \theta_{2}E(\epsilon_{T - 1}\mid\Omega_{T}) \\
+&=0 + \theta_{1}\epsilon_{T} + \theta_{2}\epsilon_{T - 1}
+\end{align}$$
