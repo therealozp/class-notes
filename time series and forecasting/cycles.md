@@ -25,7 +25,40 @@ P(y_{T+1}\mid \Omega_{T})&=E(y_{T+1}\mid \Omega_{T}) \\
 $$
 and the 2-step prediction is:
 $$\begin{align}
-P(y_{T+1}\mid \Omega_{T})&=E(y_{T+1}\mid \Omega_{T}) \\
-&=E(\epsilon_{T+1}\mid\Omega_{T}) + \theta_{1}E(\epsilon_{T}\mid\Omega_{T}) + \theta_{2}E(\epsilon_{T - 1}\mid\Omega_{T}) \\
-&=0 + \theta_{1}\epsilon_{T} + \theta_{2}\epsilon_{T - 1}
+P(y_{T+2}\mid \Omega_{T})&=E(y_{T+2}\mid \Omega_{T}) \\
+&=E(\epsilon_{T+2}\mid\Omega_{T}) + \theta_{1}E(\epsilon_{T + 1}\mid\Omega_{T}) + \theta_{2}E(\epsilon_{T}\mid\Omega_{T}) \\
+&=0 + 0 + \theta_{2}\epsilon_{T}
 \end{align}$$
+so, for a $MA(2)$ model, any conditional prediction $P(y_{T+j}\mid\Omega_{T})$ for $j > 2$ will be 0.
+
+for any model, we define the forecast errors as:
+$$e_{T+h} = y_{T + h} - E(y_{T+h}\mid \Omega_{T})$$
+so, the forecast errors for the 1-step forecast is:
+$$\begin{align}
+e_{T+1} & = \epsilon_{T+1}+\theta_{1}\epsilon_{T}+\theta_{2}\epsilon_{T - 1} - [\theta_{1}\epsilon_{T} + \theta_{2}\epsilon_{T - 1}] \\
+& = e_{T + 1} \to \text{white noise}
+\end{align}$$
+for a 2-step forecast:
+$$\begin{align}
+e_{T+2} & = \epsilon_{T+2}+\theta_{1}\epsilon_{T + 1}+\theta_{2}\epsilon_{T} - [\theta_{2}\epsilon_{T}] \\
+& = \epsilon_{T + 2} + \theta_{1}e_{T + 1} \to MA(1)
+\end{align}$$
+for a 3-step forecast:
+$$\begin{align}
+e_{T+2} & = \epsilon_{T+2}+\theta_{1}\epsilon_{T + 1}+\theta_{2}\epsilon_{T} - [0] \\
+& = \epsilon_{T + 3} + \theta_{1}e_{T + 2} + \theta_{2}\epsilon_{T+1} \to MA(2)
+\end{align}$$
+for an $AR(1)$ model, where
+$$y_{T}=\phi y_{T-1} + \epsilon_{T}$$
+then, $y_{T+1}=\phi y_{T}+\epsilon_{T + 1}$. so, our conditional prediction 1 step ahead is:
+$$\begin{align}
+P(y_{T+1}\mid \Omega_{T})&=\phi E(y_{T}\mid \Omega_{T}) + E(\epsilon_{T + 1} \mid \Omega_{T}) \\
+& = \phi y_{T} + 0
+\end{align}$$
+for a 2-step prediction:
+$$\begin{align}
+P(y_{T+2}\mid \Omega_{T})&=\phi E(y_{T + 1}\mid \Omega_{T}) + E(\epsilon_{T + 2} \mid \Omega_{T}) \\
+& = \phi y_{T + 1} + 0 \\
+& = \phi^{2}y_{T}
+\end{align}$$
+for an $AR(1)$, the $n$-step conditional mean will be $\phi^{n}y_{T}$.
