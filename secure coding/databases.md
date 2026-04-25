@@ -40,6 +40,15 @@ ALTER TABLE Inventory RENAME oldName newName;
 ```
 
 DML:
+consider table:
+
+| SKU | Name   | Price | Brand |
+| --- | ------ | ----- | ----- |
+| 1   | shirt  | 20    | X     |
+| 2   | pencil | 2     | X     |
+| 3   | shirt  | 30    | Y     |
+standard results match the structure of the table.
+
 ```sql
 -- SQL strings start and end with single apostrophes
 INSERT INTO Inventory VALUES('1','Shirt',20,'X');
@@ -58,3 +67,98 @@ WHERE price > 5 AND SKU <> '1' AND Name LIKE '%shirt%';
 -- update clauses
 UPDATE Inventory SET price=25 WHERE SKU='1';
 ```
+
+```SQL
+SELECT Name FROM Inventory -- returns all attributes, duplicate included
+/*
++ Name +
+|shirt |
+|pencil|
+|shirt |
++ ---- + 
+*/
+```
+
+```sql
+SELECT DISTINCT Name FROM Inventory -- only returns the unique ones
+/*
++ Name +
+|shirt |
+|pencil|
++ ---- + 
+*/
+
+-- only returns the unique ones, sorted by alphabetical order
+SELECT DISTINCT Name FROM Inventory ORDER BY Name
+/*
++ Name +
+|penicl|
+|shirt |
++ ---- + 
+*/
+
+
+-- returns 2 columns, all rows, sorted by descending price
+SELECT DISTINCT Price,Brand FROM Inventory ORDER BY Price DESC 
+/*
++ Name +
+|shirt |
+|pencil|
++ ---- + 
+*/
+
+-- only returns 2 rows
+SELECT DISTINCT Price,Brand FROM Inventory ORDER BY Price DESC LIMIT 2
+
+-- returns 2 rows, skip 1 rows 
+SELECT DISTINCT Price,Brand FROM Inventory ORDER BY Price DESC LIMIT 2 OFFSET 1
+
+-- 
+SELECT * FROM Inventory WHERE Name = 'pencil' OR SKU = 1
+/*
++ --- + ---- + ----- + ----- +
+| SKU | Name | Price | Brand |
+| --- | ---- | ----- | ----- |
+|  1  | shirt | 20 | X |
+|  2  | pencil | 30 | X |
++ --- + ---- + ----- + ----- +
+*/
+
+--  unexpected behavior, the numeric value of SKU is aggregated
+SELECT count(SKU),Brand FROM Inventory
+/*
++ ---------- + ----- +
+| count(SKU) | Brand |
+| ---------- | ----- |
+|     3      |   X   |
++ ---------- + ----- +
+*/
+
+SELECT count(SKU),Brand FROM Inventory GROUP BY Brand ORDER BY count(SKU)
+/*
++ ---------- + ----- +
+| count(SKU) | Brand |
+| ---------- | ----- |
+|     2      |   X   |
+|     1      |   Y   |
++ ---------- + ----- +
+*/
+
+-- aliasing a column with AS:
+SELECT count(SKU) AS n,Brand FROM Inventory GROUP BY Brand ORDER BY n
+/*
++ - + ----- +
+| n | Brand |
+| - | ----- |
+| 2 |   X   |
+| 1 |   Y   |
++ - + ----- +
+*/
+
+-- set unions, returns only the Name
+-- if UNION ALL is used, then duplicated are also included
+SELECT Name FROM Inventory where price = 20 UNION
+SELECT Name FROM Inventory where price = 30
+
+```
+
