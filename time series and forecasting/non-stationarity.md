@@ -182,7 +182,7 @@ to illustrate, we can use the consumption-smoothing (permanent income hypothesis
 - $y_{t}^{p}$ is the permanent income
 - $C_{t}'$ is the current transitory consumption
 
-$C_{t}$ and $y_{t}^{p}$ are $I(1)$, so not stationary. $C_{t}'$ is stationary. the formula for the permanent income hypothesis says that $C_{t} = \beta y_{t}^{p} + C_{t}'$. even though both the independent variables are $I(1)$, the dependent variable is stationary $I(0)$. so, we conclude that both $C_{t}$ and $y_{t}^{p}$ is cointegrated
+$C_{t}$ and $y_{t}^{p}$ are $I(1)$, so not stationary. $C_{t}'$ is stationary. the formula for the permanent income hypothesis says that $C_{t} = \beta y_{t}^{p} + C_{t}'$. even though both the independent variables are $I(1)$, the dependent variable is stationary $I(0)$. so, we conclude that both $C_{t}$ and $y_{t}^{p}$ is cointegrated.
 
 ## cointegration
 when two variables are cointegrated, the OLS estimator is **super consistent**, and the estimate $\beta$ can be interpreted in the standard way.
