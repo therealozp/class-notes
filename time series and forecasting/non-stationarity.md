@@ -94,7 +94,7 @@ usually, the rate that it approaches is proportional to $\sqrt{n}$. **super cons
 $$\frac{\phi - \hat{\phi}}{ T}\to 0 \text{ as }T\to \infty$$
 2. but the estimator is biased downwards:
 $$E[\hat{\phi _{OLS}}] < \phi ^{*}= 1$$
-this mean that the statistic $\frac{\hat{\phi_{OLS}} - 1}{\sigma}$ is **not** t-distributed. so, to test the unit root, we have to rely on a different distribution to see if $\phi<1$ significantly. 
+this mean that the statistic $\frac{\hat{\phi}_{OLS} - 1}{\sigma}$ is **not** t-distributed. so, to test the unit root, we have to rely on a different distribution to see if $\phi<1$ significantly. 
 
 this distribution is put together by 2 statisticians, Dickey and Fuller, so the tests for this is usually called Dickey-Fuller tests.
 
@@ -174,7 +174,7 @@ this is usually referred to as a **spurious regression** that shows a relationsh
 OLS regression results usually falls into one of 4 possibilities:
 1. both $X_{t}$ and $y_{t}$ are stationary, regular results hold, and ordinary interpretation is correct.
 2. if they are integrated at different orders $I(1)$ and $I(0)$, results won't mean anything.
-3. if both are $I(1)$ (or any $I(d)$ for that matter), and the residuals of the regression also follow an $I(d)$ integrated series, these results are meaningless. **this is spurious regression**.
+3. if both are $I(1)$ (or any $I(d)$ for that matter), and the residuals of the regression also follow an $I(d)$ integrated series, these results are meaningless. this is a **spurious regression**.
 4. both are integrated at the same order (almost always $I(1)$) and the residuals from the regression are $I(0)$ stationary, we have what Engle and Granger calls **cointegration**.
 
 to illustrate, we can use the consumption-smoothing (permanent income hypothesis) as an example:
