@@ -1,5 +1,5 @@
 lingo:
-- databases: organized collections of data
+- databases: organized collections o`f data
 - DBMS: database management systems. interacts with DB and app to define and manipulate the DB
 - relational DB:
 	- data is organized into tables (relations)

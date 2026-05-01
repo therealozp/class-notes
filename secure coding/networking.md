@@ -170,5 +170,4 @@ the URLs can be of embedded content (images/videos) that the browser goes to fet
 	- just a randomly generated number from a CSPRNG
 	- server embeds the hidden token in HTML forms and only satisfies requests with the proper tokens. the URLs sent by the attacker won't have these CSRF tokens.
 	- hash tokens and client details, store them in a database for validity checks
-
-and don't trust scripts (JS) from the client.
+- and don't trust scripts (JS) from the client.
