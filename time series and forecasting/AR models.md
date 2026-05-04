@@ -50,7 +50,7 @@ $$\rho(\tau)=\frac{\gamma(\tau)}{\gamma(0)}=\phi^{\tau}$$
 for any $\lvert \phi \rvert < 1$, the ACF dies off to 0.
 
 ### partials
-the partial autocorrelations are the main identifier of an $AR$ model. 
+the partial autocorrelations are the main identifier of an $AR(p)$ model. 
 $$
 \forall AR(p): \begin{cases} P(\tau) \neq 0 & \text{if } \tau \leq p \\ P(\tau) = 0 & \text{if } \tau > p \end{cases}
 $$

@@ -4,7 +4,7 @@ in a moving average model, think of $y_{t}$ as the deviation from the mean. then
 $$MA(q)=\epsilon_{t}+\theta_{1}\epsilon_{t-1} +\theta_{2}\epsilon_{t-2}+\dots+\theta_{q}\epsilon_{t -q}$$
 where $\epsilon\sim WN(0, \sigma^2)$
 
-so, for the class of $MA(1)$ models:
+	so, for the class of $MA(1)$ models:
 - $y_{t}=\epsilon_{t} + \theta \epsilon_{t - 1}$
 - $y_{26}=\epsilon_{26} + \theta \epsilon_{25}$
 
