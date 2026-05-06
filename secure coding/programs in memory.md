@@ -1,3 +1,5 @@
+#secure_coding 
+
 it is important for us to understand how program data is often stored and executed in memory. generally, it is divided into 4 big chunks
 - heap: stores dynamically allocated data (i.e. from `malloc`, `new`, etc.)
 - stack: stack of frames/activation records. each frame keeps track of data that is locally relevant to that function/method/procedure.

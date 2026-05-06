@@ -12,7 +12,7 @@ for something to be MFA, there needs to be multiple factors. PWs and PINs combo 
 - if the email requires a phone access, fingerprint, etc. then it can be MFA
 ### authorization
 - access-control list: data structure that stores list of permissions **stored with each object**. for example, for a file, we can have `(root: rwx, user5: r--, others: ---)`
-- capability list: list of permissions **stored with each subject**. `(file 1: R, file 2: X, file 3: -)`
+- capability list: list of permissions **stored with each subject** aka user. `(file 1: R, file 2: X, file 3: -)`
 - access-control matrix: combines both of the above. probably not used in practice where machines are big, but useful because of constant-time access
 
 |        | file 1 | file 2 | etc. |

@@ -1,5 +1,6 @@
+#secure_coding 
 ## SYN flooding
-host is vulnerable during [[TCPIP model#three-way handshake|half-open connections]], where DDoS attacks can happen. at this stage, a botnet can send a bunch of SYN connection requests, and the victim needs to remember all those requests (for the sequence numbers, addresses, sizes of packets, maximum transmission size, etc.) that they **cannot** remove. this can potentially exhaust all memory on the server.
+host is vulnerable during [[TCP-IP model#three-way handshake|half-open connections]], where DDoS attacks can happen. at this stage, a botnet can send a bunch of SYN connection requests, and the victim needs to remember all those requests (for the sequence numbers, addresses, sizes of packets, maximum transmission size, etc.) that they **cannot** remove. this can potentially exhaust all memory on the server.
 
 sometimes, the attacker can also spoof the source IP addresses to subvert the firewall.
 ### mitigation 
@@ -22,7 +23,7 @@ spoofed address can be a number of things, but there has to be the IP address fo
 		- IDSes detect **anomalies**. they use ML models/some classifiers to detect anomalous packets. a bit more complicated than firewalls
 		- firewalls just do simple pattern-match to decide which one to decide what to do with the packet (drop/allow)
 
-firewall packets (using dotted octet notation, meaning asterisks). rule matching/disambiguation is first-rule-apply basis.
+firewall packets (using dotted octet notation, and asterisks for catch-alls). rule matching/disambiguation is first-rule-apply basis.
 
 an example of a firewall table
 
@@ -42,7 +43,7 @@ refer to pizza model. suppose that instead of the value of the HTML saying "Pay 
 	- `hash(sid + client details)` like IP addresses to session state,
 	- app sends client the session ID, e.g. in a hidden value,
 	- when client returns the SID (e.g. GET/sid....), the server can look up the session state.
-	$\to$ might block hosts sending several invalid (sid + client details) combo.
+	$\to$ might block hosts sending several invalid (sid + client details) combo to prevent brute-force attacks.
 	
 2. send client state but use cryptography to enforce integrity.
 	- application creates and sends a MAC (message authentication code) or digital signature with the state send to client

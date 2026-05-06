@@ -1,3 +1,4 @@
+#secure_coding 
 what does it mean for software, practices, etc. to be secure?
 
 historically, security is often hard-coded. it would be secure for passwords to be changed every set amount of time, or auto logouts.

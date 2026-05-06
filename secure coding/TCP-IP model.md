@@ -1,7 +1,4 @@
-there exists 2 common layered models for computer communications: TCP/IP model and the OSI model.
-
-## TCP/IP model
-also known as Internet Protocol Suite. 
+also known as Internet Protocol Suite. later improved upon by the [[OSI model]].
 
 ![[Pasted image 20260330162114.png]]
 

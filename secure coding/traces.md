@@ -1,3 +1,4 @@
+#secure_coding 
 a **trace** (or **run**, or **execution**) is a sequence of security relevant actions (or **events**). 
 
 consider the program `echo`,  where our traces are (separated by semicolons). traces may be **converging** (terminating) or **diverging** (non-terminating).

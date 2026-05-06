@@ -1,3 +1,4 @@
+#secure_coding
 ## SQL injection (SQLIA)
 a typical server requests goes: 
 client -> data -> app -> db
@@ -91,7 +92,8 @@ ResultSet rs = ps.executeQuery();
 ```
 - access control mechanisms
 	- maybe the application should not be able to access some tables
-	- fine-grained access control is good
+	- fine-grained access control is 
+	- good
 	- access one row at a time
 - sanitization
 ## XSS (cross-site-scripting)

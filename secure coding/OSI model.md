@@ -1,3 +1,5 @@
+#secure_coding 
+
 stands for the Open Systems Interconnection model. consists of 7 layers:
 - application layer is split into 3 layers:
 	- application

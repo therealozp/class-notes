@@ -1,3 +1,4 @@
+#secure_coding 
 a mechanism is (active) a concrete implementation ensuring that software adheres to a policy (passive). when a mechanism $M$ ensures software obeys a policy $P$, we say that **$M$ enforces $P$**. so, all the foundational ideas boil down to a mechanism, a policy, a program, and enforcement.
 
 for information on true/false positives/negatives, refer to [[philosophy of security]].
@@ -29,7 +30,7 @@ bool alwaysTrue() {
 
 in this case, the type checker would raise type errors on function `f()`, but in reality, it would never run. then, static type checkers may raise **false positives**, because it is (mostly) impossible for a static type checker to know what a dynamic program does. or in the halting problem terms, it is undecidable for a computer/algorithm to figure out what an input program will do at runtime. 
 
-type checking is a kind of memory [[access control mechanisms|access control]] policy, as we are trying to control way memory is accessed.
+type checking is a kind of memory [[access control mechanisms|access control]] policy, as we are trying to control ways in which memory is accessed.
 ## precise mechanisms
 precise enforcers never exhibit false positives/negatives. that means static mechanisms are always **imprecise**, due to the problem of decidability. an example of a precise enforcement systems would be an intrusion detection system.
 
