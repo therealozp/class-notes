@@ -1,3 +1,5 @@
+#secure_coding 
+
 for a long time, people have tried to define some kind of metric to measure security. for example, comparing multiple vulnerabilities that range from minor annoyances (pop ups), to catastrophes such as data wipes. so, to tackle this, we define attack surfaces as a metric.
 
 >[!note] definition
@@ -11,7 +13,7 @@ the issue with cyber-insurance:
 ## design principles
 1. validate/sanitize inputs. really needs to be creative on how user provides inputs, because there are a number of ways attackers can provide input to attack a machine.
 2. try to handle errors securely.
-	- no leakage of confidential info via error messages, etc.
+	- no [[code injection attacks#SQL injection (SQLIA)|leakage of confidential info via error messages]], etc.
 	- when the program fails, enter a secure state. don't enter an insecure state. 
 3. use layers of heterogeneous mechanisms
 	- defense in depth. have mechanisms to prevent, detect, contain, and recover.

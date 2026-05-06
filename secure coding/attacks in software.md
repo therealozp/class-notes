@@ -1,4 +1,4 @@
-#secure_coding 
+ #secure_coding 
 
 >[!note] definition
 >**attack vectors**: how the attack occurs. there is exactly one high-level attack vector: subverting (undermining) trust that software places in something. 
