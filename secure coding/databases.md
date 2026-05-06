@@ -1,5 +1,5 @@
 lingo:
-- databases: organized collections o`f data
+- databases: organized collections of data
 - DBMS: database management systems. interacts with DB and app to define and manipulate the DB
 - relational DB:
 	- data is organized into tables (relations)
@@ -68,43 +68,52 @@ WHERE price > 5 AND SKU <> '1' AND Name LIKE '%shirt%';
 UPDATE Inventory SET price=25 WHERE SKU='1';
 ```
 
-```SQL
-SELECT Name FROM Inventory -- returns all attributes, duplicate included
-/*
-+ Name +
-|shirt |
-|pencil|
-|shirt |
-+ ---- + 
-*/
-```
-
 ```sql
-SELECT DISTINCT Name FROM Inventory -- only returns the unique ones
+-- returns all attributes, duplicate included
+SELECT Name FROM Inventory 
 /*
-+ Name +
-|shirt |
-|pencil|
-+ ---- + 
++ ------ +
+|  Name  |
+| ------ |
+| shirt  |
+| pencil |
+| shirt  |
++ ------ + 
+*/
+
+-- only returns the unique ones
+SELECT DISTINCT Name FROM Inventory 
+/*
++ ------ +
+|  Name  |
+| ------ |
+| shirt  |
+| pencil |
++ ------ + 
 */
 
 -- only returns the unique ones, sorted by alphabetical order
 SELECT DISTINCT Name FROM Inventory ORDER BY Name
 /*
-+ Name +
-|penicl|
-|shirt |
-+ ---- + 
++ ------ +
+|  Name  |
+| ------ |
+| pencil |
+|  shirt |
++ ------ + 
 */
 
 
 -- returns 2 columns, all rows, sorted by descending price
 SELECT DISTINCT Price,Brand FROM Inventory ORDER BY Price DESC 
 /*
-+ Name +
-|shirt |
-|pencil|
-+ ---- + 
++ ----- + ----- + 
+| Price | Brand | 
+| ----- | ----- |
+| 2     | X     | 
+| 20    | X     | 
+| 30    | Y     | 
++ ----- + ----- + 
 */
 
 -- only returns 2 rows
@@ -116,12 +125,12 @@ SELECT DISTINCT Price,Brand FROM Inventory ORDER BY Price DESC LIMIT 2 OFFSET 1
 -- 
 SELECT * FROM Inventory WHERE Name = 'pencil' OR SKU = 1
 /*
-+ --- + ---- + ----- + ----- +
-| SKU | Name | Price | Brand |
-| --- | ---- | ----- | ----- |
-|  1  | shirt | 20 | X |
-|  2  | pencil | 30 | X |
-+ --- + ---- + ----- + ----- +
++ --- + ------ + ----- + ----- +
+| SKU |  Name  | Price | Brand |
+| --- | ------ | ----- | ----- |
+|  1  |  shirt |   20  |   X   |
+|  2  | pencil |   30  |   X   |
++ --- + ------ + ----- + ----- +
 */
 
 --  unexpected behavior, the numeric value of SKU is aggregated

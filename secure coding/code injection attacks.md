@@ -51,7 +51,7 @@ SELECT ... WHERE login = ''; DROP TABLE acctInfo -- ' AND pw = ...
 ```
 
 5. gets access to the `sysobjects` table
-set the PIN to this conversion statement.
+set the PIN to this CONVERT statement.
 ```sql
 SELECT * FROM acctInfo WHERE login = '' and pw = '' and pin=CONVERT(int, (SELECT TOP 1 name FROM sysobjects))
 ```
@@ -103,7 +103,7 @@ for example: `http://search.com?q=...<script%20src="http://attack.com/fun/js"></
 ```html
 <html>
 ...
-<p>Result for <script src="http://attack.com/fun/js"></script></p>
+<p>Result for <script src="http://attack.com/fun.js"></script></p>
 ...
 </html>
 ```
@@ -132,7 +132,9 @@ UI -> app -> XML
 
 user can include stuff that requires an entity tag, that looks like
 ```xml
-<!entity some_file_name> # this specifies some operation, that goes to the file specified, copied, and pasted into the XML documents.
+<!entity some_file_name> 
+# this specifies some operation
+# XML will go to the file specified, copies, and pastes into the XML documents.
 ```
 this tag works very similar to the `#include` directive in C. can be used to abuse path traversal attacks.
 
