@@ -22,7 +22,7 @@ there are generally two forms of symmetric ciphers:
  
 2. stream cipher: encrypt/decrypt one symbol at a time.
 ## asymmetric cryptography
-typically much slower than symmetric, involving a lot of math. typically, we use a hybrid approach by using asymmetric to share keys, and using the symmetric to encrypt-decrypt with said shared key (see HTTPS and TLS).
+typically much slower than symmetric, involving a lot of math. typically, we use a hybrid approach by using asymmetric to share keys, and using the symmetric to encrypt-decrypt with said shared key (see [[TCP-IP model#protocols|HTTPS and TLS]]).
 ### Diffie-Hellman key exchange
 public-private-key cryptography. also called Diffie-Hellman-Merkle, discovered in 1977. 
 
@@ -30,7 +30,7 @@ Alice creates a secret $a$ (with a CSPRNG), a prime number $p$, and the generato
 
 ![[Pasted image 20260429161616.png]]
 
-a passive attacker wouldn't be able to break this (given that the DLP problem is harder to solve), but an active attacker (malary) can do a man-in-the-middle attack to break DHKE. what the MITM attack does is sit in the middle, and to Bob, pretend to be Alice (and forward Alice's key); and to Alice, pretend to be Bob.
+a passive attacker wouldn't be able to break this (given that the DLP problem is harder to solve), but an active attacker (mallory) can do a man-in-the-middle attack to break DHKE. what the MITM attack does is sit in the middle, and to Bob, pretend to be Alice (and forward Alice's key); and to Alice, pretending to be Bob.
 
 ### RSA
 found in 1977 by Rivest, Shamir, Adleman
